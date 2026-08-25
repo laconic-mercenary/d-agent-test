@@ -1,0 +1,100 @@
+<30>1 2024-05-13T14:00:03.620275Z WS-GRETA-01 fwupd 44122 - - metadata is 14 days old, scheduling refresh
+<30>1 2024-05-13T14:02:19.504459Z WS-GRETA-01 dbus-daemon 38502 - - [system] Successfully activated service 'org.freedesktop.locale1' for ':1.90'
+<30>1 2024-05-13T14:03:03.781565Z WS-GRETA-01 rsyslogd 38500 - - main Q: queue action-remote has 177 messages pending, worker threads 2
+<30>1 2024-05-13T14:04:44.963800Z WS-GRETA-01 systemd-timesyncd 38509 - - Selected time server 129.6.15.28:123.
+<78>1 2024-05-13T14:06:00.014000Z WS-GRETA-01 CRON 385582 - - (sysstat) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+<30>1 2024-05-13T14:06:42Z WS-GRETA-01 anacron 42035 - - Anacron 2.3 started on 2024-05-13
+<30>1 2024-05-13T14:06:43.236325Z WS-GRETA-01 anacron 42035 - - Will run job `logrotate' in 11 min.
+<30>1 2024-05-13T14:07:54.388996Z WS-GRETA-01 tracker-miner-fs-3 48258 - - Resetting tracker extract task after idle timeout 501364
+<30>1 2024-05-13T14:10:19.146503Z WS-GRETA-01 systemd-timesyncd 38509 - - System clock synchronized to 129.6.15.28:123.
+<86>1 2024-05-13T14:10:34.774093Z WS-GRETA-01 gdm-password 386318 - - pam_unix(gdm-password:session): session opened for user svc_app(uid=2214) by gdm(uid=0)
+<86>1 2024-05-13T14:10:39.543093Z WS-GRETA-01 systemd-logind 38503 - - New session 288145 of user svc_app.
+<30>1 2024-05-13T14:14:46.804893Z WS-GRETA-01 snapd 38508 - - snapmgr.go:523: refresh candidates checked for snapd-desktop-integration
+<30>1 2024-05-13T14:15:22.924882Z WS-GRETA-01 dbus-daemon 38502 - - [system] Activating via systemd: service name='org.freedesktop.timedate1' unit='dbus-org.freedesktop.timedate1.service' requested by ':1.91'
+<85>1 2024-05-13T14:15:23.672093Z WS-GRETA-01 sudo 386830 - - svc_app : TTY=pts/9 ; PWD=/srv/app ; USER=root ; COMMAND=/usr/bin/systemctl list-units --state=failed --no-pager
+<86>1 2024-05-13T14:15:23.878093Z WS-GRETA-01 sudo 386830 - - pam_unix(sudo:session): session opened for user root(uid=0) by svc_app(uid=2214)
+<86>1 2024-05-13T14:15:28.656326Z WS-GRETA-01 sudo 386830 - - pam_unix(sudo:session): session closed for user root
+<30>1 2024-05-13T14:16:11.186494Z WS-GRETA-01 systemd-resolved 38510 - - Grace period over, resuming full feature set (UDP+EDNS0) for DNS server 208.67.222.222.
+<30>1 2024-05-13T14:16:44.486830Z WS-GRETA-01 NetworkManager 38501 - - <info>  [1715609804.4868] manager: NetworkManager state is now CONNECTED_GLOBAL
+<30>1 2024-05-13T14:17:42.889929Z WS-GRETA-01 anacron 42035 - - Job `logrotate' started
+<30>1 2024-05-13T14:18:03.899825Z WS-GRETA-01 snapd 38508 - - stateengine.go:150: state ensure starting change 7287
+<30>1 2024-05-13T14:18:16.938957Z WS-GRETA-01 snapd 38508 - - taskrunner.go:271: change 7284 task 2 done for snapd-desktop-integration
+<30>1 2024-05-13T14:18:42.123871Z WS-GRETA-01 anacron 42035 - - Job `logrotate' terminated
+<30>1 2024-05-13T14:18:44.236854Z WS-GRETA-01 anacron 42035 - - Normal exit (1 job run)
+<30>1 2024-05-13T14:19:15.666600Z WS-GRETA-01 systemd-timesyncd 38509 - - Time has been changed by -1.292343 seconds.
+<30>1 2024-05-13T14:21:02.445770Z WS-GRETA-01 rsyslogd 38500 - - omfwd: target 10.10.2.30 using disk-assisted queue fwdRule1, checkpoint 104703
+<85>1 2024-05-13T14:21:02.466743Z WS-GRETA-01 sudo 387373 - - backup : TTY=pts/3 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/lsof -i -P -n
+<86>1 2024-05-13T14:21:02.626743Z WS-GRETA-01 sudo 387373 - - pam_unix(sudo:session): session opened for user root(uid=0) by backup(uid=3037)
+<86>1 2024-05-13T14:21:04.914929Z WS-GRETA-01 sudo 387373 - - pam_unix(sudo:session): session closed for user root
+<30>1 2024-05-13T14:21:30.961399Z WS-GRETA-01 accounts-daemon 44292 - - user 'ubuntu' has logged in
+<30>1 2024-05-13T14:22:09.496657Z WS-GRETA-01 thermald 54820 - - thermal zone x86_pkg_temp: trip point updated
+<30>1 2024-05-13T14:22:09.687975Z WS-GRETA-01 accounts-daemon 44292 - - user 'ubuntu' has logged in
+<30>1 2024-05-13T14:22:13.311771Z WS-GRETA-01 NetworkManager 38501 - - <info>  [1715610133.3118] manager: NetworkManager state is now CONNECTED_GLOBAL
+<30>1 2024-05-13T14:23:34.596312Z WS-GRETA-01 irqbalance 5472 - - Skipping IRQ 24: banned by affinity mask 00000008 (ens160)
+<30>1 2024-05-13T14:23:37.006232Z WS-GRETA-01 polkitd 44678 - - Unregistered Authentication Agent for unix-session:177 (system bus name :1.57, object path /org/freedesktop/PolicyKit1/AuthenticationAgent)
+<30>1 2024-05-13T14:25:51.188830Z WS-GRETA-01 systemd-timesyncd 38509 - - System clock synchronized to 129.6.15.28:123.
+<30>1 2024-05-13T14:27:45.219235Z WS-GRETA-01 rsyslogd 38500 - - omfwd: target 10.10.2.30 using disk-assisted queue action-remote, checkpoint 104846
+<30>1 2024-05-13T14:28:24.025913Z WS-GRETA-01 NetworkManager 38501 - - <info>  [1715610504.0259] manager: NetworkManager state is now CONNECTED_GLOBAL
+<30>1 2024-05-13T14:31:58.682061Z WS-GRETA-01 thermald 54820 - - Unsupported cpu model, use default config
+<30>1 2024-05-13T14:31:59.915259Z WS-GRETA-01 NetworkManager 38501 - - <info>  [1715610719.9153] device (ens192): state change: ip-config -> activated
+<30>1 2024-05-13T14:32:00.124633Z WS-GRETA-01 polkitd 44678 - - Unregistered Authentication Agent for unix-session:180 (system bus name :1.67, object path /org/freedesktop/PolicyKit1/AuthenticationAgent)
+<30>1 2024-05-13T14:34:34.892687Z WS-GRETA-01 snapd 38508 - - snapmgr.go:523: refresh candidates checked for core20
+<30>1 2024-05-13T14:34:36.139483Z WS-GRETA-01 systemd-timesyncd 38509 - - System clock synchronized to 129.6.15.28:123.
+<30>1 2024-05-13T14:34:36.796644Z WS-GRETA-01 NetworkManager 38501 - - <info>  [1715610876.7966] device (ens192): state change: ip-config -> activated
+<78>1 2024-05-13T14:36:00.038000Z WS-GRETA-01 CRON 389131 - - (sysstat) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+<30>1 2024-05-13T14:37:13.071685Z WS-GRETA-01 polkitd 44678 - - Unregistered Authentication Agent for unix-session:177 (system bus name :1.71, object path /org/freedesktop/PolicyKit1/AuthenticationAgent)
+<30>1 2024-05-13T14:39:14.000815Z WS-GRETA-01 NetworkManager 38501 - - <info>  [1715611154.0008] manager: NetworkManager state is now CONNECTED_GLOBAL
+<30>1 2024-05-13T14:40:29.468803Z WS-GRETA-01 thermald 54820 - - thermal zone x86_pkg_temp: trip point updated
+<30>1 2024-05-13T14:40:37.742223Z WS-GRETA-01 tracker-miner-fs-3 48258 - - Resetting tracker extract task after idle timeout 907758
+<30>1 2024-05-13T14:40:39.610288Z WS-GRETA-01 cups-browsed 3334 - - Printer FRONTDESK-MFP was not found by DNS-SD, keeping stale queue for now
+<30>1 2024-05-13T14:40:47.954554Z WS-GRETA-01 systemd-timesyncd 38509 - - Selected time server 129.6.15.28:123.
+<30>1 2024-05-13T14:41:01.212054Z WS-GRETA-01 dbus-daemon 38502 - - [system] Activating via systemd: service name='org.freedesktop.timedate1' unit='dbus-org.freedesktop.timedate1.service' requested by ':1.92'
+<84>1 2024-05-13T14:44:40Z WS-GRETA-01 login 389836 - - pam_unix(login:auth): authentication failure; logname=LOGIN uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=greta.lindqvist
+<84>1 2024-05-13T14:44:44Z WS-GRETA-01 login 389841 - - pam_unix(login:auth): authentication failure; logname=LOGIN uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=greta.lindqvist
+<84>1 2024-05-13T14:44:46Z WS-GRETA-01 login 389843 - - pam_unix(login:auth): authentication failure; logname=LOGIN uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=greta.lindqvist
+<30>1 2024-05-13T14:45:58.427673Z WS-GRETA-01 accounts-daemon 44292 - - user 'deploy' has logged in
+<30>1 2024-05-13T14:45:59.878913Z WS-GRETA-01 systemd-timesyncd 38509 - - Time has been changed by 1.156787 seconds.
+<30>1 2024-05-13T14:46:34.821657Z WS-GRETA-01 snapd 38508 - - taskrunner.go:271: change 7285 task 4 done for core20
+<30>1 2024-05-13T14:59:00.749026Z WS-GRETA-01 systemd-journald 38498 - - Rotating system journal.
+<30>1 2024-05-13T15:01:26.308181Z WS-GRETA-01 systemd-timesyncd 38509 - - System clock synchronized to 129.6.15.28:123.
+<30>1 2024-05-13T15:04:54.223115Z WS-GRETA-01 snapd 38508 - - daemon.go:460: gracefully waiting for hook snapd-desktop-integration.configure
+<30>1 2024-05-13T15:05:13.782645Z WS-GRETA-01 snapd 38508 - - snapmgr.go:523: refresh candidates checked for snapd-desktop-integration
+<30>1 2024-05-13T15:05:51.314200Z WS-GRETA-01 systemd-resolved 38510 - - Using degraded feature set UDP instead of UDP+EDNS0 for DNS server 208.67.222.222.
+<78>1 2024-05-13T15:06:00.087000Z WS-GRETA-01 CRON 394137 - - (sysstat) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+<30>1 2024-05-13T15:07:36.643295Z WS-GRETA-01 dbus-daemon 38502 - - [system] Successfully activated service 'org.freedesktop.resolve1' for ':1.93'
+<30>1 2024-05-13T15:11:31.471575Z WS-GRETA-01 avahi-daemon 25698 - - Withdrawing address record for ens192.
+<30>1 2024-05-13T15:11:49.458278Z WS-GRETA-01 systemd-timesyncd 38509 - - System clock synchronized to 129.6.15.28:123.
+<30>1 2024-05-13T15:11:50.069244Z WS-GRETA-01 accounts-daemon 44292 - - user 'ubuntu' has logged in
+<30>1 2024-05-13T15:12:24.211268Z WS-GRETA-01 cups-browsed 3334 - - Browse remote printer FINANCE-MFP at 324757
+<85>1 2024-05-13T15:16:38.864689Z WS-GRETA-01 sudo 397838 - - ops : TTY=pts/1 ; PWD=/var/log ; USER=root ; COMMAND=/usr/sbin/ss -s
+<86>1 2024-05-13T15:16:38.961689Z WS-GRETA-01 sudo 397838 - - pam_unix(sudo:session): session opened for user root(uid=0) by ops(uid=6366)
+<86>1 2024-05-13T15:16:41.134066Z WS-GRETA-01 sudo 397838 - - pam_unix(sudo:session): session closed for user root
+<30>1 2024-05-13T15:19:45.808039Z WS-GRETA-01 gnome-shell 41624 - - Extension ubuntu-dock@ubuntu.com already enabled
+<30>1 2024-05-13T15:20:34.529537Z WS-GRETA-01 systemd-timesyncd 38509 - - System clock synchronized to 129.6.15.28:123.
+<30>1 2024-05-13T15:20:57.601135Z WS-GRETA-01 cups-browsed 3334 - - Browse remote printer FRONTDESK-MFP at 959268
+<30>1 2024-05-13T15:20:58.149430Z WS-GRETA-01 avahi-daemon 25698 - - Registering new address record for ens192.
+<30>1 2024-05-13T15:20:58.396398Z WS-GRETA-01 NetworkManager 38501 - - <info>  [1715613658.3964] manager: NetworkManager state is now CONNECTED_GLOBAL
+<30>1 2024-05-13T15:20:59.855941Z WS-GRETA-01 NetworkManager 38501 - - <info>  [1715613659.8559] manager: NetworkManager state is now CONNECTED_GLOBAL
+<30>1 2024-05-13T15:21:00.107909Z WS-GRETA-01 NetworkManager 38501 - - <info>  [1715613660.1079] device (ens192): state change: disconnected -> prepare
+<30>1 2024-05-13T15:22:05.403915Z WS-GRETA-01 irqbalance 5472 - - Skipping IRQ 86: banned by affinity mask 00000002 (mlx5_comp1)
+<30>1 2024-05-13T15:22:05.891250Z WS-GRETA-01 packagekitd 26625 - - search-names transaction /708552
+<30>1 2024-05-13T15:22:57.524372Z WS-GRETA-01 polkitd 44678 - - Subject unix-process:399243:216497743 is authorized for action org.freedesktop.NetworkManager.settings.modify.system
+<30>1 2024-05-13T15:22:57.644711Z WS-GRETA-01 NetworkManager 38501 - - <info>  [1715613777.6447] dhcp4 (ens192): state changed renew -> bound
+<30>1 2024-05-13T15:22:57.814900Z WS-GRETA-01 gnome-shell 41624 - - Monitor 0 configuration unchanged after hotplug event
+<30>1 2024-05-13T15:26:01.283460Z WS-GRETA-01 NetworkManager 38501 - - <info>  [1715613961.2835] device (ens192): state change: ip-config -> activated
+<30>1 2024-05-13T15:26:23.098776Z WS-GRETA-01 systemd-timesyncd 38509 - - System clock synchronized to 129.6.15.28:123.
+<30>1 2024-05-13T15:26:30.803069Z WS-GRETA-01 avahi-daemon 25698 - - Service "_ipp._tcp" successfully established.
+<30>1 2024-05-13T15:28:23.686286Z WS-GRETA-01 NetworkManager 38501 - - <info>  [1715614103.6863] device (ens192): state change: disconnected -> prepare
+<30>1 2024-05-13T15:29:36.832476Z WS-GRETA-01 polkitd 44678 - - Operator of unix-process:400947:216536748 successfully authenticated as unix-user:admin to gain TEMPORARY authorization for action org.freedesktop.systemd1.manage-units for system-bus-name::1.95 [/usr/bin/systemctl] (owned by unix-user:admin)
+<30>1 2024-05-13T15:30:37.598398Z WS-GRETA-01 avahi-daemon 25698 - - Registering new address record for ens192.
+<30>1 2024-05-13T15:32:22.434665Z WS-GRETA-01 NetworkManager 38501 - - <info>  [1715614342.4347] device (ens192): state change: disconnected -> prepare
+<30>1 2024-05-13T15:32:33.785288Z WS-GRETA-01 systemd-resolved 38510 - - Grace period over, resuming full feature set (UDP+EDNS0) for DNS server 208.67.222.222.
+<30>1 2024-05-13T15:32:33.975865Z WS-GRETA-01 avahi-daemon 25698 - - Service "_workstation._tcp" successfully established.
+<86>1 2024-05-13T15:35:53.249027Z WS-GRETA-01 gdm-password 402384 - - pam_unix(gdm-password:session): session opened for user admin(uid=1001) by gdm(uid=0)
+<78>1 2024-05-13T15:36:00.089000Z WS-GRETA-01 CRON 402400 - - (sysstat) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+<86>1 2024-05-13T15:36:00.183027Z WS-GRETA-01 systemd-logind 38503 - - New session 288829 of user admin.
+<30>1 2024-05-13T15:37:55.260173Z WS-GRETA-01 systemd-timesyncd 38509 - - System clock synchronized to 129.6.15.28:123.
+<30>1 2024-05-13T15:39:37.531280Z WS-GRETA-01 polkitd 44678 - - Registered Authentication Agent for unix-session:180 (system bus name :1.96 [/usr/libexec/polkit-gnome-authentication-agent-1], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8)
+<85>1 2024-05-13T15:41:49.349027Z WS-GRETA-01 sudo 404021 - - admin : TTY=pts/10 ; PWD=/var/log ; USER=root ; COMMAND=/bin/systemctl restart auditd
+<86>1 2024-05-13T15:41:49.585027Z WS-GRETA-01 sudo 404021 - - pam_unix(sudo:session): session opened for user root(uid=0) by admin(uid=1001)
+<86>1 2024-05-13T15:41:56.298618Z WS-GRETA-01 sudo 404021 - - pam_unix(sudo:session): session closed for user root

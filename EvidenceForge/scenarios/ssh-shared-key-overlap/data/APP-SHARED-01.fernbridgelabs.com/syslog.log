@@ -1,0 +1,107 @@
+<86>1 2024-05-13T14:01:24.432975Z APP-SHARED-01 sshd 3146349 - - pam_unix(sshd:session): session closed for user greta.lindqvist
+<86>1 2024-05-13T14:01:25.002810Z APP-SHARED-01 systemd-logind 8425 - - Removed session 220072.
+<30>1 2024-05-13T14:01:37.635999Z APP-SHARED-01 irqbalance 48743 - - IRQ 122 classified for CPU 1 balancing on nvme0q2
+<30>1 2024-05-13T14:01:37.686715Z APP-SHARED-01 snapd 8430 - - daemon.go:460: gracefully waiting for hook lxd.configure
+<30>1 2024-05-13T14:01:57.872458Z APP-SHARED-01 irqbalance 48743 - - Skipping IRQ 181: banned by affinity mask 00000004 (mlx5_comp2)
+<30>1 2024-05-13T14:01:58.466545Z APP-SHARED-01 rsyslogd 8422 - - main Q: queue main has 1037 messages pending, worker threads 2
+<30>1 2024-05-13T14:01:58.474960Z APP-SHARED-01 snapd 8430 - - snapmgr.go:523: refresh candidates checked for core20
+<78>1 2024-05-13T14:03:00.034000Z APP-SHARED-01 CRON 3159202 - - (sysstat) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+<30>1 2024-05-13T14:03:40Z APP-SHARED-01 anacron 46729 - - Anacron 2.3 started on 2024-05-13
+<30>1 2024-05-13T14:03:41.199569Z APP-SHARED-01 anacron 46729 - - Will run job `logrotate' in 11 min.
+<30>1 2024-05-13T14:04:05.330628Z APP-SHARED-01 snapd 8430 - - daemon.go:460: gracefully waiting for hook core22.configure
+<30>1 2024-05-13T14:04:23.152665Z APP-SHARED-01 irqbalance 48743 - - IRQ 32 affinity hint keeps vector on CPU 2 (nvme0q1)
+<30>1 2024-05-13T14:05:09.782259Z APP-SHARED-01 snapd 8430 - - autorefresh.go:540: auto-refresh for core22: no updates found
+<30>1 2024-05-13T14:05:54.661028Z APP-SHARED-01 rsyslogd 8422 - - omfwd: target 10.10.2.30 using disk-assisted queue main, checkpoint 117267
+<30>1 2024-05-13T14:07:45.365018Z APP-SHARED-01 systemd-resolved 8432 - - Using degraded feature set UDP instead of UDP+EDNS0 for DNS server 208.67.222.222.
+<85>1 2024-05-13T14:08:24.429512Z APP-SHARED-01 sudo 3159883 - - backup : TTY=pts/22 ; PWD=/home/admin ; USER=root ; COMMAND=/usr/sbin/iptables -L -n -v
+<86>1 2024-05-13T14:08:24.667512Z APP-SHARED-01 sudo 3159883 - - pam_unix(sudo:session): session opened for user root(uid=0) by backup(uid=3037)
+<85>1 2024-05-13T14:08:26.729778Z APP-SHARED-01 sudo 3159887 - - ubuntu : TTY=pts/24 ; PWD=/tmp ; USER=root ; COMMAND=/usr/bin/systemctl list-units --state=failed --no-pager
+<86>1 2024-05-13T14:08:26.857778Z APP-SHARED-01 sudo 3159887 - - pam_unix(sudo:session): session opened for user root(uid=0) by ubuntu(uid=1000)
+<86>1 2024-05-13T14:08:26.868596Z APP-SHARED-01 sudo 3159883 - - pam_unix(sudo:session): session closed for user root
+<86>1 2024-05-13T14:08:28.761476Z APP-SHARED-01 sudo 3159887 - - pam_unix(sudo:session): session closed for user root
+<30>1 2024-05-13T14:08:32.764329Z APP-SHARED-01 unattended-upgr 7351 - - dpkg --status-fd: processing triggers for man-db (libc6)
+<30>1 2024-05-13T14:08:33.260115Z APP-SHARED-01 rsyslogd 8422 - - omfwd: target 10.10.2.30 using disk-assisted queue main, checkpoint 117572
+<30>1 2024-05-13T14:08:57.736976Z APP-SHARED-01 snapd 8430 - - autorefresh.go:540: auto-refresh for snapd-desktop-integration: no updates found
+<30>1 2024-05-13T14:10:37.973144Z APP-SHARED-01 systemd-resolved 8432 - - Grace period over, resuming full feature set (UDP+EDNS0) for DNS server 208.67.222.222.
+<86>1 2024-05-13T14:11:22.601268Z APP-SHARED-01 sshd 3160172 - - Connection from 10.70.8.22 port 44190 on 10.70.8.10 port 22
+<86>1 2024-05-13T14:11:24.372509Z APP-SHARED-01 sshd 3160172 - - Accepted publickey for marcus.oyelaran from 10.70.8.22 port 44190 ssh2: ED25519 SHA256:bDXKx+2Pu2AzjvhMl4CABTErar0X9Ku1lOjFjARUl2M
+<86>1 2024-05-13T14:11:24.423679Z APP-SHARED-01 sshd 3160172 - - pam_unix(sshd:session): session opened for user marcus.oyelaran(uid=2050) by (uid=0)
+<86>1 2024-05-13T14:11:25.047892Z APP-SHARED-01 systemd-logind 8425 - - New session 220611 of user marcus.oyelaran.
+<30>1 2024-05-13T14:11:59.914277Z APP-SHARED-01 polkitd 41234 - - Operator of unix-process:3160284:146951909 successfully authenticated as unix-user:admin to gain TEMPORARY authorization for action org.freedesktop.systemd1.manage-units for system-bus-name::1.232 [/usr/bin/loginctl] (owned by unix-user:deploy)
+<30>1 2024-05-13T14:13:44.730271Z APP-SHARED-01 systemd-resolved 8432 - - Using degraded feature set TCP instead of UDP+EDNS0 for DNS server 208.67.222.222.
+<30>1 2024-05-13T14:14:42.010750Z APP-SHARED-01 anacron 46729 - - Job `logrotate' started
+<30>1 2024-05-13T14:14:47.645292Z APP-SHARED-01 irqbalance 48743 - - NUMA node 0: balancing pass complete, 2 IRQs moved
+<86>1 2024-05-13T14:15:01.941089Z APP-SHARED-01 sshd 3160650 - - Connection from 10.70.8.21 port 44280 on 10.70.8.10 port 22
+<86>1 2024-05-13T14:15:03.625319Z APP-SHARED-01 sshd 3160650 - - Accepted publickey for priya.desai from 10.70.8.21 port 44280 ssh2: RSA SHA256:Zp4QbAUMUxM8gr9OcDYefMqxvouBubIm8RsNToYr6Ay
+<86>1 2024-05-13T14:15:03.769471Z APP-SHARED-01 sshd 3160650 - - pam_unix(sshd:session): session opened for user priya.desai(uid=4392) by (uid=0)
+<86>1 2024-05-13T14:15:04.197666Z APP-SHARED-01 systemd-logind 8425 - - New session 220646 of user priya.desai.
+<30>1 2024-05-13T14:15:25.644117Z APP-SHARED-01 rsyslogd 8422 - - main Q: queue fwdRule1 has 1218 messages pending, worker threads 2
+<30>1 2024-05-13T14:15:32.689198Z APP-SHARED-01 anacron 46729 - - Job `logrotate' terminated
+<30>1 2024-05-13T14:15:35.214465Z APP-SHARED-01 anacron 46729 - - Normal exit (1 job run)
+<30>1 2024-05-13T14:16:30.794461Z APP-SHARED-01 dbus-daemon 8424 - - [system] Activating via systemd: service name='org.freedesktop.login1' unit='dbus-org.freedesktop.login1.service' requested by ':1.233'
+<30>1 2024-05-13T14:16:30.965850Z APP-SHARED-01 irqbalance 48743 - - IRQ 64 classified for CPU 3 balancing on mlx5_comp0
+<30>1 2024-05-13T14:17:54.428826Z APP-SHARED-01 irqbalance 48743 - - Skipping IRQ 16: banned by affinity mask 00000001 (ahci)
+<85>1 2024-05-13T14:18:14.709657Z APP-SHARED-01 sudo 3161463 - - deploy : TTY=pts/0 ; PWD=/srv/app ; USER=root ; COMMAND=/bin/systemctl restart sshd
+<86>1 2024-05-13T14:18:14.978657Z APP-SHARED-01 sudo 3161463 - - pam_unix(sudo:session): session opened for user root(uid=0) by deploy(uid=1002)
+<86>1 2024-05-13T14:18:18.035947Z APP-SHARED-01 sshd 3161468 - - Connection from 10.70.8.23 port 58825 on 10.70.8.10 port 22
+<86>1 2024-05-13T14:18:19.749134Z APP-SHARED-01 sshd 3161468 - - Accepted publickey for greta.lindqvist from 10.70.8.23 port 58825 ssh2: ECDSA SHA256:VwCFCSj8B0pzOiJ6eM1aHgAXKb8mVhBqyRXTU4oChFM
+<86>1 2024-05-13T14:18:19.870330Z APP-SHARED-01 sshd 3161468 - - pam_unix(sshd:session): session opened for user greta.lindqvist(uid=2658) by (uid=0)
+<86>1 2024-05-13T14:18:20.318581Z APP-SHARED-01 sudo 3161463 - - pam_unix(sudo:session): session closed for user root
+<86>1 2024-05-13T14:18:20.390530Z APP-SHARED-01 systemd-logind 8425 - - New session 220674 of user greta.lindqvist.
+<30>1 2024-05-13T14:19:20.678467Z APP-SHARED-01 systemd-journald 8420 - - Vacuuming done, freed 33.8M of archived journals.
+<86>1 2024-05-13T14:19:35.707597Z APP-SHARED-01 sshd 3161583 - - Connection from 10.70.8.22 port 55243 on 10.70.8.10 port 22
+<86>1 2024-05-13T14:19:37.412772Z APP-SHARED-01 sshd 3161583 - - Accepted publickey for priya.desai from 10.70.8.22 port 55243 ssh2: ED25519 SHA256:1cTIpVoldwCdEMIZGvs/AazRXCRnQJbradksz21qVEt
+<86>1 2024-05-13T14:19:37.503978Z APP-SHARED-01 sshd 3161583 - - pam_unix(sshd:session): session opened for user priya.desai(uid=4392) by (uid=0)
+<86>1 2024-05-13T14:19:38.003221Z APP-SHARED-01 systemd-logind 8425 - - New session 220684 of user priya.desai.
+<30>1 2024-05-13T14:21:35.549284Z APP-SHARED-01 irqbalance 48743 - - Skipping IRQ 86: banned by affinity mask 00000008 (mlx5_comp1)
+<30>1 2024-05-13T14:22:15.515596Z APP-SHARED-01 polkitd 41234 - - Subject unix-process:3161980:147013165 is authorized for action org.freedesktop.packagekit.system-update
+<30>1 2024-05-13T14:22:15.518112Z APP-SHARED-01 dbus-daemon 8424 - - [system] Activating via systemd: service name='org.freedesktop.login1' unit='dbus-org.freedesktop.login1.service' requested by ':1.237'
+<30>1 2024-05-13T14:22:15.520036Z APP-SHARED-01 irqbalance 48743 - - IRQ 45 affinity hint keeps vector on CPU 0 (virtio0-input)
+<30>1 2024-05-13T14:22:34.215299Z APP-SHARED-01 dbus-daemon 8424 - - [system] Activating via systemd: service name='org.freedesktop.login1' unit='dbus-org.freedesktop.login1.service' requested by ':1.238'
+<30>1 2024-05-13T14:24:08.897045Z APP-SHARED-01 rsyslogd 8422 - - omfwd: target siem-forwarder using disk-assisted queue fwdRule1, checkpoint 118944
+<30>1 2024-05-13T14:24:24.596486Z APP-SHARED-01 systemd-resolved 8432 - - Grace period over, resuming full feature set (UDP+EDNS0) for DNS server 208.67.222.222.
+<30>1 2024-05-13T14:25:05.077140Z APP-SHARED-01 rsyslogd 8422 - - main Q: queue local-spool has 1251 messages pending, worker threads 2
+<30>1 2024-05-13T14:26:02.021457Z APP-SHARED-01 snapd 8430 - - taskrunner.go:271: change 8344 task 1 done for core20
+<30>1 2024-05-13T14:27:40.769259Z APP-SHARED-01 unattended-upgr 7351 - - Allowed origins are: o=Ubuntu,a=jammy-security
+<30>1 2024-05-13T14:28:55.929902Z APP-SHARED-01 dbus-daemon 8424 - - [system] Activating via systemd: service name='org.freedesktop.timedate1' unit='dbus-org.freedesktop.timedate1.service' requested by ':1.241'
+<78>1 2024-05-13T14:33:00.068000Z APP-SHARED-01 CRON 3163547 - - (sysstat) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+<30>1 2024-05-13T14:33:12.684566Z APP-SHARED-01 rsyslogd 8422 - - omfwd: target logrelay01 using disk-assisted queue fwdRule1, checkpoint 120311
+<85>1 2024-05-13T14:34:34.865157Z APP-SHARED-01 sudo 3163729 - - svc_app : TTY=pts/1 ; PWD=/srv/app ; USER=root ; COMMAND=/usr/bin/df -h /tmp
+<86>1 2024-05-13T14:34:34.931157Z APP-SHARED-01 sudo 3163729 - - pam_unix(sudo:session): session opened for user root(uid=0) by svc_app(uid=2214)
+<86>1 2024-05-13T14:34:35.956917Z APP-SHARED-01 sudo 3163729 - - pam_unix(sudo:session): session closed for user root
+<30>1 2024-05-13T14:34:36.863869Z APP-SHARED-01 polkitd 41234 - - Operator of unix-process:3163734:147086646 successfully authenticated as unix-user:deploy to gain TEMPORARY authorization for action org.freedesktop.packagekit.system-update for system-bus-name::1.244 [/usr/bin/pkcon] (owned by unix-user:deploy)
+<84>1 2024-05-13T14:38:13Z APP-SHARED-01 login 3164138 - - pam_unix(login:auth): authentication failure; logname=LOGIN uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=svc_scan
+<30>1 2024-05-13T14:38:44.589891Z APP-SHARED-01 unattended-upgr 7351 - - Allowed origins are: o=Ubuntu,a=jammy-updates
+<30>1 2024-05-13T14:41:30.216913Z APP-SHARED-01 dbus-daemon 8424 - - [system] Activating via systemd: service name='org.freedesktop.timedate1' unit='dbus-org.freedesktop.timedate1.service' requested by ':1.245'
+<30>1 2024-05-13T14:41:32.367205Z APP-SHARED-01 dbus-daemon 8424 - - [system] Successfully activated service 'org.freedesktop.locale1' for ':1.248'
+<30>1 2024-05-13T14:44:23.714626Z APP-SHARED-01 irqbalance 48743 - - Skipping IRQ 16: banned by affinity mask 00000002 (ahci)
+<30>1 2024-05-13T14:44:27.773251Z APP-SHARED-01 irqbalance 48743 - - Skipping IRQ 32: banned by affinity mask 00000001 (nvme0q1)
+<30>1 2024-05-13T14:46:11.716616Z APP-SHARED-01 snapd 8430 - - stateengine.go:150: state ensure starting change 8345
+<30>1 2024-05-13T14:46:36.643336Z APP-SHARED-01 snapd 8430 - - autorefresh.go:540: auto-refresh for lxd: no updates found
+<30>1 2024-05-13T14:47:11.205175Z APP-SHARED-01 dbus-daemon 8424 - - [system] Successfully activated service 'org.freedesktop.locale1' for ':1.249'
+<30>1 2024-05-13T15:00:21.314104Z APP-SHARED-01 dbus-daemon 8424 - - [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service' requested by ':1.252'
+<86>1 2024-05-13T15:00:55.995787Z APP-SHARED-01 sshd 3160172 - - pam_unix(sshd:session): session closed for user marcus.oyelaran
+<86>1 2024-05-13T15:00:56.836646Z APP-SHARED-01 systemd-logind 8425 - - Removed session 220611.
+<85>1 2024-05-13T15:01:47.814198Z APP-SHARED-01 sudo 3167063 - - backup : TTY=pts/22 ; PWD=/home/admin ; USER=root ; COMMAND=/usr/bin/ss -ltnp
+<86>1 2024-05-13T15:01:48.108198Z APP-SHARED-01 sudo 3167063 - - pam_unix(sudo:session): session opened for user root(uid=0) by backup(uid=3037)
+<86>1 2024-05-13T15:01:49.248904Z APP-SHARED-01 sudo 3167063 - - pam_unix(sudo:session): session closed for user root
+<78>1 2024-05-13T15:03:00.029000Z APP-SHARED-01 CRON 3167131 - - (sysstat) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+<30>1 2024-05-13T15:06:52.843724Z APP-SHARED-01 snapd 8430 - - autorefresh.go:540: auto-refresh for snapd-desktop-integration: no updates found
+<30>1 2024-05-13T15:07:51.671291Z APP-SHARED-01 rsyslogd 8422 - - omfwd: target logrelay01 using disk-assisted queue main, checkpoint 120747
+<30>1 2024-05-13T15:11:29.405357Z APP-SHARED-01 irqbalance 48743 - - NUMA node 0: balancing pass complete, 1 IRQs moved
+<30>1 2024-05-13T15:13:06.744403Z APP-SHARED-01 snapd 8430 - - taskrunner.go:271: change 8345 task 9 done for snapd-desktop-integration
+<30>1 2024-05-13T15:14:37.603280Z APP-SHARED-01 systemd-journald 8420 - - System Journal (/var/log/journal/dbc333f1c52c365a86f69082b8b40209) is 181.7M, max 512M, 330.3M free.
+<30>1 2024-05-13T15:21:59.171984Z APP-SHARED-01 rsyslogd 8422 - - omfwd: target logrelay01 using disk-assisted queue action-remote, checkpoint 121539
+<78>1 2024-05-13T15:33:00.077000Z APP-SHARED-01 CRON 3170005 - - (sysstat) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+<30>1 2024-05-13T15:34:12.248167Z APP-SHARED-01 rsyslogd 8422 - - omfwd: target logrelay01 using disk-assisted queue local-spool, checkpoint 122282
+<30>1 2024-05-13T15:51:06.381379Z APP-SHARED-01 irqbalance 48743 - - IRQ 24 affinity hint keeps vector on CPU 1 (ens160)
+<86>1 2024-05-13T15:51:13.945660Z APP-SHARED-01 sshd 3160650 - - pam_unix(sshd:session): session closed for user priya.desai
+<86>1 2024-05-13T15:51:14.267366Z APP-SHARED-01 systemd-logind 8425 - - Removed session 220646.
+<86>1 2024-05-13T15:54:35.582639Z APP-SHARED-01 sshd 3171759 - - Connection from 10.70.8.23 port 46898 on 10.70.8.10 port 22
+<86>1 2024-05-13T15:54:37.254892Z APP-SHARED-01 sshd 3171759 - - Accepted publickey for greta.lindqvist from 10.70.8.23 port 46898 ssh2: ECDSA SHA256:VwCFCSj8B0pzOiJ6eM1aHgAXKb8mVhBqyRXTU4oChFM
+<86>1 2024-05-13T15:54:37.422034Z APP-SHARED-01 sshd 3171759 - - pam_unix(sshd:session): session opened for user greta.lindqvist(uid=2658) by (uid=0)
+<86>1 2024-05-13T15:54:37.843277Z APP-SHARED-01 systemd-logind 8425 - - New session 221539 of user greta.lindqvist.
+<86>1 2024-05-13T15:56:33.457419Z APP-SHARED-01 sshd 3161583 - - pam_unix(sshd:session): session closed for user priya.desai
+<86>1 2024-05-13T15:56:33.861220Z APP-SHARED-01 systemd-logind 8425 - - Removed session 220684.
+<86>1 2024-05-13T15:57:51.306429Z APP-SHARED-01 sshd 3161468 - - pam_unix(sshd:session): session closed for user greta.lindqvist
+<86>1 2024-05-13T15:57:52.001281Z APP-SHARED-01 systemd-logind 8425 - - Removed session 220674.

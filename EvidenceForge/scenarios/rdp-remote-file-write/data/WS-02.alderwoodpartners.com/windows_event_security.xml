@@ -1,0 +1,2888 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Events>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4634</EventID>
+    <Version>0</Version>
+    <Level>0</Level>
+    <Task>12545</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:01:29.5525224Z"/>
+    <EventRecordID>816638</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="5428" ThreadID="416"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="TargetUserSid">S-1-5-21-1198276704-1000000000-1000048801-24011</Data>
+    <Data Name="TargetUserName">dana.whitfield</Data>
+    <Data Name="TargetDomainName">ALDERWOODPARTNERS</Data>
+    <Data Name="TargetLogonId">0x7a398f9</Data>
+    <Data Name="LogonType">3</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4688</EventID>
+    <Version>2</Version>
+    <Level>0</Level>
+    <Task>13312</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:06:39.8022768Z"/>
+    <EventRecordID>816644</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="8196"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="NewProcessId">0x1994</Data>
+    <Data Name="NewProcessName">C:\Windows\System32\wbem\WmiPrvSE.exe</Data>
+    <Data Name="TokenElevationType">%%1936</Data>
+    <Data Name="ProcessId">0x1544</Data>
+    <Data Name="CommandLine">WmiPrvSE.exe -Embedding</Data>
+    <Data Name="TargetUserSid">S-1-0-0</Data>
+    <Data Name="TargetUserName">-</Data>
+    <Data Name="TargetDomainName">-</Data>
+    <Data Name="TargetLogonId">0x0</Data>
+    <Data Name="ParentProcessName">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="MandatoryLabel">S-1-16-16384</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4688</EventID>
+    <Version>2</Version>
+    <Level>0</Level>
+    <Task>13312</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:09:43.5512848Z"/>
+    <EventRecordID>816648</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="9756"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="NewProcessId">0x19b0</Data>
+    <Data Name="NewProcessName">C:\Windows\System32\taskhostw.exe</Data>
+    <Data Name="TokenElevationType">%%1936</Data>
+    <Data Name="ProcessId">0x154c</Data>
+    <Data Name="CommandLine">taskhostw.exe /Run</Data>
+    <Data Name="TargetUserSid">S-1-0-0</Data>
+    <Data Name="TargetUserName">-</Data>
+    <Data Name="TargetDomainName">-</Data>
+    <Data Name="TargetLogonId">0x0</Data>
+    <Data Name="ParentProcessName">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="MandatoryLabel">S-1-16-16384</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4689</EventID>
+    <Version>0</Version>
+    <Level>0</Level>
+    <Task>13313</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:09:53.6040239Z"/>
+    <EventRecordID>816649</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="308"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="Status">0x0</Data>
+    <Data Name="ProcessId">0x19b0</Data>
+    <Data Name="ProcessName">C:\Windows\System32\taskhostw.exe</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4688</EventID>
+    <Version>2</Version>
+    <Level>0</Level>
+    <Task>13312</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:12:11.2716056Z"/>
+    <EventRecordID>816651</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="9984"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="NewProcessId">0x19c0</Data>
+    <Data Name="NewProcessName">C:\Windows\System32\taskhostw.exe</Data>
+    <Data Name="TokenElevationType">%%1936</Data>
+    <Data Name="ProcessId">0x154c</Data>
+    <Data Name="CommandLine">taskhostw.exe /Run</Data>
+    <Data Name="TargetUserSid">S-1-0-0</Data>
+    <Data Name="TargetUserName">-</Data>
+    <Data Name="TargetDomainName">-</Data>
+    <Data Name="TargetLogonId">0x0</Data>
+    <Data Name="ParentProcessName">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="MandatoryLabel">S-1-16-16384</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4689</EventID>
+    <Version>0</Version>
+    <Level>0</Level>
+    <Task>13313</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:12:31.5947659Z"/>
+    <EventRecordID>816652</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="244"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="Status">0x0</Data>
+    <Data Name="ProcessId">0x19c0</Data>
+    <Data Name="ProcessName">C:\Windows\System32\taskhostw.exe</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4689</EventID>
+    <Version>0</Version>
+    <Level>0</Level>
+    <Task>13313</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:14:13.4906733Z"/>
+    <EventRecordID>816657</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="400"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="Status">0x0</Data>
+    <Data Name="ProcessId">0x1970</Data>
+    <Data Name="ProcessName">C:\Windows\System32\cleanmgr.exe</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4688</EventID>
+    <Version>2</Version>
+    <Level>0</Level>
+    <Task>13312</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:15:01.6931587Z"/>
+    <EventRecordID>816660</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="9084"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="NewProcessId">0x1980</Data>
+    <Data Name="NewProcessName">C:\Windows\System32\conhost.exe</Data>
+    <Data Name="TokenElevationType">%%1936</Data>
+    <Data Name="ProcessId">0x151c</Data>
+    <Data Name="CommandLine">\??\C:\Windows\system32\conhost.exe 0xffffffff -ForceV1</Data>
+    <Data Name="TargetUserSid">S-1-0-0</Data>
+    <Data Name="TargetUserName">-</Data>
+    <Data Name="TargetDomainName">-</Data>
+    <Data Name="TargetLogonId">0x0</Data>
+    <Data Name="ParentProcessName">C:\Windows\System32\csrss.exe</Data>
+    <Data Name="MandatoryLabel">S-1-16-16384</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4689</EventID>
+    <Version>0</Version>
+    <Level>0</Level>
+    <Task>13313</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:15:07.8170662Z"/>
+    <EventRecordID>816661</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="104"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="Status">0x0</Data>
+    <Data Name="ProcessId">0x1980</Data>
+    <Data Name="ProcessName">C:\Windows\System32\conhost.exe</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>5156</EventID>
+    <Version>1</Version>
+    <Level>0</Level>
+    <Task>12810</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:16:26.8100006Z"/>
+    <EventRecordID>816662</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="168"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="ProcessID">4</Data>
+    <Data Name="Application">System</Data>
+    <Data Name="Direction">%%14593</Data>
+    <Data Name="SourceAddress">10.40.12.12</Data>
+    <Data Name="SourcePort">50245</Data>
+    <Data Name="DestAddress">10.40.12.11</Data>
+    <Data Name="DestPort">445</Data>
+    <Data Name="Protocol">6</Data>
+    <Data Name="FilterRTID">31617</Data>
+    <Data Name="LayerName">%%14611</Data>
+    <Data Name="LayerRTID">48</Data>
+    <Data Name="RemoteUserID">S-1-0-0</Data>
+    <Data Name="RemoteMachineID">S-1-0-0</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>5156</EventID>
+    <Version>1</Version>
+    <Level>0</Level>
+    <Task>12810</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:16:28.2076434Z"/>
+    <EventRecordID>816663</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="80"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="ProcessID">4</Data>
+    <Data Name="Application">System</Data>
+    <Data Name="Direction">%%14592</Data>
+    <Data Name="SourceAddress">10.40.12.11</Data>
+    <Data Name="SourcePort">56913</Data>
+    <Data Name="DestAddress">10.40.12.12</Data>
+    <Data Name="DestPort">445</Data>
+    <Data Name="Protocol">6</Data>
+    <Data Name="FilterRTID">31620</Data>
+    <Data Name="LayerName">%%14610</Data>
+    <Data Name="LayerRTID">44</Data>
+    <Data Name="RemoteUserID">S-1-0-0</Data>
+    <Data Name="RemoteMachineID">S-1-0-0</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4625</EventID>
+    <Version>0</Version>
+    <Level>0</Level>
+    <Task>12544</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8010000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:16:28.3196439Z"/>
+    <EventRecordID>816664</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="5428" ThreadID="4484"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-0-0</Data>
+    <Data Name="SubjectUserName">-</Data>
+    <Data Name="SubjectDomainName">-</Data>
+    <Data Name="SubjectLogonId">0x0</Data>
+    <Data Name="TargetUserSid">S-1-5-21-3868518262-1000000000-1000043770-45037</Data>
+    <Data Name="TargetUserName">svc_mgmt</Data>
+    <Data Name="TargetDomainName">ALDERWOODPARTNERS</Data>
+    <Data Name="Status">0xc000006d</Data>
+    <Data Name="FailureReason">%%2307</Data>
+    <Data Name="SubStatus">0xc0000072</Data>
+    <Data Name="LogonType">3</Data>
+    <Data Name="LogonProcessName">NtLmSsp</Data>
+    <Data Name="AuthenticationPackageName">Negotiate</Data>
+    <Data Name="WorkstationName">WS-01</Data>
+    <Data Name="TransmittedServices">-</Data>
+    <Data Name="LmPackageName">-</Data>
+    <Data Name="KeyLength">0</Data>
+    <Data Name="ProcessId">0x1534</Data>
+    <Data Name="ProcessName">C:\Windows\System32\lsass.exe</Data>
+    <Data Name="IpAddress">::ffff:10.40.12.11</Data>
+    <Data Name="IpPort">56913</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>5156</EventID>
+    <Version>1</Version>
+    <Level>0</Level>
+    <Task>12810</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:18:24.2500316Z"/>
+    <EventRecordID>816668</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="88"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="ProcessID">5460</Data>
+    <Data Name="Application">\device\harddiskvolume1\windows\system32\svchost.exe</Data>
+    <Data Name="Direction">%%14593</Data>
+    <Data Name="SourceAddress">10.40.12.12</Data>
+    <Data Name="SourcePort">52492</Data>
+    <Data Name="DestAddress">8.8.8.8</Data>
+    <Data Name="DestPort">53</Data>
+    <Data Name="Protocol">17</Data>
+    <Data Name="FilterRTID">31573</Data>
+    <Data Name="LayerName">%%14611</Data>
+    <Data Name="LayerRTID">48</Data>
+    <Data Name="RemoteUserID">S-1-0-0</Data>
+    <Data Name="RemoteMachineID">S-1-0-0</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>5156</EventID>
+    <Version>1</Version>
+    <Level>0</Level>
+    <Task>12810</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:18:25.8015336Z"/>
+    <EventRecordID>816669</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="68"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="ProcessID">5456</Data>
+    <Data Name="Application">\device\harddiskvolume1\windows\system32\svchost.exe</Data>
+    <Data Name="Direction">%%14593</Data>
+    <Data Name="SourceAddress">10.40.12.12</Data>
+    <Data Name="SourcePort">64035</Data>
+    <Data Name="DestAddress">151.101.193.140</Data>
+    <Data Name="DestPort">443</Data>
+    <Data Name="Protocol">6</Data>
+    <Data Name="FilterRTID">31634</Data>
+    <Data Name="LayerName">%%14611</Data>
+    <Data Name="LayerRTID">48</Data>
+    <Data Name="RemoteUserID">S-1-0-0</Data>
+    <Data Name="RemoteMachineID">S-1-0-0</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4688</EventID>
+    <Version>2</Version>
+    <Level>0</Level>
+    <Task>13312</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:21:43.2659899Z"/>
+    <EventRecordID>816672</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="6300"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="NewProcessId">0x1988</Data>
+    <Data Name="NewProcessName">C:\Windows\System32\conhost.exe</Data>
+    <Data Name="TokenElevationType">%%1936</Data>
+    <Data Name="ProcessId">0x151c</Data>
+    <Data Name="CommandLine">conhost.exe 0x4</Data>
+    <Data Name="TargetUserSid">S-1-0-0</Data>
+    <Data Name="TargetUserName">-</Data>
+    <Data Name="TargetDomainName">-</Data>
+    <Data Name="TargetLogonId">0x0</Data>
+    <Data Name="ParentProcessName">C:\Windows\System32\csrss.exe</Data>
+    <Data Name="MandatoryLabel">S-1-16-16384</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4689</EventID>
+    <Version>0</Version>
+    <Level>0</Level>
+    <Task>13313</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:21:48.9982768Z"/>
+    <EventRecordID>816673</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="496"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="Status">0x0</Data>
+    <Data Name="ProcessId">0x1988</Data>
+    <Data Name="ProcessName">C:\Windows\System32\conhost.exe</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4624</EventID>
+    <Version>2</Version>
+    <Level>0</Level>
+    <Task>12544</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:21:49.5834904Z"/>
+    <EventRecordID>816674</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="5428" ThreadID="396"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="TargetUserSid">S-1-5-19</Data>
+    <Data Name="TargetUserName">LOCAL SERVICE</Data>
+    <Data Name="TargetDomainName">NT AUTHORITY</Data>
+    <Data Name="TargetLogonId">0x3e5</Data>
+    <Data Name="LogonType">5</Data>
+    <Data Name="LogonGuid">{00000000-0000-0000-0000-000000000000}</Data>
+    <Data Name="LogonProcessName">Advapi</Data>
+    <Data Name="AuthenticationPackageName">Negotiate</Data>
+    <Data Name="WorkstationName">WS-02</Data>
+    <Data Name="TransmittedServices">-</Data>
+    <Data Name="LmPackageName">-</Data>
+    <Data Name="KeyLength">0</Data>
+    <Data Name="ProcessId">0x152c</Data>
+    <Data Name="ProcessName">C:\Windows\System32\services.exe</Data>
+    <Data Name="IpAddress">-</Data>
+    <Data Name="IpPort">-</Data>
+    <Data Name="ImpersonationLevel">%%1833</Data>
+    <Data Name="RestrictedAdminMode">-</Data>
+    <Data Name="TargetOutboundUserName">-</Data>
+    <Data Name="TargetOutboundDomainName">-</Data>
+    <Data Name="VirtualAccount">%%1843</Data>
+    <Data Name="TargetLinkedLogonId">0x0</Data>
+    <Data Name="ElevatedToken">%%1842</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4672</EventID>
+    <Version>0</Version>
+    <Level>0</Level>
+    <Task>12548</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:21:49.5836323Z"/>
+    <EventRecordID>816675</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="5428" ThreadID="368"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-19</Data>
+    <Data Name="SubjectUserName">LOCAL SERVICE</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e5</Data>
+    <Data Name="PrivilegeList">SeAssignPrimaryTokenPrivilege
+			SeAuditPrivilege
+			SeImpersonatePrivilege
+			SeChangeNotifyPrivilege</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4689</EventID>
+    <Version>0</Version>
+    <Level>0</Level>
+    <Task>13313</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:22:09.1385293Z"/>
+    <EventRecordID>816676</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="484"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="Status">0x0</Data>
+    <Data Name="ProcessId">0x1824</Data>
+    <Data Name="ProcessName">C:\Windows\System32\SearchFilterHost.exe</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4624</EventID>
+    <Version>2</Version>
+    <Level>0</Level>
+    <Task>12544</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:27:01.1316323Z"/>
+    <EventRecordID>816682</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="5428" ThreadID="256"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="TargetUserSid">S-1-5-18</Data>
+    <Data Name="TargetUserName">SYSTEM</Data>
+    <Data Name="TargetDomainName">NT AUTHORITY</Data>
+    <Data Name="TargetLogonId">0x3e7</Data>
+    <Data Name="LogonType">5</Data>
+    <Data Name="LogonGuid">{00000000-0000-0000-0000-000000000000}</Data>
+    <Data Name="LogonProcessName">Advapi</Data>
+    <Data Name="AuthenticationPackageName">Negotiate</Data>
+    <Data Name="WorkstationName">WS-02</Data>
+    <Data Name="TransmittedServices">-</Data>
+    <Data Name="LmPackageName">-</Data>
+    <Data Name="KeyLength">0</Data>
+    <Data Name="ProcessId">0x152c</Data>
+    <Data Name="ProcessName">C:\Windows\System32\services.exe</Data>
+    <Data Name="IpAddress">-</Data>
+    <Data Name="IpPort">-</Data>
+    <Data Name="ImpersonationLevel">%%1833</Data>
+    <Data Name="RestrictedAdminMode">-</Data>
+    <Data Name="TargetOutboundUserName">-</Data>
+    <Data Name="TargetOutboundDomainName">-</Data>
+    <Data Name="VirtualAccount">%%1843</Data>
+    <Data Name="TargetLinkedLogonId">0x0</Data>
+    <Data Name="ElevatedToken">%%1842</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4672</EventID>
+    <Version>0</Version>
+    <Level>0</Level>
+    <Task>12548</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:27:01.1319045Z"/>
+    <EventRecordID>816683</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="5428" ThreadID="344"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="PrivilegeList">SeTcbPrivilege
+			SeSecurityPrivilege
+			SeTakeOwnershipPrivilege
+			SeLoadDriverPrivilege
+			SeBackupPrivilege
+			SeRestorePrivilege
+			SeDebugPrivilege
+			SeAuditPrivilege
+			SeSystemEnvironmentPrivilege
+			SeImpersonatePrivilege
+			SeDelegateSessionUserImpersonatePrivilege</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>5156</EventID>
+    <Version>1</Version>
+    <Level>0</Level>
+    <Task>12810</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:27:19.2630002Z"/>
+    <EventRecordID>816684</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="116"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="ProcessID">4</Data>
+    <Data Name="Application">System</Data>
+    <Data Name="Direction">%%14592</Data>
+    <Data Name="SourceAddress">10.40.12.11</Data>
+    <Data Name="SourcePort">64156</Data>
+    <Data Name="DestAddress">10.40.12.12</Data>
+    <Data Name="DestPort">445</Data>
+    <Data Name="Protocol">6</Data>
+    <Data Name="FilterRTID">31620</Data>
+    <Data Name="LayerName">%%14610</Data>
+    <Data Name="LayerRTID">44</Data>
+    <Data Name="RemoteUserID">S-1-0-0</Data>
+    <Data Name="RemoteMachineID">S-1-0-0</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4624</EventID>
+    <Version>2</Version>
+    <Level>0</Level>
+    <Task>12544</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:27:19.3680002Z"/>
+    <EventRecordID>816685</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="5428" ThreadID="348"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="TargetUserSid">S-1-5-21-1198276704-1000000000-1000048801-24011</Data>
+    <Data Name="TargetUserName">dana.whitfield</Data>
+    <Data Name="TargetDomainName">ALDERWOODPARTNERS</Data>
+    <Data Name="TargetLogonId">0x7af3aee</Data>
+    <Data Name="LogonType">3</Data>
+    <Data Name="LogonGuid">{00000000-0000-0000-0000-000000000000}</Data>
+    <Data Name="LogonProcessName">NtLmSsp</Data>
+    <Data Name="AuthenticationPackageName">NTLM</Data>
+    <Data Name="WorkstationName">WS-01</Data>
+    <Data Name="TransmittedServices">-</Data>
+    <Data Name="LmPackageName">NTLM V2</Data>
+    <Data Name="KeyLength">128</Data>
+    <Data Name="ProcessId">0x1534</Data>
+    <Data Name="ProcessName">C:\Windows\System32\lsass.exe</Data>
+    <Data Name="IpAddress">::ffff:10.40.12.11</Data>
+    <Data Name="IpPort">64156</Data>
+    <Data Name="ImpersonationLevel">%%1833</Data>
+    <Data Name="RestrictedAdminMode">-</Data>
+    <Data Name="TargetOutboundUserName">-</Data>
+    <Data Name="TargetOutboundDomainName">-</Data>
+    <Data Name="VirtualAccount">%%1843</Data>
+    <Data Name="TargetLinkedLogonId">0x0</Data>
+    <Data Name="ElevatedToken">%%1843</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4688</EventID>
+    <Version>2</Version>
+    <Level>0</Level>
+    <Task>13312</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:28:12.4628143Z"/>
+    <EventRecordID>816687</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="1120"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="NewProcessId">0x19c4</Data>
+    <Data Name="NewProcessName">C:\Windows\System32\taskhostw.exe</Data>
+    <Data Name="TokenElevationType">%%1936</Data>
+    <Data Name="ProcessId">0x154c</Data>
+    <Data Name="CommandLine">taskhostw.exe /Run</Data>
+    <Data Name="TargetUserSid">S-1-0-0</Data>
+    <Data Name="TargetUserName">-</Data>
+    <Data Name="TargetDomainName">-</Data>
+    <Data Name="TargetLogonId">0x0</Data>
+    <Data Name="ParentProcessName">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="MandatoryLabel">S-1-16-16384</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4689</EventID>
+    <Version>0</Version>
+    <Level>0</Level>
+    <Task>13313</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:28:24.4608227Z"/>
+    <EventRecordID>816689</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="132"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="Status">0x0</Data>
+    <Data Name="ProcessId">0x19c4</Data>
+    <Data Name="ProcessName">C:\Windows\System32\taskhostw.exe</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4688</EventID>
+    <Version>2</Version>
+    <Level>0</Level>
+    <Task>13312</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:32:05.8980581Z"/>
+    <EventRecordID>816694</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="1344"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="NewProcessId">0x1974</Data>
+    <Data Name="NewProcessName">C:\Windows\System32\SearchProtocolHost.exe</Data>
+    <Data Name="TokenElevationType">%%1936</Data>
+    <Data Name="ProcessId">0x15c8</Data>
+    <Data Name="CommandLine">SearchProtocolHost.exe Global\UsGthrFltPipeMssGthrPipe_S-1-5-18 Global\UsGthrCtrlFltPipeMssGthrPipe_S-1-5-18 1</Data>
+    <Data Name="TargetUserSid">S-1-0-0</Data>
+    <Data Name="TargetUserName">-</Data>
+    <Data Name="TargetDomainName">-</Data>
+    <Data Name="TargetLogonId">0x0</Data>
+    <Data Name="ParentProcessName">C:\Windows\System32\SearchIndexer.exe</Data>
+    <Data Name="MandatoryLabel">S-1-16-16384</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4688</EventID>
+    <Version>2</Version>
+    <Level>0</Level>
+    <Task>13312</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:32:51.2893462Z"/>
+    <EventRecordID>816695</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="4380"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="NewProcessId">0x19c8</Data>
+    <Data Name="NewProcessName">C:\Windows\System32\taskhostw.exe</Data>
+    <Data Name="TokenElevationType">%%1936</Data>
+    <Data Name="ProcessId">0x154c</Data>
+    <Data Name="CommandLine">taskhostw.exe /Run</Data>
+    <Data Name="TargetUserSid">S-1-0-0</Data>
+    <Data Name="TargetUserName">-</Data>
+    <Data Name="TargetDomainName">-</Data>
+    <Data Name="TargetLogonId">0x0</Data>
+    <Data Name="ParentProcessName">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="MandatoryLabel">S-1-16-16384</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4689</EventID>
+    <Version>0</Version>
+    <Level>0</Level>
+    <Task>13313</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:32:58.7255122Z"/>
+    <EventRecordID>816696</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="388"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="Status">0x0</Data>
+    <Data Name="ProcessId">0x19c8</Data>
+    <Data Name="ProcessName">C:\Windows\System32\taskhostw.exe</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>5156</EventID>
+    <Version>1</Version>
+    <Level>0</Level>
+    <Task>12810</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:36:33.8478590Z"/>
+    <EventRecordID>816702</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="200"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="ProcessID">5460</Data>
+    <Data Name="Application">\device\harddiskvolume1\windows\system32\svchost.exe</Data>
+    <Data Name="Direction">%%14593</Data>
+    <Data Name="SourceAddress">10.40.12.12</Data>
+    <Data Name="SourcePort">52022</Data>
+    <Data Name="DestAddress">8.8.4.4</Data>
+    <Data Name="DestPort">53</Data>
+    <Data Name="Protocol">17</Data>
+    <Data Name="FilterRTID">31573</Data>
+    <Data Name="LayerName">%%14611</Data>
+    <Data Name="LayerRTID">48</Data>
+    <Data Name="RemoteUserID">S-1-0-0</Data>
+    <Data Name="RemoteMachineID">S-1-0-0</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>5156</EventID>
+    <Version>1</Version>
+    <Level>0</Level>
+    <Task>12810</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:36:36.1074476Z"/>
+    <EventRecordID>816704</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="160"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="ProcessID">5456</Data>
+    <Data Name="Application">\device\harddiskvolume1\windows\system32\svchost.exe</Data>
+    <Data Name="Direction">%%14593</Data>
+    <Data Name="SourceAddress">10.40.12.12</Data>
+    <Data Name="SourcePort">60544</Data>
+    <Data Name="DestAddress">34.237.161.42</Data>
+    <Data Name="DestPort">443</Data>
+    <Data Name="Protocol">6</Data>
+    <Data Name="FilterRTID">31634</Data>
+    <Data Name="LayerName">%%14611</Data>
+    <Data Name="LayerRTID">48</Data>
+    <Data Name="RemoteUserID">S-1-0-0</Data>
+    <Data Name="RemoteMachineID">S-1-0-0</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4689</EventID>
+    <Version>0</Version>
+    <Level>0</Level>
+    <Task>13313</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:37:07.9267220Z"/>
+    <EventRecordID>816705</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="204"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="Status">0x0</Data>
+    <Data Name="ProcessId">0x1994</Data>
+    <Data Name="ProcessName">C:\Windows\System32\wbem\WmiPrvSE.exe</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4688</EventID>
+    <Version>2</Version>
+    <Level>0</Level>
+    <Task>13312</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:40:48.2722592Z"/>
+    <EventRecordID>816715</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="2436"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="NewProcessId">0x19d4</Data>
+    <Data Name="NewProcessName">C:\Windows\System32\winlogon.exe</Data>
+    <Data Name="TokenElevationType">%%1936</Data>
+    <Data Name="ProcessId">0x150c</Data>
+    <Data Name="CommandLine">winlogon.exe</Data>
+    <Data Name="TargetUserSid">S-1-0-0</Data>
+    <Data Name="TargetUserName">-</Data>
+    <Data Name="TargetDomainName">-</Data>
+    <Data Name="TargetLogonId">0x0</Data>
+    <Data Name="ParentProcessName">C:\Windows\System32\smss.exe</Data>
+    <Data Name="MandatoryLabel">S-1-16-16384</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>5156</EventID>
+    <Version>1</Version>
+    <Level>0</Level>
+    <Task>12810</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:40:48.8812596Z"/>
+    <EventRecordID>816716</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="112"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="ProcessID">5456</Data>
+    <Data Name="Application">\device\harddiskvolume1\windows\system32\svchost.exe</Data>
+    <Data Name="Direction">%%14592</Data>
+    <Data Name="SourceAddress">10.40.12.11</Data>
+    <Data Name="SourcePort">63730</Data>
+    <Data Name="DestAddress">10.40.12.12</Data>
+    <Data Name="DestPort">3389</Data>
+    <Data Name="Protocol">6</Data>
+    <Data Name="FilterRTID">31668</Data>
+    <Data Name="LayerName">%%14610</Data>
+    <Data Name="LayerRTID">44</Data>
+    <Data Name="RemoteUserID">S-1-0-0</Data>
+    <Data Name="RemoteMachineID">S-1-0-0</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4624</EventID>
+    <Version>2</Version>
+    <Level>0</Level>
+    <Task>12544</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:40:48.9932592Z"/>
+    <EventRecordID>816717</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="5428" ThreadID="236"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="TargetUserSid">S-1-5-21-1198276704-1000000000-1000048801-24011</Data>
+    <Data Name="TargetUserName">dana.whitfield</Data>
+    <Data Name="TargetDomainName">ALDERWOODPARTNERS</Data>
+    <Data Name="TargetLogonId">0x7b0ebea</Data>
+    <Data Name="LogonType">10</Data>
+    <Data Name="LogonGuid">{00000000-0000-0000-0000-000000000000}</Data>
+    <Data Name="LogonProcessName">User32</Data>
+    <Data Name="AuthenticationPackageName">Negotiate</Data>
+    <Data Name="WorkstationName">WS-01</Data>
+    <Data Name="TransmittedServices">-</Data>
+    <Data Name="LmPackageName">-</Data>
+    <Data Name="KeyLength">0</Data>
+    <Data Name="ProcessId">0x19d4</Data>
+    <Data Name="ProcessName">C:\Windows\System32\winlogon.exe</Data>
+    <Data Name="IpAddress">::ffff:10.40.12.11</Data>
+    <Data Name="IpPort">63730</Data>
+    <Data Name="ImpersonationLevel">%%1833</Data>
+    <Data Name="RestrictedAdminMode">-</Data>
+    <Data Name="TargetOutboundUserName">-</Data>
+    <Data Name="TargetOutboundDomainName">-</Data>
+    <Data Name="VirtualAccount">%%1843</Data>
+    <Data Name="TargetLinkedLogonId">0x0</Data>
+    <Data Name="ElevatedToken">%%1843</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4688</EventID>
+    <Version>2</Version>
+    <Level>0</Level>
+    <Task>13312</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:40:50.1422595Z"/>
+    <EventRecordID>816718</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="4912"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-21-1198276704-1000000000-1000048801-24011</Data>
+    <Data Name="SubjectUserName">dana.whitfield</Data>
+    <Data Name="SubjectDomainName">ALDERWOODPARTNERS</Data>
+    <Data Name="SubjectLogonId">0x7b0ebea</Data>
+    <Data Name="NewProcessId">0x19ec</Data>
+    <Data Name="NewProcessName">C:\Windows\System32\userinit.exe</Data>
+    <Data Name="TokenElevationType">%%1938</Data>
+    <Data Name="ProcessId">0x19d4</Data>
+    <Data Name="CommandLine">userinit.exe</Data>
+    <Data Name="TargetUserSid">S-1-0-0</Data>
+    <Data Name="TargetUserName">-</Data>
+    <Data Name="TargetDomainName">-</Data>
+    <Data Name="TargetLogonId">0x0</Data>
+    <Data Name="ParentProcessName">C:\Windows\System32\winlogon.exe</Data>
+    <Data Name="MandatoryLabel">S-1-16-8192</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4688</EventID>
+    <Version>2</Version>
+    <Level>0</Level>
+    <Task>13312</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:40:50.8335377Z"/>
+    <EventRecordID>816719</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="7220"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-21-1198276704-1000000000-1000048801-24011</Data>
+    <Data Name="SubjectUserName">dana.whitfield</Data>
+    <Data Name="SubjectDomainName">ALDERWOODPARTNERS</Data>
+    <Data Name="SubjectLogonId">0x7b0ebea</Data>
+    <Data Name="NewProcessId">0x19f4</Data>
+    <Data Name="NewProcessName">C:\Windows\explorer.exe</Data>
+    <Data Name="TokenElevationType">%%1938</Data>
+    <Data Name="ProcessId">0x19ec</Data>
+    <Data Name="CommandLine">explorer.exe</Data>
+    <Data Name="TargetUserSid">S-1-0-0</Data>
+    <Data Name="TargetUserName">-</Data>
+    <Data Name="TargetDomainName">-</Data>
+    <Data Name="TargetLogonId">0x0</Data>
+    <Data Name="ParentProcessName">C:\Windows\System32\userinit.exe</Data>
+    <Data Name="MandatoryLabel">S-1-16-8192</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4688</EventID>
+    <Version>2</Version>
+    <Level>0</Level>
+    <Task>13312</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:40:51.0694215Z"/>
+    <EventRecordID>816720</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="9632"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-21-1198276704-1000000000-1000048801-24011</Data>
+    <Data Name="SubjectUserName">dana.whitfield</Data>
+    <Data Name="SubjectDomainName">ALDERWOODPARTNERS</Data>
+    <Data Name="SubjectLogonId">0x7b0ebea</Data>
+    <Data Name="NewProcessId">0x19f8</Data>
+    <Data Name="NewProcessName">C:\Windows\System32\notepad.exe</Data>
+    <Data Name="TokenElevationType">%%1938</Data>
+    <Data Name="ProcessId">0x19f4</Data>
+    <Data Name="CommandLine">notepad.exe C:\Users\dana.whitfield\Documents\team-notes.txt</Data>
+    <Data Name="TargetUserSid">S-1-0-0</Data>
+    <Data Name="TargetUserName">-</Data>
+    <Data Name="TargetDomainName">-</Data>
+    <Data Name="TargetLogonId">0x0</Data>
+    <Data Name="ParentProcessName">C:\Windows\explorer.exe</Data>
+    <Data Name="MandatoryLabel">S-1-16-8192</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4689</EventID>
+    <Version>0</Version>
+    <Level>0</Level>
+    <Task>13313</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:40:52.8482593Z"/>
+    <EventRecordID>816721</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="400"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-21-1198276704-1000000000-1000048801-24011</Data>
+    <Data Name="SubjectUserName">dana.whitfield</Data>
+    <Data Name="SubjectDomainName">ALDERWOODPARTNERS</Data>
+    <Data Name="SubjectLogonId">0x7b0ebea</Data>
+    <Data Name="Status">0x0</Data>
+    <Data Name="ProcessId">0x19ec</Data>
+    <Data Name="ProcessName">C:\Windows\System32\userinit.exe</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4689</EventID>
+    <Version>0</Version>
+    <Level>0</Level>
+    <Task>13313</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:40:54.8120815Z"/>
+    <EventRecordID>816722</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="476"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-21-1198276704-1000000000-1000048801-24011</Data>
+    <Data Name="SubjectUserName">dana.whitfield</Data>
+    <Data Name="SubjectDomainName">ALDERWOODPARTNERS</Data>
+    <Data Name="SubjectLogonId">0x7b0ebea</Data>
+    <Data Name="Status">0x0</Data>
+    <Data Name="ProcessId">0x19f8</Data>
+    <Data Name="ProcessName">C:\Windows\System32\notepad.exe</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>5156</EventID>
+    <Version>1</Version>
+    <Level>0</Level>
+    <Task>12810</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:42:14.7017347Z"/>
+    <EventRecordID>816727</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="132"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="ProcessID">4</Data>
+    <Data Name="Application">System</Data>
+    <Data Name="Direction">%%14593</Data>
+    <Data Name="SourceAddress">10.40.12.12</Data>
+    <Data Name="SourcePort">57809</Data>
+    <Data Name="DestAddress">10.40.12.11</Data>
+    <Data Name="DestPort">445</Data>
+    <Data Name="Protocol">6</Data>
+    <Data Name="FilterRTID">31617</Data>
+    <Data Name="LayerName">%%14611</Data>
+    <Data Name="LayerRTID">48</Data>
+    <Data Name="RemoteUserID">S-1-0-0</Data>
+    <Data Name="RemoteMachineID">S-1-0-0</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>5156</EventID>
+    <Version>1</Version>
+    <Level>0</Level>
+    <Task>12810</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:45:23.7760565Z"/>
+    <EventRecordID>816731</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="164"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="ProcessID">5460</Data>
+    <Data Name="Application">\device\harddiskvolume1\windows\system32\svchost.exe</Data>
+    <Data Name="Direction">%%14593</Data>
+    <Data Name="SourceAddress">10.40.12.12</Data>
+    <Data Name="SourcePort">56178</Data>
+    <Data Name="DestAddress">8.8.4.4</Data>
+    <Data Name="DestPort">53</Data>
+    <Data Name="Protocol">17</Data>
+    <Data Name="FilterRTID">31573</Data>
+    <Data Name="LayerName">%%14611</Data>
+    <Data Name="LayerRTID">48</Data>
+    <Data Name="RemoteUserID">S-1-0-0</Data>
+    <Data Name="RemoteMachineID">S-1-0-0</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>5156</EventID>
+    <Version>1</Version>
+    <Level>0</Level>
+    <Task>12810</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:45:25.7403053Z"/>
+    <EventRecordID>816732</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="68"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="ProcessID">5456</Data>
+    <Data Name="Application">\device\harddiskvolume1\windows\system32\svchost.exe</Data>
+    <Data Name="Direction">%%14593</Data>
+    <Data Name="SourceAddress">10.40.12.12</Data>
+    <Data Name="SourcePort">55053</Data>
+    <Data Name="DestAddress">23.45.121.20</Data>
+    <Data Name="DestPort">443</Data>
+    <Data Name="Protocol">6</Data>
+    <Data Name="FilterRTID">31634</Data>
+    <Data Name="LayerName">%%14611</Data>
+    <Data Name="LayerRTID">48</Data>
+    <Data Name="RemoteUserID">S-1-0-0</Data>
+    <Data Name="RemoteMachineID">S-1-0-0</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>5156</EventID>
+    <Version>1</Version>
+    <Level>0</Level>
+    <Task>12810</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:46:09.5336220Z"/>
+    <EventRecordID>816734</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="188"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="ProcessID">4</Data>
+    <Data Name="Application">System</Data>
+    <Data Name="Direction">%%14593</Data>
+    <Data Name="SourceAddress">10.40.12.12</Data>
+    <Data Name="SourcePort">62310</Data>
+    <Data Name="DestAddress">10.40.12.11</Data>
+    <Data Name="DestPort">445</Data>
+    <Data Name="Protocol">6</Data>
+    <Data Name="FilterRTID">31617</Data>
+    <Data Name="LayerName">%%14611</Data>
+    <Data Name="LayerRTID">48</Data>
+    <Data Name="RemoteUserID">S-1-0-0</Data>
+    <Data Name="RemoteMachineID">S-1-0-0</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>5156</EventID>
+    <Version>1</Version>
+    <Level>0</Level>
+    <Task>12810</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:46:10.1564006Z"/>
+    <EventRecordID>816735</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="100"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="ProcessID">4</Data>
+    <Data Name="Application">System</Data>
+    <Data Name="Direction">%%14593</Data>
+    <Data Name="SourceAddress">10.40.12.12</Data>
+    <Data Name="SourcePort">63333</Data>
+    <Data Name="DestAddress">10.40.12.11</Data>
+    <Data Name="DestPort">445</Data>
+    <Data Name="Protocol">6</Data>
+    <Data Name="FilterRTID">31617</Data>
+    <Data Name="LayerName">%%14611</Data>
+    <Data Name="LayerRTID">48</Data>
+    <Data Name="RemoteUserID">S-1-0-0</Data>
+    <Data Name="RemoteMachineID">S-1-0-0</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>5156</EventID>
+    <Version>1</Version>
+    <Level>0</Level>
+    <Task>12810</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:46:12.0072471Z"/>
+    <EventRecordID>816736</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="116"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="ProcessID">4</Data>
+    <Data Name="Application">System</Data>
+    <Data Name="Direction">%%14592</Data>
+    <Data Name="SourceAddress">10.40.12.11</Data>
+    <Data Name="SourcePort">55862</Data>
+    <Data Name="DestAddress">10.40.12.12</Data>
+    <Data Name="DestPort">445</Data>
+    <Data Name="Protocol">6</Data>
+    <Data Name="FilterRTID">31620</Data>
+    <Data Name="LayerName">%%14610</Data>
+    <Data Name="LayerRTID">44</Data>
+    <Data Name="RemoteUserID">S-1-0-0</Data>
+    <Data Name="RemoteMachineID">S-1-0-0</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>5156</EventID>
+    <Version>1</Version>
+    <Level>0</Level>
+    <Task>12810</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:46:21.2186221Z"/>
+    <EventRecordID>816737</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="128"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="ProcessID">4</Data>
+    <Data Name="Application">System</Data>
+    <Data Name="Direction">%%14593</Data>
+    <Data Name="SourceAddress">10.40.12.12</Data>
+    <Data Name="SourcePort">53569</Data>
+    <Data Name="DestAddress">10.40.12.11</Data>
+    <Data Name="DestPort">445</Data>
+    <Data Name="Protocol">6</Data>
+    <Data Name="FilterRTID">31617</Data>
+    <Data Name="LayerName">%%14611</Data>
+    <Data Name="LayerRTID">48</Data>
+    <Data Name="RemoteUserID">S-1-0-0</Data>
+    <Data Name="RemoteMachineID">S-1-0-0</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>5156</EventID>
+    <Version>1</Version>
+    <Level>0</Level>
+    <Task>12810</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:52:39.8097107Z"/>
+    <EventRecordID>816751</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="192"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="ProcessID">5460</Data>
+    <Data Name="Application">\device\harddiskvolume1\windows\system32\svchost.exe</Data>
+    <Data Name="Direction">%%14593</Data>
+    <Data Name="SourceAddress">10.40.12.12</Data>
+    <Data Name="SourcePort">55530</Data>
+    <Data Name="DestAddress">8.8.4.4</Data>
+    <Data Name="DestPort">53</Data>
+    <Data Name="Protocol">17</Data>
+    <Data Name="FilterRTID">31573</Data>
+    <Data Name="LayerName">%%14611</Data>
+    <Data Name="LayerRTID">48</Data>
+    <Data Name="RemoteUserID">S-1-0-0</Data>
+    <Data Name="RemoteMachineID">S-1-0-0</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>5156</EventID>
+    <Version>1</Version>
+    <Level>0</Level>
+    <Task>12810</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:52:41.7235131Z"/>
+    <EventRecordID>816752</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="88"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="ProcessID">5456</Data>
+    <Data Name="Application">\device\harddiskvolume1\windows\system32\svchost.exe</Data>
+    <Data Name="Direction">%%14593</Data>
+    <Data Name="SourceAddress">10.40.12.12</Data>
+    <Data Name="SourcePort">61849</Data>
+    <Data Name="DestAddress">13.107.6.172</Data>
+    <Data Name="DestPort">443</Data>
+    <Data Name="Protocol">6</Data>
+    <Data Name="FilterRTID">31634</Data>
+    <Data Name="LayerName">%%14611</Data>
+    <Data Name="LayerRTID">48</Data>
+    <Data Name="RemoteUserID">S-1-0-0</Data>
+    <Data Name="RemoteMachineID">S-1-0-0</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4688</EventID>
+    <Version>2</Version>
+    <Level>0</Level>
+    <Task>13312</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:59:04.7114528Z"/>
+    <EventRecordID>816769</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="2060"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="NewProcessId">0x1990</Data>
+    <Data Name="NewProcessName">C:\Windows\System32\wbem\WmiPrvSE.exe</Data>
+    <Data Name="TokenElevationType">%%1936</Data>
+    <Data Name="ProcessId">0x1544</Data>
+    <Data Name="CommandLine">WmiPrvSE.exe -Embedding</Data>
+    <Data Name="TargetUserSid">S-1-0-0</Data>
+    <Data Name="TargetUserName">-</Data>
+    <Data Name="TargetDomainName">-</Data>
+    <Data Name="TargetLogonId">0x0</Data>
+    <Data Name="ParentProcessName">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="MandatoryLabel">S-1-16-16384</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4624</EventID>
+    <Version>2</Version>
+    <Level>0</Level>
+    <Task>12544</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:01:18.1057846Z"/>
+    <EventRecordID>816777</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="5428" ThreadID="384"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="TargetUserSid">S-1-5-19</Data>
+    <Data Name="TargetUserName">LOCAL SERVICE</Data>
+    <Data Name="TargetDomainName">NT AUTHORITY</Data>
+    <Data Name="TargetLogonId">0x3e5</Data>
+    <Data Name="LogonType">5</Data>
+    <Data Name="LogonGuid">{00000000-0000-0000-0000-000000000000}</Data>
+    <Data Name="LogonProcessName">Advapi</Data>
+    <Data Name="AuthenticationPackageName">Negotiate</Data>
+    <Data Name="WorkstationName">WS-02</Data>
+    <Data Name="TransmittedServices">-</Data>
+    <Data Name="LmPackageName">-</Data>
+    <Data Name="KeyLength">0</Data>
+    <Data Name="ProcessId">0x152c</Data>
+    <Data Name="ProcessName">C:\Windows\System32\services.exe</Data>
+    <Data Name="IpAddress">-</Data>
+    <Data Name="IpPort">-</Data>
+    <Data Name="ImpersonationLevel">%%1833</Data>
+    <Data Name="RestrictedAdminMode">-</Data>
+    <Data Name="TargetOutboundUserName">-</Data>
+    <Data Name="TargetOutboundDomainName">-</Data>
+    <Data Name="VirtualAccount">%%1843</Data>
+    <Data Name="TargetLinkedLogonId">0x0</Data>
+    <Data Name="ElevatedToken">%%1842</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4672</EventID>
+    <Version>0</Version>
+    <Level>0</Level>
+    <Task>12548</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:01:18.1061326Z"/>
+    <EventRecordID>816778</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="5428" ThreadID="404"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-19</Data>
+    <Data Name="SubjectUserName">LOCAL SERVICE</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e5</Data>
+    <Data Name="PrivilegeList">SeAssignPrimaryTokenPrivilege
+			SeAuditPrivilege
+			SeImpersonatePrivilege
+			SeChangeNotifyPrivilege</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>5156</EventID>
+    <Version>1</Version>
+    <Level>0</Level>
+    <Task>12810</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:07:32.7947574Z"/>
+    <EventRecordID>816785</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="144"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="ProcessID">5460</Data>
+    <Data Name="Application">\device\harddiskvolume1\windows\system32\svchost.exe</Data>
+    <Data Name="Direction">%%14593</Data>
+    <Data Name="SourceAddress">10.40.12.12</Data>
+    <Data Name="SourcePort">56934</Data>
+    <Data Name="DestAddress">8.8.8.8</Data>
+    <Data Name="DestPort">53</Data>
+    <Data Name="Protocol">17</Data>
+    <Data Name="FilterRTID">31573</Data>
+    <Data Name="LayerName">%%14611</Data>
+    <Data Name="LayerRTID">48</Data>
+    <Data Name="RemoteUserID">S-1-0-0</Data>
+    <Data Name="RemoteMachineID">S-1-0-0</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>5156</EventID>
+    <Version>1</Version>
+    <Level>0</Level>
+    <Task>12810</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:07:35.3210092Z"/>
+    <EventRecordID>816786</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="160"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="ProcessID">5456</Data>
+    <Data Name="Application">\device\harddiskvolume1\windows\system32\svchost.exe</Data>
+    <Data Name="Direction">%%14593</Data>
+    <Data Name="SourceAddress">10.40.12.12</Data>
+    <Data Name="SourcePort">53229</Data>
+    <Data Name="DestAddress">149.96.18.45</Data>
+    <Data Name="DestPort">443</Data>
+    <Data Name="Protocol">6</Data>
+    <Data Name="FilterRTID">31634</Data>
+    <Data Name="LayerName">%%14611</Data>
+    <Data Name="LayerRTID">48</Data>
+    <Data Name="RemoteUserID">S-1-0-0</Data>
+    <Data Name="RemoteMachineID">S-1-0-0</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4688</EventID>
+    <Version>2</Version>
+    <Level>0</Level>
+    <Task>13312</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:16:17.1733196Z"/>
+    <EventRecordID>816804</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="8208"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="NewProcessId">0x1a18</Data>
+    <Data Name="NewProcessName">C:\Windows\System32\conhost.exe</Data>
+    <Data Name="TokenElevationType">%%1936</Data>
+    <Data Name="ProcessId">0x151c</Data>
+    <Data Name="CommandLine">\??\C:\Windows\system32\conhost.exe 0xffffffff -ForceV1</Data>
+    <Data Name="TargetUserSid">S-1-0-0</Data>
+    <Data Name="TargetUserName">-</Data>
+    <Data Name="TargetDomainName">-</Data>
+    <Data Name="TargetLogonId">0x0</Data>
+    <Data Name="ParentProcessName">C:\Windows\System32\csrss.exe</Data>
+    <Data Name="MandatoryLabel">S-1-16-16384</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4689</EventID>
+    <Version>0</Version>
+    <Level>0</Level>
+    <Task>13313</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:16:19.8291002Z"/>
+    <EventRecordID>816805</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="292"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="Status">0x0</Data>
+    <Data Name="ProcessId">0x1a18</Data>
+    <Data Name="ProcessName">C:\Windows\System32\conhost.exe</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4688</EventID>
+    <Version>2</Version>
+    <Level>0</Level>
+    <Task>13312</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:17:59.8132597Z"/>
+    <EventRecordID>816808</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="2340"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="NewProcessId">0x1a08</Data>
+    <Data Name="NewProcessName">C:\Windows\System32\SearchProtocolHost.exe</Data>
+    <Data Name="TokenElevationType">%%1936</Data>
+    <Data Name="ProcessId">0x15c8</Data>
+    <Data Name="CommandLine">SearchProtocolHost.exe Global\UsGthrFltPipeMssGthrPipe_S-1-5-21-371235759-513400749-677150092-5678 Global\UsGthrCtrlFltPipeMssGthrPipe_S-1-5-21-371235759-513400749-677150092-5678 1</Data>
+    <Data Name="TargetUserSid">S-1-0-0</Data>
+    <Data Name="TargetUserName">-</Data>
+    <Data Name="TargetDomainName">-</Data>
+    <Data Name="TargetLogonId">0x0</Data>
+    <Data Name="ParentProcessName">C:\Windows\System32\SearchIndexer.exe</Data>
+    <Data Name="MandatoryLabel">S-1-16-16384</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4688</EventID>
+    <Version>2</Version>
+    <Level>0</Level>
+    <Task>13312</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:27:44.9105642Z"/>
+    <EventRecordID>816825</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="2452"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="NewProcessId">0x1a28</Data>
+    <Data Name="NewProcessName">C:\Windows\System32\usoclient.exe</Data>
+    <Data Name="TokenElevationType">%%1936</Data>
+    <Data Name="ProcessId">0x15a0</Data>
+    <Data Name="CommandLine">usoclient.exe StartInteractiveScan</Data>
+    <Data Name="TargetUserSid">S-1-0-0</Data>
+    <Data Name="TargetUserName">-</Data>
+    <Data Name="TargetDomainName">-</Data>
+    <Data Name="TargetLogonId">0x0</Data>
+    <Data Name="ParentProcessName">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="MandatoryLabel">S-1-16-16384</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4689</EventID>
+    <Version>0</Version>
+    <Level>0</Level>
+    <Task>13313</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:28:44.9369917Z"/>
+    <EventRecordID>816827</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="460"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="Status">0x0</Data>
+    <Data Name="ProcessId">0x1a28</Data>
+    <Data Name="ProcessName">C:\Windows\System32\usoclient.exe</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4688</EventID>
+    <Version>2</Version>
+    <Level>0</Level>
+    <Task>13312</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:30:51.0305046Z"/>
+    <EventRecordID>816829</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="112"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="NewProcessId">0x1a1c</Data>
+    <Data Name="NewProcessName">C:\Windows\System32\conhost.exe</Data>
+    <Data Name="TokenElevationType">%%1936</Data>
+    <Data Name="ProcessId">0x151c</Data>
+    <Data Name="CommandLine">\??\C:\Windows\system32\conhost.exe 0xffffffff -ForceV1</Data>
+    <Data Name="TargetUserSid">S-1-0-0</Data>
+    <Data Name="TargetUserName">-</Data>
+    <Data Name="TargetDomainName">-</Data>
+    <Data Name="TargetLogonId">0x0</Data>
+    <Data Name="ParentProcessName">C:\Windows\System32\csrss.exe</Data>
+    <Data Name="MandatoryLabel">S-1-16-16384</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4688</EventID>
+    <Version>2</Version>
+    <Level>0</Level>
+    <Task>13312</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:39:49.9237579Z"/>
+    <EventRecordID>816848</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="9936"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="NewProcessId">0x1a00</Data>
+    <Data Name="NewProcessName">C:\Windows\System32\SearchProtocolHost.exe</Data>
+    <Data Name="TokenElevationType">%%1936</Data>
+    <Data Name="ProcessId">0x15c8</Data>
+    <Data Name="CommandLine">SearchProtocolHost.exe Global\UsGthrFltPipeMssGthrPipe_S-1-5-20 Global\UsGthrCtrlFltPipeMssGthrPipe_S-1-5-20 1</Data>
+    <Data Name="TargetUserSid">S-1-0-0</Data>
+    <Data Name="TargetUserName">-</Data>
+    <Data Name="TargetDomainName">-</Data>
+    <Data Name="TargetLogonId">0x0</Data>
+    <Data Name="ParentProcessName">C:\Windows\System32\SearchIndexer.exe</Data>
+    <Data Name="MandatoryLabel">S-1-16-16384</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4689</EventID>
+    <Version>0</Version>
+    <Level>0</Level>
+    <Task>13313</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:39:53.3569226Z"/>
+    <EventRecordID>816849</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="428"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="Status">0x0</Data>
+    <Data Name="ProcessId">0x1a1c</Data>
+    <Data Name="ProcessName">C:\Windows\System32\conhost.exe</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4624</EventID>
+    <Version>2</Version>
+    <Level>0</Level>
+    <Task>12544</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:40:13.7408565Z"/>
+    <EventRecordID>816850</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="5428" ThreadID="228"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="TargetUserSid">S-1-5-20</Data>
+    <Data Name="TargetUserName">NETWORK SERVICE</Data>
+    <Data Name="TargetDomainName">NT AUTHORITY</Data>
+    <Data Name="TargetLogonId">0x3e4</Data>
+    <Data Name="LogonType">5</Data>
+    <Data Name="LogonGuid">{00000000-0000-0000-0000-000000000000}</Data>
+    <Data Name="LogonProcessName">Advapi</Data>
+    <Data Name="AuthenticationPackageName">Negotiate</Data>
+    <Data Name="WorkstationName">WS-02</Data>
+    <Data Name="TransmittedServices">-</Data>
+    <Data Name="LmPackageName">-</Data>
+    <Data Name="KeyLength">0</Data>
+    <Data Name="ProcessId">0x152c</Data>
+    <Data Name="ProcessName">C:\Windows\System32\services.exe</Data>
+    <Data Name="IpAddress">-</Data>
+    <Data Name="IpPort">-</Data>
+    <Data Name="ImpersonationLevel">%%1833</Data>
+    <Data Name="RestrictedAdminMode">-</Data>
+    <Data Name="TargetOutboundUserName">-</Data>
+    <Data Name="TargetOutboundDomainName">-</Data>
+    <Data Name="VirtualAccount">%%1843</Data>
+    <Data Name="TargetLinkedLogonId">0x0</Data>
+    <Data Name="ElevatedToken">%%1842</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4672</EventID>
+    <Version>0</Version>
+    <Level>0</Level>
+    <Task>12548</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:40:13.7412795Z"/>
+    <EventRecordID>816851</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="5428" ThreadID="200"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-20</Data>
+    <Data Name="SubjectUserName">NETWORK SERVICE</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e4</Data>
+    <Data Name="PrivilegeList">SeAssignPrimaryTokenPrivilege
+			SeAuditPrivilege
+			SeImpersonatePrivilege
+			SeChangeNotifyPrivilege</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4688</EventID>
+    <Version>2</Version>
+    <Level>0</Level>
+    <Task>13312</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:42:48.5614273Z"/>
+    <EventRecordID>816855</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="9560"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="NewProcessId">0x1a2c</Data>
+    <Data Name="NewProcessName">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="TokenElevationType">%%1936</Data>
+    <Data Name="ProcessId">0x152c</Data>
+    <Data Name="CommandLine">svchost.exe -k netsvcs -p -s wuauserv</Data>
+    <Data Name="TargetUserSid">S-1-0-0</Data>
+    <Data Name="TargetUserName">-</Data>
+    <Data Name="TargetDomainName">-</Data>
+    <Data Name="TargetLogonId">0x0</Data>
+    <Data Name="ParentProcessName">C:\Windows\System32\services.exe</Data>
+    <Data Name="MandatoryLabel">S-1-16-16384</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>5156</EventID>
+    <Version>1</Version>
+    <Level>0</Level>
+    <Task>12810</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:47:06.5068158Z"/>
+    <EventRecordID>816860</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="108"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="ProcessID">5460</Data>
+    <Data Name="Application">\device\harddiskvolume1\windows\system32\svchost.exe</Data>
+    <Data Name="Direction">%%14593</Data>
+    <Data Name="SourceAddress">10.40.12.12</Data>
+    <Data Name="SourcePort">59821</Data>
+    <Data Name="DestAddress">8.8.4.4</Data>
+    <Data Name="DestPort">53</Data>
+    <Data Name="Protocol">17</Data>
+    <Data Name="FilterRTID">31573</Data>
+    <Data Name="LayerName">%%14611</Data>
+    <Data Name="LayerRTID">48</Data>
+    <Data Name="RemoteUserID">S-1-0-0</Data>
+    <Data Name="RemoteMachineID">S-1-0-0</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>5156</EventID>
+    <Version>1</Version>
+    <Level>0</Level>
+    <Task>12810</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:47:08.7831411Z"/>
+    <EventRecordID>816861</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="176"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="ProcessID">5456</Data>
+    <Data Name="Application">\device\harddiskvolume1\windows\system32\svchost.exe</Data>
+    <Data Name="Direction">%%14593</Data>
+    <Data Name="SourceAddress">10.40.12.12</Data>
+    <Data Name="SourcePort">51862</Data>
+    <Data Name="DestAddress">13.107.21.200</Data>
+    <Data Name="DestPort">443</Data>
+    <Data Name="Protocol">6</Data>
+    <Data Name="FilterRTID">31634</Data>
+    <Data Name="LayerName">%%14611</Data>
+    <Data Name="LayerRTID">48</Data>
+    <Data Name="RemoteUserID">S-1-0-0</Data>
+    <Data Name="RemoteMachineID">S-1-0-0</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4688</EventID>
+    <Version>2</Version>
+    <Level>0</Level>
+    <Task>13312</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:47:21.0360831Z"/>
+    <EventRecordID>816862</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="8264"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="NewProcessId">0x1a54</Data>
+    <Data Name="NewProcessName">C:\Windows\System32\taskhostw.exe</Data>
+    <Data Name="TokenElevationType">%%1936</Data>
+    <Data Name="ProcessId">0x154c</Data>
+    <Data Name="CommandLine">taskhostw.exe</Data>
+    <Data Name="TargetUserSid">S-1-0-0</Data>
+    <Data Name="TargetUserName">-</Data>
+    <Data Name="TargetDomainName">-</Data>
+    <Data Name="TargetLogonId">0x0</Data>
+    <Data Name="ParentProcessName">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="MandatoryLabel">S-1-16-16384</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4689</EventID>
+    <Version>0</Version>
+    <Level>0</Level>
+    <Task>13313</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:47:39.2137296Z"/>
+    <EventRecordID>816863</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="368"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="Status">0x0</Data>
+    <Data Name="ProcessId">0x1a54</Data>
+    <Data Name="ProcessName">C:\Windows\System32\taskhostw.exe</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>4689</EventID>
+    <Version>0</Version>
+    <Level>0</Level>
+    <Task>13313</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:53:42.5365573Z"/>
+    <EventRecordID>816870</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="256"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="SubjectUserSid">S-1-5-18</Data>
+    <Data Name="SubjectUserName">SYSTEM</Data>
+    <Data Name="SubjectDomainName">NT AUTHORITY</Data>
+    <Data Name="SubjectLogonId">0x3e7</Data>
+    <Data Name="Status">0x0</Data>
+    <Data Name="ProcessId">0x1990</Data>
+    <Data Name="ProcessName">C:\Windows\System32\wbem\WmiPrvSE.exe</Data>
+    
+  </EventData>
+  
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    
+    <Provider Name="Microsoft-Windows-Security-Auditing" Guid="{54849625-5478-4994-a5ba-3e3b0328c30d}"/>
+    
+    <EventID>5156</EventID>
+    <Version>1</Version>
+    <Level>0</Level>
+    <Task>12810</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8020000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:54:53.8204292Z"/>
+    <EventRecordID>816874</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="4" ThreadID="112"/>
+    <Channel>Security</Channel>
+    <Computer>WS-02.alderwoodpartners.com</Computer>
+    
+    <Security/>
+    
+  </System>
+  
+  <EventData>
+    
+    <Data Name="ProcessID">5444</Data>
+    <Data Name="Application">\device\harddiskvolume1\windows\system32\svchost.exe</Data>
+    <Data Name="Direction">%%14592</Data>
+    <Data Name="SourceAddress">10.40.12.11</Data>
+    <Data Name="SourcePort">64086</Data>
+    <Data Name="DestAddress">10.40.12.12</Data>
+    <Data Name="DestPort">135</Data>
+    <Data Name="Protocol">6</Data>
+    <Data Name="FilterRTID">31891</Data>
+    <Data Name="LayerName">%%14610</Data>
+    <Data Name="LayerRTID">44</Data>
+    <Data Name="RemoteUserID">S-1-0-0</Data>
+    <Data Name="RemoteMachineID">S-1-0-0</Data>
+    
+  </EventData>
+  
+</Event>
+</Events>

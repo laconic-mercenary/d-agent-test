@@ -1,0 +1,132 @@
+<30>1 2024-05-13T14:00:28.876426Z WS-MARCUS-01 systemd-resolved 39232 - - Grace period over, resuming full feature set (UDP+EDNS0) for DNS server 208.67.222.222.
+<30>1 2024-05-13T14:00:30.606345Z WS-MARCUS-01 systemd-timesyncd 39226 - - Time has been changed by -1.835806 seconds.
+<30>1 2024-05-13T14:01:46.309129Z WS-MARCUS-01 tracker-miner-fs-3 13275 - - Indexed 68 file(s) under /home/deploy/Documents
+<30>1 2024-05-13T14:01:47.565593Z WS-MARCUS-01 tracker-miner-fs-3 13275 - - Resetting tracker extract task after idle timeout 167853
+<30>1 2024-05-13T14:02:37.463354Z WS-MARCUS-01 thermald 43929 - - thermal zone x86_pkg_temp: trip point updated
+<30>1 2024-05-13T14:03:51.692308Z WS-MARCUS-01 rsyslogd 39163 - - main Q: queue main has 395 messages pending, worker threads 1
+<30>1 2024-05-13T14:03:51.775160Z WS-MARCUS-01 tracker-miner-fs-3 13275 - - Resetting tracker extract task after idle timeout 116702
+<78>1 2024-05-13T14:05:00.102000Z WS-MARCUS-01 CRON 2532441 - - (sysstat) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+<30>1 2024-05-13T14:08:56.527127Z WS-MARCUS-01 accounts-daemon 25357 - - user 'ubuntu' has logged in
+<30>1 2024-05-13T14:09:43.825805Z WS-MARCUS-01 thermald 43929 - - thermal zone x86_pkg_temp: trip point updated
+<30>1 2024-05-13T14:10:23.351960Z WS-MARCUS-01 avahi-daemon 50394 - - Service "_workstation._tcp" successfully established.
+<30>1 2024-05-13T14:10:24.717257Z WS-MARCUS-01 systemd-timesyncd 39226 - - Time has been changed by 1.469023 seconds.
+<30>1 2024-05-13T14:10:39.983779Z WS-MARCUS-01 polkitd 41337 - - Subject unix-process:2533620:121023918 is not authorized for action org.freedesktop.login1.reboot
+<30>1 2024-05-13T14:16:08.857535Z WS-MARCUS-01 gnome-shell 58389 - - Monitor 0 configuration unchanged after hotplug event
+<30>1 2024-05-13T14:17:16.037947Z WS-MARCUS-01 irqbalance 23579 - - IRQ 86 affinity hint keeps vector on CPU 2 (mlx5_comp1)
+<30>1 2024-05-13T14:17:53.797704Z WS-MARCUS-01 anacron 45668 - - Will run job `cron.daily' in 2 min.
+<30>1 2024-05-13T14:17:53Z WS-MARCUS-01 anacron 45668 - - Anacron 2.3 started on 2024-05-13
+<30>1 2024-05-13T14:19:04.012681Z WS-MARCUS-01 systemd-journald 39152 - - Rotating system journal.
+<86>1 2024-05-13T14:19:12.760736Z WS-MARCUS-01 gdm-password 2535712 - - pam_unix(gdm-password:session): session opened for user priya.desai(uid=4392) by gdm(uid=0)
+<86>1 2024-05-13T14:19:18.520736Z WS-MARCUS-01 systemd-logind 39180 - - New session 181856 of user priya.desai.
+<30>1 2024-05-13T14:19:48.521741Z WS-MARCUS-01 polkitd 41337 - - Operator of unix-process:2535911:121078737 failed to authenticate as unix-user:admin to gain TEMPORARY authorization for action org.freedesktop.login1.reboot for system-bus-name::1.114 [/usr/bin/systemctl] (owned by unix-user:admin)
+<30>1 2024-05-13T14:19:48.919433Z WS-MARCUS-01 systemd-timesyncd 39226 - - Time has been changed by -1.606458 seconds.
+<30>1 2024-05-13T14:20:04.183001Z WS-MARCUS-01 anacron 45668 - - Job `cron.daily' started
+<30>1 2024-05-13T14:22:02.409194Z WS-MARCUS-01 anacron 45668 - - Job `cron.daily' terminated
+<30>1 2024-05-13T14:22:03.004857Z WS-MARCUS-01 anacron 45668 - - Normal exit (1 job run)
+<30>1 2024-05-13T14:22:21.334781Z WS-MARCUS-01 snapd 39215 - - taskrunner.go:271: change 5547 task 9 done for microk8s
+<30>1 2024-05-13T14:22:31.536926Z WS-MARCUS-01 dbus-daemon 39175 - - [system] Successfully activated service 'org.freedesktop.locale1' for ':1.154'
+<30>1 2024-05-13T14:25:10.079481Z WS-MARCUS-01 systemd-timesyncd 39226 - - System clock synchronized to 129.6.15.28:123.
+<85>1 2024-05-13T14:25:13.972809Z WS-MARCUS-01 sudo 2537135 - - backup : TTY=pts/1 ; PWD=/etc ; USER=root ; COMMAND=/usr/bin/lsof -i -P -n
+<86>1 2024-05-13T14:25:14.241809Z WS-MARCUS-01 sudo 2537135 - - pam_unix(sudo:session): session opened for user root(uid=0) by backup(uid=3037)
+<86>1 2024-05-13T14:25:21.185795Z WS-MARCUS-01 sudo 2537135 - - pam_unix(sudo:session): session closed for user root
+<30>1 2024-05-13T14:27:03.436850Z WS-MARCUS-01 rsyslogd 39163 - - main Q: queue action-remote has 779 messages pending, worker threads 1
+<86>1 2024-05-13T14:27:31.300816Z WS-MARCUS-01 gdm-password 2537717 - - pam_unix(gdm-password:session): session opened for user marcus.oyelaran(uid=2050) by gdm(uid=0)
+<30>1 2024-05-13T14:27:35.711763Z WS-MARCUS-01 rsyslogd 39163 - - main Q: queue action-remote has 458 messages pending, worker threads 1
+<86>1 2024-05-13T14:27:36.372816Z WS-MARCUS-01 systemd-logind 39180 - - New session 181931 of user marcus.oyelaran.
+<30>1 2024-05-13T14:29:09.144930Z WS-MARCUS-01 fwupd 45097 - - metadata is 6 days old, scheduling refresh
+<30>1 2024-05-13T14:29:16.510672Z WS-MARCUS-01 accounts-daemon 25357 - - user 'ubuntu' has logged in
+<30>1 2024-05-13T14:29:33.397687Z WS-MARCUS-01 irqbalance 23579 - - IRQ 181 affinity hint keeps vector on CPU 0 (mlx5_comp2)
+<30>1 2024-05-13T14:33:05.538799Z WS-MARCUS-01 polkitd 41337 - - Registered Authentication Agent for unix-session:19 (system bus name :1.157 [/usr/libexec/polkit-gnome-authentication-agent-1], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8)
+<30>1 2024-05-13T14:33:25.318082Z WS-MARCUS-01 NetworkManager 39174 - - <info>  [1715610805.3181] device (ens192): state change: disconnected -> prepare
+<30>1 2024-05-13T14:33:45.044419Z WS-MARCUS-01 irqbalance 23579 - - IRQ 64 classified for CPU 3 balancing on mlx5_comp0
+<78>1 2024-05-13T14:35:00.064000Z WS-MARCUS-01 CRON 2539299 - - (sysstat) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+<30>1 2024-05-13T14:35:26.584831Z WS-MARCUS-01 snapd 39215 - - taskrunner.go:271: change 5548 task 2 done for snapd-desktop-integration
+<30>1 2024-05-13T14:36:34.561300Z WS-MARCUS-01 NetworkManager 39174 - - <info>  [1715610994.5613] device (ens192): state change: ip-config -> activated
+<30>1 2024-05-13T14:37:24.546921Z WS-MARCUS-01 systemd-timesyncd 39226 - - System clock synchronized to 129.6.15.28:123.
+<30>1 2024-05-13T14:37:24.743892Z WS-MARCUS-01 polkitd 41337 - - Operator of unix-process:2539839:121184042 successfully authenticated as unix-user:root to gain TEMPORARY authorization for action org.freedesktop.NetworkManager.settings.modify.system for system-bus-name::1.158 [/usr/sbin/NetworkManager] (owned by unix-user:admin)
+<30>1 2024-05-13T14:37:25.456173Z WS-MARCUS-01 snapd 39215 - - stateengine.go:150: state ensure starting change 5549
+<86>1 2024-05-13T14:42:59.679123Z WS-MARCUS-01 gdm-password 2541683 - - pam_unix(gdm-password:session): session opened for user admin(uid=1001) by gdm(uid=0)
+<86>1 2024-05-13T14:43:03.865123Z WS-MARCUS-01 systemd-logind 39180 - - New session 182071 of user admin.
+<30>1 2024-05-13T14:43:43.782697Z WS-MARCUS-01 NetworkManager 39174 - - <info>  [1715611423.7827] device (ens192): state change: ip-config -> activated
+<30>1 2024-05-13T14:43:45.667795Z WS-MARCUS-01 fwupd 45097 - - USB-C Dock: no updates available
+<30>1 2024-05-13T14:46:12.841784Z WS-MARCUS-01 polkitd 41337 - - Unregistered Authentication Agent for unix-session:27 (system bus name :1.126, object path /org/freedesktop/PolicyKit1/AuthenticationAgent)
+<85>1 2024-05-13T14:46:16.950123Z WS-MARCUS-01 sudo 2542341 - - admin : TTY=pts/13 ; PWD=/home/ops ; USER=root ; COMMAND=/usr/bin/ss -ltnp
+<86>1 2024-05-13T14:46:17.093123Z WS-MARCUS-01 sudo 2542341 - - pam_unix(sudo:session): session opened for user root(uid=0) by admin(uid=1001)
+<86>1 2024-05-13T14:46:18.351504Z WS-MARCUS-01 sudo 2542341 - - pam_unix(sudo:session): session closed for user root
+<30>1 2024-05-13T14:46:20.679056Z WS-MARCUS-01 cups-browsed 48028 - - Created local queue CORP-PRINT-01 (ipp_everywhere)
+<85>1 2024-05-13T14:46:22.027046Z WS-MARCUS-01 sudo 2542369 - - admin : TTY=pts/13 ; PWD=/tmp ; USER=root ; COMMAND=/usr/bin/iostat -xz 1 3
+<86>1 2024-05-13T14:46:22.127046Z WS-MARCUS-01 sudo 2542369 - - pam_unix(sudo:session): session opened for user root(uid=0) by admin(uid=1001)
+<86>1 2024-05-13T14:46:26.396492Z WS-MARCUS-01 sudo 2542369 - - pam_unix(sudo:session): session closed for user root
+<30>1 2024-05-13T14:46:51.527015Z WS-MARCUS-01 irqbalance 23579 - - NUMA node 0: balancing pass complete, 0 IRQs moved
+<30>1 2024-05-13T14:47:24.025389Z WS-MARCUS-01 polkitd 41337 - - Unregistered Authentication Agent for unix-session:21 (system bus name :1.135, object path /org/freedesktop/PolicyKit1/AuthenticationAgent)
+<30>1 2024-05-13T14:47:24.770480Z WS-MARCUS-01 NetworkManager 39174 - - <info>  [1715611644.7705] device (ens192): state change: ip-config -> activated
+<30>1 2024-05-13T14:48:06.744798Z WS-MARCUS-01 NetworkManager 39174 - - <info>  [1715611686.7448] dhcp4 (ens192): state changed renew -> bound
+<30>1 2024-05-13T14:50:38.700964Z WS-MARCUS-01 dbus-daemon 39175 - - [system] Activating via systemd: service name='org.freedesktop.timedate1' unit='dbus-org.freedesktop.timedate1.service' requested by ':1.160'
+<30>1 2024-05-13T14:53:51.370200Z WS-MARCUS-01 systemd-timesyncd 39226 - - System clock synchronized to 129.6.15.28:123.
+<30>1 2024-05-13T14:53:52.628526Z WS-MARCUS-01 NetworkManager 39174 - - <info>  [1715612032.6285] manager: NetworkManager state is now CONNECTED_GLOBAL
+<86>1 2024-05-13T14:57:37.420376Z WS-MARCUS-01 gdm-password 2545558 - - pam_unix(gdm-password:session): session opened for user svc_app(uid=2214) by gdm(uid=0)
+<86>1 2024-05-13T14:57:41.017376Z WS-MARCUS-01 systemd-logind 39180 - - New session 182202 of user svc_app.
+<86>1 2024-05-13T14:58:29.828317Z WS-MARCUS-01 gdm-password 2545842 - - pam_unix(gdm-password:session): session opened for user backup(uid=3037) by gdm(uid=0)
+<86>1 2024-05-13T14:58:37.492317Z WS-MARCUS-01 systemd-logind 39180 - - New session 182210 of user backup.
+<85>1 2024-05-13T14:59:56.597317Z WS-MARCUS-01 sudo 2546386 - - backup : TTY=pts/14 ; PWD=/etc ; USER=root ; COMMAND=/usr/bin/apt list --upgradable
+<86>1 2024-05-13T14:59:56.701317Z WS-MARCUS-01 sudo 2546386 - - pam_unix(sudo:session): session opened for user root(uid=0) by backup(uid=3037)
+<86>1 2024-05-13T15:00:07.471070Z WS-MARCUS-01 sudo 2546386 - - pam_unix(sudo:session): session closed for user root
+<30>1 2024-05-13T15:01:21.845305Z WS-MARCUS-01 NetworkManager 39174 - - <info>  [1715612481.8453] dhcp4 (ens192): state changed renew -> bound
+<30>1 2024-05-13T15:01:23.371049Z WS-MARCUS-01 packagekitd 2757 - - resolve transaction /581404
+<30>1 2024-05-13T15:02:17.356085Z WS-MARCUS-01 NetworkManager 39174 - - <info>  [1715612537.3561] manager: NetworkManager state is now CONNECTED_GLOBAL
+<30>1 2024-05-13T15:02:17.816606Z WS-MARCUS-01 NetworkManager 39174 - - <info>  [1715612537.8166] device (ens192): state change: ip-config -> activated
+<30>1 2024-05-13T15:03:25.812840Z WS-MARCUS-01 systemd-timesyncd 39226 - - System clock synchronized to 129.6.15.28:123.
+<78>1 2024-05-13T15:05:00.054000Z WS-MARCUS-01 CRON 2547083 - - (sysstat) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+<30>1 2024-05-13T15:05:44.341790Z WS-MARCUS-01 fwupd 45097 - - System Firmware: no updates available
+<30>1 2024-05-13T15:05:45.222818Z WS-MARCUS-01 accounts-daemon 25357 - - user 'admin' has logged in
+<30>1 2024-05-13T15:05:46.043969Z WS-MARCUS-01 packagekitd 2757 - - resolve transaction /856405
+<85>1 2024-05-13T15:06:54.096376Z WS-MARCUS-01 sudo 2547383 - - svc_app : TTY=pts/15 ; PWD=/home/ops ; USER=root ; COMMAND=/usr/bin/lsblk
+<86>1 2024-05-13T15:06:54.373376Z WS-MARCUS-01 sudo 2547383 - - pam_unix(sudo:session): session opened for user root(uid=0) by svc_app(uid=2214)
+<86>1 2024-05-13T15:06:56.274828Z WS-MARCUS-01 sudo 2547383 - - pam_unix(sudo:session): session closed for user root
+<30>1 2024-05-13T15:07:22.566250Z WS-MARCUS-01 gnome-shell 58389 - - Window manager warning: Overwriting existing binding of keysym XF86AudioMute with keysym Super_L
+<30>1 2024-05-13T15:08:54.977006Z WS-MARCUS-01 avahi-daemon 50394 - - Withdrawing address record for ens192.
+<30>1 2024-05-13T15:09:01.383658Z WS-MARCUS-01 systemd-timesyncd 39226 - - Selected time server 129.6.15.28:123.
+<30>1 2024-05-13T15:09:07.784709Z WS-MARCUS-01 NetworkManager 39174 - - <info>  [1715612947.7847] manager: NetworkManager state is now CONNECTED_GLOBAL
+<30>1 2024-05-13T15:09:42.593654Z WS-MARCUS-01 gnome-shell 58389 - - Extension appindicatorsupport@rgcjonas.gmail.com already enabled
+<30>1 2024-05-13T15:13:06.269507Z WS-MARCUS-01 thermald 43929 - - Unsupported cpu model, use default config
+<30>1 2024-05-13T15:14:34.082289Z WS-MARCUS-01 cups-browsed 48028 - - Printer FRONTDESK-MFP was not found by DNS-SD, keeping stale queue for now
+<30>1 2024-05-13T15:14:34.680137Z WS-MARCUS-01 NetworkManager 39174 - - <info>  [1715613274.6801] manager: NetworkManager state is now CONNECTED_GLOBAL
+<30>1 2024-05-13T15:15:57.844306Z WS-MARCUS-01 NetworkManager 39174 - - <info>  [1715613357.8443] device (ens192): state change: ip-config -> activated
+<30>1 2024-05-13T15:15:58.508503Z WS-MARCUS-01 NetworkManager 39174 - - <info>  [1715613358.5085] device (ens192): state change: ip-config -> activated
+<30>1 2024-05-13T15:15:58.626884Z WS-MARCUS-01 packagekitd 2757 - - resolve transaction /242423
+<30>1 2024-05-13T15:16:11.122805Z WS-MARCUS-01 systemd-timesyncd 39226 - - Selected time server 129.6.15.28:123.
+<30>1 2024-05-13T15:17:57.001330Z WS-MARCUS-01 NetworkManager 39174 - - <info>  [1715613477.0013] dhcp4 (ens192): state changed renew -> bound
+<30>1 2024-05-13T15:18:06.299241Z WS-MARCUS-01 NetworkManager 39174 - - <info>  [1715613486.2992] device (ens192): state change: disconnected -> prepare
+<30>1 2024-05-13T15:19:24.329540Z WS-MARCUS-01 packagekitd 2757 - - resolve transaction /902177
+<30>1 2024-05-13T15:19:56.990314Z WS-MARCUS-01 NetworkManager 39174 - - <info>  [1715613596.9903] manager: NetworkManager state is now CONNECTED_GLOBAL
+<30>1 2024-05-13T15:20:00.383227Z WS-MARCUS-01 snapd 39215 - - stateengine.go:150: state ensure starting change 5550
+<30>1 2024-05-13T15:21:18.485846Z WS-MARCUS-01 avahi-daemon 50394 - - Withdrawing address record for ens192.
+<30>1 2024-05-13T15:21:23.522730Z WS-MARCUS-01 systemd-resolved 39232 - - Using degraded feature set TCP instead of UDP+EDNS0 for DNS server 208.67.222.222.
+<30>1 2024-05-13T15:21:25.169195Z WS-MARCUS-01 dbus-daemon 39175 - - [system] Successfully activated service 'org.freedesktop.locale1' for ':1.161'
+<30>1 2024-05-13T15:21:25.804895Z WS-MARCUS-01 gnome-shell 58389 - - Window manager warning: Overwriting existing binding of keysym Print with keysym Super_L
+<30>1 2024-05-13T15:23:40.701247Z WS-MARCUS-01 thermald 43929 - - thermal zone acpitz: trip point updated
+<30>1 2024-05-13T15:25:34.233433Z WS-MARCUS-01 NetworkManager 39174 - - <info>  [1715613934.2334] dhcp4 (ens192): state changed renew -> bound
+<30>1 2024-05-13T15:28:16.579441Z WS-MARCUS-01 dbus-daemon 39175 - - [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service' requested by ':1.162'
+<30>1 2024-05-13T15:29:48.384618Z WS-MARCUS-01 systemd-timesyncd 39226 - - System clock synchronized to 129.6.15.28:123.
+<30>1 2024-05-13T15:30:24.263030Z WS-MARCUS-01 systemd-journald 39152 - - Runtime Journal (/run/log/journal/d7da819689eae346ac5451a1fc5b8063) is 827.6M, max 4096M, 3268.4M free.
+<30>1 2024-05-13T15:31:27.528386Z WS-MARCUS-01 irqbalance 23579 - - Skipping IRQ 24: banned by affinity mask 00000001 (ens160)
+<30>1 2024-05-13T15:32:48.538017Z WS-MARCUS-01 packagekitd 2757 - - resolve transaction /426705
+<30>1 2024-05-13T15:34:30.375747Z WS-MARCUS-01 NetworkManager 39174 - - <info>  [1715614470.3757] device (ens192): state change: ip-config -> activated
+<30>1 2024-05-13T15:34:40.373900Z WS-MARCUS-01 cups-browsed 48028 - - Printer FRONTDESK-MFP was not found by DNS-SD, keeping stale queue for now
+<78>1 2024-05-13T15:35:00.081000Z WS-MARCUS-01 CRON 2551246 - - (sysstat) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+<30>1 2024-05-13T15:35:16.881246Z WS-MARCUS-01 tracker-miner-fs-3 13275 - - Miner finished crawling /home/admin/Documents
+<30>1 2024-05-13T15:35:20.081466Z WS-MARCUS-01 thermald 43929 - - thermal zone acpitz: trip point updated
+<30>1 2024-05-13T15:37:40.504895Z WS-MARCUS-01 systemd-timesyncd 39226 - - System clock synchronized to 129.6.15.28:123.
+<86>1 2024-05-13T15:39:20.066598Z WS-MARCUS-01 gdm-password 2551773 - - pam_unix(gdm-password:session): session opened for user admin(uid=1001) by gdm(uid=0)
+<86>1 2024-05-13T15:39:27.686598Z WS-MARCUS-01 systemd-logind 39180 - - New session 182577 of user admin.
+<30>1 2024-05-13T15:39:30.087066Z WS-MARCUS-01 systemd-resolved 39232 - - Grace period over, resuming full feature set (UDP+EDNS0) for DNS server 208.67.222.222.
+<30>1 2024-05-13T15:39:43.863069Z WS-MARCUS-01 packagekitd 2757 - - search-names transaction /807396
+<30>1 2024-05-13T15:43:02.942176Z WS-MARCUS-01 gnome-shell 58389 - - Extension ubuntu-dock@ubuntu.com already enabled
+<30>1 2024-05-13T15:43:10.545283Z WS-MARCUS-01 systemd-timesyncd 39226 - - Selected time server 129.6.15.28:123.
+<30>1 2024-05-13T15:45:25.723045Z WS-MARCUS-01 cups-browsed 48028 - - Browse remote printer FRONTDESK-MFP at 370745
+<84>1 2024-05-13T15:45:47.459020Z WS-MARCUS-01 login 2552704 - - pam_unix(login:auth): authentication failure; logname=LOGIN uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=marcus.oyelaran
+<30>1 2024-05-13T15:46:07.592772Z WS-MARCUS-01 snapd 39215 - - stateengine.go:150: state ensure starting change 5551
+<85>1 2024-05-13T15:49:09.812598Z WS-MARCUS-01 sudo 2553072 - - admin : TTY=pts/16 ; PWD=/home/ops ; USER=root ; COMMAND=/usr/bin/needrestart -b
+<86>1 2024-05-13T15:49:10.107598Z WS-MARCUS-01 sudo 2553072 - - pam_unix(sudo:session): session opened for user root(uid=0) by admin(uid=1001)
+<30>1 2024-05-13T15:49:13.067202Z WS-MARCUS-01 systemd-timesyncd 39226 - - System clock synchronized to 129.6.15.28:123.
+<86>1 2024-05-13T15:49:17.580237Z WS-MARCUS-01 sudo 2553072 - - pam_unix(sudo:session): session closed for user root

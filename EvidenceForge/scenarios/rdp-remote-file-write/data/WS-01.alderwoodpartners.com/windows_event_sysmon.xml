@@ -1,0 +1,3728 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Events>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>5</EventID>
+    <Version>3</Version>
+    <Level>4</Level>
+    <Task>5</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:01:05.5761906Z"/>
+    <EventRecordID>515010</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:01:05.573</Data>
+    <Data Name="ProcessGuid">{641a7f09-d118-65e5-3b00-0010ab7706d5}</Data>
+    <Data Name="ProcessId">3752</Data>
+    <Data Name="Image">C:\Windows\System32\wbem\WmiPrvSE.exe</Data>
+    <Data Name="User">NT AUTHORITY\SYSTEM</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>1</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>1</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:04:15.0049123Z"/>
+    <EventRecordID>515016</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="3392"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:04:15.003</Data>
+    <Data Name="ProcessGuid">{641a7f09-d4df-65e5-2d02-0010e7e09035}</Data>
+    <Data Name="ProcessId">3956</Data>
+    <Data Name="Image">C:\Windows\System32\winlogon.exe</Data>
+    <Data Name="FileVersion">-</Data>
+    <Data Name="Description">-</Data>
+    <Data Name="Product">-</Data>
+    <Data Name="Company">-</Data>
+    <Data Name="OriginalFileName">-</Data>
+    <Data Name="CommandLine">winlogon.exe</Data>
+    <Data Name="CurrentDirectory">C:\Windows\System32\</Data>
+    <Data Name="User">NT AUTHORITY\SYSTEM</Data>
+    <Data Name="LogonGuid">{00000000-0000-0000-0000-000000000000}</Data>
+    <Data Name="LogonId">0x3e7</Data>
+    <Data Name="TerminalSessionId">0</Data>
+    <Data Name="IntegrityLevel">System</Data>
+    <Data Name="Hashes">SHA1=9346FD5F83897428CBEEFE7541717E3A158E2B11,MD5=11A2E297BEA7B166F4A9D2C6BE5E2278,SHA256=6B0FA04BC5E8CE24A5DB36851D4A6CDBBB1030B9C471A3E4FC3BD613B85080E7,IMPHASH=57930F079A22768C8BF86A9C197BCDCF</Data>
+    <Data Name="ParentProcessGuid">{641a7f09-46e1-65be-9d02-0000aa018f2a}</Data>
+    <Data Name="ParentProcessId">2024</Data>
+    <Data Name="ParentImage">C:\Windows\System32\smss.exe</Data>
+    <Data Name="ParentCommandLine">smss.exe</Data>
+    <Data Name="ParentUser">NT AUTHORITY\SYSTEM</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>1</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>1</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:04:17.1465751Z"/>
+    <EventRecordID>515017</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="3392"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:04:17.144</Data>
+    <Data Name="ProcessGuid">{641a7f09-d4e1-65e5-5b02-0000d429d17b}</Data>
+    <Data Name="ProcessId">3960</Data>
+    <Data Name="Image">C:\Windows\System32\userinit.exe</Data>
+    <Data Name="FileVersion">-</Data>
+    <Data Name="Description">-</Data>
+    <Data Name="Product">-</Data>
+    <Data Name="Company">-</Data>
+    <Data Name="OriginalFileName">-</Data>
+    <Data Name="CommandLine">userinit.exe</Data>
+    <Data Name="CurrentDirectory">C:\Windows\System32\</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    <Data Name="LogonGuid">{00000000-0000-0000-0000-000000000000}</Data>
+    <Data Name="LogonId">0x1531bd72</Data>
+    <Data Name="TerminalSessionId">5</Data>
+    <Data Name="IntegrityLevel">Medium</Data>
+    <Data Name="Hashes">SHA1=6A4714367CD4C105D4349C5F089354153BE58DD9,MD5=5A56268C48DE9F5E679EDCE87E08B276,SHA256=91665FC0325F4DE548C15AAFB5C01CD83C3A50136038AE6B7BB2DC31330399A9,IMPHASH=6B2B4605529C1A2D51ED6C8F0DFC02C4</Data>
+    <Data Name="ParentProcessGuid">{641a7f09-d4df-65e5-2d02-0010e7e09035}</Data>
+    <Data Name="ParentProcessId">3956</Data>
+    <Data Name="ParentImage">C:\Windows\System32\winlogon.exe</Data>
+    <Data Name="ParentCommandLine">winlogon.exe</Data>
+    <Data Name="ParentUser">NT AUTHORITY\SYSTEM</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>1</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>1</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:04:18.0644163Z"/>
+    <EventRecordID>515018</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="3392"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:04:18.063</Data>
+    <Data Name="ProcessGuid">{641a7f09-d4e2-65e5-6e02-0010d534f768}</Data>
+    <Data Name="ProcessId">3968</Data>
+    <Data Name="Image">C:\Windows\explorer.exe</Data>
+    <Data Name="FileVersion">10.0.22621.1</Data>
+    <Data Name="Description">Windows Explorer</Data>
+    <Data Name="Product">Microsoft Windows Operating System</Data>
+    <Data Name="Company">Microsoft Corporation</Data>
+    <Data Name="OriginalFileName">EXPLORER.EXE</Data>
+    <Data Name="CommandLine">explorer.exe</Data>
+    <Data Name="CurrentDirectory">C:\Windows\</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    <Data Name="LogonGuid">{00000000-0000-0000-0000-000000000000}</Data>
+    <Data Name="LogonId">0x1531bd72</Data>
+    <Data Name="TerminalSessionId">5</Data>
+    <Data Name="IntegrityLevel">Medium</Data>
+    <Data Name="Hashes">SHA1=3922E3757754CF8848DAFCB0E35BD21FC056C472,MD5=F01FD4C9C159B0E18F9FE7FA4FDC181A,SHA256=8C469B1EB65ED2CFD03B604DDEF39743BB03724423FB1FD944E29D590B369B3B,IMPHASH=A863B5AAD4A2056679EBC19C74B829AE</Data>
+    <Data Name="ParentProcessGuid">{641a7f09-d4e1-65e5-5b02-0000d429d17b}</Data>
+    <Data Name="ParentProcessId">3960</Data>
+    <Data Name="ParentImage">C:\Windows\System32\userinit.exe</Data>
+    <Data Name="ParentCommandLine">userinit.exe</Data>
+    <Data Name="ParentUser">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>5</EventID>
+    <Version>3</Version>
+    <Level>4</Level>
+    <Task>5</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:04:20.5994271Z"/>
+    <EventRecordID>515019</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="3392"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:04:20.596</Data>
+    <Data Name="ProcessGuid">{641a7f09-d4e1-65e5-5b02-0000d429d17b}</Data>
+    <Data Name="ProcessId">3960</Data>
+    <Data Name="Image">C:\Windows\System32\userinit.exe</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>1</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>1</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:07:31.1926890Z"/>
+    <EventRecordID>515020</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:07:31.191</Data>
+    <Data Name="ProcessGuid">{641a7f09-d5a3-65e5-4c00-001053f899e9}</Data>
+    <Data Name="ProcessId">3904</Data>
+    <Data Name="Image">C:\Windows\System32\SearchProtocolHost.exe</Data>
+    <Data Name="FileVersion">10.0.22621.1</Data>
+    <Data Name="Description">Microsoft Windows Search Protocol Host</Data>
+    <Data Name="Product">Microsoft Windows Operating System</Data>
+    <Data Name="Company">Microsoft Corporation</Data>
+    <Data Name="OriginalFileName">SearchProtocolHost.exe</Data>
+    <Data Name="CommandLine">SearchProtocolHost.exe Global\UsGthrFltPipeMssGthrPipe_S-1-5-18 Global\UsGthrCtrlFltPipeMssGthrPipe_S-1-5-18 1</Data>
+    <Data Name="CurrentDirectory">C:\Windows\System32\</Data>
+    <Data Name="User">NT AUTHORITY\SYSTEM</Data>
+    <Data Name="LogonGuid">{00000000-0000-0000-0000-000000000000}</Data>
+    <Data Name="LogonId">0x3e7</Data>
+    <Data Name="TerminalSessionId">0</Data>
+    <Data Name="IntegrityLevel">System</Data>
+    <Data Name="Hashes">SHA1=43216957F6B1F6C0C1C954D1CFC7F9CE3FC72B60,MD5=BA242BD070D4A866C5D58169DB10ED02,SHA256=D48FE4EDB7B572D8CF8A37CD1AFC0882D88CA17A0BE3F4615C9E5A4F608E954A,IMPHASH=E495A5C3FEEEA98E32665B0ADE2B5A18</Data>
+    <Data Name="ParentProcessGuid">{641a7f09-46f5-65be-fb00-0000613b3cdf}</Data>
+    <Data Name="ParentProcessId">2288</Data>
+    <Data Name="ParentImage">C:\Windows\System32\SearchIndexer.exe</Data>
+    <Data Name="ParentCommandLine">SearchIndexer.exe</Data>
+    <Data Name="ParentUser">NT AUTHORITY\SYSTEM</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>1</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>1</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:07:38.6853106Z"/>
+    <EventRecordID>515021</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:07:38.684</Data>
+    <Data Name="ProcessGuid">{641a7f09-d5aa-65e5-a102-0000f98edefb}</Data>
+    <Data Name="ProcessId">3932</Data>
+    <Data Name="Image">C:\Windows\System32\conhost.exe</Data>
+    <Data Name="FileVersion">10.0.22621.1</Data>
+    <Data Name="Description">Console Window Host</Data>
+    <Data Name="Product">Microsoft Windows Operating System</Data>
+    <Data Name="Company">Microsoft Corporation</Data>
+    <Data Name="OriginalFileName">conhost.exe</Data>
+    <Data Name="CommandLine">\??\C:\Windows\system32\conhost.exe 0xffffffff -ForceV1</Data>
+    <Data Name="CurrentDirectory">C:\Windows\System32\</Data>
+    <Data Name="User">NT AUTHORITY\SYSTEM</Data>
+    <Data Name="LogonGuid">{00000000-0000-0000-0000-000000000000}</Data>
+    <Data Name="LogonId">0x3e7</Data>
+    <Data Name="TerminalSessionId">0</Data>
+    <Data Name="IntegrityLevel">System</Data>
+    <Data Name="Hashes">SHA1=C5BD601C27AA1527E53242CF6DCE1C779AB58F54,MD5=C7180D6EF3169C4CFD9152F2E0F718D6,SHA256=14986A25CAF24462E361E0E3D07934E9926D2E0D36D1C8FEFCDE00AB59AF67C6,IMPHASH=8E63419D15B3090A0F7E22048F46A007</Data>
+    <Data Name="ParentProcessGuid">{641a7f09-46e2-65be-6e02-0010e2d474bc}</Data>
+    <Data Name="ParentProcessId">2044</Data>
+    <Data Name="ParentImage">C:\Windows\System32\csrss.exe</Data>
+    <Data Name="ParentCommandLine">csrss.exe</Data>
+    <Data Name="ParentUser">NT AUTHORITY\SYSTEM</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>5</EventID>
+    <Version>3</Version>
+    <Level>4</Level>
+    <Task>5</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:07:43.2449658Z"/>
+    <EventRecordID>515022</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:07:43.239</Data>
+    <Data Name="ProcessGuid">{641a7f09-d5aa-65e5-a102-0000f98edefb}</Data>
+    <Data Name="ProcessId">3932</Data>
+    <Data Name="Image">C:\Windows\System32\conhost.exe</Data>
+    <Data Name="User">NT AUTHORITY\SYSTEM</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>13</EventID>
+    <Version>2</Version>
+    <Level>4</Level>
+    <Task>13</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:09:26.0610121Z"/>
+    <EventRecordID>515023</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="EventType">SetValue</Data>
+    <Data Name="UtcTime">2024-03-04 14:09:26.060</Data>
+    <Data Name="ProcessGuid">{641a7f09-4702-65be-d802-000038d9816d}</Data>
+    <Data Name="ProcessId">2396</Data>
+    <Data Name="Image">C:\Windows\explorer.exe</Data>
+    <Data Name="TargetObject">HKU\S-1-5-21-1198276704-1000000000-1000048801-24011\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{CEBFF5CD-ACE2-4F4F-9178-9926F41749EA}\Count\HRZR_EHACNGU:P:\Hfref\qnan.juvgsvryq\NccQngn\Ebnzvat\Zvpebfbsg\Jvaqbjf\Fgneg Zrah\Cebtenzf\Grnzf.yax</Data>
+    <Data Name="Details">00 00 00 00 45 00 00 00 3F 00 00 00 A8 9A 0E 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 0F AD 3B D7 81 DA 01 00 00 00 00</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>3</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>3</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:11:34.4271210Z"/>
+    <EventRecordID>515026</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:11:34.406</Data>
+    <Data Name="ProcessGuid">{641a7f09-46ec-65be-6200-0010b9fc7c2a}</Data>
+    <Data Name="ProcessId">2176</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\LOCAL SERVICE</Data>
+    <Data Name="Protocol">udp</Data>
+    <Data Name="Initiated">true</Data>
+    <Data Name="SourceIsIpv6">false</Data>
+    <Data Name="SourceIp">10.40.12.11</Data>
+    <Data Name="SourceHostname">WS-01.alderwoodpartners.com</Data>
+    <Data Name="SourcePort">54938</Data>
+    <Data Name="SourcePortName">-</Data>
+    <Data Name="DestinationIsIpv6">false</Data>
+    <Data Name="DestinationIp">1.0.0.1</Data>
+    <Data Name="DestinationHostname">-</Data>
+    <Data Name="DestinationPort">53</Data>
+    <Data Name="DestinationPortName">domain</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>1</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>1</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:13:34.8056968Z"/>
+    <EventRecordID>515027</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:13:34.804</Data>
+    <Data Name="ProcessGuid">{641a7f09-d70e-65e5-a502-0000c72588a7}</Data>
+    <Data Name="ProcessId">3868</Data>
+    <Data Name="Image">C:\Windows\System32\SearchFilterHost.exe</Data>
+    <Data Name="FileVersion">10.0.22621.1</Data>
+    <Data Name="Description">Microsoft Windows Search Filter Host</Data>
+    <Data Name="Product">Microsoft Windows Operating System</Data>
+    <Data Name="Company">Microsoft Corporation</Data>
+    <Data Name="OriginalFileName">SearchFilterHost.exe</Data>
+    <Data Name="CommandLine">SearchFilterHost.exe 0 820 0 0 0</Data>
+    <Data Name="CurrentDirectory">C:\Windows\System32\</Data>
+    <Data Name="User">NT AUTHORITY\SYSTEM</Data>
+    <Data Name="LogonGuid">{00000000-0000-0000-0000-000000000000}</Data>
+    <Data Name="LogonId">0x3e7</Data>
+    <Data Name="TerminalSessionId">0</Data>
+    <Data Name="IntegrityLevel">System</Data>
+    <Data Name="Hashes">SHA1=0C19DDD62CEFD07AB2CB42FF4878D529F9DFB89D,MD5=BA4A7DF8FAB830DDF49B7F01EFACD90E,SHA256=64BACFAEEB126E9041DB6B9526C676A6830B01431EE23A0BA0F1351CAA484FC6,IMPHASH=7E131377F9483DE692B447AD26B54EEA</Data>
+    <Data Name="ParentProcessGuid">{641a7f09-46f5-65be-fb00-0000613b3cdf}</Data>
+    <Data Name="ParentProcessId">2288</Data>
+    <Data Name="ParentImage">C:\Windows\System32\SearchIndexer.exe</Data>
+    <Data Name="ParentCommandLine">SearchIndexer.exe</Data>
+    <Data Name="ParentUser">NT AUTHORITY\SYSTEM</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:14:26.1902341Z"/>
+    <EventRecordID>515030</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:14:26.188</Data>
+    <Data Name="ProcessGuid">{641a7f09-46eb-65be-ba02-000026f61fe0}</Data>
+    <Data Name="ProcessId">2156</Data>
+    <Data Name="QueryName">c1-onenote-15.cdn.office.net</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">13.107.9.173;13.107.6.173;</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\NETWORK SERVICE</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>13</EventID>
+    <Version>2</Version>
+    <Level>4</Level>
+    <Task>13</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:16:23.9190680Z"/>
+    <EventRecordID>515031</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="EventType">SetValue</Data>
+    <Data Name="UtcTime">2024-03-04 14:16:23.905</Data>
+    <Data Name="ProcessGuid">{641a7f09-4702-65be-d802-000038d9816d}</Data>
+    <Data Name="ProcessId">2396</Data>
+    <Data Name="Image">C:\Windows\explorer.exe</Data>
+    <Data Name="TargetObject">HKU\S-1-5-21-1198276704-1000000000-1000048801-24011\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{CEBFF5CD-ACE2-4F4F-9178-9926F41749EA}\Count\HRZR_EHACNGU:P:\Cebtenz Svyrf\Tbbtyr\Puebzr\Nccyvpngvba\puebzr.rkr</Data>
+    <Data Name="Details">00 00 00 00 3F 00 00 00 09 00 00 00 3C 3F 15 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 79 85 5F E5 6E DA 01 00 00 00 00</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:22:05.8872768Z"/>
+    <EventRecordID>515035</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:22:05.885</Data>
+    <Data Name="ProcessGuid">{641a7f09-46eb-65be-ba02-000026f61fe0}</Data>
+    <Data Name="ProcessId">2156</Data>
+    <Data Name="QueryName">arc.msn.com</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">13.107.246.42;204.79.197.203;</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\NETWORK SERVICE</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>10</EventID>
+    <Version>3</Version>
+    <Level>4</Level>
+    <Task>10</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:23:14.7169654Z"/>
+    <EventRecordID>515036</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:23:14.714</Data>
+    <Data Name="SourceProcessGUID">{641a7f09-46e2-65be-6e02-0010e2d474bc}</Data>
+    <Data Name="SourceProcessId">2044</Data>
+    <Data Name="SourceThreadId">13664</Data>
+    <Data Name="SourceImage">C:\Windows\System32\csrss.exe</Data>
+    <Data Name="TargetProcessGUID">{641a7f09-46e5-65be-f002-00003ac28fde}</Data>
+    <Data Name="TargetProcessId">2108</Data>
+    <Data Name="TargetImage">C:\Windows\System32\lsass.exe</Data>
+    <Data Name="GrantedAccess">0x1000</Data>
+    <Data Name="CallTrace">C:\Windows\SYSTEM32\ntdll.dll+9E679</Data>
+    <Data Name="SourceUser">NT AUTHORITY\SYSTEM</Data>
+    <Data Name="TargetUser">NT AUTHORITY\SYSTEM</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>7</EventID>
+    <Version>3</Version>
+    <Level>4</Level>
+    <Task>7</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:26:57.6596462Z"/>
+    <EventRecordID>515039</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:26:57.659</Data>
+    <Data Name="ProcessGuid">{641a7f09-46e5-65be-f002-00003ac28fde}</Data>
+    <Data Name="ProcessId">2108</Data>
+    <Data Name="Image">C:\Windows\System32\lsass.exe</Data>
+    <Data Name="ImageLoaded">C:\Program Files\VMware\VMware Tools\vmStatsProvider.dll</Data>
+    <Data Name="FileVersion">1.0.0.0</Data>
+    <Data Name="Description">vmStatsProvider.dll module</Data>
+    <Data Name="Product">VMware, Inc.</Data>
+    <Data Name="Company">VMware, Inc.</Data>
+    <Data Name="OriginalFileName">vmStatsProvider.dll</Data>
+    <Data Name="Hashes">SHA1=59D6A2228965DEA66D7C93F926FFF5BEA58D0958,MD5=90B6BA84A505CD2472182B6A3BFF34DD,SHA256=51F5802FF35D872BE25CF1BA725DBFE7E93B2CB0E7620126E5A6CC4F506DF760,IMPHASH=96621860BADAB47E574E7B6E25AA7F61</Data>
+    <Data Name="Signed">true</Data>
+    <Data Name="Signature">VMware, Inc.</Data>
+    <Data Name="SignatureStatus">Valid</Data>
+    <Data Name="User">NT AUTHORITY\SYSTEM</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>10</EventID>
+    <Version>3</Version>
+    <Level>4</Level>
+    <Task>10</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:27:40.7620039Z"/>
+    <EventRecordID>515040</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:27:40.760</Data>
+    <Data Name="SourceProcessGUID">{641a7f09-46f9-65be-f902-00005cc2c27e}</Data>
+    <Data Name="SourceProcessId">2304</Data>
+    <Data Name="SourceThreadId">14204</Data>
+    <Data Name="SourceImage">C:\Windows\System32\dllhost.exe</Data>
+    <Data Name="TargetProcessGUID">{641a7f09-4702-65be-d802-000038d9816d}</Data>
+    <Data Name="TargetProcessId">2396</Data>
+    <Data Name="TargetImage">C:\Windows\explorer.exe</Data>
+    <Data Name="GrantedAccess">0x1000</Data>
+    <Data Name="CallTrace">C:\Windows\SYSTEM32\ntdll.dll+9EBBC|C:\Windows\SYSTEM32\KERNELBASE.dll+2C95F</Data>
+    <Data Name="SourceUser">NT AUTHORITY\SYSTEM</Data>
+    <Data Name="TargetUser">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>5</EventID>
+    <Version>3</Version>
+    <Level>4</Level>
+    <Task>5</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:28:44.2662960Z"/>
+    <EventRecordID>515042</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:28:44.264</Data>
+    <Data Name="ProcessGuid">{641a7f09-ca0c-65e5-2202-0000b5306de3}</Data>
+    <Data Name="ProcessId">3680</Data>
+    <Data Name="Image">C:\Windows\System32\SearchProtocolHost.exe</Data>
+    <Data Name="User">NT AUTHORITY\SYSTEM</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>13</EventID>
+    <Version>2</Version>
+    <Level>4</Level>
+    <Task>13</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:29:33.2627388Z"/>
+    <EventRecordID>515043</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="EventType">SetValue</Data>
+    <Data Name="UtcTime">2024-03-04 14:29:33.261</Data>
+    <Data Name="ProcessGuid">{641a7f09-4702-65be-d802-000038d9816d}</Data>
+    <Data Name="ProcessId">2396</Data>
+    <Data Name="Image">C:\Windows\explorer.exe</Data>
+    <Data Name="TargetObject">HKU\S-1-5-21-1198276704-1000000000-1000048801-24011\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{CEBFF5CD-ACE2-4F4F-9178-9926F41749EA}\Count\HRZR_EHACNGU:P:\Jvaqbjf\Flfgrz32\zfgfp.rkr</Data>
+    <Data Name="Details">00 00 00 00 4C 00 00 00 02 00 00 00 78 3F 02 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 36 08 2D 9B 77 DA 01 00 00 00 00</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>1</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>1</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:37:34.7317519Z"/>
+    <EventRecordID>515047</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:37:34.728</Data>
+    <Data Name="ProcessGuid">{641a7f09-dcae-65e5-8402-001000bd0005}</Data>
+    <Data Name="ProcessId">3912</Data>
+    <Data Name="Image">C:\Windows\System32\wbem\WmiPrvSE.exe</Data>
+    <Data Name="FileVersion">10.0.22621.1</Data>
+    <Data Name="Description">WMI Provider Host</Data>
+    <Data Name="Product">Microsoft Windows Operating System</Data>
+    <Data Name="Company">Microsoft Corporation</Data>
+    <Data Name="OriginalFileName">WmiPrvSE.exe</Data>
+    <Data Name="CommandLine">WmiPrvSE.exe -secured -Embedding</Data>
+    <Data Name="CurrentDirectory">C:\Windows\System32\</Data>
+    <Data Name="User">NT AUTHORITY\SYSTEM</Data>
+    <Data Name="LogonGuid">{00000000-0000-0000-0000-000000000000}</Data>
+    <Data Name="LogonId">0x3e7</Data>
+    <Data Name="TerminalSessionId">0</Data>
+    <Data Name="IntegrityLevel">System</Data>
+    <Data Name="Hashes">SHA1=46ED812F7B5C135F9B5C3B57477D88A786683FF2,MD5=AAEAE0631E80D5742B02ED7046F7C425,SHA256=894ABE128AA86E96E7CD29A302C0E058BF88455F7D54C53BF1C01C3669D49661,IMPHASH=2AF1A337C33BBA81DFC20C21850217EF</Data>
+    <Data Name="ParentProcessGuid">{641a7f09-46e8-65be-2d00-00006bccf361}</Data>
+    <Data Name="ParentProcessId">2148</Data>
+    <Data Name="ParentImage">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="ParentCommandLine">svchost.exe -k DcomLaunch</Data>
+    <Data Name="ParentUser">NT AUTHORITY\SYSTEM</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>1</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>1</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:40:02.7471694Z"/>
+    <EventRecordID>515050</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:40:02.746</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd42-65e5-f100-0010ab187bdb}</Data>
+    <Data Name="ProcessId">3796</Data>
+    <Data Name="Image">C:\Windows\System32\winlogon.exe</Data>
+    <Data Name="FileVersion">-</Data>
+    <Data Name="Description">-</Data>
+    <Data Name="Product">-</Data>
+    <Data Name="Company">-</Data>
+    <Data Name="OriginalFileName">-</Data>
+    <Data Name="CommandLine">winlogon.exe</Data>
+    <Data Name="CurrentDirectory">C:\Windows\System32\</Data>
+    <Data Name="User">NT AUTHORITY\SYSTEM</Data>
+    <Data Name="LogonGuid">{00000000-0000-0000-0000-000000000000}</Data>
+    <Data Name="LogonId">0x3e7</Data>
+    <Data Name="TerminalSessionId">0</Data>
+    <Data Name="IntegrityLevel">System</Data>
+    <Data Name="Hashes">SHA1=9346FD5F83897428CBEEFE7541717E3A158E2B11,MD5=11A2E297BEA7B166F4A9D2C6BE5E2278,SHA256=6B0FA04BC5E8CE24A5DB36851D4A6CDBBB1030B9C471A3E4FC3BD613B85080E7,IMPHASH=57930F079A22768C8BF86A9C197BCDCF</Data>
+    <Data Name="ParentProcessGuid">{641a7f09-46e1-65be-9d02-0000aa018f2a}</Data>
+    <Data Name="ParentProcessId">2024</Data>
+    <Data Name="ParentImage">C:\Windows\System32\smss.exe</Data>
+    <Data Name="ParentCommandLine">smss.exe</Data>
+    <Data Name="ParentUser">NT AUTHORITY\SYSTEM</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>1</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>1</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:40:05.1239419Z"/>
+    <EventRecordID>515051</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:40:05.122</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd45-65e5-1902-0000565d0228}</Data>
+    <Data Name="ProcessId">3800</Data>
+    <Data Name="Image">C:\Windows\System32\userinit.exe</Data>
+    <Data Name="FileVersion">-</Data>
+    <Data Name="Description">-</Data>
+    <Data Name="Product">-</Data>
+    <Data Name="Company">-</Data>
+    <Data Name="OriginalFileName">-</Data>
+    <Data Name="CommandLine">userinit.exe</Data>
+    <Data Name="CurrentDirectory">C:\Windows\System32\</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    <Data Name="LogonGuid">{00000000-0000-0000-0000-000000000000}</Data>
+    <Data Name="LogonId">0x1536397b</Data>
+    <Data Name="TerminalSessionId">2</Data>
+    <Data Name="IntegrityLevel">Medium</Data>
+    <Data Name="Hashes">SHA1=6A4714367CD4C105D4349C5F089354153BE58DD9,MD5=5A56268C48DE9F5E679EDCE87E08B276,SHA256=91665FC0325F4DE548C15AAFB5C01CD83C3A50136038AE6B7BB2DC31330399A9,IMPHASH=6B2B4605529C1A2D51ED6C8F0DFC02C4</Data>
+    <Data Name="ParentProcessGuid">{641a7f09-dd42-65e5-f100-0010ab187bdb}</Data>
+    <Data Name="ParentProcessId">3796</Data>
+    <Data Name="ParentImage">C:\Windows\System32\winlogon.exe</Data>
+    <Data Name="ParentCommandLine">winlogon.exe</Data>
+    <Data Name="ParentUser">NT AUTHORITY\SYSTEM</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>1</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>1</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:40:05.3538523Z"/>
+    <EventRecordID>515052</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:40:05.349</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd45-65e5-b500-00100e3e4f20}</Data>
+    <Data Name="ProcessId">3820</Data>
+    <Data Name="Image">C:\Windows\explorer.exe</Data>
+    <Data Name="FileVersion">10.0.22621.1</Data>
+    <Data Name="Description">Windows Explorer</Data>
+    <Data Name="Product">Microsoft Windows Operating System</Data>
+    <Data Name="Company">Microsoft Corporation</Data>
+    <Data Name="OriginalFileName">EXPLORER.EXE</Data>
+    <Data Name="CommandLine">explorer.exe</Data>
+    <Data Name="CurrentDirectory">C:\Windows\</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    <Data Name="LogonGuid">{00000000-0000-0000-0000-000000000000}</Data>
+    <Data Name="LogonId">0x1536397b</Data>
+    <Data Name="TerminalSessionId">2</Data>
+    <Data Name="IntegrityLevel">Medium</Data>
+    <Data Name="Hashes">SHA1=3922E3757754CF8848DAFCB0E35BD21FC056C472,MD5=F01FD4C9C159B0E18F9FE7FA4FDC181A,SHA256=8C469B1EB65ED2CFD03B604DDEF39743BB03724423FB1FD944E29D590B369B3B,IMPHASH=A863B5AAD4A2056679EBC19C74B829AE</Data>
+    <Data Name="ParentProcessGuid">{641a7f09-dd45-65e5-1902-0000565d0228}</Data>
+    <Data Name="ParentProcessId">3800</Data>
+    <Data Name="ParentImage">C:\Windows\System32\userinit.exe</Data>
+    <Data Name="ParentCommandLine">userinit.exe</Data>
+    <Data Name="ParentUser">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>5</EventID>
+    <Version>3</Version>
+    <Level>4</Level>
+    <Task>5</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:40:10.3060763Z"/>
+    <EventRecordID>515053</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:40:10.300</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd45-65e5-1902-0000565d0228}</Data>
+    <Data Name="ProcessId">3800</Data>
+    <Data Name="Image">C:\Windows\System32\userinit.exe</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:40:36.5197859Z"/>
+    <EventRecordID>515055</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="3392"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:40:36.508</Data>
+    <Data Name="ProcessGuid">{641a7f09-46eb-65be-ba02-000026f61fe0}</Data>
+    <Data Name="ProcessId">2156</Data>
+    <Data Name="QueryName">media.akamai.net</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">23.205.100.42;23.205.101.42;</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\NETWORK SERVICE</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>1</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>1</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:40:46.9736006Z"/>
+    <EventRecordID>515056</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="3392"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:40:46.971</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd6e-65e5-ec00-001011d8bbf3}</Data>
+    <Data Name="ProcessId">3992</Data>
+    <Data Name="Image">C:\Windows\System32\mstsc.exe</Data>
+    <Data Name="FileVersion">10.0.22621.1</Data>
+    <Data Name="Description">Remote Desktop Connection</Data>
+    <Data Name="Product">Microsoft Windows Operating System</Data>
+    <Data Name="Company">Microsoft Corporation</Data>
+    <Data Name="OriginalFileName">mstsc.exe</Data>
+    <Data Name="CommandLine">mstsc.exe /v:WS-02</Data>
+    <Data Name="CurrentDirectory">C:\Windows\System32\</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    <Data Name="LogonGuid">{00000000-0000-0000-0000-000000000000}</Data>
+    <Data Name="LogonId">0x1536397b</Data>
+    <Data Name="TerminalSessionId">2</Data>
+    <Data Name="IntegrityLevel">Medium</Data>
+    <Data Name="Hashes">SHA1=E6E36D2FC9772680CAA626321052A0C9D56D307A,MD5=D279444AE4C9D8B7840B8A914D0D3419,SHA256=07030FD178093090E1B1A171374910B6868B60F1E452940FB8F03806C324C621,IMPHASH=8C24FC2F939A9A509FBC0B5C81CBAA47</Data>
+    <Data Name="ParentProcessGuid">{641a7f09-dd45-65e5-b500-00100e3e4f20}</Data>
+    <Data Name="ParentProcessId">3820</Data>
+    <Data Name="ParentImage">C:\Windows\explorer.exe</Data>
+    <Data Name="ParentCommandLine">explorer.exe</Data>
+    <Data Name="ParentUser">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>3</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>3</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:40:49.4332202Z"/>
+    <EventRecordID>515057</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="3392"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:40:49.432</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd6e-65e5-ec00-001011d8bbf3}</Data>
+    <Data Name="ProcessId">3992</Data>
+    <Data Name="Image">C:\Windows\System32\mstsc.exe</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    <Data Name="Protocol">tcp</Data>
+    <Data Name="Initiated">true</Data>
+    <Data Name="SourceIsIpv6">false</Data>
+    <Data Name="SourceIp">10.40.12.11</Data>
+    <Data Name="SourceHostname">WS-01.alderwoodpartners.com</Data>
+    <Data Name="SourcePort">63730</Data>
+    <Data Name="SourcePortName">-</Data>
+    <Data Name="DestinationIsIpv6">false</Data>
+    <Data Name="DestinationIp">10.40.12.12</Data>
+    <Data Name="DestinationHostname">-</Data>
+    <Data Name="DestinationPort">3389</Data>
+    <Data Name="DestinationPortName">ms-wbt-server</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>1</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>1</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:41:09.2533856Z"/>
+    <EventRecordID>515059</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:41:09.233</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd85-65e5-6302-0010892dcb42}</Data>
+    <Data Name="ProcessId">3832</Data>
+    <Data Name="Image">C:\Program Files\Cisco Spark\Webex.exe</Data>
+    <Data Name="FileVersion">44.4.0.28421</Data>
+    <Data Name="Description">Cisco Webex</Data>
+    <Data Name="Product">Cisco Webex</Data>
+    <Data Name="Company">Cisco Systems, Inc.</Data>
+    <Data Name="OriginalFileName">Webex.exe</Data>
+    <Data Name="CommandLine">"C:\Program Files\Cisco Spark\Webex.exe" --autostart</Data>
+    <Data Name="CurrentDirectory">C:\Program Files\Cisco Spark\</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    <Data Name="LogonGuid">{00000000-0000-0000-0000-000000000000}</Data>
+    <Data Name="LogonId">0x1536397b</Data>
+    <Data Name="TerminalSessionId">2</Data>
+    <Data Name="IntegrityLevel">Medium</Data>
+    <Data Name="Hashes">SHA1=B84116C0DEEB5E98ECB484DE9FA0CAA81BAFCC02,MD5=987DBA459398443115153DD36D50B70C,SHA256=3E21E31DECB72E6850C4A6CB9E06E4D86227AEAEC9CEDB6C2210B75E455290A6,IMPHASH=663DCA131FD22D5B403FB2FA0791FC1E</Data>
+    <Data Name="ParentProcessGuid">{641a7f09-dd45-65e5-b500-00100e3e4f20}</Data>
+    <Data Name="ParentProcessId">3820</Data>
+    <Data Name="ParentImage">C:\Windows\explorer.exe</Data>
+    <Data Name="ParentCommandLine">explorer.exe</Data>
+    <Data Name="ParentUser">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>7</EventID>
+    <Version>3</Version>
+    <Level>4</Level>
+    <Task>7</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:41:09.3869694Z"/>
+    <EventRecordID>515060</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:41:09.385</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd85-65e5-6302-0010892dcb42}</Data>
+    <Data Name="ProcessId">3832</Data>
+    <Data Name="Image">C:\Program Files\Cisco Spark\Webex.exe</Data>
+    <Data Name="ImageLoaded">C:\Program Files\Cisco Spark\WebexHost.dll</Data>
+    <Data Name="FileVersion">44.4.0.28421</Data>
+    <Data Name="Description">Cisco Webex Host</Data>
+    <Data Name="Product">Cisco Webex</Data>
+    <Data Name="Company">Cisco Systems, Inc.</Data>
+    <Data Name="OriginalFileName">WebexHost.dll</Data>
+    <Data Name="Hashes">SHA1=A978906769A29ECD3E6C9151C247EB0CEBB51DE9,MD5=115D1BB2EC1C3BEBC5FF5B5889377D53,SHA256=97EFF9C07491810CD84F67CFC49A8FA96457B99703BD087826B40C2532122103,IMPHASH=41A61349BBA73F216990EAF13255F2EA</Data>
+    <Data Name="Signed">true</Data>
+    <Data Name="Signature">Cisco Systems, Inc.</Data>
+    <Data Name="SignatureStatus">Valid</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>1</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>1</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:41:11.1487102Z"/>
+    <EventRecordID>515061</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:41:11.146</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd87-65e5-3100-0000965b1fff}</Data>
+    <Data Name="ProcessId">3836</Data>
+    <Data Name="Image">C:\Program Files\Cisco Spark\CiscoCollabHost.exe</Data>
+    <Data Name="FileVersion">44.4.0.28421</Data>
+    <Data Name="Description">Cisco Webex</Data>
+    <Data Name="Product">Cisco Webex</Data>
+    <Data Name="Company">Cisco Systems, Inc.</Data>
+    <Data Name="OriginalFileName">CiscoCollabHost.exe</Data>
+    <Data Name="CommandLine">"C:\Program Files\Cisco Spark\CiscoCollabHost.exe" --type=renderer</Data>
+    <Data Name="CurrentDirectory">C:\Program Files\Cisco Spark\</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    <Data Name="LogonGuid">{00000000-0000-0000-0000-000000000000}</Data>
+    <Data Name="LogonId">0x1536397b</Data>
+    <Data Name="TerminalSessionId">2</Data>
+    <Data Name="IntegrityLevel">Medium</Data>
+    <Data Name="Hashes">SHA1=279D54CCD685D665BB0B51D1BA0154EE4B1DCBBA,MD5=A66E9A3681607DCC9AB63E012CB58142,SHA256=3E93A76EFEAF0BB07D35F23E2D3E29C3A03192A9366F4ABD96CA39667EEA0A28,IMPHASH=59CB71864BC2622F5A1A2B7D7215535B</Data>
+    <Data Name="ParentProcessGuid">{641a7f09-dd85-65e5-6302-0010892dcb42}</Data>
+    <Data Name="ParentProcessId">3832</Data>
+    <Data Name="ParentImage">C:\Program Files\Cisco Spark\Webex.exe</Data>
+    <Data Name="ParentCommandLine">"C:\Program Files\Cisco Spark\Webex.exe" --autostart</Data>
+    <Data Name="ParentUser">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>1</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>1</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:41:12.0648892Z"/>
+    <EventRecordID>515062</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:41:12.064</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd88-65e5-7900-00003af3e0ec}</Data>
+    <Data Name="ProcessId">3844</Data>
+    <Data Name="Image">C:\Program Files\Cisco Spark\CiscoCollabHost.exe</Data>
+    <Data Name="FileVersion">44.4.0.28421</Data>
+    <Data Name="Description">Cisco Webex</Data>
+    <Data Name="Product">Cisco Webex</Data>
+    <Data Name="Company">Cisco Systems, Inc.</Data>
+    <Data Name="OriginalFileName">CiscoCollabHost.exe</Data>
+    <Data Name="CommandLine">"C:\Program Files\Cisco Spark\CiscoCollabHost.exe" --type=gpu-process</Data>
+    <Data Name="CurrentDirectory">C:\Program Files\Cisco Spark\</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    <Data Name="LogonGuid">{00000000-0000-0000-0000-000000000000}</Data>
+    <Data Name="LogonId">0x1536397b</Data>
+    <Data Name="TerminalSessionId">2</Data>
+    <Data Name="IntegrityLevel">Medium</Data>
+    <Data Name="Hashes">SHA1=279D54CCD685D665BB0B51D1BA0154EE4B1DCBBA,MD5=A66E9A3681607DCC9AB63E012CB58142,SHA256=3E93A76EFEAF0BB07D35F23E2D3E29C3A03192A9366F4ABD96CA39667EEA0A28,IMPHASH=59CB71864BC2622F5A1A2B7D7215535B</Data>
+    <Data Name="ParentProcessGuid">{641a7f09-dd85-65e5-6302-0010892dcb42}</Data>
+    <Data Name="ParentProcessId">3832</Data>
+    <Data Name="ParentImage">C:\Program Files\Cisco Spark\Webex.exe</Data>
+    <Data Name="ParentCommandLine">"C:\Program Files\Cisco Spark\Webex.exe" --autostart</Data>
+    <Data Name="ParentUser">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>1</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>1</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:41:33.0971555Z"/>
+    <EventRecordID>515064</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="3392"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:41:33.095</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd9d-65e5-c400-00106cd8cc38}</Data>
+    <Data Name="ProcessId">3852</Data>
+    <Data Name="Image">C:\Program Files\Google\Chrome\Application\chrome.exe</Data>
+    <Data Name="FileVersion">120.0.6099.225</Data>
+    <Data Name="Description">Google Chrome</Data>
+    <Data Name="Product">Google Chrome</Data>
+    <Data Name="Company">Google LLC</Data>
+    <Data Name="OriginalFileName">chrome.exe</Data>
+    <Data Name="CommandLine">"C:\Program Files\Google\Chrome\Application\chrome.exe" --single-argument http://news.ycombinator.com/ask</Data>
+    <Data Name="CurrentDirectory">C:\Users\dana.whitfield\</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    <Data Name="LogonGuid">{00000000-0000-0000-0000-000000000000}</Data>
+    <Data Name="LogonId">0x1536397b</Data>
+    <Data Name="TerminalSessionId">2</Data>
+    <Data Name="IntegrityLevel">Medium</Data>
+    <Data Name="Hashes">SHA1=9A6ABFD71C6BF2F4EBB94D3F8749E823BCBA1599,MD5=9C138CF19782C37F8D6546E930658EC5,SHA256=70A3704619A118FFAE3B629CE7A4180B6A590C15315A1AF231BD743641F92879,IMPHASH=CEACCC3BA7E24A3EE7324A871B42715A</Data>
+    <Data Name="ParentProcessGuid">{641a7f09-dd45-65e5-b500-00100e3e4f20}</Data>
+    <Data Name="ParentProcessId">3820</Data>
+    <Data Name="ParentImage">C:\Windows\explorer.exe</Data>
+    <Data Name="ParentCommandLine">explorer.exe</Data>
+    <Data Name="ParentUser">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>7</EventID>
+    <Version>3</Version>
+    <Level>4</Level>
+    <Task>7</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:41:33.3989922Z"/>
+    <EventRecordID>515065</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:41:33.398</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd9d-65e5-c400-00106cd8cc38}</Data>
+    <Data Name="ProcessId">3852</Data>
+    <Data Name="Image">C:\Program Files\Google\Chrome\Application\chrome.exe</Data>
+    <Data Name="ImageLoaded">C:\Program Files\Google\Chrome\Application\chrome_elf.dll</Data>
+    <Data Name="FileVersion">120.0.6099.225</Data>
+    <Data Name="Description">Google Chrome ELF</Data>
+    <Data Name="Product">Google Chrome</Data>
+    <Data Name="Company">Google LLC</Data>
+    <Data Name="OriginalFileName">chrome_elf.dll</Data>
+    <Data Name="Hashes">SHA1=98F2C46F436321DF47D29A18726967971BBA8B5D,MD5=2DFDCBCCB66CC7CA411D7399A5897E66,SHA256=8C4F880DC692201052696B65463DFD80CB5488164181D65755AD1522ABC726A2,IMPHASH=86D2DE677295CE14413467B53FCCFA41</Data>
+    <Data Name="Signed">true</Data>
+    <Data Name="Signature">Google LLC</Data>
+    <Data Name="SignatureStatus">Valid</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>7</EventID>
+    <Version>3</Version>
+    <Level>4</Level>
+    <Task>7</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:41:33.4375908Z"/>
+    <EventRecordID>515066</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:41:33.435</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd9d-65e5-c400-00106cd8cc38}</Data>
+    <Data Name="ProcessId">3852</Data>
+    <Data Name="Image">C:\Program Files\Google\Chrome\Application\chrome.exe</Data>
+    <Data Name="ImageLoaded">C:\Program Files\Google\Chrome\Application\libEGL.dll</Data>
+    <Data Name="FileVersion">120.0.6099.225</Data>
+    <Data Name="Description">ANGLE libEGL</Data>
+    <Data Name="Product">Google Chrome</Data>
+    <Data Name="Company">Google LLC</Data>
+    <Data Name="OriginalFileName">libEGL.dll</Data>
+    <Data Name="Hashes">SHA1=38ABAC2C266E5E11C4CDE0D5FE32B698D17E8A3F,MD5=635CC346EF0EFAB57DCE46897D2A6C7C,SHA256=F2A50EBBE0799B7707B8BA601A2A564D953E6C6F3EBC7FA1C7EA61921685211E,IMPHASH=41BB4F9E1CE32C093585BE0316BEE1D8</Data>
+    <Data Name="Signed">true</Data>
+    <Data Name="Signature">Google LLC</Data>
+    <Data Name="SignatureStatus">Valid</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>7</EventID>
+    <Version>3</Version>
+    <Level>4</Level>
+    <Task>7</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:41:33.4469742Z"/>
+    <EventRecordID>515067</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:41:33.446</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd9d-65e5-c400-00106cd8cc38}</Data>
+    <Data Name="ProcessId">3852</Data>
+    <Data Name="Image">C:\Program Files\Google\Chrome\Application\chrome.exe</Data>
+    <Data Name="ImageLoaded">C:\Program Files\Google\Chrome\Application\libGLESv2.dll</Data>
+    <Data Name="FileVersion">120.0.6099.225</Data>
+    <Data Name="Description">ANGLE libGLESv2</Data>
+    <Data Name="Product">Google Chrome</Data>
+    <Data Name="Company">Google LLC</Data>
+    <Data Name="OriginalFileName">libGLESv2.dll</Data>
+    <Data Name="Hashes">SHA1=2382B7BDA749A039BEE9067DA5228AB4E8A7BB47,MD5=B10F540002F7FA9F21C83E9A841C5346,SHA256=2D6B4ACFA96760A029683771E85F021DAEA7F43D2607CB25C8EDA6BBD92F92A0,IMPHASH=2E30E46968E1B465ED3DE5D1DE3F709C</Data>
+    <Data Name="Signed">true</Data>
+    <Data Name="Signature">Google LLC</Data>
+    <Data Name="SignatureStatus">Valid</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:41:35.6565201Z"/>
+    <EventRecordID>515068</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:41:35.654</Data>
+    <Data Name="ProcessGuid">{641a7f09-46eb-65be-ba02-000026f61fe0}</Data>
+    <Data Name="ProcessId">2156</Data>
+    <Data Name="QueryName">news.ycombinator.com</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">209.216.230.240;</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\NETWORK SERVICE</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:43:20.6163083Z"/>
+    <EventRecordID>515071</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:43:20.615</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd9d-65e5-c400-00106cd8cc38}</Data>
+    <Data Name="ProcessId">3852</Data>
+    <Data Name="QueryName">www.office.com</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">2603:1000:7e1c::13;</Data>
+    <Data Name="Image">C:\Program Files\Google\Chrome\Application\chrome.exe</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:43:20.9760768Z"/>
+    <EventRecordID>515072</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:43:20.975</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd9d-65e5-c400-00106cd8cc38}</Data>
+    <Data Name="ProcessId">3852</Data>
+    <Data Name="QueryName">www.office.com</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">13.107.42.15;13.107.42.14;</Data>
+    <Data Name="Image">C:\Program Files\Google\Chrome\Application\chrome.exe</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:43:23.2186577Z"/>
+    <EventRecordID>515073</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:43:23.217</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd9d-65e5-c400-00106cd8cc38}</Data>
+    <Data Name="ProcessId">3852</Data>
+    <Data Name="QueryName">res.cdn.office.net</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">13.107.6.171;13.107.9.171;</Data>
+    <Data Name="Image">C:\Program Files\Google\Chrome\Application\chrome.exe</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:43:23.6254556Z"/>
+    <EventRecordID>515074</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:43:23.623</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd9d-65e5-c400-00106cd8cc38}</Data>
+    <Data Name="ProcessId">3852</Data>
+    <Data Name="QueryName">c.s-microsoft.com</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">13.107.9.160;13.107.6.160;</Data>
+    <Data Name="Image">C:\Program Files\Google\Chrome\Application\chrome.exe</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:44:03.7738835Z"/>
+    <EventRecordID>515075</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="3392"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:44:03.765</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd9d-65e5-c400-00106cd8cc38}</Data>
+    <Data Name="ProcessId">3852</Data>
+    <Data Name="QueryName">www.office.com</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">13.107.42.15;13.107.42.14;</Data>
+    <Data Name="Image">C:\Program Files\Google\Chrome\Application\chrome.exe</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:44:04.0011096Z"/>
+    <EventRecordID>515076</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:44:04.000</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd9d-65e5-c400-00106cd8cc38}</Data>
+    <Data Name="ProcessId">3852</Data>
+    <Data Name="QueryName">www.office.com</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">2603:1000:7e1c::13;</Data>
+    <Data Name="Image">C:\Program Files\Google\Chrome\Application\chrome.exe</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>3</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>3</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:44:08.0373532Z"/>
+    <EventRecordID>515077</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:44:08.035</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd9d-65e5-c400-00106cd8cc38}</Data>
+    <Data Name="ProcessId">3852</Data>
+    <Data Name="Image">C:\Program Files\Google\Chrome\Application\chrome.exe</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    <Data Name="Protocol">tcp</Data>
+    <Data Name="Initiated">true</Data>
+    <Data Name="SourceIsIpv6">false</Data>
+    <Data Name="SourceIp">10.40.12.11</Data>
+    <Data Name="SourceHostname">WS-01.alderwoodpartners.com</Data>
+    <Data Name="SourcePort">63470</Data>
+    <Data Name="SourcePortName">-</Data>
+    <Data Name="DestinationIsIpv6">false</Data>
+    <Data Name="DestinationIp">13.107.6.171</Data>
+    <Data Name="DestinationHostname">res.cdn.office.net</Data>
+    <Data Name="DestinationPort">443</Data>
+    <Data Name="DestinationPortName">https</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:44:45.4388642Z"/>
+    <EventRecordID>515079</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:44:45.438</Data>
+    <Data Name="ProcessGuid">{641a7f09-46eb-65be-ba02-000026f61fe0}</Data>
+    <Data Name="ProcessId">2156</Data>
+    <Data Name="QueryName">ctldl.windowsupdate.com</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">52.114.128.40;52.114.132.73;</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\NETWORK SERVICE</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:45:04.6857327Z"/>
+    <EventRecordID>515080</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:45:04.681</Data>
+    <Data Name="ProcessGuid">{641a7f09-46eb-65be-ba02-000026f61fe0}</Data>
+    <Data Name="ProcessId">2156</Data>
+    <Data Name="QueryName">arc.msn.com</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">13.107.246.42;204.79.197.203;</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\NETWORK SERVICE</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>3</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>3</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:45:05.5227521Z"/>
+    <EventRecordID>515081</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:45:05.522</Data>
+    <Data Name="ProcessGuid">{641a7f09-46eb-65be-ba02-000026f61fe0}</Data>
+    <Data Name="ProcessId">2156</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\NETWORK SERVICE</Data>
+    <Data Name="Protocol">tcp</Data>
+    <Data Name="Initiated">true</Data>
+    <Data Name="SourceIsIpv6">false</Data>
+    <Data Name="SourceIp">10.40.12.11</Data>
+    <Data Name="SourceHostname">WS-01.alderwoodpartners.com</Data>
+    <Data Name="SourcePort">53485</Data>
+    <Data Name="SourcePortName">-</Data>
+    <Data Name="DestinationIsIpv6">false</Data>
+    <Data Name="DestinationIp">13.107.246.42</Data>
+    <Data Name="DestinationHostname">arc.msn.com</Data>
+    <Data Name="DestinationPort">443</Data>
+    <Data Name="DestinationPortName">https</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>3</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>3</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:45:08.3497029Z"/>
+    <EventRecordID>515082</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:45:08.347</Data>
+    <Data Name="ProcessGuid">{641a7f09-46ec-65be-6200-0010b9fc7c2a}</Data>
+    <Data Name="ProcessId">2176</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\LOCAL SERVICE</Data>
+    <Data Name="Protocol">udp</Data>
+    <Data Name="Initiated">true</Data>
+    <Data Name="SourceIsIpv6">false</Data>
+    <Data Name="SourceIp">10.40.12.11</Data>
+    <Data Name="SourceHostname">WS-01.alderwoodpartners.com</Data>
+    <Data Name="SourcePort">52641</Data>
+    <Data Name="SourcePortName">-</Data>
+    <Data Name="DestinationIsIpv6">false</Data>
+    <Data Name="DestinationIp">1.0.0.1</Data>
+    <Data Name="DestinationHostname">-</Data>
+    <Data Name="DestinationPort">53</Data>
+    <Data Name="DestinationPortName">domain</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:46:10.6719586Z"/>
+    <EventRecordID>515084</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="3392"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:46:10.670</Data>
+    <Data Name="ProcessGuid">{641a7f09-46eb-65be-ba02-000026f61fe0}</Data>
+    <Data Name="ProcessId">2156</Data>
+    <Data Name="QueryName">cdn.patientiq.com</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">23.72.255.40;</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\NETWORK SERVICE</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>3</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>3</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:46:13.1858564Z"/>
+    <EventRecordID>515085</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:46:13.184</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd9d-65e5-c400-00106cd8cc38}</Data>
+    <Data Name="ProcessId">3852</Data>
+    <Data Name="Image">C:\Program Files\Google\Chrome\Application\chrome.exe</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    <Data Name="Protocol">tcp</Data>
+    <Data Name="Initiated">true</Data>
+    <Data Name="SourceIsIpv6">false</Data>
+    <Data Name="SourceIp">10.40.12.11</Data>
+    <Data Name="SourceHostname">WS-01.alderwoodpartners.com</Data>
+    <Data Name="SourcePort">55606</Data>
+    <Data Name="SourcePortName">-</Data>
+    <Data Name="DestinationIsIpv6">false</Data>
+    <Data Name="DestinationIp">23.72.255.40</Data>
+    <Data Name="DestinationHostname">-</Data>
+    <Data Name="DestinationPort">80</Data>
+    <Data Name="DestinationPortName">http</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:46:20.5311145Z"/>
+    <EventRecordID>515086</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:46:20.529</Data>
+    <Data Name="ProcessGuid">{641a7f09-46eb-65be-ba02-000026f61fe0}</Data>
+    <Data Name="ProcessId">2156</Data>
+    <Data Name="QueryName">online.tableau.com</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">13.248.160.137;76.223.34.124;</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\NETWORK SERVICE</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:46:23.3887063Z"/>
+    <EventRecordID>515087</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="3392"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:46:23.375</Data>
+    <Data Name="ProcessGuid">{641a7f09-46eb-65be-ba02-000026f61fe0}</Data>
+    <Data Name="ProcessId">2156</Data>
+    <Data Name="QueryName">ocsp.globalsign.com</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">104.18.26.243;104.18.25.243;</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\NETWORK SERVICE</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:46:50.2366637Z"/>
+    <EventRecordID>515088</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:46:50.226</Data>
+    <Data Name="ProcessGuid">{641a7f09-46eb-65be-ba02-000026f61fe0}</Data>
+    <Data Name="ProcessId">2156</Data>
+    <Data Name="QueryName">cdn.jsdelivr.net</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">151.101.65.229;151.101.1.229;</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\NETWORK SERVICE</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:46:53.9446406Z"/>
+    <EventRecordID>515089</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:46:53.944</Data>
+    <Data Name="ProcessGuid">{641a7f09-46eb-65be-ba02-000026f61fe0}</Data>
+    <Data Name="ProcessId">2156</Data>
+    <Data Name="QueryName">99.191.250.142.in-addr.arpa</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">mail-191-99.google.com;</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\NETWORK SERVICE</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:46:54.0028215Z"/>
+    <EventRecordID>515090</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:46:54.002</Data>
+    <Data Name="ProcessGuid">{641a7f09-46eb-65be-ba02-000026f61fe0}</Data>
+    <Data Name="ProcessId">2156</Data>
+    <Data Name="QueryName">ocsp.pki.goog</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">142.250.191.99;142.250.190.99;</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\NETWORK SERVICE</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>1</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>1</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:50:14.0096535Z"/>
+    <EventRecordID>515093</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="3392"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:50:14.009</Data>
+    <Data Name="ProcessGuid">{641a7f09-dfa6-65e5-9402-0000e78d990a}</Data>
+    <Data Name="ProcessId">3948</Data>
+    <Data Name="Image">C:\Windows\System32\wsqmcons.exe</Data>
+    <Data Name="FileVersion">10.0.22621.1</Data>
+    <Data Name="Description">Windows SQM Consolidator</Data>
+    <Data Name="Product">Microsoft Windows Operating System</Data>
+    <Data Name="Company">Microsoft Corporation</Data>
+    <Data Name="OriginalFileName">wsqmcons.exe</Data>
+    <Data Name="CommandLine">wsqmcons.exe</Data>
+    <Data Name="CurrentDirectory">C:\Windows\System32\</Data>
+    <Data Name="User">NT AUTHORITY\SYSTEM</Data>
+    <Data Name="LogonGuid">{00000000-0000-0000-0000-000000000000}</Data>
+    <Data Name="LogonId">0x3e7</Data>
+    <Data Name="TerminalSessionId">0</Data>
+    <Data Name="IntegrityLevel">System</Data>
+    <Data Name="Hashes">SHA1=F9FA354F4840B7E9239DE64F32FA74DB394F6F72,MD5=D4E8C66AECA0321FE0E5C5FCAE1AB0D3,SHA256=3CBD8272C2210AA1B9F2408BDD09CAA39B433E5384314C95B4F8C468A687B86E,IMPHASH=E70CA8B5A14A3E20D3AF153C870448D1</Data>
+    <Data Name="ParentProcessGuid">{641a7f09-46e8-65be-6502-00007c3c2c5a}</Data>
+    <Data Name="ParentProcessId">2152</Data>
+    <Data Name="ParentImage">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="ParentCommandLine">svchost.exe -k LocalSystem</Data>
+    <Data Name="ParentUser">NT AUTHORITY\SYSTEM</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>5</EventID>
+    <Version>3</Version>
+    <Level>4</Level>
+    <Task>5</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:50:18.6759211Z"/>
+    <EventRecordID>515094</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:50:18.674</Data>
+    <Data Name="ProcessGuid">{641a7f09-dfa6-65e5-9402-0000e78d990a}</Data>
+    <Data Name="ProcessId">3948</Data>
+    <Data Name="Image">C:\Windows\System32\wsqmcons.exe</Data>
+    <Data Name="User">NT AUTHORITY\SYSTEM</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:50:53.9349907Z"/>
+    <EventRecordID>515096</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:50:53.933</Data>
+    <Data Name="ProcessGuid">{641a7f09-46eb-65be-ba02-000026f61fe0}</Data>
+    <Data Name="ProcessId">2156</Data>
+    <Data Name="QueryName">portal.azure.com</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">40.90.218.198;20.190.151.70;</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\NETWORK SERVICE</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:50:54.4396096Z"/>
+    <EventRecordID>515097</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:50:54.439</Data>
+    <Data Name="ProcessGuid">{641a7f09-46eb-65be-ba02-000026f61fe0}</Data>
+    <Data Name="ProcessId">2156</Data>
+    <Data Name="QueryName">portal.azure.com</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">2620:1ec:c11::200;</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\NETWORK SERVICE</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>3</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>3</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:50:57.2156160Z"/>
+    <EventRecordID>515098</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:50:57.209</Data>
+    <Data Name="ProcessGuid">{641a7f09-46eb-65be-ba02-000026f61fe0}</Data>
+    <Data Name="ProcessId">2156</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\NETWORK SERVICE</Data>
+    <Data Name="Protocol">tcp</Data>
+    <Data Name="Initiated">true</Data>
+    <Data Name="SourceIsIpv6">false</Data>
+    <Data Name="SourceIp">10.40.12.11</Data>
+    <Data Name="SourceHostname">WS-01.alderwoodpartners.com</Data>
+    <Data Name="SourcePort">61418</Data>
+    <Data Name="SourcePortName">-</Data>
+    <Data Name="DestinationIsIpv6">false</Data>
+    <Data Name="DestinationIp">40.90.218.198</Data>
+    <Data Name="DestinationHostname">portal.azure.com</Data>
+    <Data Name="DestinationPort">443</Data>
+    <Data Name="DestinationPortName">https</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>1</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>1</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:53:38.7060976Z"/>
+    <EventRecordID>515100</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:53:38.705</Data>
+    <Data Name="ProcessGuid">{641a7f09-e072-65e5-2002-0000dd8499b8}</Data>
+    <Data Name="ProcessId">3864</Data>
+    <Data Name="Image">C:\Windows\System32\wbem\WmiPrvSE.exe</Data>
+    <Data Name="FileVersion">10.0.22621.1</Data>
+    <Data Name="Description">WMI Provider Host</Data>
+    <Data Name="Product">Microsoft Windows Operating System</Data>
+    <Data Name="Company">Microsoft Corporation</Data>
+    <Data Name="OriginalFileName">WmiPrvSE.exe</Data>
+    <Data Name="CommandLine">WmiPrvSE.exe -Embedding</Data>
+    <Data Name="CurrentDirectory">C:\Windows\System32\</Data>
+    <Data Name="User">NT AUTHORITY\SYSTEM</Data>
+    <Data Name="LogonGuid">{00000000-0000-0000-0000-000000000000}</Data>
+    <Data Name="LogonId">0x3e7</Data>
+    <Data Name="TerminalSessionId">0</Data>
+    <Data Name="IntegrityLevel">System</Data>
+    <Data Name="Hashes">SHA1=46ED812F7B5C135F9B5C3B57477D88A786683FF2,MD5=AAEAE0631E80D5742B02ED7046F7C425,SHA256=894ABE128AA86E96E7CD29A302C0E058BF88455F7D54C53BF1C01C3669D49661,IMPHASH=2AF1A337C33BBA81DFC20C21850217EF</Data>
+    <Data Name="ParentProcessGuid">{641a7f09-46e8-65be-2d00-00006bccf361}</Data>
+    <Data Name="ParentProcessId">2148</Data>
+    <Data Name="ParentImage">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="ParentCommandLine">svchost.exe -k DcomLaunch</Data>
+    <Data Name="ParentUser">NT AUTHORITY\SYSTEM</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>10</EventID>
+    <Version>3</Version>
+    <Level>4</Level>
+    <Task>10</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:56:36.8066655Z"/>
+    <EventRecordID>515102</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="3392"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:56:36.806</Data>
+    <Data Name="SourceProcessGUID">{641a7f09-46f4-65be-0900-00004a508c29}</Data>
+    <Data Name="SourceProcessId">2284</Data>
+    <Data Name="SourceThreadId">14100</Data>
+    <Data Name="SourceImage">C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.24030.9-0\MsMpEng.exe</Data>
+    <Data Name="TargetProcessGUID">{641a7f09-46eb-65be-ba02-000026f61fe0}</Data>
+    <Data Name="TargetProcessId">2156</Data>
+    <Data Name="TargetImage">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="GrantedAccess">0x1410</Data>
+    <Data Name="CallTrace">C:\Windows\SYSTEM32\ntdll.dll+9EA8F|C:\Windows\SYSTEM32\KERNELBASE.dll+2D337|C:\Windows\SYSTEM32\advapi32.dll+4AA36</Data>
+    <Data Name="SourceUser">NT AUTHORITY\SYSTEM</Data>
+    <Data Name="TargetUser">NT AUTHORITY\NETWORK SERVICE</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>5</EventID>
+    <Version>3</Version>
+    <Level>4</Level>
+    <Task>5</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T14:57:05.8518859Z"/>
+    <EventRecordID>515103</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 14:57:05.849</Data>
+    <Data Name="ProcessGuid">{641a7f09-dcae-65e5-8402-001000bd0005}</Data>
+    <Data Name="ProcessId">3912</Data>
+    <Data Name="Image">C:\Windows\System32\wbem\WmiPrvSE.exe</Data>
+    <Data Name="User">NT AUTHORITY\SYSTEM</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:02:53.8099265Z"/>
+    <EventRecordID>515108</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:02:53.807</Data>
+    <Data Name="ProcessGuid">{641a7f09-46eb-65be-ba02-000026f61fe0}</Data>
+    <Data Name="ProcessId">2156</Data>
+    <Data Name="QueryName">update.googleapis.com</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">142.250.190.74;172.217.164.138;</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\NETWORK SERVICE</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:02:54.0179451Z"/>
+    <EventRecordID>515109</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:02:54.017</Data>
+    <Data Name="ProcessGuid">{641a7f09-46eb-65be-ba02-000026f61fe0}</Data>
+    <Data Name="ProcessId">2156</Data>
+    <Data Name="QueryName">isatap</Data>
+    <Data Name="QueryStatus">9003</Data>
+    <Data Name="QueryResults">-</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\NETWORK SERVICE</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>7</EventID>
+    <Version>3</Version>
+    <Level>4</Level>
+    <Task>7</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:05:06.6387400Z"/>
+    <EventRecordID>515112</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:05:06.637</Data>
+    <Data Name="ProcessGuid">{641a7f09-d4e2-65e5-6e02-0010d534f768}</Data>
+    <Data Name="ProcessId">3968</Data>
+    <Data Name="Image">C:\Windows\explorer.exe</Data>
+    <Data Name="ImageLoaded">C:\Program Files\7-Zip\7-zip.dll</Data>
+    <Data Name="FileVersion">23.01.0.0</Data>
+    <Data Name="Description">7-Zip Shell Extension</Data>
+    <Data Name="Product">7-Zip</Data>
+    <Data Name="Company">Igor Pavlov</Data>
+    <Data Name="OriginalFileName">7-zip.dll</Data>
+    <Data Name="Hashes">SHA1=BF2619160C548067C80B010F0B9F5D224435A4AA,MD5=4FFC4040B68D405900BE629547DF0786,SHA256=A34E512691EB799A505E71B1CD8F01B889912AFB7CCB2D5DEC396F8C366E9BEE,IMPHASH=D6D3685D4A430A287607E444371EB5F5</Data>
+    <Data Name="Signed">false</Data>
+    <Data Name="Signature">-</Data>
+    <Data Name="SignatureStatus">Unavailable</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>10</EventID>
+    <Version>3</Version>
+    <Level>4</Level>
+    <Task>10</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:05:13.8156257Z"/>
+    <EventRecordID>515113</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="3392"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:05:13.815</Data>
+    <Data Name="SourceProcessGUID">{641a7f09-46f9-65be-f902-00005cc2c27e}</Data>
+    <Data Name="SourceProcessId">2304</Data>
+    <Data Name="SourceThreadId">14204</Data>
+    <Data Name="SourceImage">C:\Windows\System32\dllhost.exe</Data>
+    <Data Name="TargetProcessGUID">{641a7f09-4702-65be-d802-000038d9816d}</Data>
+    <Data Name="TargetProcessId">2396</Data>
+    <Data Name="TargetImage">C:\Windows\explorer.exe</Data>
+    <Data Name="GrantedAccess">0x1000</Data>
+    <Data Name="CallTrace">C:\Windows\SYSTEM32\ntdll.dll+9EBBC|C:\Windows\SYSTEM32\KERNELBASE.dll+2C95F</Data>
+    <Data Name="SourceUser">NT AUTHORITY\SYSTEM</Data>
+    <Data Name="TargetUser">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>1</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>1</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:05:40.1332501Z"/>
+    <EventRecordID>515114</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:05:40.130</Data>
+    <Data Name="ProcessGuid">{641a7f09-e344-65e5-be00-0010491f6b5f}</Data>
+    <Data Name="ProcessId">4108</Data>
+    <Data Name="Image">C:\Windows\System32\spoolsv.exe</Data>
+    <Data Name="FileVersion">10.0.22621.1</Data>
+    <Data Name="Description">Spooler SubSystem App</Data>
+    <Data Name="Product">Microsoft Windows Operating System</Data>
+    <Data Name="Company">Microsoft Corporation</Data>
+    <Data Name="OriginalFileName">spoolsv.exe</Data>
+    <Data Name="CommandLine">spoolsv.exe</Data>
+    <Data Name="CurrentDirectory">C:\Windows\System32\</Data>
+    <Data Name="User">NT AUTHORITY\SYSTEM</Data>
+    <Data Name="LogonGuid">{00000000-0000-0000-0000-000000000000}</Data>
+    <Data Name="LogonId">0x3e7</Data>
+    <Data Name="TerminalSessionId">0</Data>
+    <Data Name="IntegrityLevel">System</Data>
+    <Data Name="Hashes">SHA1=D7EA37840FF44A245AD18E5E207AE4901C4C18FB,MD5=F60B5C571AD75771ABD1D35C7765DC04,SHA256=C62074641183B84BD60F329FFC8412BB060770B6F2D3BE7F21CBE926B78AF568,IMPHASH=6C5BCD2285686A422084A17A03042505</Data>
+    <Data Name="ParentProcessGuid">{641a7f09-46e4-65be-8e00-0000d760db59}</Data>
+    <Data Name="ParentProcessId">2072</Data>
+    <Data Name="ParentImage">C:\Windows\System32\services.exe</Data>
+    <Data Name="ParentCommandLine">services.exe</Data>
+    <Data Name="ParentUser">NT AUTHORITY\SYSTEM</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>5</EventID>
+    <Version>3</Version>
+    <Level>4</Level>
+    <Task>5</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:07:48.3034577Z"/>
+    <EventRecordID>515115</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:07:48.303</Data>
+    <Data Name="ProcessGuid">{641a7f09-e072-65e5-2002-0000dd8499b8}</Data>
+    <Data Name="ProcessId">3864</Data>
+    <Data Name="Image">C:\Windows\System32\wbem\WmiPrvSE.exe</Data>
+    <Data Name="User">NT AUTHORITY\SYSTEM</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:11:22.8939794Z"/>
+    <EventRecordID>515117</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="3392"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:11:22.890</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd9d-65e5-c400-00106cd8cc38}</Data>
+    <Data Name="ProcessId">3852</Data>
+    <Data Name="QueryName">docs.google.com</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">142.250.185.206;142.250.80.110;</Data>
+    <Data Name="Image">C:\Program Files\Google\Chrome\Application\chrome.exe</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:11:23.7875659Z"/>
+    <EventRecordID>515118</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="3392"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:11:23.778</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd9d-65e5-c400-00106cd8cc38}</Data>
+    <Data Name="ProcessId">3852</Data>
+    <Data Name="QueryName">ssl.gstatic.com</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">142.250.190.67;172.217.164.99;</Data>
+    <Data Name="Image">C:\Program Files\Google\Chrome\Application\chrome.exe</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>3</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>3</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:11:23.8866223Z"/>
+    <EventRecordID>515119</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="3392"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:11:23.881</Data>
+    <Data Name="ProcessGuid">{641a7f09-46ec-65be-6200-0010b9fc7c2a}</Data>
+    <Data Name="ProcessId">2176</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\LOCAL SERVICE</Data>
+    <Data Name="Protocol">udp</Data>
+    <Data Name="Initiated">true</Data>
+    <Data Name="SourceIsIpv6">false</Data>
+    <Data Name="SourceIp">10.40.12.11</Data>
+    <Data Name="SourceHostname">WS-01.alderwoodpartners.com</Data>
+    <Data Name="SourcePort">59078</Data>
+    <Data Name="SourcePortName">-</Data>
+    <Data Name="DestinationIsIpv6">false</Data>
+    <Data Name="DestinationIp">1.1.1.1</Data>
+    <Data Name="DestinationHostname">-</Data>
+    <Data Name="DestinationPort">53</Data>
+    <Data Name="DestinationPortName">domain</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:11:24.6411971Z"/>
+    <EventRecordID>515120</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:11:24.638</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd9d-65e5-c400-00106cd8cc38}</Data>
+    <Data Name="ProcessId">3852</Data>
+    <Data Name="QueryName">ssl.gstatic.com</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">142.250.190.67;172.217.164.99;</Data>
+    <Data Name="Image">C:\Program Files\Google\Chrome\Application\chrome.exe</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>3</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>3</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:11:26.7745475Z"/>
+    <EventRecordID>515121</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:11:26.771</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd9d-65e5-c400-00106cd8cc38}</Data>
+    <Data Name="ProcessId">3852</Data>
+    <Data Name="Image">C:\Program Files\Google\Chrome\Application\chrome.exe</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    <Data Name="Protocol">tcp</Data>
+    <Data Name="Initiated">true</Data>
+    <Data Name="SourceIsIpv6">false</Data>
+    <Data Name="SourceIp">10.40.12.11</Data>
+    <Data Name="SourceHostname">WS-01.alderwoodpartners.com</Data>
+    <Data Name="SourcePort">62782</Data>
+    <Data Name="SourcePortName">-</Data>
+    <Data Name="DestinationIsIpv6">false</Data>
+    <Data Name="DestinationIp">142.250.185.206</Data>
+    <Data Name="DestinationHostname">accounts.google.com</Data>
+    <Data Name="DestinationPort">443</Data>
+    <Data Name="DestinationPortName">https</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:11:58.4718206Z"/>
+    <EventRecordID>515122</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:11:58.463</Data>
+    <Data Name="ProcessGuid">{641a7f09-46eb-65be-ba02-000026f61fe0}</Data>
+    <Data Name="ProcessId">2156</Data>
+    <Data Name="QueryName">static.xx.fbcdn.net</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">31.13.65.38;31.13.65.39;</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\NETWORK SERVICE</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>3</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>3</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:12:41.5103091Z"/>
+    <EventRecordID>515125</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:12:41.509</Data>
+    <Data Name="ProcessGuid">{641a7f09-46ec-65be-6200-0010b9fc7c2a}</Data>
+    <Data Name="ProcessId">2176</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\LOCAL SERVICE</Data>
+    <Data Name="Protocol">udp</Data>
+    <Data Name="Initiated">true</Data>
+    <Data Name="SourceIsIpv6">false</Data>
+    <Data Name="SourceIp">10.40.12.11</Data>
+    <Data Name="SourceHostname">WS-01.alderwoodpartners.com</Data>
+    <Data Name="SourcePort">52024</Data>
+    <Data Name="SourcePortName">-</Data>
+    <Data Name="DestinationIsIpv6">false</Data>
+    <Data Name="DestinationIp">1.1.1.1</Data>
+    <Data Name="DestinationHostname">-</Data>
+    <Data Name="DestinationPort">53</Data>
+    <Data Name="DestinationPortName">domain</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:12:41.5422759Z"/>
+    <EventRecordID>515126</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:12:41.540</Data>
+    <Data Name="ProcessGuid">{641a7f09-46ec-65be-6200-0010b9fc7c2a}</Data>
+    <Data Name="ProcessId">2176</Data>
+    <Data Name="QueryName">printer01.alderwoodpartners.com</Data>
+    <Data Name="QueryStatus">9003</Data>
+    <Data Name="QueryResults">-</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\LOCAL SERVICE</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:12:41.6871929Z"/>
+    <EventRecordID>515127</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:12:41.682</Data>
+    <Data Name="ProcessGuid">{641a7f09-46ec-65be-6200-0010b9fc7c2a}</Data>
+    <Data Name="ProcessId">2176</Data>
+    <Data Name="QueryName">onedrive.live.com</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">13.107.18.11;13.107.18.10;</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\LOCAL SERVICE</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>1</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>1</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:12:41.8201951Z"/>
+    <EventRecordID>515128</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:12:41.819</Data>
+    <Data Name="ProcessGuid">{641a7f09-e4e9-65e5-5e02-001028a9e1a5}</Data>
+    <Data Name="ProcessId">4044</Data>
+    <Data Name="Image">C:\Users\dana.whitfield\AppData\Roaming\Zoom\bin\Zoom.exe</Data>
+    <Data Name="FileVersion">6.0.11.39959</Data>
+    <Data Name="Description">Zoom Meetings</Data>
+    <Data Name="Product">Zoom Workplace</Data>
+    <Data Name="Company">Zoom Video Communications, Inc.</Data>
+    <Data Name="OriginalFileName">Zoom.exe</Data>
+    <Data Name="CommandLine">"C:\Users\dana.whitfield\AppData\Roaming\Zoom\bin\Zoom.exe" --background</Data>
+    <Data Name="CurrentDirectory">C:\Users\dana.whitfield\AppData\Roaming\Zoom\bin\</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    <Data Name="LogonGuid">{00000000-0000-0000-0000-000000000000}</Data>
+    <Data Name="LogonId">0x1531bd72</Data>
+    <Data Name="TerminalSessionId">5</Data>
+    <Data Name="IntegrityLevel">Medium</Data>
+    <Data Name="Hashes">SHA1=CE3445ECE76D72CFFF4526C78B21735EFC8C685C,MD5=C11E77CDC7B5A7625B0A7879DE8218AB,SHA256=C743A12FABD32BF04C7C05A666D08B9FC616549EA463DDE7B51FF3B74E0D94FA,IMPHASH=ABCA4B576510CF9E671CF91A3C22B81A</Data>
+    <Data Name="ParentProcessGuid">{641a7f09-d4e2-65e5-6e02-0010d534f768}</Data>
+    <Data Name="ParentProcessId">3968</Data>
+    <Data Name="ParentImage">C:\Windows\explorer.exe</Data>
+    <Data Name="ParentCommandLine">explorer.exe</Data>
+    <Data Name="ParentUser">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>7</EventID>
+    <Version>3</Version>
+    <Level>4</Level>
+    <Task>7</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:12:41.9294725Z"/>
+    <EventRecordID>515129</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="3392"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:12:41.926</Data>
+    <Data Name="ProcessGuid">{641a7f09-e4e9-65e5-5e02-001028a9e1a5}</Data>
+    <Data Name="ProcessId">4044</Data>
+    <Data Name="Image">C:\Users\dana.whitfield\AppData\Roaming\Zoom\bin\Zoom.exe</Data>
+    <Data Name="ImageLoaded">C:\Users\dana.whitfield\AppData\Roaming\Zoom\bin\zVideoApp.dll</Data>
+    <Data Name="FileVersion">6.0.11.39959</Data>
+    <Data Name="Description">Zoom Video App</Data>
+    <Data Name="Product">Zoom Workplace</Data>
+    <Data Name="Company">Zoom Video Communications, Inc.</Data>
+    <Data Name="OriginalFileName">zVideoApp.dll</Data>
+    <Data Name="Hashes">SHA1=DB3C2393BF45795446088941AD47C36377606E1B,MD5=460615CA219B4EDE365E40A3984DAB99,SHA256=BE96C9B3DE6EC66545D29C5C70D02F7ACBDF9E4ADE14477811D7EAA8F741B7F9,IMPHASH=6A26100CF29F07656C76EC895BBC0EB1</Data>
+    <Data Name="Signed">true</Data>
+    <Data Name="Signature">Zoom Video Communications, Inc.</Data>
+    <Data Name="SignatureStatus">Valid</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:12:44.0800340Z"/>
+    <EventRecordID>515130</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:12:44.078</Data>
+    <Data Name="ProcessGuid">{641a7f09-e4e9-65e5-5e02-001028a9e1a5}</Data>
+    <Data Name="ProcessId">4044</Data>
+    <Data Name="QueryName">res.cdn.office.net</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">13.107.6.171;13.107.9.171;</Data>
+    <Data Name="Image">C:\Users\dana.whitfield\AppData\Roaming\Zoom\bin\Zoom.exe</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>3</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>3</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:12:44.2743107Z"/>
+    <EventRecordID>515131</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:12:44.269</Data>
+    <Data Name="ProcessGuid">{641a7f09-46ec-65be-6200-0010b9fc7c2a}</Data>
+    <Data Name="ProcessId">2176</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\LOCAL SERVICE</Data>
+    <Data Name="Protocol">udp</Data>
+    <Data Name="Initiated">true</Data>
+    <Data Name="SourceIsIpv6">false</Data>
+    <Data Name="SourceIp">10.40.12.11</Data>
+    <Data Name="SourceHostname">WS-01.alderwoodpartners.com</Data>
+    <Data Name="SourcePort">55954</Data>
+    <Data Name="SourcePortName">-</Data>
+    <Data Name="DestinationIsIpv6">false</Data>
+    <Data Name="DestinationIp">1.0.0.1</Data>
+    <Data Name="DestinationHostname">-</Data>
+    <Data Name="DestinationPort">53</Data>
+    <Data Name="DestinationPortName">domain</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:14:20.5168906Z"/>
+    <EventRecordID>515132</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:14:20.514</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd9d-65e5-c400-00106cd8cc38}</Data>
+    <Data Name="ProcessId">3852</Data>
+    <Data Name="QueryName">login.salesforce.com</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">2620:1ec:6c00:0014::1;</Data>
+    <Data Name="Image">C:\Program Files\Google\Chrome\Application\chrome.exe</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:14:21.2894678Z"/>
+    <EventRecordID>515133</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:14:21.288</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd9d-65e5-c400-00106cd8cc38}</Data>
+    <Data Name="ProcessId">3852</Data>
+    <Data Name="QueryName">login.salesforce.com</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">13.108.0.20;13.108.0.21;</Data>
+    <Data Name="Image">C:\Program Files\Google\Chrome\Application\chrome.exe</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>3</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>3</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:14:21.5669880Z"/>
+    <EventRecordID>515134</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:14:21.561</Data>
+    <Data Name="ProcessGuid">{641a7f09-46ec-65be-6200-0010b9fc7c2a}</Data>
+    <Data Name="ProcessId">2176</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\LOCAL SERVICE</Data>
+    <Data Name="Protocol">udp</Data>
+    <Data Name="Initiated">true</Data>
+    <Data Name="SourceIsIpv6">false</Data>
+    <Data Name="SourceIp">10.40.12.11</Data>
+    <Data Name="SourceHostname">WS-01.alderwoodpartners.com</Data>
+    <Data Name="SourcePort">51658</Data>
+    <Data Name="SourcePortName">-</Data>
+    <Data Name="DestinationIsIpv6">false</Data>
+    <Data Name="DestinationIp">1.1.1.1</Data>
+    <Data Name="DestinationHostname">-</Data>
+    <Data Name="DestinationPort">53</Data>
+    <Data Name="DestinationPortName">domain</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:26:06.1557938Z"/>
+    <EventRecordID>515139</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:26:06.155</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd9d-65e5-c400-00106cd8cc38}</Data>
+    <Data Name="ProcessId">3852</Data>
+    <Data Name="QueryName">news.ycombinator.com</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">209.216.230.240;</Data>
+    <Data Name="Image">C:\Program Files\Google\Chrome\Application\chrome.exe</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:27:22.3079105Z"/>
+    <EventRecordID>515140</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:27:22.303</Data>
+    <Data Name="ProcessGuid">{641a7f09-46eb-65be-ba02-000026f61fe0}</Data>
+    <Data Name="ProcessId">2156</Data>
+    <Data Name="QueryName">updates.paloaltonetworks.com</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">199.167.52.137;199.167.52.138;</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\NETWORK SERVICE</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:28:06.4908031Z"/>
+    <EventRecordID>515142</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:28:06.489</Data>
+    <Data Name="ProcessGuid">{641a7f09-46eb-65be-ba02-000026f61fe0}</Data>
+    <Data Name="ProcessId">2156</Data>
+    <Data Name="QueryName">updates.paloaltonetworks.com</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">199.167.52.137;199.167.52.138;</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\NETWORK SERVICE</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>3</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>3</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:28:08.4832014Z"/>
+    <EventRecordID>515143</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="3392"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:28:08.481</Data>
+    <Data Name="ProcessGuid">{641a7f09-46eb-65be-ba02-000026f61fe0}</Data>
+    <Data Name="ProcessId">2156</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\NETWORK SERVICE</Data>
+    <Data Name="Protocol">tcp</Data>
+    <Data Name="Initiated">true</Data>
+    <Data Name="SourceIsIpv6">false</Data>
+    <Data Name="SourceIp">10.40.12.11</Data>
+    <Data Name="SourceHostname">WS-01.alderwoodpartners.com</Data>
+    <Data Name="SourcePort">49694</Data>
+    <Data Name="SourcePortName">-</Data>
+    <Data Name="DestinationIsIpv6">false</Data>
+    <Data Name="DestinationIp">199.167.52.137</Data>
+    <Data Name="DestinationHostname">updates.paloaltonetworks.com</Data>
+    <Data Name="DestinationPort">443</Data>
+    <Data Name="DestinationPortName">https</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:28:23.7117321Z"/>
+    <EventRecordID>515144</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="3392"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:28:23.711</Data>
+    <Data Name="ProcessGuid">{641a7f09-46eb-65be-ba02-000026f61fe0}</Data>
+    <Data Name="ProcessId">2156</Data>
+    <Data Name="QueryName">ctldl.windowsupdate.com</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">52.114.128.40;52.114.132.73;</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\NETWORK SERVICE</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:28:49.4527277Z"/>
+    <EventRecordID>515145</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="3392"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:28:49.451</Data>
+    <Data Name="ProcessGuid">{641a7f09-46eb-65be-ba02-000026f61fe0}</Data>
+    <Data Name="ProcessId">2156</Data>
+    <Data Name="QueryName">ctldl.windowsupdate.com</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">52.114.128.40;52.114.132.73;</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\NETWORK SERVICE</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:28:49.7041274Z"/>
+    <EventRecordID>515146</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:28:49.703</Data>
+    <Data Name="ProcessGuid">{641a7f09-46eb-65be-ba02-000026f61fe0}</Data>
+    <Data Name="ProcessId">2156</Data>
+    <Data Name="QueryName">ctldl.windowsupdate.com</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">2620:1ec:46::40;</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\NETWORK SERVICE</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:29:11.6518899Z"/>
+    <EventRecordID>515147</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="3392"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:29:11.649</Data>
+    <Data Name="ProcessGuid">{641a7f09-46eb-65be-ba02-000026f61fe0}</Data>
+    <Data Name="ProcessId">2156</Data>
+    <Data Name="QueryName">ca.slack-edge.com</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">34.237.160.44;34.237.160.45;</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\NETWORK SERVICE</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>1</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>1</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:38:37.2141644Z"/>
+    <EventRecordID>515151</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:38:37.213</Data>
+    <Data Name="ProcessGuid">{641a7f09-eafd-65e5-5c00-0010794a809b}</Data>
+    <Data Name="ProcessId">4048</Data>
+    <Data Name="Image">C:\Program Files (x86)\Dropbox\Update\DropboxUpdate.exe</Data>
+    <Data Name="FileVersion">-</Data>
+    <Data Name="Description">-</Data>
+    <Data Name="Product">-</Data>
+    <Data Name="Company">-</Data>
+    <Data Name="OriginalFileName">-</Data>
+    <Data Name="CommandLine">DropboxUpdate.exe /svc</Data>
+    <Data Name="CurrentDirectory">C:\Windows\System32\</Data>
+    <Data Name="User">NT AUTHORITY\SYSTEM</Data>
+    <Data Name="LogonGuid">{00000000-0000-0000-0000-000000000000}</Data>
+    <Data Name="LogonId">0x3e7</Data>
+    <Data Name="TerminalSessionId">0</Data>
+    <Data Name="IntegrityLevel">System</Data>
+    <Data Name="Hashes">SHA1=9C9553118846730CD57BE76D7FD1D6569396BDDD,MD5=28D8439028ABA7E4A3E3734E1C47A9CC,SHA256=C1E09E737846E713E9AC8D9DB04CB231377706742CC76F187A9C586FE4928980,IMPHASH=E3D92598470BD2B25DC52DD1D8A4CD13</Data>
+    <Data Name="ParentProcessGuid">{641a7f09-46e4-65be-8e00-0000d760db59}</Data>
+    <Data Name="ParentProcessId">2072</Data>
+    <Data Name="ParentImage">C:\Windows\System32\services.exe</Data>
+    <Data Name="ParentCommandLine">services.exe</Data>
+    <Data Name="ParentUser">NT AUTHORITY\SYSTEM</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:38:51.2947597Z"/>
+    <EventRecordID>515152</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:38:51.281</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd9d-65e5-c400-00106cd8cc38}</Data>
+    <Data Name="ProcessId">3852</Data>
+    <Data Name="QueryName">isatap.alderwoodpartners.com</Data>
+    <Data Name="QueryStatus">9003</Data>
+    <Data Name="QueryResults">-</Data>
+    <Data Name="Image">C:\Program Files\Google\Chrome\Application\chrome.exe</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>22</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:38:52.0212085Z"/>
+    <EventRecordID>515153</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:38:52.013</Data>
+    <Data Name="ProcessGuid">{641a7f09-dd9d-65e5-c400-00106cd8cc38}</Data>
+    <Data Name="ProcessId">3852</Data>
+    <Data Name="QueryName">spoprod-a.akamaihd.net</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">23.45.101.61;23.45.101.60;</Data>
+    <Data Name="Image">C:\Program Files\Google\Chrome\Application\chrome.exe</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>1</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>1</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:39:35.8232373Z"/>
+    <EventRecordID>515155</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:39:35.822</Data>
+    <Data Name="ProcessGuid">{641a7f09-eb37-65e5-2b00-0000056f0fac}</Data>
+    <Data Name="ProcessId">4072</Data>
+    <Data Name="Image">C:\Program Files (x86)\Dropbox\Update\DropboxUpdate.exe</Data>
+    <Data Name="FileVersion">-</Data>
+    <Data Name="Description">-</Data>
+    <Data Name="Product">-</Data>
+    <Data Name="Company">-</Data>
+    <Data Name="OriginalFileName">-</Data>
+    <Data Name="CommandLine">DropboxUpdate.exe /svc</Data>
+    <Data Name="CurrentDirectory">C:\Windows\System32\</Data>
+    <Data Name="User">NT AUTHORITY\SYSTEM</Data>
+    <Data Name="LogonGuid">{00000000-0000-0000-0000-000000000000}</Data>
+    <Data Name="LogonId">0x3e7</Data>
+    <Data Name="TerminalSessionId">0</Data>
+    <Data Name="IntegrityLevel">System</Data>
+    <Data Name="Hashes">SHA1=9C9553118846730CD57BE76D7FD1D6569396BDDD,MD5=28D8439028ABA7E4A3E3734E1C47A9CC,SHA256=C1E09E737846E713E9AC8D9DB04CB231377706742CC76F187A9C586FE4928980,IMPHASH=E3D92598470BD2B25DC52DD1D8A4CD13</Data>
+    <Data Name="ParentProcessGuid">{641a7f09-46e4-65be-8e00-0000d760db59}</Data>
+    <Data Name="ParentProcessId">2072</Data>
+    <Data Name="ParentImage">C:\Windows\System32\services.exe</Data>
+    <Data Name="ParentCommandLine">services.exe</Data>
+    <Data Name="ParentUser">NT AUTHORITY\SYSTEM</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>5</EventID>
+    <Version>3</Version>
+    <Level>4</Level>
+    <Task>5</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:39:42.4016225Z"/>
+    <EventRecordID>515156</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="1884"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:39:42.401</Data>
+    <Data Name="ProcessGuid">{641a7f09-eafd-65e5-5c00-0010794a809b}</Data>
+    <Data Name="ProcessId">4048</Data>
+    <Data Name="Image">C:\Program Files (x86)\Dropbox\Update\DropboxUpdate.exe</Data>
+    <Data Name="User">NT AUTHORITY\SYSTEM</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>5</EventID>
+    <Version>3</Version>
+    <Level>4</Level>
+    <Task>5</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:44:19.0439736Z"/>
+    <EventRecordID>515158</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:44:19.043</Data>
+    <Data Name="ProcessGuid">{641a7f09-eb37-65e5-2b00-0000056f0fac}</Data>
+    <Data Name="ProcessId">4072</Data>
+    <Data Name="Image">C:\Program Files (x86)\Dropbox\Update\DropboxUpdate.exe</Data>
+    <Data Name="User">NT AUTHORITY\SYSTEM</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>13</EventID>
+    <Version>2</Version>
+    <Level>4</Level>
+    <Task>13</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:44:43.2976998Z"/>
+    <EventRecordID>515161</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="EventType">SetValue</Data>
+    <Data Name="UtcTime">2024-03-04 15:44:43.295</Data>
+    <Data Name="ProcessGuid">{641a7f09-4702-65be-d802-000038d9816d}</Data>
+    <Data Name="ProcessId">2396</Data>
+    <Data Name="Image">C:\Windows\explorer.exe</Data>
+    <Data Name="TargetObject">HKU\S-1-5-21-1198276704-1000000000-1000048801-24011\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ProxyEnable</Data>
+    <Data Name="Details">DWORD (0x00000000)</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>13</EventID>
+    <Version>2</Version>
+    <Level>4</Level>
+    <Task>13</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:45:14.8158353Z"/>
+    <EventRecordID>515164</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="EventType">SetValue</Data>
+    <Data Name="UtcTime">2024-03-04 15:45:14.814</Data>
+    <Data Name="ProcessGuid">{641a7f09-4702-65be-d802-000038d9816d}</Data>
+    <Data Name="ProcessId">2396</Data>
+    <Data Name="Image">C:\Windows\explorer.exe</Data>
+    <Data Name="TargetObject">HKU\S-1-5-21-1198276704-1000000000-1000048801-24011\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist\{CEBFF5CD-ACE2-4F4F-9178-9926F41749EA}\Count\HRZR_EHACNGU:P:\Cebtenz Svyrf\Zvpebfbsg Bssvpr\ebbg\Bssvpr16\RKPRY.RKR</Data>
+    <Data Name="Details">00 00 00 00 35 00 00 00 11 00 00 00 67 B9 12 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 80 8F 99 F3 58 7E DA 01 00 00 00 00</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>1</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>1</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:46:03.5171588Z"/>
+    <EventRecordID>515167</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="3392"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:46:03.515</Data>
+    <Data Name="ProcessGuid">{641a7f09-ecbb-65e5-0b02-0010bfaa59c4}</Data>
+    <Data Name="ProcessId">4112</Data>
+    <Data Name="Image">C:\Program Files\HP\HP Image Assistant\HPImageAssistant.exe</Data>
+    <Data Name="FileVersion">-</Data>
+    <Data Name="Description">-</Data>
+    <Data Name="Product">-</Data>
+    <Data Name="Company">-</Data>
+    <Data Name="OriginalFileName">-</Data>
+    <Data Name="CommandLine">HPImageAssistant.exe /Operation:Analyze /Silent</Data>
+    <Data Name="CurrentDirectory">C:\Windows\System32\</Data>
+    <Data Name="User">NT AUTHORITY\SYSTEM</Data>
+    <Data Name="LogonGuid">{00000000-0000-0000-0000-000000000000}</Data>
+    <Data Name="LogonId">0x3e7</Data>
+    <Data Name="TerminalSessionId">0</Data>
+    <Data Name="IntegrityLevel">System</Data>
+    <Data Name="Hashes">SHA1=A06EC1FA31BF4F03C1DC8B8448E2F00F263E607D,MD5=BBC9DE50239C7FBB3BE6EDCB9A0BE725,SHA256=EFA87B1039A292E477780A95DE6B3694F0A1777208659A359BB51CEE1163D2FE,IMPHASH=61542B51CAA457C075C1EA6EFFA060FC</Data>
+    <Data Name="ParentProcessGuid">{641a7f09-46fe-65be-0c00-00106ccad867}</Data>
+    <Data Name="ParentProcessId">2368</Data>
+    <Data Name="ParentImage">C:\Windows\System32\taskhostw.exe</Data>
+    <Data Name="ParentCommandLine">taskhostw.exe</Data>
+    <Data Name="ParentUser">NT AUTHORITY\SYSTEM</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>3</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>3</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:50:26.3330112Z"/>
+    <EventRecordID>515172</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="3392"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:50:26.330</Data>
+    <Data Name="ProcessGuid">{641a7f09-46ec-65be-6200-0010b9fc7c2a}</Data>
+    <Data Name="ProcessId">2176</Data>
+    <Data Name="Image">C:\Windows\System32\svchost.exe</Data>
+    <Data Name="User">NT AUTHORITY\LOCAL SERVICE</Data>
+    <Data Name="Protocol">udp</Data>
+    <Data Name="Initiated">true</Data>
+    <Data Name="SourceIsIpv6">false</Data>
+    <Data Name="SourceIp">10.40.12.11</Data>
+    <Data Name="SourceHostname">WS-01.alderwoodpartners.com</Data>
+    <Data Name="SourcePort">54906</Data>
+    <Data Name="SourcePortName">-</Data>
+    <Data Name="DestinationIsIpv6">false</Data>
+    <Data Name="DestinationIp">1.0.0.1</Data>
+    <Data Name="DestinationHostname">-</Data>
+    <Data Name="DestinationPort">53</Data>
+    <Data Name="DestinationPortName">domain</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>13</EventID>
+    <Version>2</Version>
+    <Level>4</Level>
+    <Task>13</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:50:57.4406515Z"/>
+    <EventRecordID>515174</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="2068"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="EventType">SetValue</Data>
+    <Data Name="UtcTime">2024-03-04 15:50:57.440</Data>
+    <Data Name="ProcessGuid">{641a7f09-4702-65be-d802-000038d9816d}</Data>
+    <Data Name="ProcessId">2396</Data>
+    <Data Name="Image">C:\Windows\explorer.exe</Data>
+    <Data Name="TargetObject">HKU\S-1-5-21-1198276704-1000000000-1000048801-24011\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\HideFileExt</Data>
+    <Data Name="Details">DWORD (0x00000001)</Data>
+    <Data Name="User">ALDERWOODPARTNERS\dana.whitfield</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>10</EventID>
+    <Version>3</Version>
+    <Level>4</Level>
+    <Task>10</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:53:21.1187937Z"/>
+    <EventRecordID>515177</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="3392"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:53:21.118</Data>
+    <Data Name="SourceProcessGUID">{641a7f09-46e4-65be-8e00-0000d760db59}</Data>
+    <Data Name="SourceProcessId">2072</Data>
+    <Data Name="SourceThreadId">13760</Data>
+    <Data Name="SourceImage">C:\Windows\System32\services.exe</Data>
+    <Data Name="TargetProcessGUID">{641a7f09-46f4-65be-0900-00004a508c29}</Data>
+    <Data Name="TargetProcessId">2284</Data>
+    <Data Name="TargetImage">C:\ProgramData\Microsoft\Windows Defender\Platform\4.18.24030.9-0\MsMpEng.exe</Data>
+    <Data Name="GrantedAccess">0x0400</Data>
+    <Data Name="CallTrace">C:\Windows\SYSTEM32\ntdll.dll+9DEE4|C:\Windows\SYSTEM32\KERNELBASE.dll+2C5AF|C:\Windows\SYSTEM32\sechost.dll+12944</Data>
+    <Data Name="SourceUser">NT AUTHORITY\SYSTEM</Data>
+    <Data Name="TargetUser">NT AUTHORITY\SYSTEM</Data>
+    
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385f-c22a-43e0-bf4c-06f5698ffbd9}"/>
+    <EventID>5</EventID>
+    <Version>3</Version>
+    <Level>4</Level>
+    <Task>5</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2024-03-04T15:55:07.9164638Z"/>
+    <EventRecordID>515179</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="2620" ThreadID="3392"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>WS-01.alderwoodpartners.com</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2024-03-04 15:55:07.914</Data>
+    <Data Name="ProcessGuid">{641a7f09-ecbb-65e5-0b02-0010bfaa59c4}</Data>
+    <Data Name="ProcessId">4112</Data>
+    <Data Name="Image">C:\Program Files\HP\HP Image Assistant\HPImageAssistant.exe</Data>
+    <Data Name="User">NT AUTHORITY\SYSTEM</Data>
+    
+  </EventData>
+</Event>
+</Events>

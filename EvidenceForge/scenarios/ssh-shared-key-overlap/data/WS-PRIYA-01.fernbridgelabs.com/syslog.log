@@ -1,0 +1,118 @@
+<30>1 2024-05-13T14:00:20.646914Z WS-PRIYA-01 NetworkManager 21627 - - <info>  [1715608820.6469] manager: NetworkManager state is now CONNECTED_GLOBAL
+<30>1 2024-05-13T14:01:50.458795Z WS-PRIYA-01 systemd-resolved 21679 - - Using degraded feature set TCP instead of UDP+EDNS0 for DNS server 208.67.222.222.
+<86>1 2024-05-13T14:02:15.546370Z WS-PRIYA-01 gdm-password 3097909 - - pam_unix(gdm-password:session): session opened for user admin(uid=1001) by gdm(uid=0)
+<86>1 2024-05-13T14:02:20.392370Z WS-PRIYA-01 systemd-logind 21634 - - New session 220395 of user admin.
+<30>1 2024-05-13T14:02:23.020793Z WS-PRIYA-01 NetworkManager 21627 - - <info>  [1715608943.0208] device (ens192): state change: disconnected -> prepare
+<30>1 2024-05-13T14:02:38.447383Z WS-PRIYA-01 accounts-daemon 6403 - - user 'ubuntu' has logged in
+<78>1 2024-05-13T14:04:00.099000Z WS-PRIYA-01 CRON 3098220 - - (sysstat) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+<30>1 2024-05-13T14:04:15.592541Z WS-PRIYA-01 NetworkManager 21627 - - <info>  [1715609055.5925] device (ens192): state change: disconnected -> prepare
+<30>1 2024-05-13T14:05:34.437773Z WS-PRIYA-01 systemd-timesyncd 21668 - - System clock synchronized to 129.6.15.29:123.
+<30>1 2024-05-13T14:05:57.811649Z WS-PRIYA-01 NetworkManager 21627 - - <info>  [1715609157.8116] device (ens192): state change: disconnected -> prepare
+<86>1 2024-05-13T14:06:06.654500Z WS-PRIYA-01 gdm-password 3098525 - - pam_unix(gdm-password:session): session opened for user priya.desai(uid=4392) by gdm(uid=0)
+<86>1 2024-05-13T14:06:10.497500Z WS-PRIYA-01 systemd-logind 21634 - - New session 220430 of user priya.desai.
+<30>1 2024-05-13T14:08:35.134829Z WS-PRIYA-01 NetworkManager 21627 - - <info>  [1715609315.1348] manager: NetworkManager state is now CONNECTED_GLOBAL
+<30>1 2024-05-13T14:09:30.829325Z WS-PRIYA-01 dbus-daemon 21633 - - [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service' requested by ':1.156'
+<85>1 2024-05-13T14:10:30.469411Z WS-PRIYA-01 sudo 3099255 - - deploy : TTY=pts/3 ; PWD=/var/log ; USER=root ; COMMAND=/usr/bin/grep -i denied /var/log/syslog
+<86>1 2024-05-13T14:10:30.484411Z WS-PRIYA-01 sudo 3099255 - - pam_unix(sudo:session): session opened for user root(uid=0) by deploy(uid=1002)
+<86>1 2024-05-13T14:10:32.194150Z WS-PRIYA-01 sudo 3099255 - - pam_unix(sudo:session): session closed for user root
+<30>1 2024-05-13T14:10:37.240825Z WS-PRIYA-01 systemd-timesyncd 21668 - - Selected time server 129.6.15.29:123.
+<85>1 2024-05-13T14:12:02.528370Z WS-PRIYA-01 sudo 3099433 - - admin : TTY=pts/10 ; PWD=/home/admin ; USER=root ; COMMAND=/usr/bin/apt-cache policy openssl
+<86>1 2024-05-13T14:12:02.597370Z WS-PRIYA-01 sudo 3099433 - - pam_unix(sudo:session): session opened for user root(uid=0) by admin(uid=1001)
+<86>1 2024-05-13T14:12:06.022982Z WS-PRIYA-01 sudo 3099433 - - pam_unix(sudo:session): session closed for user root
+<30>1 2024-05-13T14:12:09.236924Z WS-PRIYA-01 dbus-daemon 21633 - - [system] Successfully activated service 'org.freedesktop.resolve1' for ':1.159'
+<30>1 2024-05-13T14:12:09.954176Z WS-PRIYA-01 systemd-resolved 21679 - - Grace period over, resuming full feature set (UDP+EDNS0) for DNS server 208.67.222.222.
+<30>1 2024-05-13T14:12:11.011654Z WS-PRIYA-01 rsyslogd 21621 - - omfwd: target logrelay01 using disk-assisted queue action-remote, checkpoint 38787
+<30>1 2024-05-13T14:12:12.112085Z WS-PRIYA-01 rsyslogd 21621 - - omfwd: target 10.10.2.30 using disk-assisted queue main, checkpoint 39082
+<30>1 2024-05-13T14:12:12.375136Z WS-PRIYA-01 polkitd 30446 - - Unregistered Authentication Agent for unix-session:55 (system bus name :1.155, object path /org/freedesktop/PolicyKit1/AuthenticationAgent)
+<30>1 2024-05-13T14:12:13.672111Z WS-PRIYA-01 systemd-resolved 21679 - - Using degraded feature set UDP instead of UDP+EDNS0 for DNS server 208.67.222.222.
+<30>1 2024-05-13T14:12:13.919247Z WS-PRIYA-01 NetworkManager 21627 - - <info>  [1715609533.9192] device (ens192): state change: disconnected -> prepare
+<86>1 2024-05-13T14:14:37.297000Z WS-PRIYA-01 gdm-password 3099810 - - pam_unix(gdm-password:session): session opened for user marcus.oyelaran(uid=2050) by gdm(uid=0)
+<86>1 2024-05-13T14:14:40.950000Z WS-PRIYA-01 systemd-logind 21634 - - New session 220505 of user marcus.oyelaran.
+<30>1 2024-05-13T14:15:25.783973Z WS-PRIYA-01 cups-browsed 33190 - - Browse remote printer CORP-PRINT-01 at 321451
+<30>1 2024-05-13T14:17:10.566421Z WS-PRIYA-01 systemd-journald 21616 - - Vacuuming done, freed 23.3M of archived journals.
+<30>1 2024-05-13T14:17:11.278211Z WS-PRIYA-01 systemd-resolved 21679 - - Grace period over, resuming full feature set (UDP+EDNS0) for DNS server 208.67.222.222.
+<30>1 2024-05-13T14:17:48.120650Z WS-PRIYA-01 systemd-timesyncd 21668 - - System clock synchronized to 129.6.15.29:123.
+<86>1 2024-05-13T14:20:39.237347Z WS-PRIYA-01 gdm-password 3100512 - - pam_unix(gdm-password:session): session opened for user deploy(uid=1002) by gdm(uid=0)
+<86>1 2024-05-13T14:20:43.091347Z WS-PRIYA-01 systemd-logind 21634 - - New session 220560 of user deploy.
+<30>1 2024-05-13T14:21:26.565859Z WS-PRIYA-01 anacron 35364 - - Will run job `logrotate' in 2 min.
+<30>1 2024-05-13T14:21:26Z WS-PRIYA-01 anacron 35364 - - Anacron 2.3 started on 2024-05-13
+<30>1 2024-05-13T14:23:37.734796Z WS-PRIYA-01 anacron 35364 - - Job `logrotate' started
+<30>1 2024-05-13T14:24:15.626376Z WS-PRIYA-01 anacron 35364 - - Job `logrotate' terminated
+<30>1 2024-05-13T14:24:17.803628Z WS-PRIYA-01 anacron 35364 - - Normal exit (1 job run)
+<30>1 2024-05-13T14:24:33.839196Z WS-PRIYA-01 thermald 27328 - - Unsupported cpu model, use default config
+<30>1 2024-05-13T14:25:43.419822Z WS-PRIYA-01 accounts-daemon 6403 - - user 'deploy' has logged in
+<30>1 2024-05-13T14:26:10.543455Z WS-PRIYA-01 tracker-miner-fs-3 10143 - - Miner finished crawling /home/admin/Documents
+<30>1 2024-05-13T14:26:10.769605Z WS-PRIYA-01 systemd-timesyncd 21668 - - Selected time server 129.6.15.29:123.
+<30>1 2024-05-13T14:26:36.799469Z WS-PRIYA-01 cups-browsed 33190 - - Browse remote printer CORP-PRINT-01 at 174760
+<30>1 2024-05-13T14:26:54.999956Z WS-PRIYA-01 NetworkManager 21627 - - <info>  [1715610415.0000] dhcp4 (ens192): state changed renew -> bound
+<85>1 2024-05-13T14:26:55.124415Z WS-PRIYA-01 sudo 3101760 - - svc_app : TTY=pts/8 ; PWD=/tmp ; USER=root ; COMMAND=/usr/bin/find /var/tmp -maxdepth 1 -mtime +7 -type f
+<86>1 2024-05-13T14:26:55.206415Z WS-PRIYA-01 sudo 3101760 - - pam_unix(sudo:session): session opened for user root(uid=0) by svc_app(uid=2214)
+<85>1 2024-05-13T14:26:55.213347Z WS-PRIYA-01 sudo 3101762 - - deploy : TTY=pts/11 ; PWD=/home/admin ; USER=root ; COMMAND=/usr/sbin/ss -s
+<30>1 2024-05-13T14:26:55.226253Z WS-PRIYA-01 tracker-miner-fs-3 10143 - - Indexed 27 file(s) under /home/deploy/Documents
+<86>1 2024-05-13T14:26:55.417347Z WS-PRIYA-01 sudo 3101762 - - pam_unix(sudo:session): session opened for user root(uid=0) by deploy(uid=1002)
+<86>1 2024-05-13T14:26:57.490339Z WS-PRIYA-01 sudo 3101760 - - pam_unix(sudo:session): session closed for user root
+<86>1 2024-05-13T14:26:57.508210Z WS-PRIYA-01 sudo 3101762 - - pam_unix(sudo:session): session closed for user root
+<30>1 2024-05-13T14:33:14.263096Z WS-PRIYA-01 polkitd 30446 - - Registered Authentication Agent for unix-session:51 (system bus name :1.160 [/usr/libexec/polkit-gnome-authentication-agent-1], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8)
+<30>1 2024-05-13T14:33:39.968664Z WS-PRIYA-01 fwupd 4926 - - USB-C Dock: no updates available
+<30>1 2024-05-13T14:33:41.473549Z WS-PRIYA-01 irqbalance 40490 - - IRQ 16 classified for CPU 0 balancing on ahci
+<78>1 2024-05-13T14:34:00.118000Z WS-PRIYA-01 CRON 3102540 - - (sysstat) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+<30>1 2024-05-13T14:35:01.318746Z WS-PRIYA-01 cups-browsed 33190 - - Printer FRONTDESK-MFP was not found by DNS-SD, keeping stale queue for now
+<30>1 2024-05-13T14:37:11.640313Z WS-PRIYA-01 thermald 27328 - - cooling device 1 intel_powerclamp type: 0x02
+<30>1 2024-05-13T14:39:01.274380Z WS-PRIYA-01 packagekitd 59906 - - resolve transaction /152380
+<30>1 2024-05-13T14:44:06.957388Z WS-PRIYA-01 cups-browsed 33190 - - Browse remote printer CORP-PRINT-01 at 210089
+<30>1 2024-05-13T14:44:21.260293Z WS-PRIYA-01 cups-browsed 33190 - - Browse remote printer FINANCE-MFP at 666097
+<30>1 2024-05-13T14:48:26.774603Z WS-PRIYA-01 systemd-timesyncd 21668 - - Network configuration changed, trying to establish synchronization with 129.6.15.29:123.
+<86>1 2024-05-13T14:58:44.340673Z WS-PRIYA-01 gdm-password 3106312 - - pam_unix(gdm-password:session): session opened for user backup(uid=3037) by gdm(uid=0)
+<86>1 2024-05-13T14:58:50.324673Z WS-PRIYA-01 systemd-logind 21634 - - New session 220902 of user backup.
+<30>1 2024-05-13T15:02:28.651033Z WS-PRIYA-01 systemd-timesyncd 21668 - - Selected time server 129.6.15.29:123.
+<78>1 2024-05-13T15:04:00.039000Z WS-PRIYA-01 CRON 3107057 - - (sysstat) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+<30>1 2024-05-13T15:06:32.358409Z WS-PRIYA-01 irqbalance 40490 - - IRQ 45 classified for CPU 0 balancing on virtio0-input
+<30>1 2024-05-13T15:07:38.229061Z WS-PRIYA-01 polkitd 30446 - - Unregistered Authentication Agent for unix-session:51 (system bus name :1.160, object path /org/freedesktop/PolicyKit1/AuthenticationAgent)
+<85>1 2024-05-13T15:08:01.420673Z WS-PRIYA-01 sudo 3107249 - - backup : TTY=pts/12 ; PWD=/home/admin ; USER=root ; COMMAND=/usr/bin/du -sh /var/log
+<86>1 2024-05-13T15:08:01.639673Z WS-PRIYA-01 sudo 3107249 - - pam_unix(sudo:session): session opened for user root(uid=0) by backup(uid=3037)
+<86>1 2024-05-13T15:08:03.003302Z WS-PRIYA-01 sudo 3107249 - - pam_unix(sudo:session): session closed for user root
+<30>1 2024-05-13T15:08:55.501052Z WS-PRIYA-01 systemd-timesyncd 21668 - - Selected time server 129.6.15.29:123.
+<30>1 2024-05-13T15:09:11.763461Z WS-PRIYA-01 NetworkManager 21627 - - <info>  [1715612951.7635] device (ens192): state change: ip-config -> activated
+<86>1 2024-05-13T15:10:24.574733Z WS-PRIYA-01 gdm-password 3107364 - - pam_unix(gdm-password:session): session opened for user priya.desai(uid=4392) by gdm(uid=0)
+<86>1 2024-05-13T15:10:32.284733Z WS-PRIYA-01 systemd-logind 21634 - - New session 221009 of user priya.desai.
+<30>1 2024-05-13T15:11:07.986099Z WS-PRIYA-01 polkitd 30446 - - Registered Authentication Agent for unix-session:54 (system bus name :1.163 [/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1], object path /org/freedesktop/PolicyKit1/AuthenticationAgent, locale en_US.UTF-8)
+<30>1 2024-05-13T15:11:10.088623Z WS-PRIYA-01 snapd 21667 - - autorefresh.go:540: auto-refresh for snapd-desktop-integration: no updates found
+<30>1 2024-05-13T15:11:50.697265Z WS-PRIYA-01 fwupd 4926 - - System Firmware: no updates available
+<30>1 2024-05-13T15:16:32.065343Z WS-PRIYA-01 tracker-miner-fs-3 10143 - - Miner finished crawling /home/ubuntu/Documents
+<30>1 2024-05-13T15:21:27.602044Z WS-PRIYA-01 snapd 21667 - - taskrunner.go:271: change 8037 task 1 done for microk8s
+<86>1 2024-05-13T15:22:15.701036Z WS-PRIYA-01 gdm-password 3108198 - - pam_unix(gdm-password:session): session opened for user ubuntu(uid=1000) by gdm(uid=0)
+<86>1 2024-05-13T15:22:21.945036Z WS-PRIYA-01 systemd-logind 21634 - - New session 221115 of user ubuntu.
+<30>1 2024-05-13T15:24:28.748836Z WS-PRIYA-01 fwupd 4926 - - metadata is 14 days old, scheduling refresh
+<30>1 2024-05-13T15:24:37.505503Z WS-PRIYA-01 fwupd 4926 - - metadata is 2 days old, scheduling refresh
+<30>1 2024-05-13T15:24:39.696893Z WS-PRIYA-01 irqbalance 40490 - - IRQ 86 affinity hint keeps vector on CPU 2 (mlx5_comp1)
+<30>1 2024-05-13T15:24:42.915055Z WS-PRIYA-01 systemd-timesyncd 21668 - - Selected time server 129.6.15.29:123.
+<30>1 2024-05-13T15:24:46.209555Z WS-PRIYA-01 polkitd 30446 - - Operator of unix-process:3108318:147388329 failed to authenticate as unix-user:root to gain TEMPORARY authorization for action org.freedesktop.login1.reboot for system-bus-name::1.163 [/usr/bin/loginctl] (owned by unix-user:deploy)
+<85>1 2024-05-13T15:25:01.061036Z WS-PRIYA-01 sudo 3108330 - - ubuntu : TTY=pts/13 ; PWD=/srv/app ; USER=root ; COMMAND=/usr/bin/journalctl -u app-agent -n 120
+<86>1 2024-05-13T15:25:01.101036Z WS-PRIYA-01 sudo 3108330 - - pam_unix(sudo:session): session opened for user root(uid=0) by ubuntu(uid=1000)
+<86>1 2024-05-13T15:25:09.124331Z WS-PRIYA-01 sudo 3108330 - - pam_unix(sudo:session): session closed for user root
+<30>1 2024-05-13T15:26:01.953016Z WS-PRIYA-01 accounts-daemon 6403 - - user 'admin' has logged in
+<30>1 2024-05-13T15:26:14.368366Z WS-PRIYA-01 NetworkManager 21627 - - <info>  [1715613974.3684] dhcp4 (ens192): state changed renew -> bound
+<30>1 2024-05-13T15:27:11.770793Z WS-PRIYA-01 systemd-journald 21616 - - System Journal (/var/log/journal/561bddecd900b5367c4a5c39618d71f1) is 86.2M, max 256M, 169.8M free.
+<86>1 2024-05-13T15:28:51.596733Z WS-PRIYA-01 gdm-password 3107364 - - pam_unix(gdm-password:session): session closed for user priya.desai
+<86>1 2024-05-13T15:28:55.284733Z WS-PRIYA-01 systemd-logind 21634 - - Removed session 221009.
+<30>1 2024-05-13T15:29:13.824728Z WS-PRIYA-01 NetworkManager 21627 - - <info>  [1715614153.8247] manager: NetworkManager state is now CONNECTED_GLOBAL
+<30>1 2024-05-13T15:30:04.982271Z WS-PRIYA-01 polkitd 30446 - - Subject unix-process:3108573:147420103 is authorized for action org.freedesktop.systemd1.manage-units
+<30>1 2024-05-13T15:30:06.503495Z WS-PRIYA-01 cups-browsed 33190 - - Browse remote printer FINANCE-MFP at 894068
+<30>1 2024-05-13T15:32:03.553348Z WS-PRIYA-01 NetworkManager 21627 - - <info>  [1715614323.5533] manager: NetworkManager state is now CONNECTED_GLOBAL
+<30>1 2024-05-13T15:32:23.664337Z WS-PRIYA-01 NetworkManager 21627 - - <info>  [1715614343.6643] device (ens192): state change: disconnected -> prepare
+<78>1 2024-05-13T15:34:00.050000Z WS-PRIYA-01 CRON 3108762 - - (sysstat) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+<30>1 2024-05-13T15:36:10.103344Z WS-PRIYA-01 rsyslogd 21621 - - main Q: queue fwdRule1 has 1554 messages pending, worker threads 1
+<30>1 2024-05-13T15:36:11.210434Z WS-PRIYA-01 systemd-timesyncd 21668 - - Selected time server 129.6.15.29:123.
+<30>1 2024-05-13T15:43:24.647032Z WS-PRIYA-01 accounts-daemon 6403 - - user 'admin' has logged in
+<30>1 2024-05-13T15:43:31.773762Z WS-PRIYA-01 systemd-timesyncd 21668 - - System clock synchronized to 129.6.15.29:123.
+<30>1 2024-05-13T15:46:14.122551Z WS-PRIYA-01 fwupd 4926 - - metadata is 14 days old, scheduling refresh
+<30>1 2024-05-13T15:46:14.731099Z WS-PRIYA-01 snapd 21667 - - autorefresh.go:540: auto-refresh for core20: no updates found
+<30>1 2024-05-13T15:46:47.758842Z WS-PRIYA-01 irqbalance 40490 - - Skipping IRQ 86: banned by affinity mask 00000008 (mlx5_comp1)
+<30>1 2024-05-13T15:48:46.652281Z WS-PRIYA-01 cups-browsed 33190 - - Browse remote printer FINANCE-MFP at 699665
+<30>1 2024-05-13T15:48:49.092324Z WS-PRIYA-01 NetworkManager 21627 - - <info>  [1715615329.0923] dhcp4 (ens192): state changed renew -> bound
+<30>1 2024-05-13T15:49:53.389645Z WS-PRIYA-01 irqbalance 40490 - - Skipping IRQ 86: banned by affinity mask 00000004 (mlx5_comp1)
+<30>1 2024-05-13T15:54:16.051645Z WS-PRIYA-01 thermald 27328 - - cooling device 1 intel_powerclamp type: 0x02
+<30>1 2024-05-13T15:56:05.827798Z WS-PRIYA-01 fwupd 4926 - - metadata is 6 days old, scheduling refresh
+<30>1 2024-05-13T15:56:05.937129Z WS-PRIYA-01 NetworkManager 21627 - - <info>  [1715615765.9371] manager: NetworkManager state is now CONNECTED_GLOBAL
+<30>1 2024-05-13T15:58:08.241032Z WS-PRIYA-01 NetworkManager 21627 - - <info>  [1715615888.2410] device (ens192): state change: ip-config -> activated
+<30>1 2024-05-13T15:59:00.075109Z WS-PRIYA-01 NetworkManager 21627 - - <info>  [1715615940.0751] device (ens192): state change: disconnected -> prepare

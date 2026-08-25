@@ -1,0 +1,117 @@
+<30>1 2026-08-14T02:00:14.571450Z APP-01 polkitd 8614 - - Operator of unix-process:598302:25921319 successfully authenticated as unix-user:deploy to gain TEMPORARY authorization for action org.freedesktop.systemd1.manage-units for system-bus-name::1.214 [/usr/bin/loginctl] (owned by unix-user:root)
+<30>1 2026-08-14T02:00:43.668471Z APP-01 systemd-resolved 21025 - - Using degraded feature set TCP instead of UDP+EDNS0 for DNS server 8.8.8.8.
+<78>1 2026-08-14T02:01:00.058000Z APP-01 CRON 598367 - - (sysstat) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+<85>1 2026-08-14T02:02:20.662773Z APP-01 sudo 598743 - - admin : TTY=pts/16 ; PWD=/tmp ; USER=root ; COMMAND=/usr/bin/systemd-analyze blame
+<86>1 2026-08-14T02:02:20.747773Z APP-01 sudo 598743 - - pam_unix(sudo:session): session opened for user root(uid=0) by admin(uid=1001)
+<86>1 2026-08-14T02:02:25.301396Z APP-01 sudo 598743 - - pam_unix(sudo:session): session closed for user root
+<30>1 2026-08-14T02:06:02.655167Z APP-01 polkitd 8614 - - Operator of unix-process:599013:25956035 successfully authenticated as unix-user:deploy to gain TEMPORARY authorization for action org.freedesktop.systemd1.manage-units for system-bus-name::1.215 [/usr/bin/loginctl] (owned by unix-user:root)
+<30>1 2026-08-14T02:06:20.163670Z APP-01 systemd-resolved 21025 - - Grace period over, resuming full feature set (UDP+EDNS0) for DNS server 8.8.8.8.
+<30>1 2026-08-14T02:06:47.772507Z APP-01 snapd 21023 - - stateengine.go:150: state ensure starting change 2935
+<30>1 2026-08-14T02:07:04.802611Z APP-01 snapd 21023 - - taskrunner.go:271: change 2935 task 6 done for core22
+<85>1 2026-08-14T02:07:13.752145Z APP-01 sudo 599091 - - deploy : TTY=pts/26 ; PWD=/var/log ; USER=root ; COMMAND=/usr/bin/ss -ltnp
+<86>1 2026-08-14T02:07:13.786145Z APP-01 sudo 599091 - - pam_unix(sudo:session): session opened for user root(uid=0) by deploy(uid=1002)
+<86>1 2026-08-14T02:07:14.869200Z APP-01 sudo 599091 - - pam_unix(sudo:session): session closed for user root
+<30>1 2026-08-14T02:09:32.574083Z APP-01 systemd-resolved 21025 - - Using degraded feature set TCP instead of UDP+EDNS0 for DNS server 8.8.4.4.
+<30>1 2026-08-14T02:09:53.550053Z APP-01 rsyslogd 21014 - - omfwd: target siem-forwarder using disk-assisted queue action-remote, checkpoint 111935
+<30>1 2026-08-14T02:09:57.224977Z APP-01 rsyslogd 21014 - - omfwd: target 10.10.2.30 using disk-assisted queue action-remote, checkpoint 112128
+<30>1 2026-08-14T02:10:05.357003Z APP-01 snapd 21023 - - stateengine.go:150: state ensure starting change 2936
+<30>1 2026-08-14T02:10:28.725648Z APP-01 irqbalance 33154 - - Skipping IRQ 137: banned by affinity mask 00000004 (ens192)
+<30>1 2026-08-14T02:11:51.518110Z APP-01 polkitd 8614 - - Operator of unix-process:599435:25991119 successfully authenticated as unix-user:deploy to gain TEMPORARY authorization for action org.freedesktop.packagekit.system-update for system-bus-name::1.218 [/usr/bin/pkcon] (owned by unix-user:admin)
+<86>1 2026-08-14T02:12:40.734710Z APP-01 login 599507 - - pam_unix(login:session): session opened for user backup(uid=3037) by LOGIN(uid=0)
+<86>1 2026-08-14T02:12:45.771710Z APP-01 systemd-logind 21017 - - New session 34854 of user backup.
+<30>1 2026-08-14T02:12:51.722839Z APP-01 dbus-daemon 21016 - - [system] Successfully activated service 'org.freedesktop.resolve1' for ':1.219'
+<85>1 2026-08-14T02:12:52.017971Z APP-01 sudo 599512 - - ops : TTY=pts/15 ; PWD=/tmp ; USER=root ; COMMAND=/bin/systemctl is-active nginx
+<86>1 2026-08-14T02:12:52.113971Z APP-01 sudo 599512 - - pam_unix(sudo:session): session opened for user root(uid=0) by ops(uid=6366)
+<86>1 2026-08-14T02:12:54.975428Z APP-01 sudo 599512 - - pam_unix(sudo:session): session closed for user root
+<30>1 2026-08-14T02:13:28.633930Z APP-01 snapd 21023 - - daemon.go:460: gracefully waiting for hook core20.configure
+<30>1 2026-08-14T02:13:46.012112Z APP-01 systemd-resolved 21025 - - Grace period over, resuming full feature set (UDP+EDNS0) for DNS server 8.8.4.4.
+<85>1 2026-08-14T02:14:24.047100Z APP-01 sudo 599650 - - apache : command not allowed ; TTY=pts/0 ; USER=root ; COMMAND=/usr/bin/stat /etc/passwd
+<85>1 2026-08-14T02:14:31.557626Z APP-01 sudo 599660 - - deploy : TTY=pts/8 ; PWD=/srv/app ; USER=root ; COMMAND=/usr/bin/du -sh /var/cache/apt
+<86>1 2026-08-14T02:14:31.739626Z APP-01 sudo 599660 - - pam_unix(sudo:session): session opened for user root(uid=0) by deploy(uid=1002)
+<86>1 2026-08-14T02:14:34.399532Z APP-01 sudo 599660 - - pam_unix(sudo:session): session closed for user root
+<30>1 2026-08-14T02:14:35.297217Z APP-01 dbus-daemon 21016 - - [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service' requested by ':1.222'
+<30>1 2026-08-14T02:15:43.366964Z APP-01 dbus-daemon 21016 - - [system] Successfully activated service 'org.freedesktop.resolve1' for ':1.223'
+<85>1 2026-08-14T02:15:54.943710Z APP-01 sudo 599767 - - backup : TTY=pts/27 ; PWD=/etc ; USER=root ; COMMAND=/usr/bin/apt-get -s upgrade
+<86>1 2026-08-14T02:15:55.193710Z APP-01 sudo 599767 - - pam_unix(sudo:session): session opened for user root(uid=0) by backup(uid=3037)
+<86>1 2026-08-14T02:16:10.834723Z APP-01 sudo 599767 - - pam_unix(sudo:session): session closed for user root
+<30>1 2026-08-14T02:16:22.472238Z APP-01 dbus-daemon 21016 - - [system] Activating via systemd: service name='org.freedesktop.timedate1' unit='dbus-org.freedesktop.timedate1.service' requested by ':1.224'
+<30>1 2026-08-14T02:17:03.604016Z APP-01 dbus-daemon 21016 - - [system] Activating via systemd: service name='org.freedesktop.timedate1' unit='dbus-org.freedesktop.timedate1.service' requested by ':1.227'
+<30>1 2026-08-14T02:17:07.154072Z APP-01 dbus-daemon 21016 - - [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freedesktop.hostname1.service' requested by ':1.228'
+<30>1 2026-08-14T02:17:10.819827Z APP-01 dbus-daemon 21016 - - [system] Activating via systemd: service name='org.freedesktop.timedate1' unit='dbus-org.freedesktop.timedate1.service' requested by ':1.230'
+<30>1 2026-08-14T02:17:48.979484Z APP-01 snapd 21023 - - taskrunner.go:271: change 2936 task 5 done for microk8s
+<30>1 2026-08-14T02:17:54.659957Z APP-01 anacron 52276 - - Will run job `cron.daily' in 2 min.
+<30>1 2026-08-14T02:17:54Z APP-01 anacron 52276 - - Anacron 2.3 started on 2026-08-14
+<85>1 2026-08-14T02:18:14.717733Z APP-01 sudo 599948 - - svc_app : TTY=pts/11 ; PWD=/tmp ; USER=root ; COMMAND=/usr/sbin/service sshd status
+<86>1 2026-08-14T02:18:14.797733Z APP-01 sudo 599948 - - pam_unix(sudo:session): session opened for user root(uid=0) by svc_app(uid=2214)
+<86>1 2026-08-14T02:18:21.225647Z APP-01 sudo 599948 - - pam_unix(sudo:session): session closed for user root
+<30>1 2026-08-14T02:19:35.785170Z APP-01 unattended-upgr 26113 - - No packages found that can be upgraded unattended (run 285152)
+<30>1 2026-08-14T02:19:58.323937Z APP-01 anacron 52276 - - Job `cron.daily' started
+<30>1 2026-08-14T02:20:28.313900Z APP-01 systemd-journald 21012 - - Rotating system journal.
+<30>1 2026-08-14T02:22:03.686079Z APP-01 unattended-upgr 26113 - - Checking for unattended upgrades from o=Ubuntu,a=jammy; o=Ubuntu,a=jammy-security
+<30>1 2026-08-14T02:22:14.651663Z APP-01 dbus-daemon 21016 - - [system] Successfully activated service 'org.freedesktop.resolve1' for ':1.232'
+<30>1 2026-08-14T02:22:57.352129Z APP-01 anacron 52276 - - Job `cron.daily' terminated
+<30>1 2026-08-14T02:22:59.014849Z APP-01 anacron 52276 - - Normal exit (1 job run)
+<85>1 2026-08-14T02:23:14.289292Z APP-01 sudo 600349 - - svc_app : TTY=pts/18 ; PWD=/tmp ; USER=root ; COMMAND=/bin/systemctl status nginx --no-pager
+<86>1 2026-08-14T02:23:14.404292Z APP-01 sudo 600349 - - pam_unix(sudo:session): session opened for user root(uid=0) by svc_app(uid=2214)
+<86>1 2026-08-14T02:23:16.846582Z APP-01 sudo 600349 - - pam_unix(sudo:session): session closed for user root
+<30>1 2026-08-14T02:23:47.965181Z APP-01 irqbalance 33154 - - IRQ 137 classified for CPU 3 balancing on ens192
+<30>1 2026-08-14T02:24:01.070112Z APP-01 snapd 21023 - - daemon.go:460: gracefully waiting for hook core20.configure
+<30>1 2026-08-14T02:24:17.606032Z APP-01 irqbalance 33154 - - Skipping IRQ 154: banned by affinity mask 00000002 (virtio1-input)
+<84>1 2026-08-14T02:29:11Z APP-01 login 600864 - - pam_unix(login:auth): authentication failure; logname=LOGIN uid=0 euid=0 tty=/dev/tty1 ruser= rhost=  user=svc_monitor
+<78>1 2026-08-14T02:31:00.010000Z APP-01 CRON 601331 - - (sysstat) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+<30>1 2026-08-14T02:32:00.062144Z APP-01 rsyslogd 21014 - - omfwd: target siem-forwarder using disk-assisted queue main, checkpoint 112861
+<86>1 2026-08-14T02:33:16.574373Z APP-01 sshd 601473 - - Connection from 10.20.10.15 port 43202 on 10.20.30.10 port 22
+<86>1 2026-08-14T02:33:18.321556Z APP-01 sshd 601473 - - Accepted publickey for sam.ortiz from 10.20.10.15 port 43202 ssh2: RSA SHA256:S0iC30SCRlZVKxzVFkhELCpRX2luzxmhl6M8XXchrSL
+<86>1 2026-08-14T02:33:18.446763Z APP-01 sshd 601473 - - pam_unix(sshd:session): session opened for user sam.ortiz(uid=5039) by (uid=0)
+<86>1 2026-08-14T02:33:18.992901Z APP-01 systemd-logind 21017 - - New session 35018 of user sam.ortiz.
+<86>1 2026-08-14T02:34:34.195927Z APP-01 sshd 598014 - - pam_unix(sshd:session): session closed for user sam.ortiz
+<86>1 2026-08-14T02:34:34.679708Z APP-01 systemd-logind 21017 - - Removed session 34708.
+<30>1 2026-08-14T02:35:05.674700Z APP-01 irqbalance 33154 - - Skipping IRQ 154: banned by affinity mask 00000004 (virtio1-input)
+<30>1 2026-08-14T02:35:27.759389Z APP-01 rsyslogd 21014 - - omfwd: target siem-forwarder using disk-assisted queue fwdRule1, checkpoint 113640
+<86>1 2026-08-14T02:36:43.485410Z APP-01 login 601743 - - pam_unix(login:session): session opened for user ops(uid=6366) by LOGIN(uid=0)
+<86>1 2026-08-14T02:36:51.114410Z APP-01 systemd-logind 21017 - - New session 35047 of user ops.
+<30>1 2026-08-14T02:36:56.222033Z APP-01 irqbalance 33154 - - NUMA node 1: balancing pass complete, 0 IRQs moved
+<30>1 2026-08-14T02:38:02.838487Z APP-01 rsyslogd 21014 - - main Q: queue action-remote has 1826 messages pending, worker threads 3
+<85>1 2026-08-14T02:39:24.056681Z APP-01 sudo 601909 - - svc_app : TTY=pts/18 ; PWD=/home/admin ; USER=root ; COMMAND=/usr/sbin/ss -s
+<86>1 2026-08-14T02:39:24.077681Z APP-01 sudo 601909 - - pam_unix(sudo:session): session opened for user root(uid=0) by svc_app(uid=2214)
+<86>1 2026-08-14T02:39:25.437582Z APP-01 sudo 601909 - - pam_unix(sudo:session): session closed for user root
+<85>1 2026-08-14T02:41:40.258410Z APP-01 sudo 602084 - - ops : TTY=pts/28 ; PWD=/var/log ; USER=root ; COMMAND=/usr/sbin/service nginx status
+<86>1 2026-08-14T02:41:40.325410Z APP-01 sudo 602084 - - pam_unix(sudo:session): session opened for user root(uid=0) by ops(uid=6366)
+<86>1 2026-08-14T02:41:45.594883Z APP-01 sudo 602084 - - pam_unix(sudo:session): session closed for user root
+<30>1 2026-08-14T02:42:06.532988Z APP-01 snapd 21023 - - stateengine.go:150: state ensure starting change 2937
+<85>1 2026-08-14T02:42:21.340267Z APP-01 sudo 602148 - - deploy : TTY=pts/19 ; PWD=/home/ops ; USER=root ; COMMAND=/usr/bin/grep -i denied /var/log/dpkg.log
+<86>1 2026-08-14T02:42:21.566267Z APP-01 sudo 602148 - - pam_unix(sudo:session): session opened for user root(uid=0) by deploy(uid=1002)
+<86>1 2026-08-14T02:42:22.450887Z APP-01 sudo 602148 - - pam_unix(sudo:session): session closed for user root
+<30>1 2026-08-14T02:43:35.856251Z APP-01 snapd 21023 - - daemon.go:460: gracefully waiting for hook snapd-desktop-integration.configure
+<30>1 2026-08-14T02:44:37.144363Z APP-01 irqbalance 33154 - - NUMA node 1: balancing pass complete, 0 IRQs moved
+<30>1 2026-08-14T02:47:32.234949Z APP-01 snapd 21023 - - daemon.go:460: gracefully waiting for hook core20.configure
+<30>1 2026-08-14T03:00:24.179687Z APP-01 snapd 21023 - - snapmgr.go:523: refresh candidates checked for lxd
+<86>1 2026-08-14T03:00:25.086060Z APP-01 sshd 601473 - - pam_unix(sshd:session): session closed for user sam.ortiz
+<86>1 2026-08-14T03:00:25.575882Z APP-01 systemd-logind 21017 - - Removed session 35018.
+<78>1 2026-08-14T03:01:00.090000Z APP-01 CRON 603569 - - (sysstat) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+<30>1 2026-08-14T03:03:20.785990Z APP-01 irqbalance 33154 - - IRQ 24 affinity hint keeps vector on CPU 1 (ens160)
+<85>1 2026-08-14T03:06:49.193338Z APP-01 sudo 605008 - - deploy : TTY=pts/8 ; PWD=/var/log ; USER=root ; COMMAND=/usr/bin/systemctl list-units --state=failed --no-pager
+<86>1 2026-08-14T03:06:49.363338Z APP-01 sudo 605008 - - pam_unix(sudo:session): session opened for user root(uid=0) by deploy(uid=1002)
+<86>1 2026-08-14T03:06:50.930022Z APP-01 sudo 605008 - - pam_unix(sudo:session): session closed for user root
+<30>1 2026-08-14T03:10:17.414958Z APP-01 rsyslogd 21014 - - main Q: queue local-spool has 2448 messages pending, worker threads 3
+<86>1 2026-08-14T03:10:29.960441Z APP-01 sshd 605863 - - Connection from 10.20.10.15 port 36588 on 10.20.30.10 port 22
+<86>1 2026-08-14T03:10:31.627652Z APP-01 sshd 605863 - - Accepted publickey for sam.ortiz from 10.20.10.15 port 36588 ssh2: RSA SHA256:S0iC30SCRlZVKxzVFkhELCpRX2luzxmhl6M8XXchrSL
+<86>1 2026-08-14T03:10:31.748785Z APP-01 sshd 605863 - - pam_unix(sshd:session): session opened for user sam.ortiz(uid=5039) by (uid=0)
+<86>1 2026-08-14T03:10:32.459981Z APP-01 systemd-logind 21017 - - New session 35316 of user sam.ortiz.
+<30>1 2026-08-14T03:16:11.852496Z APP-01 snapd 21023 - - snapmgr.go:523: refresh candidates checked for lxd
+<30>1 2026-08-14T03:18:47.145909Z APP-01 snapd 21023 - - snapmgr.go:523: refresh candidates checked for microk8s
+<30>1 2026-08-14T03:19:19.769629Z APP-01 snapd 21023 - - stateengine.go:150: state ensure starting change 2938
+<85>1 2026-08-14T03:19:50.651451Z APP-01 sudo 607871 - - ops : TTY=pts/28 ; PWD=/etc ; USER=root ; COMMAND=/usr/bin/apt-cache policy openssl
+<86>1 2026-08-14T03:19:50.663451Z APP-01 sudo 607871 - - pam_unix(sudo:session): session opened for user root(uid=0) by ops(uid=6366)
+<86>1 2026-08-14T03:19:52.101195Z APP-01 sudo 607871 - - pam_unix(sudo:session): session closed for user root
+<30>1 2026-08-14T03:20:13.300581Z APP-01 rsyslogd 21014 - - main Q: queue action-remote has 2519 messages pending, worker threads 3
+<30>1 2026-08-14T03:27:11.750954Z APP-01 irqbalance 33154 - - IRQ 64 affinity hint keeps vector on CPU 3 (mlx5_comp0)
+<30>1 2026-08-14T03:27:52.342652Z APP-01 irqbalance 33154 - - IRQ 86 classified for CPU 2 balancing on mlx5_comp1
+<78>1 2026-08-14T03:31:00.118000Z APP-01 CRON 610636 - - (sysstat) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+<30>1 2026-08-14T03:37:40.142736Z APP-01 snapd 21023 - - snapmgr.go:523: refresh candidates checked for core20
+<30>1 2026-08-14T03:39:49.993328Z APP-01 snapd 21023 - - taskrunner.go:271: change 2937 task 8 done for snapd-desktop-integration
+<30>1 2026-08-14T03:49:11.492563Z APP-01 snapd 21023 - - taskrunner.go:271: change 2938 task 6 done for lxd
+<30>1 2026-08-14T03:49:15.524425Z APP-01 irqbalance 33154 - - IRQ 137 affinity hint keeps vector on CPU 3 (ens192)
+<30>1 2026-08-14T03:52:13.240999Z APP-01 rsyslogd 21014 - - main Q: queue main has 2888 messages pending, worker threads 3
+<30>1 2026-08-14T03:53:23.085665Z APP-01 snapd 21023 - - stateengine.go:150: state ensure starting change 2939
+<30>1 2026-08-14T03:54:11.320362Z APP-01 irqbalance 33154 - - IRQ 16 classified for CPU 0 balancing on ahci

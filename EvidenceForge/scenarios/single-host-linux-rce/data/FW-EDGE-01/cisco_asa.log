@@ -1,0 +1,441 @@
+<166>Aug 14 02:01:16 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1063858 for outside:36.97.114.135/53030 (36.97.114.135/53030) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:01:17 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1063870 for outside:36.97.114.135/64058 (36.97.114.135/64058) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:01:18 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1063870 for outside:36.97.114.135/64058 to dmz:10.20.30.10/443 duration 0:00:01 bytes 168337 TCP FINs
+<166>Aug 14 02:01:18 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1063858 for outside:36.97.114.135/53030 to dmz:10.20.30.10/443 duration 0:00:01 bytes 79064 TCP FINs
+<166>Aug 14 02:01:19 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1063872 for outside:170.98.114.214/64090 (170.98.114.214/64090) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:01:19 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1063874 for outside:170.98.114.214/50258 (170.98.114.214/50258) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:01:20 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1063872 for outside:170.98.114.214/64090 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1744 TCP FINs
+<166>Aug 14 02:01:20 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1063874 for outside:170.98.114.214/50258 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1570 TCP FINs
+<166>Aug 14 02:02:03 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1063879 for outside:36.97.114.135/58194 (36.97.114.135/58194) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:02:03 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1063883 for outside:36.97.114.135/49980 (36.97.114.135/49980) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:02:04 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1063879 for outside:36.97.114.135/58194 to dmz:10.20.30.10/443 duration 0:00:01 bytes 413021 TCP FINs
+<166>Aug 14 02:02:04 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1063883 for outside:36.97.114.135/49980 to dmz:10.20.30.10/443 duration 0:00:00 bytes 18572 TCP FINs
+<166>Aug 14 02:02:04 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1063898 for outside:36.97.114.135/60662 (36.97.114.135/60662) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:02:04 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1063932 for outside:36.97.114.135/50898 (36.97.114.135/50898) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:02:05 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1063898 for outside:36.97.114.135/60662 to dmz:10.20.30.10/443 duration 0:00:01 bytes 152037 TCP FINs
+<166>Aug 14 02:02:05 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1063935 for outside:36.97.114.135/58085 (36.97.114.135/58085) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:02:05 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1063941 for outside:36.97.114.135/53743 (36.97.114.135/53743) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:02:06 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1063932 for outside:36.97.114.135/50898 to dmz:10.20.30.10/443 duration 0:00:01 bytes 120852 TCP FINs
+<166>Aug 14 02:02:07 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1063935 for outside:36.97.114.135/58085 to dmz:10.20.30.10/443 duration 0:00:01 bytes 7261 TCP FINs
+<166>Aug 14 02:02:07 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1063941 for outside:36.97.114.135/53743 to dmz:10.20.30.10/443 duration 0:00:01 bytes 18952 TCP FINs
+<166>Aug 14 02:06:22 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064047 for outside:154.16.92.201/51064 (154.16.92.201/51064) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:06:22 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064047 for outside:154.16.92.201/51064 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1689 TCP FINs
+<166>Aug 14 02:06:27 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064049 for outside:154.16.92.201/56476 (154.16.92.201/56476) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:06:27 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064049 for outside:154.16.92.201/56476 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1557 TCP FINs
+<166>Aug 14 02:06:30 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064052 for outside:154.16.92.201/54088 (154.16.92.201/54088) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:06:31 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064052 for outside:154.16.92.201/54088 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1819 TCP FINs
+<166>Aug 14 02:06:34 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064057 for outside:154.16.92.201/61432 (154.16.92.201/61432) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:06:34 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064057 for outside:154.16.92.201/61432 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1483 TCP FINs
+<166>Aug 14 02:06:35 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064073 for outside:154.16.92.201/64013 (154.16.92.201/64013) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:06:36 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064073 for outside:154.16.92.201/64013 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1530 TCP FINs
+<166>Aug 14 02:06:38 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064086 for outside:154.16.92.201/54558 (154.16.92.201/54558) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:06:38 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064086 for outside:154.16.92.201/54558 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1106 TCP Reset-O
+<166>Aug 14 02:06:42 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064090 for outside:154.16.92.201/59539 (154.16.92.201/59539) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:06:43 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064090 for outside:154.16.92.201/59539 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1786 TCP FINs
+<166>Aug 14 02:06:43 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064104 for outside:154.16.92.201/61811 (154.16.92.201/61811) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:06:43 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064104 for outside:154.16.92.201/61811 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1772 TCP FINs
+<166>Aug 14 02:06:46 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064106 for outside:154.16.92.201/64455 (154.16.92.201/64455) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:06:47 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064106 for outside:154.16.92.201/64455 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1579 TCP FINs
+<166>Aug 14 02:06:51 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064110 for outside:154.16.92.201/51865 (154.16.92.201/51865) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:06:51 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064110 for outside:154.16.92.201/51865 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1172 TCP Reset-I
+<166>Aug 14 02:06:52 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064121 for outside:154.16.92.201/49622 (154.16.92.201/49622) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:06:52 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064121 for outside:154.16.92.201/49622 to dmz:10.20.30.10/80 duration 0:00:00 bytes 928 TCP FINs
+<166>Aug 14 02:06:55 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064126 for outside:154.16.92.201/52307 (154.16.92.201/52307) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:06:56 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064126 for outside:154.16.92.201/52307 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1578 TCP FINs
+<166>Aug 14 02:06:57 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064128 for outside:154.16.92.201/57006 (154.16.92.201/57006) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:06:58 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064128 for outside:154.16.92.201/57006 to dmz:10.20.30.10/80 duration 0:00:00 bytes 701 TCP Reset-O
+<166>Aug 14 02:07:00 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064134 for outside:154.16.92.201/53919 (154.16.92.201/53919) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:07:00 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064134 for outside:154.16.92.201/53919 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1646 TCP FINs
+<166>Aug 14 02:07:04 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064167 for outside:154.16.92.201/59437 (154.16.92.201/59437) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:07:05 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064167 for outside:154.16.92.201/59437 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1580 TCP FINs
+<166>Aug 14 02:07:05 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064220 for outside:154.16.92.201/54829 (154.16.92.201/54829) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:07:10 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064225 for outside:154.16.92.201/51317 (154.16.92.201/51317) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:07:11 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064225 for outside:154.16.92.201/51317 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1559 TCP FINs
+<166>Aug 14 02:07:12 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064227 for outside:154.16.92.201/64518 (154.16.92.201/64518) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:07:13 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064227 for outside:154.16.92.201/64518 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1602 TCP FINs
+<166>Aug 14 02:07:16 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064231 for outside:154.16.92.201/64270 (154.16.92.201/64270) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:07:16 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064231 for outside:154.16.92.201/64270 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1644 TCP FINs
+<166>Aug 14 02:07:19 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064253 for outside:154.16.92.201/65059 (154.16.92.201/65059) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:07:19 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064253 for outside:154.16.92.201/65059 to dmz:10.20.30.10/80 duration 0:00:00 bytes 30120 TCP FINs
+<166>Aug 14 02:07:21 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064263 for outside:154.16.92.201/62385 (154.16.92.201/62385) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:07:21 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064263 for outside:154.16.92.201/62385 to dmz:10.20.30.10/80 duration 0:00:00 bytes 943 TCP FINs
+<166>Aug 14 02:07:24 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064267 for outside:154.16.92.201/52368 (154.16.92.201/52368) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:07:24 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064267 for outside:154.16.92.201/52368 to dmz:10.20.30.10/80 duration 0:00:00 bytes 26136 TCP FINs
+<166>Aug 14 02:07:25 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064309 for outside:154.16.92.201/49917 (154.16.92.201/49917) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:07:25 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064309 for outside:154.16.92.201/49917 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1669 TCP FINs
+<166>Aug 14 02:07:28 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064325 for outside:154.16.92.201/52546 (154.16.92.201/52546) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:07:28 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064325 for outside:154.16.92.201/52546 to dmz:10.20.30.10/80 duration 0:00:00 bytes 926 TCP FINs
+<166>Aug 14 02:07:32 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064363 for outside:203.48.245.226/62241 (203.48.245.226/62241) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:07:32 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064378 for outside:154.16.92.201/51090 (154.16.92.201/51090) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:07:32 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064378 for outside:154.16.92.201/51090 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1558 TCP FINs
+<166>Aug 14 02:07:33 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064363 for outside:203.48.245.226/62241 to dmz:10.20.30.10/443 duration 0:00:01 bytes 20029 TCP FINs
+<166>Aug 14 02:07:33 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064388 for outside:203.48.245.226/64955 (203.48.245.226/64955) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:07:33 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064412 for outside:203.48.245.226/55962 (203.48.245.226/55962) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:07:34 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064500 for outside:203.48.245.226/63243 (203.48.245.226/63243) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:07:35 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064388 for outside:203.48.245.226/64955 to dmz:10.20.30.10/443 duration 0:00:01 bytes 5518 TCP FINs
+<166>Aug 14 02:07:35 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064412 for outside:203.48.245.226/55962 to dmz:10.20.30.10/443 duration 0:00:01 bytes 19744 TCP FINs
+<166>Aug 14 02:07:35 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064533 for outside:203.48.245.226/56303 (203.48.245.226/56303) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:07:35 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064570 for outside:203.48.245.226/57322 (203.48.245.226/57322) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:07:35 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064220 for outside:154.16.92.201/54829 to dmz:10.20.30.10/80 duration 0:00:30 bytes 0 SYN Timeout
+<166>Aug 14 02:07:36 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064500 for outside:203.48.245.226/63243 to dmz:10.20.30.10/443 duration 0:00:01 bytes 120026 TCP FINs
+<166>Aug 14 02:07:36 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064533 for outside:203.48.245.226/56303 to dmz:10.20.30.10/443 duration 0:00:01 bytes 150851 TCP FINs
+<166>Aug 14 02:07:36 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064587 for outside:154.16.92.201/59132 (154.16.92.201/59132) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:07:37 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064587 for outside:154.16.92.201/59132 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1533 TCP FINs
+<166>Aug 14 02:07:39 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064589 for outside:212.161.9.225/61823 (212.161.9.225/61823) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:07:40 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064591 for outside:212.161.9.225/61696 (212.161.9.225/61696) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:07:40 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064602 for outside:212.161.9.225/54395 (212.161.9.225/54395) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:07:40 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064626 for outside:154.16.92.201/60904 (154.16.92.201/60904) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:07:41 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064589 for outside:212.161.9.225/61823 to dmz:10.20.30.10/443 duration 0:00:01 bytes 120658 TCP FINs
+<166>Aug 14 02:07:41 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064627 for outside:212.161.9.225/52948 (212.161.9.225/52948) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:07:41 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064626 for outside:154.16.92.201/60904 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1740 TCP FINs
+<166>Aug 14 02:07:42 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064602 for outside:212.161.9.225/54395 to dmz:10.20.30.10/443 duration 0:00:01 bytes 21220 TCP FINs
+<166>Aug 14 02:07:42 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064627 for outside:212.161.9.225/52948 to dmz:10.20.30.10/443 duration 0:00:00 bytes 5671 TCP FINs
+<166>Aug 14 02:07:42 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064635 for outside:212.161.9.225/57426 (212.161.9.225/57426) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:07:42 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064641 for outside:212.161.9.225/55343 (212.161.9.225/55343) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:07:43 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064641 for outside:212.161.9.225/55343 to dmz:10.20.30.10/443 duration 0:00:01 bytes 18314 TCP FINs
+<166>Aug 14 02:07:43 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064655 for outside:154.16.92.201/56106 (154.16.92.201/56106) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:07:44 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064635 for outside:212.161.9.225/57426 to dmz:10.20.30.10/443 duration 0:00:01 bytes 414667 TCP FINs
+<166>Aug 14 02:07:44 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064570 for outside:203.48.245.226/57322 to dmz:10.20.30.10/443 duration 0:00:09 bytes 409861 TCP FINs
+<166>Aug 14 02:07:44 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064655 for outside:154.16.92.201/56106 to dmz:10.20.30.10/80 duration 0:00:00 bytes 913 TCP FINs
+<166>Aug 14 02:07:45 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064747 for outside:154.16.92.201/64020 (154.16.92.201/64020) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:07:46 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064591 for outside:212.161.9.225/61696 to dmz:10.20.30.10/443 duration 0:00:05 bytes 149872 TCP FINs
+<166>Aug 14 02:07:46 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064747 for outside:154.16.92.201/64020 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1640 TCP FINs
+<166>Aug 14 02:07:51 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064750 for outside:154.16.92.201/50402 (154.16.92.201/50402) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:07:51 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064750 for outside:154.16.92.201/50402 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1718 TCP FINs
+<166>Aug 14 02:07:53 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064760 for outside:154.16.92.201/61110 (154.16.92.201/61110) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:07:54 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064760 for outside:154.16.92.201/61110 to dmz:10.20.30.10/80 duration 0:00:00 bytes 2010 TCP FINs
+<166>Aug 14 02:07:56 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064772 for outside:212.161.9.225/49614 (212.161.9.225/49614) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:07:57 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064772 for outside:212.161.9.225/49614 to dmz:10.20.30.10/443 duration 0:00:01 bytes 299792 TCP FINs
+<166>Aug 14 02:07:57 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064782 for outside:212.161.9.225/53562 (212.161.9.225/53562) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:07:57 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064783 for outside:154.16.92.201/53650 (154.16.92.201/53650) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:07:57 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064783 for outside:154.16.92.201/53650 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1012 TCP FINs
+<166>Aug 14 02:07:58 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064782 for outside:212.161.9.225/53562 to dmz:10.20.30.10/443 duration 0:00:01 bytes 331633 TCP FINs
+<166>Aug 14 02:07:59 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064797 for outside:154.16.92.201/62539 (154.16.92.201/62539) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:07:59 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064797 for outside:154.16.92.201/62539 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1838 TCP FINs
+<166>Aug 14 02:08:02 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064806 for outside:154.16.92.201/50466 (154.16.92.201/50466) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:08:03 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064806 for outside:154.16.92.201/50466 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1791 TCP FINs
+<166>Aug 14 02:08:05 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064945 for outside:154.16.92.201/57209 (154.16.92.201/57209) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:08:06 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064945 for outside:154.16.92.201/57209 to dmz:10.20.30.10/80 duration 0:00:00 bytes 978 TCP FINs
+<166>Aug 14 02:08:08 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064949 for outside:154.16.92.201/55222 (154.16.92.201/55222) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:08:09 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064949 for outside:154.16.92.201/55222 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1525 TCP FINs
+<166>Aug 14 02:08:12 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064962 for outside:154.16.92.201/63249 (154.16.92.201/63249) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:08:12 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064962 for outside:154.16.92.201/63249 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1481 TCP FINs
+<166>Aug 14 02:08:13 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064966 for outside:154.16.92.201/55501 (154.16.92.201/55501) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:08:14 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064966 for outside:154.16.92.201/55501 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1617 TCP FINs
+<166>Aug 14 02:08:16 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064971 for outside:154.16.92.201/60608 (154.16.92.201/60608) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:08:16 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064971 for outside:154.16.92.201/60608 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1493 TCP FINs
+<166>Aug 14 02:08:25 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1064999 for outside:212.161.9.225/62817 (212.161.9.225/62817) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:08:26 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1065000 for outside:212.161.9.225/54692 (212.161.9.225/54692) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:08:27 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1064999 for outside:212.161.9.225/62817 to dmz:10.20.30.10/443 duration 0:00:01 bytes 248509 TCP FINs
+<166>Aug 14 02:08:28 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1065000 for outside:212.161.9.225/54692 to dmz:10.20.30.10/443 duration 0:00:02 bytes 341836 TCP FINs
+<164>Aug 14 02:08:57 FW-EDGE-01 %ASA-4-106023: Deny tcp src inside:10.20.10.15/45517 dst dmz:10.20.30.10/3389 by access-group "inside_access_in" [0x0, 0x0]
+<164>Aug 14 02:09:36 FW-EDGE-01 %ASA-4-106023: Deny tcp src inside:10.20.10.15/53471 dst dmz:10.20.30.10/5900 by access-group "inside_access_in" [0x0, 0x0]
+<164>Aug 14 02:10:05 FW-EDGE-01 %ASA-4-106023: Deny tcp src inside:10.20.10.15/36352 dst dmz:10.20.30.10/5900 by access-group "inside_access_in" [0x0, 0x0]
+<166>Aug 14 02:10:23 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1065041 for outside:77.237.243.198/55881 (77.237.243.198/55881) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:10:24 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1065041 for outside:77.237.243.198/55881 to dmz:10.20.30.10/443 duration 0:00:00 bytes 1255 TCP Reset-O
+<166>Aug 14 02:11:09 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1065057 for outside:131.96.146.42/56857 (131.96.146.42/56857) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:11:09 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1065057 for outside:131.96.146.42/56857 to dmz:10.20.30.10/443 duration 0:00:00 bytes 1076 TCP Reset-O
+<166>Aug 14 02:11:11 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1065094 for outside:133.218.172.115/50372 (133.218.172.115/50372) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:11:12 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1065094 for outside:133.218.172.115/50372 to dmz:10.20.30.10/80 duration 0:00:00 bytes 41866 TCP FINs
+<166>Aug 14 02:11:28 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1065101 for outside:181.122.106.13/65046 (181.122.106.13/65046) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:11:29 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1065101 for outside:181.122.106.13/65046 to dmz:10.20.30.10/80 duration 0:00:00 bytes 37454 TCP FINs
+<166>Aug 14 02:11:51 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1065128 for outside:208.5.90.136/64582 (208.5.90.136/64582) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:11:52 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1065141 for outside:208.5.90.136/52314 (208.5.90.136/52314) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:11:52 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1065152 for outside:208.5.90.136/49758 (208.5.90.136/49758) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:11:53 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1065155 for outside:208.5.90.136/61114 (208.5.90.136/61114) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:11:54 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1065128 for outside:208.5.90.136/64582 to dmz:10.20.30.10/443 duration 0:00:02 bytes 22153 TCP FINs
+<166>Aug 14 02:11:54 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1065141 for outside:208.5.90.136/52314 to dmz:10.20.30.10/443 duration 0:00:01 bytes 5085 TCP FINs
+<166>Aug 14 02:11:54 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1065152 for outside:208.5.90.136/49758 to dmz:10.20.30.10/443 duration 0:00:01 bytes 412420 TCP FINs
+<166>Aug 14 02:11:54 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1065155 for outside:208.5.90.136/61114 to dmz:10.20.30.10/443 duration 0:00:01 bytes 121676 TCP FINs
+<166>Aug 14 02:11:54 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1065183 for outside:208.5.90.136/57609 (208.5.90.136/57609) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:11:54 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1065186 for outside:208.5.90.136/51985 (208.5.90.136/51985) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:11:55 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1065186 for outside:208.5.90.136/51985 to dmz:10.20.30.10/443 duration 0:00:01 bytes 6577 TCP FINs
+<166>Aug 14 02:11:56 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1065183 for outside:208.5.90.136/57609 to dmz:10.20.30.10/443 duration 0:00:01 bytes 151910 TCP FINs
+<166>Aug 14 02:12:13 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1065232 for outside:155.99.12.181/62606 (155.99.12.181/62606) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:12:13 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1065251 for outside:155.99.12.181/59130 (155.99.12.181/59130) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:12:15 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1065232 for outside:155.99.12.181/62606 to dmz:10.20.30.10/443 duration 0:00:01 bytes 368734 TCP FINs
+<166>Aug 14 02:12:17 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1065251 for outside:155.99.12.181/59130 to dmz:10.20.30.10/443 duration 0:00:03 bytes 6226 TCP FINs
+<166>Aug 14 02:12:30 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1065258 for outside:208.5.90.136/62566 (208.5.90.136/62566) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:12:30 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1065291 for outside:208.5.90.136/50389 (208.5.90.136/50389) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:12:31 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1065258 for outside:208.5.90.136/62566 to dmz:10.20.30.10/443 duration 0:00:01 bytes 125471 TCP FINs
+<166>Aug 14 02:12:32 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1065291 for outside:208.5.90.136/50389 to dmz:10.20.30.10/443 duration 0:00:01 bytes 345924 TCP FINs
+<166>Aug 14 02:17:15 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1065431 for outside:170.98.114.214/50084 (170.98.114.214/50084) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:17:16 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1065431 for outside:170.98.114.214/50084 to dmz:10.20.30.10/443 duration 0:00:01 bytes 8759 TCP FINs
+<166>Aug 14 02:17:16 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1065434 for outside:170.98.114.214/58344 (170.98.114.214/58344) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:17:18 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1065434 for outside:170.98.114.214/58344 to dmz:10.20.30.10/443 duration 0:00:01 bytes 6583 TCP FINs
+<166>Aug 14 02:17:18 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1065437 for outside:170.98.114.214/60600 (170.98.114.214/60600) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:17:19 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1065437 for outside:170.98.114.214/60600 to dmz:10.20.30.10/443 duration 0:00:01 bytes 6579 TCP FINs
+<166>Aug 14 02:17:35 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1065473 for outside:154.16.92.201/51772 (154.16.92.201/51772) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:17:52 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1065473 for outside:154.16.92.201/51772 to dmz:10.20.30.10/80 duration 0:00:17 bytes 5752 TCP FINs
+<164>Aug 14 02:21:58 FW-EDGE-01 %ASA-4-106023: Deny tcp src inside:10.20.10.15/35350 dst outside:135.39.27.199/22 by access-group "inside_access_in" [0x0, 0x0]
+<164>Aug 14 02:22:54 FW-EDGE-01 %ASA-4-106023: Deny tcp src inside:10.20.10.15/60091 dst dmz:10.20.30.10/443 by access-group "inside_access_in" [0xf30f, 0x570e]
+<164>Aug 14 02:24:02 FW-EDGE-01 %ASA-4-106023: Deny tcp src inside:10.20.10.15/54970 dst dmz:10.20.30.10/443 by access-group "inside_access_in" [0x7366, 0xb54c]
+<166>Aug 14 02:24:24 FW-EDGE-01 %ASA-6-302015: Built outbound UDP connection 1065624 for dmz:10.20.30.10/59435 (45.61.18.5/59435) to outside:1.1.1.1/53 (1.1.1.1/53)
+<166>Aug 14 02:24:24 FW-EDGE-01 %ASA-6-302016: Teardown UDP connection 1065624 for dmz:10.20.30.10/59435 to outside:1.1.1.1/53 duration 0:00:00 bytes 145
+<166>Aug 14 02:24:26 FW-EDGE-01 %ASA-6-302013: Built outbound TCP connection 1065627 for dmz:10.20.30.10/33915 (45.61.18.5/33915) to outside:154.16.92.201/80 (154.16.92.201/80)
+<166>Aug 14 02:24:31 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1065627 for dmz:10.20.30.10/33915 to outside:154.16.92.201/80 duration 0:00:05 bytes 8526 TCP FINs
+<166>Aug 14 02:24:38 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1065634 for outside:222.88.246.55/55442 (222.88.246.55/55442) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:24:42 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1065634 for outside:222.88.246.55/55442 to dmz:10.20.30.10/443 duration 0:00:04 bytes 52242 TCP FINs
+<166>Aug 14 02:24:53 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1065649 for outside:139.152.131.117/62005 (139.152.131.117/62005) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:24:56 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1065649 for outside:139.152.131.117/62005 to dmz:10.20.30.10/443 duration 0:00:03 bytes 28721 TCP FINs
+<166>Aug 14 02:25:47 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1065672 for outside:14.108.86.37/53100 (14.108.86.37/53100) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:25:51 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1065672 for outside:14.108.86.37/53100 to dmz:10.20.30.10/443 duration 0:00:03 bytes 40387 TCP FINs
+<166>Aug 14 02:28:17 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1065775 for outside:155.99.12.181/53717 (155.99.12.181/53717) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:28:17 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1065795 for outside:155.99.12.181/61314 (155.99.12.181/61314) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:28:19 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1065795 for outside:155.99.12.181/61314 to dmz:10.20.30.10/443 duration 0:00:01 bytes 265790 TCP FINs
+<166>Aug 14 02:28:26 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1065775 for outside:155.99.12.181/53717 to dmz:10.20.30.10/443 duration 0:00:08 bytes 418068 TCP FINs
+<166>Aug 14 02:28:44 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1065849 for outside:155.99.12.181/58805 (155.99.12.181/58805) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:28:45 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1065849 for outside:155.99.12.181/58805 to dmz:10.20.30.10/443 duration 0:00:01 bytes 15955 TCP FINs
+<166>Aug 14 02:28:45 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1065857 for outside:155.99.12.181/57596 (155.99.12.181/57596) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:28:47 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1065857 for outside:155.99.12.181/57596 to dmz:10.20.30.10/443 duration 0:00:02 bytes 209461 TCP FINs
+<166>Aug 14 02:28:47 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1065858 for dmz:10.20.30.10/57085 (10.20.30.10/57085) to inside:10.20.10.15/22 (10.20.10.15/22)
+<166>Aug 14 02:28:49 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1065858 for dmz:10.20.30.10/57085 to inside:10.20.10.15/22 duration 0:00:02 bytes 4253 TCP FINs
+<166>Aug 14 02:28:50 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1065879 for dmz:10.20.30.10/52069 (10.20.30.10/52069) to inside:10.20.10.15/22 (10.20.10.15/22)
+<166>Aug 14 02:28:53 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1065879 for dmz:10.20.30.10/52069 to inside:10.20.10.15/22 duration 0:00:02 bytes 35010 TCP FINs
+<166>Aug 14 02:33:14 FW-EDGE-01 %ASA-6-302013: Built outbound TCP connection 1065980 for inside:10.20.10.15/43202 (10.20.10.15/43202) to dmz:10.20.30.10/22 (10.20.30.10/22)
+<166>Aug 14 02:35:29 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066009 for outside:212.161.9.225/50091 (212.161.9.225/50091) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:35:29 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066022 for outside:212.161.9.225/53983 (212.161.9.225/53983) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:35:30 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066022 for outside:212.161.9.225/53983 to dmz:10.20.30.10/80 duration 0:00:01 bytes 182912 TCP FINs
+<166>Aug 14 02:35:31 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066009 for outside:212.161.9.225/50091 to dmz:10.20.30.10/80 duration 0:00:01 bytes 1126 TCP FINs
+<166>Aug 14 02:36:00 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066034 for outside:212.161.9.225/52580 (212.161.9.225/52580) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:36:02 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066034 for outside:212.161.9.225/52580 to dmz:10.20.30.10/80 duration 0:00:01 bytes 182450 TCP FINs
+<164>Aug 14 02:37:47 FW-EDGE-01 %ASA-4-106023: Deny tcp src inside:10.20.10.15/56633 dst outside:173.207.192.80/3389 by access-group "inside_access_in" [0x0, 0x0]
+<164>Aug 14 02:38:22 FW-EDGE-01 %ASA-4-106023: Deny tcp src inside:10.20.10.15/44350 dst dmz:10.20.30.10/3389 by access-group "inside_access_in" [0x0, 0x0]
+<164>Aug 14 02:38:40 FW-EDGE-01 %ASA-4-106023: Deny tcp src inside:10.20.10.15/36519 dst dmz:10.20.30.10/3389 by access-group "inside_access_in" [0xf84a, 0x6d4a]
+<164>Aug 14 02:39:06 FW-EDGE-01 %ASA-4-106023: Deny tcp src inside:10.20.10.15/36668 dst dmz:10.20.30.10/443 by access-group "inside_access_in" [0x0, 0x0]
+<166>Aug 14 02:43:21 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066153 for outside:189.141.156.1/55670 (189.141.156.1/55670) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:43:22 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066159 for outside:189.141.156.1/51127 (189.141.156.1/51127) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:43:22 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066205 for outside:189.141.156.1/58533 (189.141.156.1/58533) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:43:23 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066153 for outside:189.141.156.1/55670 to dmz:10.20.30.10/443 duration 0:00:01 bytes 118370 TCP FINs
+<166>Aug 14 02:43:23 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066159 for outside:189.141.156.1/51127 to dmz:10.20.30.10/443 duration 0:00:00 bytes 4776 TCP FINs
+<166>Aug 14 02:43:23 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066206 for outside:189.141.156.1/58921 (189.141.156.1/58921) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:43:24 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066205 for outside:189.141.156.1/58533 to dmz:10.20.30.10/443 duration 0:00:02 bytes 18603 TCP FINs
+<166>Aug 14 02:43:24 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066206 for outside:189.141.156.1/58921 to dmz:10.20.30.10/443 duration 0:00:01 bytes 18209 TCP FINs
+<166>Aug 14 02:43:24 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066213 for outside:189.141.156.1/52204 (189.141.156.1/52204) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:43:25 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066218 for outside:189.141.156.1/52896 (189.141.156.1/52896) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:43:26 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066213 for outside:189.141.156.1/52204 to dmz:10.20.30.10/443 duration 0:00:01 bytes 6626 TCP FINs
+<166>Aug 14 02:43:26 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066218 for outside:189.141.156.1/52896 to dmz:10.20.30.10/443 duration 0:00:01 bytes 405513 TCP FINs
+<166>Aug 14 02:43:31 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066226 for outside:189.141.156.1/51328 (189.141.156.1/51328) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:43:32 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066227 for outside:189.141.156.1/61567 (189.141.156.1/61567) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:43:33 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066226 for outside:189.141.156.1/51328 to dmz:10.20.30.10/443 duration 0:00:02 bytes 147527 TCP FINs
+<166>Aug 14 02:43:33 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066227 for outside:189.141.156.1/61567 to dmz:10.20.30.10/443 duration 0:00:01 bytes 165149 TCP FINs
+<166>Aug 14 02:43:55 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066244 for outside:189.141.156.1/64216 (189.141.156.1/64216) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:43:56 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066259 for outside:189.141.156.1/61405 (189.141.156.1/61405) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:43:57 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066244 for outside:189.141.156.1/64216 to dmz:10.20.30.10/443 duration 0:00:02 bytes 149981 TCP FINs
+<166>Aug 14 02:43:57 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066259 for outside:189.141.156.1/61405 to dmz:10.20.30.10/443 duration 0:00:01 bytes 171721 TCP FINs
+<166>Aug 14 02:44:19 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066315 for outside:40.237.169.103/53386 (40.237.169.103/53386) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:44:24 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066315 for outside:40.237.169.103/53386 to dmz:10.20.30.10/80 duration 0:00:04 bytes 41996 TCP FINs
+<166>Aug 14 02:45:31 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066365 for outside:139.215.210.177/57163 (139.215.210.177/57163) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:45:32 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066365 for outside:139.215.210.177/57163 to dmz:10.20.30.10/80 duration 0:00:00 bytes 15413 TCP FINs
+<166>Aug 14 02:45:32 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066366 for outside:139.215.210.177/62950 (139.215.210.177/62950) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:45:33 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066366 for outside:139.215.210.177/62950 to dmz:10.20.30.10/80 duration 0:00:01 bytes 147860 TCP FINs
+<166>Aug 14 02:45:33 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066392 for outside:139.215.210.177/52544 (139.215.210.177/52544) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:45:33 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066394 for outside:139.215.210.177/65443 (139.215.210.177/65443) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:45:34 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066392 for outside:139.215.210.177/52544 to dmz:10.20.30.10/80 duration 0:00:01 bytes 1904 TCP FINs
+<166>Aug 14 02:45:34 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066394 for outside:139.215.210.177/65443 to dmz:10.20.30.10/80 duration 0:00:01 bytes 16820 TCP FINs
+<166>Aug 14 02:45:34 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066395 for outside:139.215.210.177/52958 (139.215.210.177/52958) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:45:35 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066395 for outside:139.215.210.177/52958 to dmz:10.20.30.10/80 duration 0:00:01 bytes 113933 TCP FINs
+<166>Aug 14 02:46:01 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066405 for outside:139.215.210.177/55587 (139.215.210.177/55587) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:46:02 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066405 for outside:139.215.210.177/55587 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1058 TCP FINs
+<166>Aug 14 02:48:03 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066457 for outside:170.98.114.214/62917 (170.98.114.214/62917) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:48:05 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066457 for outside:170.98.114.214/62917 to dmz:10.20.30.10/443 duration 0:00:01 bytes 6618 TCP FINs
+<166>Aug 14 02:48:05 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066459 for outside:170.98.114.214/55100 (170.98.114.214/55100) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:48:05 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066487 for outside:170.98.114.214/54446 (170.98.114.214/54446) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:48:06 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066459 for outside:170.98.114.214/55100 to dmz:10.20.30.10/443 duration 0:00:01 bytes 5824 TCP FINs
+<166>Aug 14 02:48:06 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066487 for outside:170.98.114.214/54446 to dmz:10.20.30.10/443 duration 0:00:01 bytes 6230 TCP FINs
+<164>Aug 14 02:48:24 FW-EDGE-01 %ASA-4-106023: Deny tcp src inside:10.20.10.15/33270 dst outside:134.139.51.92/5900 by access-group "inside_access_in" [0x0, 0x0]
+<164>Aug 14 02:48:47 FW-EDGE-01 %ASA-4-106023: Deny tcp src inside:10.20.10.15/39586 dst dmz:10.20.30.10/5900 by access-group "inside_access_in" [0xfa1a, 0xcaf0]
+<164>Aug 14 02:49:20 FW-EDGE-01 %ASA-4-106023: Deny tcp src inside:10.20.10.15/58865 dst dmz:10.20.30.10/5900 by access-group "inside_access_in" [0x0, 0x0]
+<164>Aug 14 02:49:44 FW-EDGE-01 %ASA-4-106023: Deny tcp src inside:10.20.10.15/33935 dst dmz:10.20.30.10/443 by access-group "inside_access_in" [0x0, 0x0]
+<166>Aug 14 02:52:36 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066525 for outside:155.99.12.181/60091 (155.99.12.181/60091) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:52:37 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066525 for outside:155.99.12.181/60091 to dmz:10.20.30.10/80 duration 0:00:01 bytes 1109 TCP FINs
+<166>Aug 14 02:52:37 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066573 for outside:155.99.12.181/53199 (155.99.12.181/53199) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:52:37 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066619 for outside:155.99.12.181/55861 (155.99.12.181/55861) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:52:38 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066573 for outside:155.99.12.181/53199 to dmz:10.20.30.10/80 duration 0:00:00 bytes 15562 TCP FINs
+<166>Aug 14 02:52:38 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066622 for outside:155.99.12.181/63542 (155.99.12.181/63542) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:52:39 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066619 for outside:155.99.12.181/55861 to dmz:10.20.30.10/80 duration 0:00:01 bytes 147653 TCP FINs
+<166>Aug 14 02:52:39 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066622 for outside:155.99.12.181/63542 to dmz:10.20.30.10/80 duration 0:00:00 bytes 17069 TCP FINs
+<166>Aug 14 02:52:39 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066648 for outside:155.99.12.181/64448 (155.99.12.181/64448) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:52:40 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066648 for outside:155.99.12.181/64448 to dmz:10.20.30.10/80 duration 0:00:00 bytes 1971 TCP FINs
+<166>Aug 14 02:53:25 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066662 for outside:223.249.130.134/57266 (223.249.130.134/57266) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 02:53:26 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066662 for outside:223.249.130.134/57266 to dmz:10.20.30.10/80 duration 0:00:00 bytes 41325 TCP FINs
+<166>Aug 14 02:55:49 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066744 for outside:119.138.27.224/52410 (119.138.27.224/52410) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<164>Aug 14 02:55:50 FW-EDGE-01 %ASA-4-106023: Deny tcp src inside:10.20.10.15/42147 dst outside:34.10.165.211/5900 by access-group "inside_access_in" [0x0, 0x0]
+<166>Aug 14 02:55:51 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066744 for outside:119.138.27.224/52410 to dmz:10.20.30.10/443 duration 0:00:01 bytes 16311 TCP FINs
+<166>Aug 14 02:58:39 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066795 for outside:203.48.245.226/55251 (203.48.245.226/55251) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:58:39 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066800 for outside:203.48.245.226/59795 (203.48.245.226/59795) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:58:40 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066795 for outside:203.48.245.226/55251 to dmz:10.20.30.10/443 duration 0:00:01 bytes 219290 TCP FINs
+<166>Aug 14 02:58:40 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066800 for outside:203.48.245.226/59795 to dmz:10.20.30.10/443 duration 0:00:01 bytes 149141 TCP FINs
+<166>Aug 14 02:58:54 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066806 for outside:203.48.245.226/49680 (203.48.245.226/49680) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:58:55 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066808 for outside:203.48.245.226/57761 (203.48.245.226/57761) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:58:56 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066808 for outside:203.48.245.226/57761 to dmz:10.20.30.10/443 duration 0:00:01 bytes 3463 TCP FINs
+<166>Aug 14 02:58:57 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066806 for outside:203.48.245.226/49680 to dmz:10.20.30.10/443 duration 0:00:02 bytes 6284 TCP FINs
+<166>Aug 14 02:59:16 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066818 for outside:212.161.9.225/65323 (212.161.9.225/65323) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:59:17 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066867 for outside:212.161.9.225/52579 (212.161.9.225/52579) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:59:18 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066818 for outside:212.161.9.225/65323 to dmz:10.20.30.10/443 duration 0:00:02 bytes 308855 TCP FINs
+<166>Aug 14 02:59:18 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066867 for outside:212.161.9.225/52579 to dmz:10.20.30.10/443 duration 0:00:01 bytes 188738 TCP FINs
+<166>Aug 14 02:59:32 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066870 for outside:212.161.9.225/51112 (212.161.9.225/51112) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:59:33 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066870 for outside:212.161.9.225/51112 to dmz:10.20.30.10/443 duration 0:00:01 bytes 329918 TCP FINs
+<166>Aug 14 02:59:33 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066913 for outside:212.161.9.225/60239 (212.161.9.225/60239) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 02:59:34 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066913 for outside:212.161.9.225/60239 to dmz:10.20.30.10/443 duration 0:00:01 bytes 120853 TCP FINs
+<166>Aug 14 03:00:22 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1065980 for inside:10.20.10.15/43202 to dmz:10.20.30.10/22 duration 0:27:07 bytes 76616 TCP FINs
+<166>Aug 14 03:02:39 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066948 for outside:111.58.211.143/50876 (111.58.211.143/50876) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 03:02:39 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066948 for outside:111.58.211.143/50876 to dmz:10.20.30.10/80 duration 0:00:00 bytes 145701 TCP FINs
+<166>Aug 14 03:02:39 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066951 for outside:111.58.211.143/62869 (111.58.211.143/62869) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 03:02:40 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066951 for outside:111.58.211.143/62869 to dmz:10.20.30.10/80 duration 0:00:00 bytes 15698 TCP FINs
+<166>Aug 14 03:02:40 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066954 for outside:111.58.211.143/50980 (111.58.211.143/50980) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 03:02:41 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066957 for outside:111.58.211.143/52518 (111.58.211.143/52518) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 03:02:41 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066957 for outside:111.58.211.143/52518 to dmz:10.20.30.10/80 duration 0:00:00 bytes 16977 TCP FINs
+<166>Aug 14 03:02:41 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066961 for outside:111.58.211.143/61418 (111.58.211.143/61418) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 03:02:42 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066954 for outside:111.58.211.143/50980 to dmz:10.20.30.10/80 duration 0:00:01 bytes 411046 TCP FINs
+<166>Aug 14 03:02:42 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066969 for outside:111.58.211.143/55368 (111.58.211.143/55368) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 03:02:43 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066961 for outside:111.58.211.143/61418 to dmz:10.20.30.10/80 duration 0:00:01 bytes 116235 TCP FINs
+<166>Aug 14 03:02:43 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066969 for outside:111.58.211.143/55368 to dmz:10.20.30.10/80 duration 0:00:01 bytes 1986 TCP FINs
+<164>Aug 14 03:02:45 FW-EDGE-01 %ASA-4-106023: Deny tcp src inside:10.20.10.15/56323 dst dmz:10.20.30.10/5900 by access-group "inside_access_in" [0x0, 0x0]
+<166>Aug 14 03:02:59 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066977 for outside:119.110.218.23/65265 (119.110.218.23/65265) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:03:00 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066977 for outside:119.110.218.23/65265 to dmz:10.20.30.10/443 duration 0:00:01 bytes 19191 TCP FINs
+<166>Aug 14 03:03:00 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1066980 for outside:119.110.218.23/50074 (119.110.218.23/50074) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:03:00 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1067020 for outside:119.110.218.23/50228 (119.110.218.23/50228) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:03:01 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1066980 for outside:119.110.218.23/50074 to dmz:10.20.30.10/443 duration 0:00:01 bytes 116424 TCP FINs
+<166>Aug 14 03:03:01 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1067020 for outside:119.110.218.23/50228 to dmz:10.20.30.10/443 duration 0:00:01 bytes 4999 TCP FINs
+<166>Aug 14 03:03:01 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1067032 for outside:119.110.218.23/55930 (119.110.218.23/55930) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:03:02 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1067032 for outside:119.110.218.23/55930 to dmz:10.20.30.10/443 duration 0:00:01 bytes 123990 TCP FINs
+<166>Aug 14 03:03:02 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1067043 for outside:119.110.218.23/49929 (119.110.218.23/49929) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:03:03 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1067043 for outside:119.110.218.23/49929 to dmz:10.20.30.10/443 duration 0:00:01 bytes 308357 TCP FINs
+<166>Aug 14 03:03:06 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1067047 for outside:111.58.211.143/64011 (111.58.211.143/64011) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 03:03:07 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1067049 for outside:111.58.211.143/56218 (111.58.211.143/56218) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 03:03:08 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1067047 for outside:111.58.211.143/64011 to dmz:10.20.30.10/80 duration 0:00:01 bytes 122757 TCP FINs
+<166>Aug 14 03:03:09 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1067049 for outside:111.58.211.143/56218 to dmz:10.20.30.10/80 duration 0:00:01 bytes 363595 TCP FINs
+<164>Aug 14 03:03:10 FW-EDGE-01 %ASA-4-106023: Deny tcp src inside:10.20.10.15/46947 dst outside:93.123.150.211/3389 by access-group "inside_access_in" [0x384f, 0xc796]
+<164>Aug 14 03:04:17 FW-EDGE-01 %ASA-4-106023: Deny tcp src inside:10.20.10.15/37941 dst dmz:10.20.30.10/3389 by access-group "inside_access_in" [0xab66, 0xd42b]
+<164>Aug 14 03:04:31 FW-EDGE-01 %ASA-4-106023: Deny tcp src inside:10.20.10.15/49235 dst outside:220.112.49.161/22 by access-group "inside_access_in" [0x0, 0x0]
+<166>Aug 14 03:05:05 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1067093 for outside:129.114.187.156/57332 (129.114.187.156/57332) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:05:07 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1067093 for outside:129.114.187.156/57332 to dmz:10.20.30.10/443 duration 0:00:01 bytes 17253 TCP FINs
+<166>Aug 14 03:06:10 FW-EDGE-01 %ASA-6-302013: Built outbound TCP connection 1067115 for inside:10.20.10.15/54142 (10.20.10.15/54142) to dmz:10.20.30.10/514 (10.20.30.10/514)
+<166>Aug 14 03:06:27 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1067131 for outside:198.169.49.186/56269 (198.169.49.186/56269) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:06:30 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1067131 for outside:198.169.49.186/56269 to dmz:10.20.30.10/443 duration 0:00:03 bytes 21046 TCP FINs
+<166>Aug 14 03:06:40 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1067115 for inside:10.20.10.15/54142 to dmz:10.20.30.10/514 duration 0:00:30 bytes 0 SYN Timeout
+<166>Aug 14 03:07:37 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1067146 for outside:202.188.64.135/60003 (202.188.64.135/60003) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:07:39 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1067146 for outside:202.188.64.135/60003 to dmz:10.20.30.10/443 duration 0:00:02 bytes 8552 TCP FINs
+<166>Aug 14 03:10:29 FW-EDGE-01 %ASA-6-302013: Built outbound TCP connection 1067217 for inside:10.20.10.15/36588 (10.20.10.15/36588) to dmz:10.20.30.10/22 (10.20.30.10/22)
+<166>Aug 14 03:13:59 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1067275 for outside:86.2.216.87/58769 (86.2.216.87/58769) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:14:00 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1067282 for outside:86.2.216.87/51093 (86.2.216.87/51093) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:14:00 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1067284 for outside:86.2.216.87/50503 (86.2.216.87/50503) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:14:01 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1067275 for outside:86.2.216.87/58769 to dmz:10.20.30.10/443 duration 0:00:02 bytes 116509 TCP FINs
+<166>Aug 14 03:14:01 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1067282 for outside:86.2.216.87/51093 to dmz:10.20.30.10/443 duration 0:00:00 bytes 7287 TCP FINs
+<166>Aug 14 03:14:01 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1067284 for outside:86.2.216.87/50503 to dmz:10.20.30.10/443 duration 0:00:00 bytes 5545 TCP FINs
+<166>Aug 14 03:14:01 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1067290 for outside:86.2.216.87/64781 (86.2.216.87/64781) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:14:01 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1067500 for outside:86.2.216.87/56707 (86.2.216.87/56707) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:14:02 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1067290 for outside:86.2.216.87/64781 to dmz:10.20.30.10/443 duration 0:00:01 bytes 68504 TCP FINs
+<166>Aug 14 03:14:02 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1067500 for outside:86.2.216.87/56707 to dmz:10.20.30.10/443 duration 0:00:01 bytes 5223 TCP FINs
+<166>Aug 14 03:15:11 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1067557 for outside:197.158.5.247/62492 (197.158.5.247/62492) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 03:15:12 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1067595 for outside:197.158.5.247/62386 (197.158.5.247/62386) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 03:15:12 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1067631 for outside:197.158.5.247/62589 (197.158.5.247/62589) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 03:15:13 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1067557 for outside:197.158.5.247/62492 to dmz:10.20.30.10/80 duration 0:00:01 bytes 409062 TCP FINs
+<166>Aug 14 03:15:13 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1067631 for outside:197.158.5.247/62589 to dmz:10.20.30.10/80 duration 0:00:01 bytes 145846 TCP FINs
+<166>Aug 14 03:15:13 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1067642 for outside:197.158.5.247/55153 (197.158.5.247/55153) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 03:15:14 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1067595 for outside:197.158.5.247/62386 to dmz:10.20.30.10/80 duration 0:00:01 bytes 1945 TCP FINs
+<166>Aug 14 03:15:14 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1067657 for outside:197.158.5.247/60475 (197.158.5.247/60475) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 03:15:15 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1067642 for outside:197.158.5.247/55153 to dmz:10.20.30.10/80 duration 0:00:01 bytes 115447 TCP FINs
+<166>Aug 14 03:15:15 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1067657 for outside:197.158.5.247/60475 to dmz:10.20.30.10/80 duration 0:00:01 bytes 16973 TCP FINs
+<166>Aug 14 03:15:15 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1067670 for outside:197.158.5.247/52640 (197.158.5.247/52640) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 03:15:16 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1067670 for outside:197.158.5.247/52640 to dmz:10.20.30.10/80 duration 0:00:01 bytes 15438 TCP FINs
+<166>Aug 14 03:15:37 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1067685 for outside:197.158.5.247/63128 (197.158.5.247/63128) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 03:15:38 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1067685 for outside:197.158.5.247/63128 to dmz:10.20.30.10/80 duration 0:00:01 bytes 463261 TCP FINs
+<166>Aug 14 03:15:38 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1067734 for outside:197.158.5.247/53637 (197.158.5.247/53637) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 03:15:39 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1067734 for outside:197.158.5.247/53637 to dmz:10.20.30.10/80 duration 0:00:01 bytes 408667 TCP FINs
+<166>Aug 14 03:19:42 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1067776 for outside:111.22.247.183/49489 (111.22.247.183/49489) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:19:43 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1067776 for outside:111.22.247.183/49489 to dmz:10.20.30.10/443 duration 0:00:01 bytes 6363 TCP FINs
+<166>Aug 14 03:19:43 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1067789 for outside:111.22.247.183/49562 (111.22.247.183/49562) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:19:44 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1067789 for outside:111.22.247.183/49562 to dmz:10.20.30.10/443 duration 0:00:00 bytes 3882 TCP FINs
+<166>Aug 14 03:19:44 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1067791 for outside:111.22.247.183/57177 (111.22.247.183/57177) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:19:45 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1067791 for outside:111.22.247.183/57177 to dmz:10.20.30.10/443 duration 0:00:01 bytes 5942 TCP FINs
+<166>Aug 14 03:23:25 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1067874 for outside:129.107.206.201/64941 (129.107.206.201/64941) to dmz:10.20.30.10/80 (45.61.18.5/80)
+<166>Aug 14 03:23:28 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1067874 for outside:129.107.206.201/64941 to dmz:10.20.30.10/80 duration 0:00:03 bytes 20279 TCP FINs
+<166>Aug 14 03:25:02 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1067955 for outside:57.62.64.144/55882 (57.62.64.144/55882) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:25:03 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1068101 for outside:57.62.64.144/59054 (57.62.64.144/59054) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:25:03 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1068108 for outside:57.62.64.144/49749 (57.62.64.144/49749) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:25:04 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1067955 for outside:57.62.64.144/55882 to dmz:10.20.30.10/443 duration 0:00:01 bytes 117337 TCP FINs
+<166>Aug 14 03:25:04 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1068101 for outside:57.62.64.144/59054 to dmz:10.20.30.10/443 duration 0:00:01 bytes 149752 TCP FINs
+<166>Aug 14 03:25:04 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1068123 for outside:57.62.64.144/64749 (57.62.64.144/64749) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:25:04 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1068130 for outside:57.62.64.144/53062 (57.62.64.144/53062) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:25:05 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1068123 for outside:57.62.64.144/64749 to dmz:10.20.30.10/443 duration 0:00:01 bytes 413064 TCP FINs
+<166>Aug 14 03:25:05 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1068130 for outside:57.62.64.144/53062 to dmz:10.20.30.10/443 duration 0:00:01 bytes 4075 TCP FINs
+<166>Aug 14 03:25:05 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1068132 for outside:57.62.64.144/55464 (57.62.64.144/55464) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:25:07 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1068132 for outside:57.62.64.144/55464 to dmz:10.20.30.10/443 duration 0:00:01 bytes 22429 TCP FINs
+<166>Aug 14 03:25:09 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1068108 for outside:57.62.64.144/49749 to dmz:10.20.30.10/443 duration 0:00:05 bytes 4532 TCP FINs
+<166>Aug 14 03:25:50 FW-EDGE-01 %ASA-6-302013: Built outbound TCP connection 1068188 for inside:10.20.10.15/36740 (10.20.10.15/36740) to dmz:10.20.30.10/5000 (10.20.30.10/5000)
+<166>Aug 14 03:26:09 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1068188 for inside:10.20.10.15/36740 to dmz:10.20.30.10/5000 duration 0:00:19 bytes 25111 TCP FINs
+<164>Aug 14 03:26:20 FW-EDGE-01 %ASA-4-106023: Deny tcp src inside:10.20.10.15/34630 dst outside:194.210.119.35/5900 by access-group "inside_access_in" [0x9cdf, 0xc377]
+<166>Aug 14 03:26:35 FW-EDGE-01 %ASA-6-305011: Built dynamic UDP translation from inside:10.20.10.15/47027 to outside:45.61.18.1/35139
+<166>Aug 14 03:26:35 FW-EDGE-01 %ASA-6-302015: Built outbound UDP connection 1068200 for inside:10.20.10.15/47027 (45.61.18.1/35139) to outside:8.8.4.4/53 (8.8.4.4/53)
+<166>Aug 14 03:26:35 FW-EDGE-01 %ASA-6-302016: Teardown UDP connection 1068200 for inside:10.20.10.15/47027 to outside:8.8.4.4/53 duration 0:00:00 bytes 163
+<166>Aug 14 03:26:35 FW-EDGE-01 %ASA-6-305012: Teardown dynamic UDP translation from inside:10.20.10.15/47027 to outside:45.61.18.1/35139 duration 0:00:00
+<166>Aug 14 03:26:35 FW-EDGE-01 %ASA-6-305011: Built dynamic UDP translation from inside:10.20.10.15/54508 to outside:45.61.18.1/35260
+<166>Aug 14 03:26:35 FW-EDGE-01 %ASA-6-302015: Built outbound UDP connection 1068202 for inside:10.20.10.15/54508 (45.61.18.1/35260) to outside:8.8.4.4/53 (8.8.4.4/53)
+<166>Aug 14 03:26:35 FW-EDGE-01 %ASA-6-302016: Teardown UDP connection 1068202 for inside:10.20.10.15/54508 to outside:8.8.4.4/53 duration 0:00:00 bytes 178
+<166>Aug 14 03:26:35 FW-EDGE-01 %ASA-6-305012: Teardown dynamic UDP translation from inside:10.20.10.15/54508 to outside:45.61.18.1/35260 duration 0:00:00
+<166>Aug 14 03:26:35 FW-EDGE-01 %ASA-6-305011: Built dynamic UDP translation from inside:10.20.10.15/52938 to outside:45.61.18.1/35273
+<166>Aug 14 03:26:35 FW-EDGE-01 %ASA-6-302015: Built outbound UDP connection 1068203 for inside:10.20.10.15/52938 (45.61.18.1/35273) to outside:8.8.8.8/53 (8.8.8.8/53)
+<166>Aug 14 03:26:35 FW-EDGE-01 %ASA-6-302016: Teardown UDP connection 1068203 for inside:10.20.10.15/52938 to outside:8.8.8.8/53 duration 0:00:00 bytes 155
+<166>Aug 14 03:26:35 FW-EDGE-01 %ASA-6-305012: Teardown dynamic UDP translation from inside:10.20.10.15/52938 to outside:45.61.18.1/35273 duration 0:00:00
+<166>Aug 14 03:26:38 FW-EDGE-01 %ASA-6-305011: Built dynamic TCP translation from inside:10.20.10.15/46603 to outside:45.61.18.1/35505
+<166>Aug 14 03:26:38 FW-EDGE-01 %ASA-6-302013: Built outbound TCP connection 1068204 for inside:10.20.10.15/46603 (45.61.18.1/35505) to outside:13.107.6.157/443 (13.107.6.157/443)
+<166>Aug 14 03:26:38 FW-EDGE-01 %ASA-6-305011: Built dynamic UDP translation from inside:10.20.10.15/36115 to outside:45.61.18.1/35719
+<166>Aug 14 03:26:38 FW-EDGE-01 %ASA-6-302015: Built outbound UDP connection 1068215 for inside:10.20.10.15/36115 (45.61.18.1/35719) to outside:8.8.4.4/53 (8.8.4.4/53)
+<166>Aug 14 03:26:38 FW-EDGE-01 %ASA-6-302016: Teardown UDP connection 1068215 for inside:10.20.10.15/36115 to outside:8.8.4.4/53 duration 0:00:00 bytes 173
+<166>Aug 14 03:26:38 FW-EDGE-01 %ASA-6-305012: Teardown dynamic UDP translation from inside:10.20.10.15/36115 to outside:45.61.18.1/35719 duration 0:00:00
+<166>Aug 14 03:26:38 FW-EDGE-01 %ASA-6-305011: Built dynamic UDP translation from inside:10.20.10.15/37011 to outside:45.61.18.1/35939
+<166>Aug 14 03:26:38 FW-EDGE-01 %ASA-6-302015: Built outbound UDP connection 1068239 for inside:10.20.10.15/37011 (45.61.18.1/35939) to outside:8.8.4.4/53 (8.8.4.4/53)
+<166>Aug 14 03:26:38 FW-EDGE-01 %ASA-6-302016: Teardown UDP connection 1068239 for inside:10.20.10.15/37011 to outside:8.8.4.4/53 duration 0:00:00 bytes 169
+<166>Aug 14 03:26:38 FW-EDGE-01 %ASA-6-305012: Teardown dynamic UDP translation from inside:10.20.10.15/37011 to outside:45.61.18.1/35939 duration 0:00:00
+<166>Aug 14 03:26:38 FW-EDGE-01 %ASA-6-305011: Built dynamic UDP translation from inside:10.20.10.15/34453 to outside:45.61.18.1/36120
+<166>Aug 14 03:26:38 FW-EDGE-01 %ASA-6-302015: Built outbound UDP connection 1068253 for inside:10.20.10.15/34453 (45.61.18.1/36120) to outside:8.8.4.4/53 (8.8.4.4/53)
+<166>Aug 14 03:26:38 FW-EDGE-01 %ASA-6-302016: Teardown UDP connection 1068253 for inside:10.20.10.15/34453 to outside:8.8.4.4/53 duration 0:00:00 bytes 244
+<166>Aug 14 03:26:38 FW-EDGE-01 %ASA-6-305012: Teardown dynamic UDP translation from inside:10.20.10.15/34453 to outside:45.61.18.1/36120 duration 0:00:00
+<166>Aug 14 03:26:39 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1068204 for inside:10.20.10.15/46603 to outside:13.107.6.157/443 duration 0:00:01 bytes 12734 TCP FINs
+<166>Aug 14 03:26:39 FW-EDGE-01 %ASA-6-305012: Teardown dynamic TCP translation from inside:10.20.10.15/46603 to outside:45.61.18.1/35505 duration 0:00:01
+<166>Aug 14 03:26:40 FW-EDGE-01 %ASA-6-305011: Built dynamic TCP translation from inside:10.20.10.15/37691 to outside:45.61.18.1/36239
+<166>Aug 14 03:26:40 FW-EDGE-01 %ASA-6-302013: Built outbound TCP connection 1068274 for inside:10.20.10.15/37691 (45.61.18.1/36239) to outside:104.18.25.243/80 (104.18.25.243/80)
+<166>Aug 14 03:26:40 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1068274 for inside:10.20.10.15/37691 to outside:104.18.25.243/80 duration 0:00:00 bytes 2153 TCP FINs
+<166>Aug 14 03:26:40 FW-EDGE-01 %ASA-6-305012: Teardown dynamic TCP translation from inside:10.20.10.15/37691 to outside:45.61.18.1/36239 duration 0:00:00
+<164>Aug 14 03:27:30 FW-EDGE-01 %ASA-4-106023: Deny tcp src inside:10.20.10.15/50892 dst outside:134.39.95.151/5900 by access-group "inside_access_in" [0x0, 0x0]
+<164>Aug 14 03:29:39 FW-EDGE-01 %ASA-4-106023: Deny tcp src inside:10.20.10.15/42298 dst dmz:10.20.30.10/443 by access-group "inside_access_in" [0x0, 0x0]
+<166>Aug 14 03:32:52 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1068471 for outside:35.4.192.161/52776 (35.4.192.161/52776) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:32:53 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1068472 for outside:35.4.192.161/64732 (35.4.192.161/64732) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:32:54 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1068488 for outside:35.4.192.161/54928 (35.4.192.161/54928) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:32:54 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1068472 for outside:35.4.192.161/64732 to dmz:10.20.30.10/443 duration 0:00:00 bytes 417546 TCP FINs
+<166>Aug 14 03:32:55 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1068502 for outside:35.4.192.161/63047 (35.4.192.161/63047) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:32:55 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1068510 for outside:35.4.192.161/55880 (35.4.192.161/55880) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:32:55 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1068519 for outside:35.4.192.161/62895 (35.4.192.161/62895) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:32:56 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1068488 for outside:35.4.192.161/54928 to dmz:10.20.30.10/443 duration 0:00:02 bytes 6117 TCP FINs
+<166>Aug 14 03:32:56 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1068502 for outside:35.4.192.161/63047 to dmz:10.20.30.10/443 duration 0:00:01 bytes 5748 TCP FINs
+<166>Aug 14 03:32:57 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1068510 for outside:35.4.192.161/55880 to dmz:10.20.30.10/443 duration 0:00:01 bytes 117218 TCP FINs
+<166>Aug 14 03:32:57 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1068519 for outside:35.4.192.161/62895 to dmz:10.20.30.10/443 duration 0:00:01 bytes 150140 TCP FINs
+<166>Aug 14 03:32:58 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1068471 for outside:35.4.192.161/52776 to dmz:10.20.30.10/443 duration 0:00:05 bytes 19378 TCP FINs
+<164>Aug 14 03:35:37 FW-EDGE-01 %ASA-4-106023: Deny tcp src inside:10.20.10.15/38533 dst dmz:10.20.30.10/3389 by access-group "inside_access_in" [0x0, 0x0]
+<166>Aug 14 03:40:01 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1068715 for outside:183.249.88.176/62132 (183.249.88.176/62132) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:40:05 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1068715 for outside:183.249.88.176/62132 to dmz:10.20.30.10/443 duration 0:00:03 bytes 42842 TCP FINs
+<164>Aug 14 03:40:09 FW-EDGE-01 %ASA-4-106023: Deny tcp src inside:10.20.10.15/35943 dst outside:92.22.33.136/22 by access-group "inside_access_in" [0x1c61, 0xfd3f]
+<166>Aug 14 03:41:27 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1068731 for outside:181.170.207.210/54724 (181.170.207.210/54724) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:41:28 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1068731 for outside:181.170.207.210/54724 to dmz:10.20.30.10/443 duration 0:00:01 bytes 19258 TCP FINs
+<164>Aug 14 03:41:31 FW-EDGE-01 %ASA-4-106023: Deny tcp src inside:10.20.10.15/53895 dst dmz:10.20.30.10/5900 by access-group "inside_access_in" [0x0, 0x0]
+<166>Aug 14 03:44:57 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1068783 for outside:125.134.244.97/50020 (125.134.244.97/50020) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:45:02 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1068783 for outside:125.134.244.97/50020 to dmz:10.20.30.10/443 duration 0:00:04 bytes 41903 TCP FINs
+<166>Aug 14 03:50:48 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1068974 for outside:111.22.247.183/52325 (111.22.247.183/52325) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:50:49 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1068974 for outside:111.22.247.183/52325 to dmz:10.20.30.10/443 duration 0:00:01 bytes 9721 TCP FINs
+<166>Aug 14 03:50:50 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1068989 for outside:111.22.247.183/64465 (111.22.247.183/64465) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:50:51 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1068989 for outside:111.22.247.183/64465 to dmz:10.20.30.10/443 duration 0:00:01 bytes 4477 TCP FINs
+<166>Aug 14 03:50:51 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1068991 for outside:111.22.247.183/55585 (111.22.247.183/55585) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:50:51 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1068998 for outside:111.22.247.183/65096 (111.22.247.183/65096) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:50:52 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1068991 for outside:111.22.247.183/55585 to dmz:10.20.30.10/443 duration 0:00:00 bytes 5872 TCP FINs
+<166>Aug 14 03:50:52 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1068998 for outside:111.22.247.183/65096 to dmz:10.20.30.10/443 duration 0:00:01 bytes 4383 TCP FINs
+<166>Aug 14 03:50:52 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1069000 for outside:111.22.247.183/49810 (111.22.247.183/49810) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:50:53 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1069000 for outside:111.22.247.183/49810 to dmz:10.20.30.10/443 duration 0:00:01 bytes 5061 TCP FINs
+<164>Aug 14 03:51:35 FW-EDGE-01 %ASA-4-106023: Deny tcp src inside:10.20.10.15/40241 dst outside:48.208.116.22/3389 by access-group "inside_access_in" [0x0, 0x0]
+<166>Aug 14 03:55:29 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1069181 for outside:119.110.218.23/65390 (119.110.218.23/65390) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:55:29 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1069195 for outside:119.110.218.23/52581 (119.110.218.23/52581) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:55:30 FW-EDGE-01 %ASA-6-302013: Built inbound TCP connection 1069202 for outside:119.110.218.23/57962 (119.110.218.23/57962) to dmz:10.20.30.10/443 (45.61.18.5/443)
+<166>Aug 14 03:55:31 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1069195 for outside:119.110.218.23/52581 to dmz:10.20.30.10/443 duration 0:00:01 bytes 150549 TCP FINs
+<166>Aug 14 03:55:32 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1069181 for outside:119.110.218.23/65390 to dmz:10.20.30.10/443 duration 0:00:03 bytes 416299 TCP FINs
+<166>Aug 14 03:55:32 FW-EDGE-01 %ASA-6-302014: Teardown TCP connection 1069202 for outside:119.110.218.23/57962 to dmz:10.20.30.10/443 duration 0:00:01 bytes 21319 TCP FINs

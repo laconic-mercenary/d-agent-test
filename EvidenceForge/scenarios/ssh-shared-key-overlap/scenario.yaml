@@ -1,0 +1,164 @@
+version: "1.0"
+name: ssh-shared-key-overlap
+description: |
+  Minimal benign scenario testing whether an analyst (LLM) can detect
+  private-key sharing from correlated SSH evidence alone. Three developers
+  SSH into the same shared Linux server and each writes a short note file.
+  One developer (Priya) shares her private key with a colleague (Marcus),
+  who uses it to open a second SSH session that authenticates as Priya —
+  from his own workstation, overlapping in time with Priya's own genuine
+  session. A third developer (Greta) is uninvolved and uses her own
+  account normally, with her session also overlapping the other two. No
+  attack, no malicious technique — the only "finding" is that one identity
+  (priya.desai) has two concurrent sessions from two different source IPs,
+  which a single person cannot produce.
+
+environment:
+  description: "Fernbridge Labs — a small software team sharing one Linux application server for day-to-day work. No Active Directory."
+
+  timezone:
+    default: "UTC"
+
+  users:
+    - username: priya.desai
+      full_name: "Priya Desai"
+      email: priya.desai@fernbridgelabs.com
+      persona: developer
+      primary_system: WS-PRIYA-01
+      enabled: true
+
+    - username: marcus.oyelaran
+      full_name: "Marcus Oyelaran"
+      email: marcus.oyelaran@fernbridgelabs.com
+      persona: developer
+      primary_system: WS-MARCUS-01
+      enabled: true
+
+    - username: greta.lindqvist
+      full_name: "Greta Lindqvist"
+      email: greta.lindqvist@fernbridgelabs.com
+      persona: developer
+      primary_system: WS-GRETA-01
+      enabled: true
+
+  systems:
+    - hostname: WS-PRIYA-01
+      ip: "10.70.8.21"
+      os: "Ubuntu 22.04 LTS"
+      type: workstation
+      assigned_user: priya.desai
+
+    - hostname: WS-MARCUS-01
+      ip: "10.70.8.22"
+      os: "Ubuntu 22.04 LTS"
+      type: workstation
+      assigned_user: marcus.oyelaran
+
+    - hostname: WS-GRETA-01
+      ip: "10.70.8.23"
+      os: "Ubuntu 22.04 LTS"
+      type: workstation
+      assigned_user: greta.lindqvist
+
+    - hostname: APP-SHARED-01
+      ip: "10.70.8.10"
+      os: "Ubuntu 22.04 LTS"
+      type: server
+      services: ["ssh"]
+
+  network:
+    segments:
+      - name: dev_lan
+        cidr: "10.70.8.0/24"
+        description: "Single flat dev-team LAN — all workstations and the shared server"
+        exposure: internal
+        systems: [WS-PRIYA-01, WS-MARCUS-01, WS-GRETA-01, APP-SHARED-01]
+
+    sensors:
+      - type: network
+        name: dev-span
+        hostname: ZEEK-DEV-01
+        monitoring_segments: [dev_lan]
+        direction: bidirectional
+        placement: span
+        log_formats: [zeek]
+        description: "SPAN sensor mirroring all traffic on the dev-team LAN"
+
+time_window:
+  start: "2024-05-13T14:00:00Z"
+  duration: "2h"
+
+baseline_activity:
+  description: "Light normal developer activity; nothing else running in the background."
+  intensity: low
+  variation: low
+  suspicious_noise: low
+
+observation_profile: complete
+
+storyline:
+  - id: evt-001-priya-connect
+    time: "+15m"
+    actor: priya.desai
+    system: APP-SHARED-01
+    activity: "Priya connects to the shared app server from her own workstation"
+    events:
+      - type: ssh_session
+        source_ip: "10.70.8.21"
+
+  - id: evt-002-priya-write
+    time: "+17m"
+    actor: priya.desai
+    system: APP-SHARED-01
+    activity: "Priya appends a note to her deployment log during her own session"
+    events:
+      - type: process
+        process_name: "/bin/bash"
+        command_line: "bash -c \"echo 'API gateway config reviewed, no changes needed' >> /home/priya.desai/notes/deploy-log.txt\""
+
+  - id: evt-003-greta-connect
+    time: "+18m"
+    actor: greta.lindqvist
+    system: APP-SHARED-01
+    activity: "Greta connects to the shared app server from her own workstation"
+    events:
+      - type: ssh_session
+        source_ip: "10.70.8.23"
+
+  - id: evt-004-marcus-borrowed-connect
+    time: "+20m"
+    actor: priya.desai
+    system: APP-SHARED-01
+    activity: "A second session authenticating as Priya connects from Marcus's workstation, overlapping with Priya's own already-open session — Marcus is using a private key Priya shared with him"
+    events:
+      - type: ssh_session
+        source_ip: "10.70.8.22"
+
+  - id: evt-005-greta-write
+    time: "+22m"
+    actor: greta.lindqvist
+    system: APP-SHARED-01
+    activity: "Greta writes a short status note during her session"
+    events:
+      - type: process
+        process_name: "/bin/bash"
+        command_line: "bash -c \"echo 'Ran nightly test suite, all green' >> /home/greta.lindqvist/notes/status-log.txt\""
+
+  - id: evt-006-marcus-borrowed-write
+    time: "+24m"
+    actor: priya.desai
+    system: APP-SHARED-01
+    activity: "The session sourced from Marcus's workstation appends a second note to Priya's deployment log, still under Priya's account"
+    events:
+      - type: process
+        process_name: "/bin/bash"
+        command_line: "bash -c \"echo 'Reviewed staging deploy, looks good' >> /home/priya.desai/notes/deploy-log.txt\""
+
+output:
+  logs:
+    - format: syslog
+    - format: bash_history
+    - format: ecar
+    - format: zeek
+  destination: "scenarios/ssh-shared-key-overlap"
+  compression: false

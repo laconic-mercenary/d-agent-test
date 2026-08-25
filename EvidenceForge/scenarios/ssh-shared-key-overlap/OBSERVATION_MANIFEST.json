@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "scenario_name": "ssh-shared-key-overlap",
+  "observation_profile": "complete",
+  "collection_window": {
+    "start": "2024-05-13T14:00:00Z",
+    "end": "2024-05-13T16:00:00Z"
+  },
+  "source_summary": {
+    "bash_history": {
+      "visible": 6
+    },
+    "ecar": {
+      "visible": 32
+    },
+    "syslog": {
+      "visible": 14
+    },
+    "zeek": {
+      "visible": 3
+    }
+  },
+  "storyline_events": [
+    {
+      "kind": "storyline",
+      "storyline_id": "evt-001-priya-connect",
+      "index": 0,
+      "actor": "priya.desai",
+      "system": "APP-SHARED-01",
+      "activity": "Priya connects to the shared app server from her own workstation",
+      "event_types": [
+        "ssh_session"
+      ],
+      "source_status": {
+        "bash_history": {
+          "visible": 1
+        },
+        "ecar": {
+          "visible": 6
+        },
+        "syslog": {
+          "visible": 4
+        },
+        "zeek": {
+          "visible": 1
+        }
+      }
+    },
+    {
+      "kind": "storyline",
+      "storyline_id": "evt-002-priya-write",
+      "index": 1,
+      "actor": "priya.desai",
+      "system": "APP-SHARED-01",
+      "activity": "Priya appends a note to her deployment log during her own session",
+      "event_types": [
+        "process"
+      ],
+      "source_status": {
+        "bash_history": {
+          "visible": 1
+        },
+        "ecar": {
+          "visible": 3
+        }
+      }
+    },
+    {
+      "kind": "storyline",
+      "storyline_id": "evt-003-greta-connect",
+      "index": 2,
+      "actor": "greta.lindqvist",
+      "system": "APP-SHARED-01",
+      "activity": "Greta connects to the shared app server from her own workstation",
+      "event_types": [
+        "ssh_session"
+      ],
+      "source_status": {
+        "bash_history": {
+          "visible": 1
+        },
+        "ecar": {
+          "visible": 7
+        },
+        "syslog": {
+          "visible": 4
+        },
+        "zeek": {
+          "visible": 1
+        }
+      }
+    },
+    {
+      "kind": "storyline",
+      "storyline_id": "evt-004-marcus-borrowed-connect",
+      "index": 3,
+      "actor": "priya.desai",
+      "system": "APP-SHARED-01",
+      "activity": "A second session authenticating as Priya connects from Marcus's workstation, overlapping with Priya's own already-open session — Marcus is using a private key Priya shared with him",
+      "event_types": [
+        "ssh_session"
+      ],
+      "source_status": {
+        "bash_history": {
+          "visible": 1
+        },
+        "ecar": {
+          "visible": 10
+        },
+        "syslog": {
+          "visible": 6
+        },
+        "zeek": {
+          "visible": 1
+        }
+      }
+    },
+    {
+      "kind": "storyline",
+      "storyline_id": "evt-005-greta-write",
+      "index": 4,
+      "actor": "greta.lindqvist",
+      "system": "APP-SHARED-01",
+      "activity": "Greta writes a short status note during her session",
+      "event_types": [
+        "process"
+      ],
+      "source_status": {
+        "bash_history": {
+          "visible": 1
+        },
+        "ecar": {
+          "visible": 3
+        }
+      }
+    },
+    {
+      "kind": "storyline",
+      "storyline_id": "evt-006-marcus-borrowed-write",
+      "index": 5,
+      "actor": "priya.desai",
+      "system": "APP-SHARED-01",
+      "activity": "The session sourced from Marcus's workstation appends a second note to Priya's deployment log, still under Priya's account",
+      "event_types": [
+        "process"
+      ],
+      "source_status": {
+        "bash_history": {
+          "visible": 1
+        },
+        "ecar": {
+          "visible": 3
+        }
+      }
+    }
+  ],
+  "red_herring_events": []
+}

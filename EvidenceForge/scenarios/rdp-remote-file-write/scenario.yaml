@@ -1,0 +1,82 @@
+version: "1.0"
+name: rdp-remote-file-write
+description: |
+  Minimal, entirely benign single-action scenario. One user at her own
+  workstation opens a remote desktop session to a shared office workstation
+  and saves a short note file during that session. No attack, no malicious
+  technique, no red herrings — the goal is a basic test of whether an
+  analyst (LLM) can reconstruct the sequence of actions and correctly
+  identify the actor from the generated logs alone.
+
+environment:
+  description: "Alderwood Partners — a small professional services office. One active staff member and one shared workstation used by the team. No Active Directory."
+
+  timezone:
+    default: "UTC"
+
+  users:
+    - username: dana.whitfield
+      full_name: "Dana Whitfield"
+      email: dana.whitfield@alderwoodpartners.com
+      persona: receptionist
+      primary_system: WS-01
+      enabled: true
+
+  systems:
+    - hostname: WS-01
+      ip: "10.40.12.11"
+      os: "Windows 11"
+      type: workstation
+      assigned_user: dana.whitfield
+
+    - hostname: WS-02
+      ip: "10.40.12.12"
+      os: "Windows 11"
+      type: workstation
+      services: ["rdp"]
+
+  network:
+    segments:
+      - name: office_lan
+        cidr: "10.40.12.0/24"
+        description: "Single flat office LAN — all workstations"
+        exposure: internal
+        systems: [WS-01, WS-02]
+
+time_window:
+  start: "2024-03-04T14:00:00Z"
+  duration: "2h"
+
+baseline_activity:
+  description: "Light normal office activity from the one active user; nothing else running in the background."
+  intensity: low
+  variation: low
+  suspicious_noise: low
+
+observation_profile: complete
+
+storyline:
+  - id: evt-remote-session
+    time: "+20m"
+    actor: dana.whitfield
+    system: WS-02
+    activity: "Dana remotely connects to the shared office workstation from her own desk machine via RDP"
+    events:
+      - type: rdp_session
+        source_ip: "10.40.12.11"
+
+  - id: evt-write-file
+    time: "+22m"
+    actor: dana.whitfield
+    system: WS-02
+    activity: "Dana opens Notepad during the remote session and saves a short note file for the team"
+    events:
+      - type: process
+        process_name: "C:\\Windows\\System32\\notepad.exe"
+        command_line: "notepad.exe C:\\Users\\dana.whitfield\\Documents\\team-notes.txt"
+
+output:
+  logs:
+    - format: windows
+  destination: "scenarios/rdp-remote-file-write"
+  compression: false
