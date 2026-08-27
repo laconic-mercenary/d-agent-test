@@ -4,7 +4,9 @@ Answer every question below. See [TASK.md](TASK.md) for how and where to
 write your answers.
 
 1. What two distinct actions does the evidence show occurring on WS-02, and
-   in what order?
+   in what order? For each, name the specific evidence type (session logon,
+   process launch, file write, etc.) — don't assume an action happened
+   beyond what its evidence type actually proves.
 
 2. Who performed these actions? Cite the specific evidence that identifies
    the actor — not an assumption about who the system is normally used by.
@@ -16,7 +18,7 @@ write your answers.
    evidence establishes that the actor's own machine, rather than some
    other source, initiated it?
 
-5. What specific identifier ties the file-save process directly to this
+5. What specific identifier ties the notepad.exe process directly to this
    particular remote logon session, rather than merely to the same rough
    time window?
 

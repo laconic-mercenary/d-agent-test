@@ -1,4 +1,3 @@
 # forensic-agent-answers holds the held-out answer keys for forensic-agent-tests.
 # It must never enter this repo's history (this repo has a public `origin` remote).
 # It will move to its own separate repository later.
-/forensic-agent-answers/

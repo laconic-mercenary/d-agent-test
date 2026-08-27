@@ -11,6 +11,14 @@ description: |
 environment:
   description: "Alderwood Partners — a small professional services office. One active staff member and one shared workstation used by the team. No Active Directory."
 
+  identity:
+    windows_default_scope: local
+    users:
+      dana.whitfield:
+        windows:
+          scope: local
+          account_name: dana.whitfield
+
   timezone:
     default: "UTC"
 

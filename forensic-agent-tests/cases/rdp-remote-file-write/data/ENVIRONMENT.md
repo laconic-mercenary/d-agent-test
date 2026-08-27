@@ -4,8 +4,7 @@
 
 Alderwood Partners is a small professional services office. The environment
 consists of one active staff member's workstation and one shared workstation
-used by the team. There is no Active Directory or Windows domain in this
-environment.
+used by the team.
 
 - **Timezone:** UTC
 - **All log timestamps are in UTC.**

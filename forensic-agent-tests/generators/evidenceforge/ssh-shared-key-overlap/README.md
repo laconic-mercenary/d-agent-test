@@ -1,24 +1,29 @@
 # Generator: ssh-shared-key-overlap
 
 `scenario.yaml` is authored for
-[EvidenceForge](https://github.com/cisco-talos/EvidenceForge) (Cisco Talos,
+[EvidenceForge](https://github.com/Cisco-Talos/EvidenceForge) (Cisco Talos,
 MIT) and drives deterministic generation of the case's `data/`.
 
-**EvidenceForge version/commit used:** not recorded — TODO, same gap as the
-other generator entries in this repo. Fill in from whatever install produced
-the data, or regenerate against a known version and note it here.
+**EvidenceForge version/commit used:** not yet reconfirmed against the live
+checkout — this case predates setting up
+`/Users/mlcs/Documents/github/EvidenceForge`. Other cases in this repo have
+been confirmed against v1.17.0 (commit `567073b0`); treat this one as
+provisionally the same until it's actually regenerated and checked.
 
 ## Regenerate
 
 ```bash
-eforge validate scenario.yaml
-eforge generate scenario.yaml --verbose --force
+cd /Users/mlcs/Documents/github/EvidenceForge
+uv run eforge validate scenarios/ssh-shared-key-overlap/scenario.yaml
+uv run eforge generate scenarios/ssh-shared-key-overlap/scenario.yaml --verbose --force
 ```
 
-Generation seed: 42 (recorded in the case's `data/COLLECTION_PROFILE.json`
-as `generation_seed` — same value as the other cases in this repo, which
-may just be EvidenceForge's default rather than an explicit per-scenario
-choice; the scenario file itself doesn't set one).
+See the `d-agent-test` root `AGENTS.md` for the full generate → port-over
+workflow, and its "Environment setup" section if `uv sync` fails.
+
+Generation seed: 42 — the scenario file itself doesn't set one explicitly,
+so this is EvidenceForge's default seed, not a deliberate per-scenario
+choice.
 
 ## Note on scope
 
