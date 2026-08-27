@@ -31,7 +31,10 @@ For each of the 3 questions:
    correct account is `jpcertadmin`, sourced from the actual matched event
    data, not from either PDF slide's wording. Grade against the data-backed
    answer; this is not something the AUT could have or should have
-   resolved differently.
+   resolved differently. **Q2 also has a second, independently valid
+   answer: `domadm`** (a real Type-10 RDP logon also present in the data,
+   undocumented in the source PDF but fully evidenced). Accept either
+   account, per `grading_schema.md`.
 4. **Q3 rewards demonstrating the correlation, not just naming the right
    account.** An answer that states `testadmin001` without citing the
    Event 5001 + Event 5379 correlation is a lower-quality answer than one

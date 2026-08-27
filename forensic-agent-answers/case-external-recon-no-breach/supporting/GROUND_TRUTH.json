@@ -1,0 +1,169 @@
+{
+  "schema_version": 2,
+  "scenario_name": "external-recon-no-breach",
+  "scenario_description": "A small office network is port-scanned from an external IP against its\nDMZ segment. The firewall's default-deny policy blocks nearly every\nprobe; the few ports that are actually open (the public web server's\n80/443) respond normally to what look like ordinary scan probes, with\nno follow-on connection, no successful authentication, and no process\nor account activity of any kind. The entire incident is: someone\nlooked, and found nothing they could use. No attacker storyline beyond\nthe scan itself — this case tests whether an agent can correctly\nconclude \"no compromise\" from real but ultimately inert reconnaissance\nevidence, rather than either dismissing it without checking or\nescalating scan noise into a breach finding it can't support.\n",
+  "generated_at": "2024-06-11T13:00:00Z",
+  "observation_profile": "complete",
+  "collection_window": {
+    "start": "2024-06-11T13:00:00Z",
+    "end": "2024-06-11T17:00:00Z"
+  },
+  "source_evidence_status": {
+    "evt-recon-001": {
+      "asa": {
+        "visible": 21
+      },
+      "syslog": {
+        "visible": 4
+      },
+      "zeek": {
+        "filtered": 19,
+        "visible": 2
+      }
+    }
+  },
+  "storyline_steps": [
+    {
+      "storyline_id": "evt-recon-001",
+      "index": 0,
+      "actor": "www-data",
+      "system": "WEB-01",
+      "activity": "External host conducts a broad TCP port scan against the DMZ segment, testing a mix of common service ports; the firewall's default-deny policy blocks all but the two ports actually permitted inbound (80/443 to the web server), which respond as ordinary open ports with no follow-on connection or exploitation attempt",
+      "ground_truth_section": "storyline",
+      "event_types": [
+        "port_scan"
+      ]
+    }
+  ],
+  "red_herring_steps": [],
+  "intent_reconciliation": {
+    "complete": true,
+    "expected_count": 1,
+    "planned_count": 1,
+    "occurred_count": 1,
+    "observed_count": 1,
+    "missing_intent_ids": [],
+    "unexpected_intent_ids": [],
+    "intents": [
+      {
+        "intent_id": "613162e7-5287-42f2-81b4-48055428f2bd",
+        "ground_truth_section": "storyline",
+        "storyline_id": "evt-recon-001",
+        "event_type": "port_scan",
+        "semantic_instance_key": "9404768f37442a6879f5283b:0",
+        "authored_time": "+1h10m",
+        "actor": "www-data",
+        "system": "WEB-01",
+        "activity": "External host conducts a broad TCP port scan against the DMZ segment, testing a mix of common service ports; the firewall's default-deny policy blocks all but the two ports actually permitted inbound (80/443 to the web server), which respond as ordinary open ports with no follow-on connection or exploitation attempt",
+        "planned": true,
+        "action_ids": [
+          "157664f9-9fe0-4a0f-82bf-46c7bc44574f",
+          "1b2e38e0-6100-4382-87ac-076f9352e6ca",
+          "5bf98637-3a47-4978-b77b-b975b564da58",
+          "5dc7569c-30a4-4486-9d5f-a02535f14e82",
+          "67d14ab5-5347-49d0-8fb1-67074ba1908e",
+          "6887f151-22a8-4bf2-9572-59eeb7667c61",
+          "70991b58-5a2f-46e4-b643-2c322ad02fb6",
+          "77a93596-3cfb-48a6-84c1-818307c49111",
+          "7fbbe81a-0b72-4774-a377-3ab4851fb7a1",
+          "900d3a29-9322-4c3b-9135-db112d0a36bd",
+          "92977dd3-5432-4c1c-a890-f167dce16207",
+          "9656525d-f01b-4a2e-8a96-9e8bcdc76aff",
+          "9b692f01-2172-4a94-8239-d703bc6b7bd8",
+          "b7798240-acb0-4175-b68d-591dd7126c89",
+          "c10072f9-b9b2-4a18-99ed-24bb14b3fbaa",
+          "ca37ed39-89e4-431e-b440-f50bd4d9a6c5",
+          "cb7af036-1853-4246-a83d-95c7251f91ef",
+          "d804866f-f24a-41b8-93c9-fd40b0e58966",
+          "dec45e9c-d0a0-4203-9da0-07d8540c2e6c",
+          "e75a3546-1b2c-426e-bfa8-fe9d0ef30234",
+          "e7d4bde3-d62b-4eb2-878e-b9445da42677",
+          "f880dec6-5cb7-4585-a48d-d637078a1ae9",
+          "fcfcd637-0ddf-4af5-b71a-685bf2d02ec6"
+        ],
+        "occurrence_ids": [
+          "1c920b89-0d15-454d-b4e9-1684fa9339ff",
+          "282ef3c9-ae2c-4498-a98e-3d97839913d7",
+          "35904583-7f58-4d46-bf1f-f0af74f0cff3",
+          "4da30df8-3d00-4006-8b41-e72aaead05da",
+          "51364600-0027-43de-8d92-28c94b9d12c2",
+          "5153c70e-65fe-472f-8dd0-5793c42b2342",
+          "54677090-d8dd-42aa-a1d4-7f5c49c55b11",
+          "70736a5d-7467-46b3-b272-03bf6d68c5e2",
+          "734dfe7b-4f73-48b3-91c3-9a5a013bd943",
+          "844b34a4-6234-4a70-81a1-2fd3cadda765",
+          "85cc5cd3-1235-4e19-8417-f46d377bfd55",
+          "8a06c092-87e2-4781-9060-a436c7d6ceb5",
+          "8d65e2fb-7421-4af7-bb52-3feaffa6582b",
+          "8d6fcb73-ed40-4f4a-a838-476f065bd8a5",
+          "915dafc9-6983-4ed9-ad7d-3a4137efbc35",
+          "98a53d8d-55b8-42f0-a5aa-c193d5bc467e",
+          "98e1dfbc-aeed-4825-a82e-0813c6f0f7da",
+          "a664fff0-7883-41f8-9d01-bf9ba3943e87",
+          "b097e2fc-dc87-4bf0-abdc-e7bda2c57dde",
+          "b6f6b591-3201-44d2-a932-c61a80ce568f",
+          "c5456bcb-f26b-45e8-abbb-031648b127de",
+          "c90a60af-5420-4f48-add7-7998d8c3c559",
+          "ea708b9c-c120-4674-a46d-feac02af7118",
+          "ec9179be-450b-4de7-b9f3-09c0e7129cb2",
+          "ee18c717-d684-483c-bcc4-66a744059f49",
+          "ff543cd8-e890-45a6-bcdb-631ebb8a6bc8"
+        ],
+        "source_status": {
+          "asa": {
+            "visible": 21
+          },
+          "syslog": {
+            "visible": 4
+          },
+          "zeek": {
+            "filtered": 19,
+            "visible": 2
+          }
+        }
+      }
+    ]
+  },
+  "events": [
+    {
+      "record_id": "evt-recon-001#0",
+      "kind": "port_scan",
+      "intent_id": "613162e7-5287-42f2-81b4-48055428f2bd",
+      "storyline_id": "evt-recon-001",
+      "time": "2024-06-11T14:09:59Z",
+      "actor": "www-data",
+      "system": "WEB-01",
+      "activity": "External host conducts a broad TCP port scan against the DMZ segment, testing a mix of common service ports; the firewall's default-deny policy blocks all but the two ports actually permitted inbound (80/443 to the web server), which respond as ordinary open ports with no follow-on connection or exploitation attempt",
+      "ground_truth_section": "storyline",
+      "emitted": true,
+      "attributes": {
+        "ports": [
+          21,
+          22,
+          23,
+          25,
+          80,
+          110,
+          135,
+          139,
+          143,
+          443,
+          445,
+          993,
+          995,
+          1433,
+          1521,
+          3306,
+          3389,
+          5432,
+          5900,
+          8080,
+          8443
+        ],
+        "protocol": "tcp",
+        "target_count": 1,
+        "total_connections": 21
+      }
+    }
+  ]
+}

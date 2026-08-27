@@ -1,0 +1,134 @@
+version: "1.0"
+generation_seed: 6103
+name: rogue-service-account-privcreep
+description: |
+  A BI analyst at a small analytics consultancy uses explicit
+  alternate credentials to invoke a service account that is documented
+  for one automated nightly reporting job and nothing else, then uses
+  that account's access to add itself to Domain Admins — a genuine,
+  unambiguous escalation, not a benign look-alike. Tests whether an
+  agent identifies the explicit-credentials event itself as the
+  anomaly signal (a service account being used interactively at all,
+  independent of what happens next), correctly distinguishes it from
+  the account's own legitimate automated credential usage elsewhere in
+  the data, and traces the escalation through to the actual privilege
+  change.
+
+environment:
+  description: "Small data-analytics consultancy — a handful of analysts, one IT admin, a domain controller, and an application server running scheduled reporting jobs"
+  domain: "summitridge.local"
+
+  timezone:
+    default: "America/New_York"
+
+  users:
+    - username: diego.velasquez
+      full_name: "Diego Velasquez"
+      email: "diego.velasquez@summitridge.com"
+      persona: analyst
+      primary_system: WS-DVELASQUEZ-01
+      groups: ["analysts"]
+      enabled: true
+      browsing_intensity: normal
+
+    - username: nadia.kowalski
+      full_name: "Nadia Kowalski"
+      email: "nadia.kowalski@summitridge.com"
+      persona: sysadmin
+      primary_system: WS-NKOWALSKI-01
+      groups: ["it-admins", "domain-admins"]
+      enabled: true
+      browsing_intensity: light
+
+  service_accounts:
+    - svc-reportgen
+
+  systems:
+    - hostname: WS-DVELASQUEZ-01
+      ip: "10.120.10.31"
+      os: "Windows 11 Enterprise"
+      type: workstation
+      assigned_user: diego.velasquez
+      services: ["dns-client"]
+
+    - hostname: WS-NKOWALSKI-01
+      ip: "10.120.10.32"
+      os: "Windows 11 Enterprise"
+      type: workstation
+      assigned_user: nadia.kowalski
+      services: ["dns-client"]
+
+    - hostname: DC-01
+      ip: "10.120.20.10"
+      os: "Windows Server 2022"
+      type: domain_controller
+      services: ["kerberos", "ldap", "dns", "windows-dhcp-server"]
+      roles: ["domain_controller", "dns_server", "dhcp_server"]
+
+    - hostname: APP-01
+      ip: "10.120.20.20"
+      os: "Windows Server 2019"
+      type: server
+      services: ["iis"]
+
+time_window:
+  start: "2024-10-21T13:00:00Z"
+  duration: "24h"
+  warmup: "8h"
+
+baseline_activity:
+  description: "Ordinary small-consultancy workday — analytics work, routine scheduled reporting, light web browsing, minimal background noise."
+  intensity: low
+  variation: low
+  suspicious_noise: low
+
+observation_profile: complete
+logon_grace_period: "30m"
+
+storyline:
+  - id: evt-logon-000
+    time: "+2h00m"
+    actor: diego.velasquez
+    system: WS-DVELASQUEZ-01
+    activity: "Diego logs into his own workstation for the day, as usual"
+    events:
+      - type: logon
+        logon_type: 2
+
+  - id: evt-explicit-creds-001
+    time: "+2h15m"
+    actor: diego.velasquez
+    system: WS-DVELASQUEZ-01
+    activity: "Diego invokes the reporting service account's credentials explicitly from his own interactive session"
+    events:
+      - type: explicit_credentials
+        technique: "T1078.002 - Valid Accounts: Domain Accounts"
+        description: "Explicit-credential invocation of a service account never meant for interactive human use, from an ordinary analyst workstation"
+        target_username: svc-reportgen
+        target_server: DC-01
+        process_name: "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+
+  - id: evt-privesc-002
+    time: "+2h20m"
+    actor: svc-reportgen
+    system: DC-01
+    activity: "Using the invoked credentials, the account adds itself to Domain Admins"
+    events:
+      - type: process
+        technique: "T1098 - Account Manipulation"
+        description: "PowerShell command adds the service account itself to a privileged group"
+        process_name: "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+        command_line: "powershell.exe -Command Add-ADGroupMember -Identity 'Domain Admins' -Members 'svc-reportgen'"
+      - type: group_member_added
+        technique: "T1098 - Account Manipulation"
+        description: "svc-reportgen added to Domain Admins, far outside its documented purpose"
+        group_name: "Domain Admins"
+        member_name: "svc-reportgen"
+        scope: global
+
+output:
+  logs:
+    - format: windows_event_security
+    - format: windows_event_sysmon
+  destination: scenarios/rogue-service-account-privcreep
+  compression: false

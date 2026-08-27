@@ -1,0 +1,254 @@
+{
+  "schema_version": 2,
+  "scenario_name": "rogue-service-account-privcreep",
+  "scenario_description": "A BI analyst at a small analytics consultancy uses explicit\nalternate credentials to invoke a service account that is documented\nfor one automated nightly reporting job and nothing else, then uses\nthat account's access to add itself to Domain Admins — a genuine,\nunambiguous escalation, not a benign look-alike. Tests whether an\nagent identifies the explicit-credentials event itself as the\nanomaly signal (a service account being used interactively at all,\nindependent of what happens next), correctly distinguishes it from\nthe account's own legitimate automated credential usage elsewhere in\nthe data, and traces the escalation through to the actual privilege\nchange.\n",
+  "generated_at": "2024-10-21T13:00:00Z",
+  "observation_profile": "complete",
+  "collection_window": {
+    "start": "2024-10-21T13:00:00Z",
+    "end": "2024-10-22T13:00:00Z"
+  },
+  "source_evidence_status": {
+    "evt-explicit-creds-001": {
+      "sysmon": {
+        "visible": 10
+      },
+      "windows_security": {
+        "visible": 3
+      }
+    },
+    "evt-privesc-002": {
+      "sysmon": {
+        "visible": 9
+      },
+      "windows_security": {
+        "visible": 4
+      }
+    }
+  },
+  "storyline_steps": [
+    {
+      "storyline_id": "evt-logon-000",
+      "index": 0,
+      "actor": "diego.velasquez",
+      "system": "WS-DVELASQUEZ-01",
+      "activity": "Diego logs into his own workstation for the day, as usual",
+      "ground_truth_section": "storyline",
+      "event_types": [
+        "logon"
+      ]
+    },
+    {
+      "storyline_id": "evt-explicit-creds-001",
+      "index": 1,
+      "actor": "diego.velasquez",
+      "system": "WS-DVELASQUEZ-01",
+      "activity": "Diego invokes the reporting service account's credentials explicitly from his own interactive session",
+      "ground_truth_section": "storyline",
+      "event_types": [
+        "explicit_credentials"
+      ]
+    },
+    {
+      "storyline_id": "evt-privesc-002",
+      "index": 2,
+      "actor": "svc-reportgen",
+      "system": "DC-01",
+      "activity": "Using the invoked credentials, the account adds itself to Domain Admins",
+      "ground_truth_section": "storyline",
+      "event_types": [
+        "group_member_added",
+        "process"
+      ]
+    }
+  ],
+  "red_herring_steps": [],
+  "intent_reconciliation": {
+    "complete": true,
+    "expected_count": 4,
+    "planned_count": 4,
+    "occurred_count": 3,
+    "observed_count": 3,
+    "missing_intent_ids": [],
+    "unexpected_intent_ids": [],
+    "intents": [
+      {
+        "intent_id": "d89d89d0-5069-4942-ac7b-9811d29142bb",
+        "ground_truth_section": "storyline",
+        "storyline_id": "evt-logon-000",
+        "event_type": "logon",
+        "semantic_instance_key": "6b4560dee35b917a46a5395a:0",
+        "authored_time": "+2h00m",
+        "actor": "diego.velasquez",
+        "system": "WS-DVELASQUEZ-01",
+        "activity": "Diego logs into his own workstation for the day, as usual",
+        "planned": true,
+        "action_ids": [],
+        "occurrence_ids": [],
+        "source_status": {}
+      },
+      {
+        "intent_id": "f20ada2b-270c-4ecc-83a1-0d6aeb3b8b1f",
+        "ground_truth_section": "storyline",
+        "storyline_id": "evt-explicit-creds-001",
+        "event_type": "explicit_credentials",
+        "semantic_instance_key": "e43e8906c64551f5509fc8ff:0",
+        "authored_time": "+2h15m",
+        "actor": "diego.velasquez",
+        "system": "WS-DVELASQUEZ-01",
+        "activity": "Diego invokes the reporting service account's credentials explicitly from his own interactive session",
+        "planned": true,
+        "action_ids": [
+          "6b57a0d8-6372-4dd0-8260-364a593065ab",
+          "dcd17093-4f53-455e-a08b-210e5c610292"
+        ],
+        "occurrence_ids": [
+          "684e7df2-a54f-41f6-a3d2-f2bd60a8266e",
+          "69a297ff-777c-4c88-a346-d134b3aaa874",
+          "6be12d02-87ef-4c0f-aee0-370af295ac03",
+          "6e0fc6b6-6b4b-4229-831f-b429afd50c86",
+          "6f151d61-9a7d-42ef-b201-7f31470feee9",
+          "8b8888c2-8a0f-41b3-828d-47ec115803e1",
+          "9879b2b4-201b-404c-b050-4d2822bcabd9",
+          "a1279244-1804-45f9-9099-2f6a78e56832",
+          "bee2101c-e9ba-473b-8662-55af5fda869f",
+          "c1a7a41c-f1ff-4442-bc7a-65b9ad5b3a73",
+          "de9c9e4b-52a6-4a44-a96c-085a207957e2"
+        ],
+        "source_status": {
+          "sysmon": {
+            "visible": 10
+          },
+          "windows_security": {
+            "visible": 3
+          }
+        }
+      },
+      {
+        "intent_id": "b0a10fa6-5848-4b36-bf9d-9eaff904f119",
+        "ground_truth_section": "storyline",
+        "storyline_id": "evt-privesc-002",
+        "event_type": "process",
+        "semantic_instance_key": "7c369489c28db2fd8b466279:0",
+        "authored_time": "+2h20m",
+        "actor": "svc-reportgen",
+        "system": "DC-01",
+        "activity": "Using the invoked credentials, the account adds itself to Domain Admins",
+        "planned": true,
+        "action_ids": [
+          "064cf5e2-49e2-4c5c-9eea-2f5d63664bcf",
+          "d2df8d8f-366c-4e6a-ac8f-89d1f9463451"
+        ],
+        "occurrence_ids": [
+          "0652411c-5cc6-47b5-b3d5-4421352722d6",
+          "680e5a05-6e1b-4db9-94a1-cdc462c42554",
+          "7eee1667-48f8-48a4-a4b3-dcdc9bda1ef7",
+          "8981eb00-68d6-42b5-b343-992a5ff420cb",
+          "9b919d59-51ca-4ab5-bc84-263c5d1ac668",
+          "aed47f9f-e612-433d-bc60-ceba8ca01816",
+          "bd1499a0-9018-4561-a12c-91ee1d312aa3",
+          "c46fd1e0-121c-41a4-bacc-ab75f75e9c25",
+          "c625ec4d-48fa-46d2-a5fe-c89466079e2c"
+        ],
+        "source_status": {
+          "sysmon": {
+            "visible": 8
+          },
+          "windows_security": {
+            "visible": 2
+          }
+        }
+      },
+      {
+        "intent_id": "bf66c280-9bd9-4f0e-bdf9-47a31c21c23f",
+        "ground_truth_section": "storyline",
+        "storyline_id": "evt-privesc-002",
+        "event_type": "group_member_added",
+        "semantic_instance_key": "b38f8b1c8211777b2d576275:0",
+        "authored_time": "+2h20m",
+        "actor": "svc-reportgen",
+        "system": "DC-01",
+        "activity": "Using the invoked credentials, the account adds itself to Domain Admins",
+        "planned": true,
+        "action_ids": [
+          "10add3eb-80d3-4e75-b17f-eaaf6e6ede41"
+        ],
+        "occurrence_ids": [
+          "3c0996b4-6f70-4f63-af15-c007dcfa91a2"
+        ],
+        "source_status": {
+          "windows_security": {
+            "visible": 1
+          }
+        }
+      }
+    ]
+  },
+  "events": [
+    {
+      "record_id": "evt-explicit-creds-001#0",
+      "kind": "explicit_credentials",
+      "intent_id": "f20ada2b-270c-4ecc-83a1-0d6aeb3b8b1f",
+      "storyline_id": "evt-explicit-creds-001",
+      "time": "2024-10-21T15:15:21Z",
+      "actor": "diego.velasquez",
+      "system": "WS-DVELASQUEZ-01",
+      "activity": "Diego invokes the reporting service account's credentials explicitly from his own interactive session",
+      "ground_truth_section": "storyline",
+      "emitted": true,
+      "attributes": {
+        "target_server": "DC-01",
+        "target_username": "svc-reportgen"
+      }
+    },
+    {
+      "record_id": "evt-logon-000#0",
+      "kind": "logon",
+      "intent_id": "d89d89d0-5069-4942-ac7b-9811d29142bb",
+      "storyline_id": "evt-logon-000",
+      "time": "2024-10-21T14:59:41Z",
+      "actor": "diego.velasquez",
+      "system": "WS-DVELASQUEZ-01",
+      "activity": "Diego logs into his own workstation for the day, as usual",
+      "ground_truth_section": "storyline",
+      "emitted": true,
+      "attributes": {
+        "logon_id": "0x11d3bfdb",
+        "source_ip": "91.219.236.174"
+      }
+    },
+    {
+      "record_id": "evt-privesc-002#0",
+      "kind": "process",
+      "intent_id": "b0a10fa6-5848-4b36-bf9d-9eaff904f119",
+      "storyline_id": "evt-privesc-002",
+      "time": "2024-10-21T15:20:08Z",
+      "actor": "svc-reportgen",
+      "system": "DC-01",
+      "activity": "Using the invoked credentials, the account adds itself to Domain Admins",
+      "ground_truth_section": "storyline",
+      "emitted": true,
+      "attributes": {
+        "command_line": "powershell.exe -Command Add-ADGroupMember -Identity 'Domain Admins' -Members 'svc-reportgen'",
+        "pid": 5900,
+        "process_name": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+      }
+    },
+    {
+      "record_id": "evt-privesc-002#1",
+      "kind": "group_member_added",
+      "intent_id": "bf66c280-9bd9-4f0e-bdf9-47a31c21c23f",
+      "storyline_id": "evt-privesc-002",
+      "time": "2024-10-21T15:20:23Z",
+      "actor": "svc-reportgen",
+      "system": "DC-01",
+      "activity": "Using the invoked credentials, the account adds itself to Domain Admins",
+      "ground_truth_section": "storyline",
+      "emitted": true,
+      "attributes": {
+        "group_name": "Domain Admins",
+        "member_name": "svc-reportgen"
+      }
+    }
+  ]
+}

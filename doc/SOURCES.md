@@ -18,7 +18,12 @@ usable yet: check `Status` before proposing a case against it.
 datasets (anything not `Adopted`) are referenced by link + hash in a case's
 instructions, never vendored into the repo. This applies regardless of
 license — it's about not owning a copy of someone else's dataset, not just
-what the license permits.
+what the license permits. **One explicit, deliberate exception**:
+`log-analysis-training_v2` (row below) is vendored directly into
+`cases/<slug>/data/` for both cases built from it, per project decision —
+"exploit JPCERT maximally given its authenticity, risk accepted." Don't
+treat that as license to vendor other Candidate sources without the same
+explicit conversation.
 
 **Sanitization note**: every non-EvidenceForge source below is real-world
 data or real-world-derived, which means it needs the same kind of
@@ -55,7 +60,7 @@ Things that produce fresh evidence on demand, rather than a fixed download.
 | EVTX-ATTACK-SAMPLES / EVTX-to-MITRE-Attack | Reference-only | Confirm before use | 270+ real *binary* EVTX files (not XML renderings) mapped to ATT&CK. Useful for validating that a parser/grading approach handles genuine EVTX, not for authoring a full case narrative from. |
 | DARPA OpTC | Candidate | Public domain (DARPA release) | ~1TB, 500 hosts, 2 weeks, red-team ground truth PDF. Large-scale/needle-in-haystack tier — later-stage per the original design, not a near-term pick. |
 | LANL Unified Host and Network Data Set (2018) | Candidate | Confirm LANL/DOE release terms before use | 90 days of real enterprise data, no malicious activity reported — a ready-made null-case substrate, though incidental rather than purpose-built as one. |
-| [JPCERTCC/log-analysis-training_v2](https://github.com/JPCERTCC/log-analysis-training_v2) | **Candidate — strongest lead in this entire registry, fully reviewed (both PDFs, 146/146 pages combined)** | No license file; README states *"自由にご利用ください"* ("please feel free to use it") plus a standard liability disclaimer — a real stated intent to permit use, but not a formal SPDX license. Don't treat as equivalent to the BSD-3-Clause row above. | `basic.pdf` (106pg): a technique/Event-ID reference (kill-chain framework with named techniques/commands/Event IDs, a real named-APT case study — MirrorFace, Event IDs 2004/1102/5001 — plus four more JPCERT blog citations), mechanical query-tooling drills, no narrative case. `advance.pdf` (40pg) is different in kind: **a complete, coherent multi-stage intrusion narrative**, built on real captured lab data (domain `HANDSONLAB.LOCAL`, not synthetic), spanning categories 6+7+8 in one story — initial VPN access → local-admin lateral hopping via Pass-the-Hash → persistence (rogue account + RDP) → pivot to a domain user → Kerberoasting → a ~22hr gap consistent with offline hash-cracking → domain admin compromise → GPO-based follow-on → NTDS.dit exfiltrated via Base64-encoded, numbered/chunked HTTP GETs through Squid that reassemble in order into a ZIP file. Full timeline: `Hands-on/advance/Hands-on-1` through `4` (Security+Application+System EVTX triples per exercise, plus `access.log`/`cache.log` for the exfil stage) map directly to specific timeline segments. Two design properties worth reusing: several hops are honestly annotated "(password guessing?)" rather than asserted as fact, and the network diagram embeds a built-in anomaly signal ("only the AP Server normally uses the proxy/VPN"). **This changes the calculus for the next case** — worth deciding explicitly whether to build the 6+7 case from this real dataset instead of/alongside a fresh EvidenceForge scenario; see chat for the tradeoffs (real fidelity + a validated complete narrative vs. informal license + the "reference by link+hash, don't vendor" principle requiring a different case-bundle shape than our EvidenceForge cases use). |
+| [JPCERTCC/log-analysis-training_v2](https://github.com/JPCERTCC/log-analysis-training_v2) | **Adopted** — two active cases built from it (`windows-log-search-basics` from `basic.pdf`/`Hands-on/basis/`, `windows-lateral-movement-ntds-exfil` from `advance.pdf`/`Hands-on/advance/`) | No license file; README states *"自由にご利用ください"* ("please feel free to use it") plus a standard liability disclaimer — a real stated intent to permit use, but not a formal SPDX license. Don't treat as equivalent to the BSD-3-Clause row above; risk explicitly accepted per project decision. | `basic.pdf` (106pg): a technique/Event-ID reference plus mechanical query-tooling drills, no narrative case — see `windows-log-search-basics`. `advance.pdf` (40pg) is different in kind: **a complete, coherent multi-stage intrusion narrative**, built on real captured lab data (domain `HANDSONLAB.LOCAL`, not synthetic), spanning categories 6+7+8 in one story — VPN initial access → Pass-the-Hash lateral movement → rogue-account/RDP persistence → Kerberoasting escalation → domain-admin compromise + scripted credential reuse → NTDS.dit exfiltrated via Base64-encoded, chunked HTTP GETs through Squid — see `windows-lateral-movement-ntds-exfil`. Both PDFs contained real, independently-confirmed errors (not ours): `basic.pdf`'s problem/answer slides disagree on an account name (`jpcertuser` vs. `jpcertadmin`); `advance.pdf`'s exfil-stage detail slide and its own summary-timeline slide disagree on the transfer's time window (raw `access.log` data resolved this — see that case's `BRIEFING.md`). Both cases independently re-derived every answer-key fact from converted/raw data rather than trusting either PDF's narrative or screenshots, after `windows-log-search-basics` v1.0-1.2 shipped with a systematic 9-hour JST/UTC transcription error caught by an independent audit. |
 | [JPCERTCC/phishurl-list](https://github.com/JPCERTCC/phishurl-list) | Reference-only | No license file | Monthly CSV (date / URL / spoofed-brand description) of confirmed phishing URLs, 2019-present, actively maintained. IOC pool for phishing-themed scenarios, not a case source on its own. |
 
 ## Open items before promoting any Candidate to Adopted
@@ -66,14 +71,13 @@ Things that produce fresh evidence on demand, rather than a fixed download.
   if it's non-standardly named (`LICENSE.txt` vs `LICENSE`) — a repo
   reporting `license: null` via the API is not proof no license exists,
   check the actual file listing before concluding that.
-- `log-analysis-training_v2` is now fully reviewed (both PDFs — see its row
-  above). **Decision needed, not yet made**: build the 6+7(+8) case from
-  this real dataset, from a fresh EvidenceForge scenario, or both as
-  separate cases. If this source is used, note it needs a *different*
-  case-bundle shape than our EvidenceForge cases — the "reference by
-  link+hash, don't vendor" principle applies (it's a static corpus we
-  didn't generate), not the "split generator output into `data/`" pattern
-  `AGENTS.md` currently documents.
+- `log-analysis-training_v2` is now **Adopted** — both PDFs used, both
+  cases built (see its row above). The "reference by link+hash, don't
+  vendor" principle was explicitly overridden for this source (see the
+  note at the top of this file); the resulting case-bundle shape ended up
+  matching our EvidenceForge cases closely (`data/` + thin
+  `AGENTS.md`/`TASK.md`/`EXAM.md`), just with `.tar.gz`-compressed JSON
+  Lines / plain-text evidence instead of EvidenceForge's native formats.
 - For Playwright/Selenium and ART/CALDERA specifically: no case-bundle
   design exists yet for a *generator that isn't EvidenceForge*. The
   `AGENTS.md` Phase 1/Phase 2 workflow is EvidenceForge-specific; adopting

@@ -1,5 +1,14 @@
 # Changelog — rdp-remote-file-write
 
+## 1.3 — 2026-08-27
+
+- Reworded `EXAM.md` Q6 to require citing the specific evidence a
+  no-malicious-activity conclusion rests on, rather than accepting a bare
+  conclusion — `grading_schema.md`'s Zero-credit case is specifically an
+  answer that treats the `ALDERWOODPARTNERS` rendering quirk (see Q2) as
+  real AD evidence, but the question wasn't previously asking for evidence
+  at all, so nothing forced that citation to happen.
+
 ## 1.2 — 2026-08-26
 
 - Regenerated with an explicit `environment.identity.windows_default_scope:

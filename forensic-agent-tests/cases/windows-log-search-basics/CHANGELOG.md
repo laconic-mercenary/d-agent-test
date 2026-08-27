@@ -1,5 +1,29 @@
 # Changelog — windows-log-search-basics
 
+## 1.3 — 2026-08-27
+
+- **Fixed a systematic 9-hour timestamp error in the answer key**, found by
+  an independent audit and independently re-verified against the raw
+  `data/*.jsonl` before correcting. All three questions' documented answers
+  had been transcribed from the source PDF's Event Viewer screenshots,
+  which render local JST (UTC+9) time, without converting to UTC or
+  checking against the actual `SystemTime` field in the converted data
+  (which is genuinely UTC) — this directly contradicted this case's own
+  `AGENTS.md`/`TASK.md`, which correctly state all timestamps are UTC. No
+  change to `EXAM.md` itself (it never stated a time), no change to which
+  events/fields are cited as evidence — only the stated clock times in
+  `forensic-agent-answers/case-windows-log-search-basics/BRIEFING.md` and
+  `grading_schema.md` were wrong, and only those were corrected.
+- **Fixed a real answer-key gap on Q2**: `data/sample1.jsonl` contains a
+  second, genuine Type-10 RDP logon (`domadm`, `2023-07-21 09:45:24` UTC)
+  that the source PDF doesn't document and the answer key didn't account
+  for. `EXAM.md` Q2's wording doesn't constrain which logon the agent
+  finds, so this is now documented as an equally valid second answer
+  rather than an undocumented ambiguity a correct AUT could be marked
+  down for finding.
+- No leak, no data self-contradiction — the underlying event data was
+  always correct; only the answer key's transcription was wrong.
+
 ## 1.2 — 2026-08-27
 
 - Packaged `data/sample1.jsonl`/`sample2.jsonl` as `.tar.gz` (gzipped tar,

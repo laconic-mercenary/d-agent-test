@@ -1,0 +1,187 @@
+version: "1.0"
+generation_seed: 7724
+name: dga-beacon-logclear
+description: |
+  A dispatcher's workstation at a small freight logistics company is
+  infected with malware that cycles through algorithmically-generated
+  candidate domains hunting for a live command-and-control host — the
+  overwhelming majority resolve to NXDOMAIN, a handful eventually
+  resolve, and the malware establishes a periodic beacon to the
+  resulting address. Before finishing, it clears the workstation's own
+  Security event log. Tests whether an agent characterizes the DGA
+  pattern itself (volume, entropy, resolution ratio) rather than only
+  citing the one connection that worked, and whether it verifies —
+  rather than assumes — what the log clear actually did and did not
+  remove.
+
+environment:
+  description: "Small freight logistics company — dispatchers, one IT admin, a domain controller, minimal infrastructure"
+  domain: "cascadefreight.local"
+
+  timezone:
+    default: "America/Denver"
+
+  users:
+    - username: grace.tanaka
+      full_name: "Grace Tanaka"
+      email: "grace.tanaka@cascadefreight.com"
+      persona: analyst
+      primary_system: WS-INFECTED-01
+      groups: ["dispatch"]
+      enabled: true
+      browsing_intensity: normal
+
+    - username: leo.brannigan
+      full_name: "Leo Brannigan"
+      email: "leo.brannigan@cascadefreight.com"
+      persona: sysadmin
+      primary_system: WS-BRANNIGAN-01
+      groups: ["it-admins"]
+      enabled: true
+      browsing_intensity: light
+
+    - username: sam.okafor
+      full_name: "Sam Okafor"
+      email: "sam.okafor@cascadefreight.com"
+      persona: analyst
+      primary_system: WS-OKAFOR-01
+      groups: ["dispatch"]
+      enabled: true
+      browsing_intensity: normal
+
+  systems:
+    - hostname: WS-INFECTED-01
+      ip: "10.100.10.31"
+      os: "Windows 11 Enterprise"
+      type: workstation
+      assigned_user: grace.tanaka
+      services: ["dns-client"]
+
+    - hostname: WS-BRANNIGAN-01
+      ip: "10.100.10.32"
+      os: "Windows 11 Enterprise"
+      type: workstation
+      assigned_user: leo.brannigan
+      services: ["dns-client"]
+
+    - hostname: WS-OKAFOR-01
+      ip: "10.100.10.33"
+      os: "Windows 11 Enterprise"
+      type: workstation
+      assigned_user: sam.okafor
+      services: ["dns-client"]
+
+    - hostname: DC-01
+      ip: "10.100.20.10"
+      os: "Windows Server 2022"
+      type: domain_controller
+      services: ["kerberos", "ldap", "dns", "windows-dhcp-server"]
+      roles: ["domain_controller", "dns_server", "dhcp_server"]
+
+  network:
+    segments:
+      - name: workstations
+        cidr: "10.100.10.0/24"
+        exposure: internal
+      - name: servers
+        cidr: "10.100.20.0/24"
+        exposure: internal
+    sensors:
+      - type: network
+        name: core-tap
+        hostname: zeek01
+        monitoring_segments: [workstations, servers]
+        direction: bidirectional
+        placement: span
+        log_formats: [zeek_dns, zeek_conn]
+
+time_window:
+  start: "2024-06-11T13:00:00Z"
+  duration: "24h"
+  warmup: "8h"
+
+baseline_activity:
+  description: "Ordinary small-office workday — dispatch coordination, light web browsing, domain authentication, minimal background noise."
+  intensity: low
+  variation: low
+  suspicious_noise: low
+
+observation_profile: complete
+logon_grace_period: "30m"
+
+storyline:
+  - id: evt-logon-000
+    time: "+1h50m"
+    actor: grace.tanaka
+    system: WS-INFECTED-01
+    activity: "Grace logs into her own workstation for the day, as usual"
+    events:
+      - type: logon
+        logon_type: 2
+
+  - id: evt-malware-exec-001
+    time: "+2h00m"
+    actor: grace.tanaka
+    system: WS-INFECTED-01
+    activity: "A disguised executable, already present on disk, begins running under Grace's session"
+    events:
+      - type: process
+        technique: "T1036.005 - Masquerading: Match Legitimate Name or Location"
+        description: "Malware disguised as an Adobe helper utility begins execution"
+        process_name: "C:\\Users\\grace.tanaka\\AppData\\Roaming\\Adobe\\ARMHelper.exe"
+        command_line: "\"C:\\Users\\grace.tanaka\\AppData\\Roaming\\Adobe\\ARMHelper.exe\""
+
+  - id: evt-dga-002
+    time: "+2h02m"
+    actor: grace.tanaka
+    system: WS-INFECTED-01
+    activity: "The malware begins cycling through algorithmically-generated candidate domains hunting for a live C2 host, over roughly three hours"
+    events:
+      - type: dga_queries
+        technique: "T1568.002 - Dynamic Resolution: Domain Generation Algorithms"
+        description: "High-entropy algorithmically-generated domain lookups, overwhelmingly NXDOMAIN with a handful resolving to the same C2 address"
+        interval: "2m"
+        duration: "3h"
+        jitter: 0.3
+        tld: ".com"
+        length_range: [10, 16]
+        rcode_distribution:
+          NXDOMAIN: 0.95
+          NOERROR: 0.05
+        answer_ip: "45.32.88.201"
+
+  - id: evt-c2-beacon-003
+    time: "+5h05m"
+    actor: grace.tanaka
+    system: WS-INFECTED-01
+    activity: "Having found a live host, the malware establishes a periodic beacon to it, continuing for about five hours"
+    events:
+      - type: beacon
+        technique: "T1071.001 - Application Layer Protocol: Web Protocols"
+        description: "Periodic HTTPS check-in to the C2 address the DGA search eventually resolved"
+        dst_ip: "45.32.88.201"
+        dst_port: 443
+        service: ssl
+        interval: "10m"
+        duration: "5h"
+        jitter: 0.15
+        action: allow
+
+  - id: evt-logclear-004
+    time: "+10h15m"
+    actor: grace.tanaka
+    system: WS-INFECTED-01
+    activity: "Before going quiet, the malware clears the workstation's own Security event log"
+    events:
+      - type: log_cleared
+        technique: "T1070.001 - Indicator Removal: Clear Windows Event Logs"
+        description: "Security event log cleared on the infected workstation"
+
+output:
+  logs:
+    - format: windows_event_security
+    - format: windows_event_sysmon
+    - format: zeek_dns
+    - format: zeek_conn
+  destination: scenarios/dga-beacon-logclear
+  compression: false

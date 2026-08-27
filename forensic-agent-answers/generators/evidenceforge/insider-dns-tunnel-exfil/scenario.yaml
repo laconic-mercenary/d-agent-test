@@ -1,0 +1,164 @@
+version: "1.0"
+generation_seed: 4417
+name: insider-dns-tunnel-exfil
+description: |
+  A finance analyst at a small data-analytics consultancy, who has entirely
+  legitimate access to a client-financials share, archives a batch of those
+  files during business hours and then exfiltrates the archive over roughly
+  two hours via DNS tunneling to a domain that never otherwise appears in
+  the environment's traffic. No external attacker, no compromised account —
+  the only "attack" is this employee's own credentials doing something
+  legitimate access doesn't explain. Tests whether an agent traces the full
+  chain (staging -> exfil channel -> destination) rather than stopping at
+  "an employee compressed some files."
+
+environment:
+  description: "Small data-analytics consultancy — a handful of analysts, one sysadmin, a domain controller, and a file server hosting client-project shares"
+  domain: "alderwooddp.local"
+
+  timezone:
+    default: "America/Denver"
+
+  users:
+    - username: sarah.nakamura
+      full_name: "Sarah Nakamura"
+      email: "sarah.nakamura@alderwooddp.com"
+      persona: analyst
+      primary_system: WS-SNAKAMURA-01
+      groups: ["finance"]
+      enabled: true
+      browsing_intensity: normal
+
+    - username: lena.moretz
+      full_name: "Lena Moretz"
+      email: "lena.moretz@alderwooddp.com"
+      persona: accountant
+      primary_system: WS-LMORETZ-01
+      groups: ["finance"]
+      enabled: true
+      browsing_intensity: normal
+
+    - username: david.kim
+      full_name: "David Kim"
+      email: "david.kim@alderwooddp.com"
+      persona: sysadmin
+      primary_system: WS-DKIM-01
+      groups: ["it-admins"]
+      enabled: true
+      browsing_intensity: light
+
+  systems:
+    - hostname: WS-SNAKAMURA-01
+      ip: "10.40.10.31"
+      os: "Windows 11 Enterprise"
+      type: workstation
+      assigned_user: sarah.nakamura
+      services: ["dns-client"]
+
+    - hostname: WS-LMORETZ-01
+      ip: "10.40.10.32"
+      os: "Windows 11 Enterprise"
+      type: workstation
+      assigned_user: lena.moretz
+      services: ["dns-client"]
+
+    - hostname: WS-DKIM-01
+      ip: "10.40.10.33"
+      os: "Windows 11 Enterprise"
+      type: workstation
+      assigned_user: david.kim
+      services: ["dns-client"]
+
+    - hostname: DC-01
+      ip: "10.40.20.10"
+      os: "Windows Server 2022"
+      type: domain_controller
+      services: ["kerberos", "ldap", "dns", "windows-dhcp-server"]
+      roles: ["domain_controller", "dns_server", "dhcp_server"]
+
+    - hostname: FILE-01
+      ip: "10.40.20.20"
+      os: "Windows Server 2022"
+      type: server
+      services: ["smb"]
+      roles: ["file_server"]
+
+  network:
+    segments:
+      - name: workstations
+        cidr: "10.40.10.0/24"
+        exposure: internal
+      - name: servers
+        cidr: "10.40.20.0/24"
+        exposure: internal
+    sensors:
+      - type: network
+        name: core-tap
+        hostname: zeek01
+        monitoring_segments: [workstations, servers]
+        direction: bidirectional
+        placement: span
+        log_formats: [zeek_dns, zeek_conn]
+
+time_window:
+  start: "2024-10-07T13:00:00Z"
+  duration: "26h"
+  warmup: "8h"
+
+baseline_activity:
+  description: "Ordinary small-firm workday — client analysis work, light web browsing, domain authentication, minimal background noise."
+  intensity: low
+  variation: low
+  suspicious_noise: low
+
+observation_profile: complete
+logon_grace_period: "30m"
+
+storyline:
+  - id: evt-logon-000
+    time: "+2h00m"
+    actor: sarah.nakamura
+    system: WS-SNAKAMURA-01
+    activity: "Sarah logs into her own workstation for the day, as usual"
+    events:
+      - type: logon
+        logon_type: 2
+
+  - id: evt-stage-001
+    time: "+2h10m"
+    actor: sarah.nakamura
+    system: WS-SNAKAMURA-01
+    activity: "Sarah archives a batch of client-financials files from the finance share she has legitimate, routine access to"
+    events:
+      - type: process
+        technique: "T1560.001 - Archive Collected Data: Archive via Utility"
+        description: "PowerShell compresses a client-financials folder from the FILE-01 finance share into a local temp archive"
+        process_name: "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+        command_line: "powershell.exe -NoProfile -Command Compress-Archive -Path '\\\\FILE-01\\Finance\\ClientFinancials_Q3' -DestinationPath 'C:\\Users\\sarah.nakamura\\AppData\\Local\\Temp\\backup_archive.zip'"
+
+  - id: evt-tunnel-002
+    time: "+2h25m"
+    actor: sarah.nakamura
+    system: WS-SNAKAMURA-01
+    activity: "Roughly 15 minutes after archiving, sustained DNS-tunnel traffic begins from the same workstation to a domain never otherwise seen in this environment, continuing for about two hours"
+    events:
+      - type: dns_tunnel
+        technique: "T1048.003 - Exfiltration Over Unencrypted Non-C2 Protocol"
+        description: "Base64-encoded payload chunks exfiltrated as TXT-record subdomain queries against an external tunnel endpoint"
+        base_domain: "sync.cloudmetrics-telemetry.net"
+        encoding: base64
+        qtype: TXT
+        label_length: 45
+        payload_size: 180000
+        interval: "10s"
+        duration: "2h"
+        jitter: 0.1
+
+output:
+  logs:
+    - format: windows_event_security
+    - format: windows_event_sysmon
+    - format: zeek_dns
+    - format: zeek_conn
+  destination: scenarios/insider-dns-tunnel-exfil
+  compression: false

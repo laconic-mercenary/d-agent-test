@@ -10,16 +10,20 @@ write your answers.
    in time? State the overlap window and both source IPs involved.
 
 3. Is it physically possible for one person to produce two concurrent SSH
-   sessions to the same server from two different source IPs? What does
-   that imply about the affected account's credentials?
+   sessions to the same server from two different source IPs? State
+   specifically whether this implies the account's credentials are shared
+   between two people, or that the private key has been compromised and is
+   in use by someone else — and be explicit that this is what the evidence
+   is consistent with, not something you're asserting as a confirmed fact.
 
 4. Cite specific evidence, from at least two independent log sources, that
    supports the concurrent-session finding.
 
-5. A third session (a different account) also overlaps in time with both of
-   the sessions in question 2. Does that overlap indicate any anomaly on
-   that third account? Explain why simple time-overlap between different
-   accounts is not, by itself, suspicious.
+5. One or more other sessions (different accounts) also overlap in time
+   with *both* of the sessions in question 2. Identify each one, and state
+   whether that overlap indicates any anomaly on that account. Explain why
+   simple time-overlap between different accounts is not, by itself,
+   suspicious.
 
 6. Is there any evidence of an attack, malware, or unauthorized data access
    in this environment? State your conclusion, and what would need to be

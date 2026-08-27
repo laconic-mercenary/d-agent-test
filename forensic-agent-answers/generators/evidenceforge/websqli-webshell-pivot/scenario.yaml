@@ -1,0 +1,200 @@
+version: "1.0"
+generation_seed: 9130
+name: websqli-webshell-pivot
+description: |
+  A small e-commerce retailer's public order-lookup web application is
+  scanned by an automated SQLMap-style tool, then successfully exploited
+  by a SQL injection that returns data the scan's other probes never
+  got. The attacker drops a webshell, runs basic recon through it, then
+  pivots from the web server to an internal file server over SMB — a
+  connection the firewall's own policy technically permits (a legacy
+  backup exception was never revoked) but that this host has no
+  legitimate business reason to make. Tests whether an agent recognizes
+  the web server as a stepping stone rather than the real target, and
+  whether it distinguishes "the firewall allowed it" from "this traffic
+  is normal for this host."
+
+environment:
+  description: "Small e-commerce retailer — a public order-lookup web application backed by a database, plus an internal file server. No corporate workstation population modeled; this case is network/infrastructure-focused."
+
+  users:
+    - username: priya.desai
+      full_name: "Priya Desai"
+      email: "priya.desai@solsticeoutdoors.com"
+      persona: sysadmin
+      primary_system: WS-PDESAI-01
+      groups: ["it-admins"]
+      enabled: true
+      browsing_intensity: light
+
+  network:
+    segments:
+      - name: dmz
+        cidr: "10.70.10.0/24"
+        exposure: both
+      - name: servers
+        cidr: "10.70.20.0/24"
+        exposure: internal
+      - name: workstations
+        cidr: "10.70.30.0/24"
+        exposure: internal
+    public_cidrs: ["45.77.30.0/28"]
+    sensors:
+      - type: network
+        name: core-tap
+        hostname: zeek01
+        monitoring_segments: [dmz, servers, workstations]
+        direction: bidirectional
+        placement: span
+        log_formats: [zeek_conn, zeek_dns, zeek_http]
+      - type: firewall
+        name: fw01
+        hostname: fw01
+        monitoring_segments: [dmz, servers, workstations]
+        placement: tap
+        direction: bidirectional
+        log_formats: [cisco_asa]
+        interfaces:
+          dmz: dmz
+          servers: inside
+          workstations: inside
+        default_action: deny
+        deny_ratio: 5.0
+        nat_rules:
+          - type: static
+            real_ip: "10.70.10.10"
+            mapped_ip: "45.77.30.10"
+        policy:
+          - {src: external, dst: dmz, ports: [80, 443]}
+          - {src: dmz, dst: servers, ports: [445]}
+          - {src: workstations, dst: any}
+          - {src: servers, dst: external, ports: [80, 443, 53]}
+          - {src: servers, dst: servers}
+
+  systems:
+    - hostname: WEB-01
+      ip: "10.70.10.10"
+      os: "Ubuntu 22.04 LTS"
+      type: server
+      services: ["nginx", "https"]
+      roles: ["web_server"]
+
+    - hostname: DB-01
+      ip: "10.70.10.20"
+      os: "Ubuntu 22.04 LTS"
+      type: server
+      services: ["postgresql"]
+      roles: ["database"]
+
+    - hostname: FILE-01
+      ip: "10.70.20.10"
+      os: "Ubuntu 22.04 LTS"
+      type: server
+      services: ["samba"]
+
+    - hostname: WS-PDESAI-01
+      ip: "10.70.30.10"
+      os: "Ubuntu 22.04 LTS"
+      type: workstation
+      assigned_user: priya.desai
+      services: ["dns-client"]
+
+time_window:
+  start: "2024-08-12T13:00:00Z"
+  duration: "24h"
+  warmup: "8h"
+
+baseline_activity:
+  description: "Ordinary small-retailer server traffic — the web app querying its own database, routine backup/monitoring traffic between servers, minimal background noise. No employee workstation population in this case."
+  intensity: low
+  variation: low
+  suspicious_noise: low
+
+observation_profile: complete
+
+storyline:
+  - id: evt-scan-001
+    time: "+2h00m"
+    actor: root
+    system: WEB-01
+    activity: "Automated SQLMap-style scan against the public order-lookup application from an external source"
+    event_spacing:
+      mode: automated
+      min_delay: "100ms"
+      max_delay: "400ms"
+    events:
+      - type: web_scan
+        technique: "T1190 - Exploit Public-Facing Application"
+        description: "SQLMap scan probing the order-lookup endpoint for injectable parameters"
+        dst_ip: "10.70.10.10"
+        dst_port: 443
+        hostname: "shop.solsticeoutdoors.com"
+        source_ip: "185.220.102.51"
+        preset: sqlmap
+        paths:
+          - {uri: "/products.php?id=1", method: "GET", status: 200}
+          - {uri: "/products.php?id=1'", method: "GET", status: 500}
+          - {uri: "/products.php?id=1 AND 1=1", method: "GET", status: 200}
+          - {uri: "/products.php?id=1 AND 1=2", method: "GET", status: 200}
+          - {uri: "/products.php?id=1' OR SLEEP(5)--", method: "GET", status: 500}
+          - {uri: "/products.php?id=1' ORDER BY 1--", method: "GET", status: 200}
+          - {uri: "/products.php?id=1' ORDER BY 10--", method: "GET", status: 500}
+        rate: 6
+        duration: "12m"
+
+  - id: evt-sqli-002
+    time: "+2h13m"
+    actor: root
+    system: WEB-01
+    activity: "The scan's UNION-based probe succeeds where every other probe failed, returning application data over HTTP 200 with a much larger response body"
+    events:
+      - type: connection
+        technique: "T1190 - Exploit Public-Facing Application"
+        description: "Successful UNION-based SQL injection against the order-lookup endpoint, dumping credentials from the application database"
+        dst_ip: "10.70.10.10"
+        dst_port: 443
+        hostname: "shop.solsticeoutdoors.com"
+        source_ip: "185.220.102.51"
+        service: http
+        method: "GET"
+        uri: "/products.php?id=1' UNION SELECT username,password_hash,1,1 FROM admin_users--"
+        status_code: 200
+        response_body_len: 48000
+
+  - id: evt-webshell-003
+    time: "+2h15m"
+    actor: root
+    system: WEB-01
+    activity: "Attacker drops a PHP webshell via the injection point and runs basic reconnaissance through it"
+    events:
+      - type: process
+        technique: "T1505.003 - Server Software Component: Web Shell"
+        description: "Webshell-driven recon commands executed under the web server's service context"
+        process_name: "/bin/bash"
+        command_line: "/bin/bash -c 'whoami; id; uname -a; hostname'"
+
+  - id: evt-pivot-004
+    time: "+2h17m"
+    actor: root
+    system: WEB-01
+    activity: "The webshell is used to pivot from the web server to the internal file server over SMB — a connection the firewall's legacy backup exception happens to permit, even though this host has no legitimate reason to make it"
+    events:
+      - type: connection
+        technique: "T1210 - Exploitation of Remote Services"
+        description: "Anomalous DMZ-to-internal-segment connection from the web server to the internal file server, riding an unrevoked legacy firewall exception"
+        dst_ip: "10.70.20.10"
+        dst_port: 445
+        source_ip: "10.70.10.10"
+        service: "smb"
+
+output:
+  logs:
+    - format: syslog
+    - format: bash_history
+    - format: zeek_conn
+    - format: zeek_dns
+    - format: zeek_http
+    - format: web_access
+    - format: cisco_asa
+  destination: scenarios/websqli-webshell-pivot
+  compression: false

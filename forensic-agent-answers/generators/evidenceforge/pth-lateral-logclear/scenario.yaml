@@ -1,0 +1,192 @@
+version: "1.0"
+generation_seed: 3357
+name: pth-lateral-logclear
+description: |
+  A workstation is already compromised (prior access assumed, not
+  modeled here) and the attacker has extracted the credential hash of a
+  local Administrator account that, due to imaged/cloned system
+  builds, is identical across three file servers. The attacker uses
+  that hash to authenticate directly to all three within about twelve
+  minutes, accessing file shares on each, then clears the Security
+  event log on the middle host to cover tracks before finishing. Tests
+  whether an agent isolates this account's cross-host use from a noisy
+  environment (heavy legitimate SMB traffic from the same source, and
+  the same account name appearing in unrelated legitimate automated
+  use elsewhere), and whether it verifies — rather than assumes — what
+  the log clear actually did and did not remove.
+
+environment:
+  description: "Small manufacturing company — a handful of employees, one sysadmin, a domain controller, and three file servers sharing a cloned local-admin image"
+  domain: "cobaltridge.local"
+
+  timezone:
+    default: "America/Chicago"
+
+  users:
+    - username: derek.wallace
+      full_name: "Derek Wallace"
+      email: "derek.wallace@cobaltridge.com"
+      persona: analyst
+      primary_system: WS-BREACH-01
+      groups: ["operations"]
+      enabled: true
+      browsing_intensity: normal
+
+    - username: priya.anand
+      full_name: "Priya Anand"
+      email: "priya.anand@cobaltridge.com"
+      persona: sysadmin
+      primary_system: WS-PANAND-01
+      groups: ["it-admins", "domain-admins"]
+      enabled: true
+      browsing_intensity: light
+
+  service_accounts:
+    - localadmin
+
+  systems:
+    - hostname: WS-BREACH-01
+      ip: "10.80.10.15"
+      os: "Windows 11 Enterprise"
+      type: workstation
+      assigned_user: derek.wallace
+      services: ["dns-client"]
+
+    - hostname: WS-PANAND-01
+      ip: "10.80.10.16"
+      os: "Windows 11 Enterprise"
+      type: workstation
+      assigned_user: priya.anand
+      services: ["dns-client"]
+
+    - hostname: DC-01
+      ip: "10.80.20.5"
+      os: "Windows Server 2022"
+      type: domain_controller
+      services: ["kerberos", "ldap", "dns", "windows-dhcp-server"]
+      roles: ["domain_controller", "dns_server", "dhcp_server"]
+
+    - hostname: FS-01
+      ip: "10.80.20.10"
+      os: "Windows Server 2019"
+      type: server
+      services: ["smb"]
+      roles: ["file_server"]
+
+    - hostname: FS-02
+      ip: "10.80.20.11"
+      os: "Windows Server 2019"
+      type: server
+      services: ["smb"]
+      roles: ["file_server"]
+
+    - hostname: FS-03
+      ip: "10.80.20.12"
+      os: "Windows Server 2019"
+      type: server
+      services: ["smb"]
+      roles: ["file_server"]
+
+  network:
+    segments:
+      - name: workstations
+        cidr: "10.80.10.0/24"
+        exposure: internal
+      - name: servers
+        cidr: "10.80.20.0/24"
+        exposure: internal
+    sensors:
+      - type: network
+        name: core-tap
+        hostname: zeek01
+        monitoring_segments: [workstations, servers]
+        direction: bidirectional
+        placement: span
+        log_formats: [zeek_conn]
+
+time_window:
+  start: "2024-07-15T13:00:00Z"
+  duration: "24h"
+  warmup: "8h"
+
+baseline_activity:
+  description: "Ordinary small-manufacturer workday — office document work, routine IT administration of the file servers, minimal background noise."
+  intensity: low
+  variation: low
+  suspicious_noise: low
+
+observation_profile: complete
+logon_grace_period: "30m"
+
+storyline:
+  - id: evt-pth-fs01-001
+    time: "+3h00m"
+    actor: localadmin
+    system: FS-01
+    activity: "Attacker authenticates to the first file server using the cloned local-admin credential hash, from the already-compromised workstation"
+    events:
+      - type: logon
+        technique: "T1550.002 - Use Alternate Authentication Material: Pass the Hash"
+        description: "NTLM network logon using the local Administrator account, identical across all three file servers due to a shared cloned image"
+        source_ip: "10.80.10.15"
+        logon_type: 3
+      - type: connection
+        description: "SMB share access following the logon"
+        dst_ip: "10.80.20.10"
+        dst_port: 445
+        source_ip: "10.80.10.15"
+        service: "smb"
+
+  - id: evt-pth-fs02-002
+    time: "+3h06m"
+    actor: localadmin
+    system: FS-02
+    activity: "Attacker repeats the same credential against the second file server"
+    events:
+      - type: logon
+        technique: "T1550.002 - Use Alternate Authentication Material: Pass the Hash"
+        description: "NTLM network logon using the same local Administrator credential"
+        source_ip: "10.80.10.15"
+        logon_type: 3
+      - type: connection
+        description: "SMB share access following the logon"
+        dst_ip: "10.80.20.11"
+        dst_port: 445
+        source_ip: "10.80.10.15"
+        service: "smb"
+
+  - id: evt-pth-fs03-003
+    time: "+3h12m"
+    actor: localadmin
+    system: FS-03
+    activity: "Attacker repeats the same credential against the third file server"
+    events:
+      - type: logon
+        technique: "T1550.002 - Use Alternate Authentication Material: Pass the Hash"
+        description: "NTLM network logon using the same local Administrator credential"
+        source_ip: "10.80.10.15"
+        logon_type: 3
+      - type: connection
+        description: "SMB share access following the logon"
+        dst_ip: "10.80.20.12"
+        dst_port: 445
+        source_ip: "10.80.10.15"
+        service: "smb"
+
+  - id: evt-logclear-004
+    time: "+3h22m"
+    actor: localadmin
+    system: FS-02
+    activity: "Before finishing, the attacker clears the Security event log on the middle host of the three to cover tracks"
+    events:
+      - type: log_cleared
+        technique: "T1070.001 - Indicator Removal: Clear Windows Event Logs"
+        description: "Security event log cleared on FS-02 following the lateral-movement logon"
+
+output:
+  logs:
+    - format: windows_event_security
+    - format: windows_event_sysmon
+    - format: zeek_conn
+  destination: scenarios/pth-lateral-logclear
+  compression: false

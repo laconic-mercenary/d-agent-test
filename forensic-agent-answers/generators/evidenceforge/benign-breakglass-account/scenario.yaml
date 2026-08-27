@@ -1,0 +1,189 @@
+version: "1.0"
+generation_seed: 5581
+name: benign-breakglass-account
+description: |
+  A small insurance office's two on-call sysadmins share a documented
+  break-glass local-admin account across several servers, used only
+  during off-hours incident response — logons at odd hours followed by
+  diagnostic PowerShell commands that would read as suspicious in
+  isolation, but match a real, informally-documented operational
+  practice. No attack anywhere in this scenario — entirely benign
+  activity plus one unrelated distractor (a different employee working
+  late for an ordinary reason). Tests whether an agent correctly
+  concludes "no incident" while still doing real verification work
+  (checking the account's documented purpose, distinguishing the
+  unrelated late-night activity on its own merits) rather than either
+  crying wolf over odd-hours admin activity or waving everything off
+  without checking.
+
+environment:
+  description: "Small insurance office — a handful of employees, two on-call sysadmins, a domain controller, and a few internal servers"
+  domain: "larkfield.local"
+
+  timezone:
+    default: "America/Chicago"
+
+  users:
+    - username: marcus.oyelaran
+      full_name: "Marcus Oyelaran"
+      email: "marcus.oyelaran@larkfieldinsurance.com"
+      persona: sysadmin
+      primary_system: WS-MOYELARAN-01
+      groups: ["it-admins"]
+      enabled: true
+      browsing_intensity: light
+
+    - username: dana.whitfield
+      full_name: "Dana Whitfield"
+      email: "dana.whitfield@larkfieldinsurance.com"
+      persona: sysadmin
+      primary_system: WS-DWHITFIELD-01
+      groups: ["it-admins"]
+      enabled: true
+      browsing_intensity: light
+
+    - username: rosa.delgado
+      full_name: "Rosa Delgado"
+      email: "rosa.delgado@larkfieldinsurance.com"
+      persona: accountant
+      primary_system: WS-RDELGADO-01
+      groups: ["accounting"]
+      enabled: true
+      browsing_intensity: normal
+
+  service_accounts:
+    - svc-breakglass
+
+  systems:
+    - hostname: WS-MOYELARAN-01
+      ip: "10.90.10.31"
+      os: "Windows 11 Enterprise"
+      type: workstation
+      assigned_user: marcus.oyelaran
+      services: ["dns-client"]
+
+    - hostname: WS-DWHITFIELD-01
+      ip: "10.90.10.32"
+      os: "Windows 11 Enterprise"
+      type: workstation
+      assigned_user: dana.whitfield
+      services: ["dns-client"]
+
+    - hostname: WS-RDELGADO-01
+      ip: "10.90.10.33"
+      os: "Windows 11 Enterprise"
+      type: workstation
+      assigned_user: rosa.delgado
+      services: ["dns-client"]
+
+    - hostname: DC-01
+      ip: "10.90.20.10"
+      os: "Windows Server 2022"
+      type: domain_controller
+      services: ["kerberos", "ldap", "dns", "windows-dhcp-server"]
+      roles: ["domain_controller", "dns_server", "dhcp_server"]
+
+    - hostname: APP-01
+      ip: "10.90.20.20"
+      os: "Windows Server 2019"
+      type: server
+      services: ["iis"]
+
+    - hostname: DB-01
+      ip: "10.90.20.21"
+      os: "Windows Server 2019"
+      type: server
+      services: ["mssql"]
+      roles: ["database"]
+
+    - hostname: FILE-01
+      ip: "10.90.20.22"
+      os: "Windows Server 2019"
+      type: server
+      services: ["smb"]
+      roles: ["file_server"]
+
+time_window:
+  start: "2024-09-03T07:00:00Z"
+  duration: "48h"
+  warmup: "8h"
+
+baseline_activity:
+  description: "Ordinary small-office workday — insurance document processing, routine IT administration, light web browsing."
+  intensity: low
+  variation: low
+  suspicious_noise: medium
+
+observation_profile: complete
+logon_grace_period: "30m"
+
+red_herrings:
+  - id: rh-breakglass-night1-app
+    time: "+15m"
+    actor: svc-breakglass
+    system: APP-01
+    activity: "Documented emergency-access account used for after-hours service check following an automated alert"
+    explanation: "svc-breakglass is a documented break-glass account shared by the two on-call sysadmins for after-hours incident response; usage is logged and reviewed weekly per informal IT policy. This session responds to a stopped-service alert on APP-01."
+    events:
+      - type: rdp_session
+        source_ip: "10.90.10.31"
+      - type: process
+        process_name: "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+        command_line: "powershell.exe -Command Get-Service | Where-Object {$_.Status -ne 'Running'}"
+
+  - id: rh-breakglass-night1-db
+    time: "+30m"
+    actor: svc-breakglass
+    system: DB-01
+    activity: "Same on-call session continues to DB-01 to check for related database errors"
+    explanation: "Continuation of the same documented emergency-access session — checking whether the stopped service on APP-01 affected the database tier."
+    events:
+      - type: process
+        process_name: "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+        command_line: "powershell.exe -Command Get-EventLog -LogName Application -Newest 100"
+
+  - id: rh-lateworker-db
+    time: "+21h00m"
+    actor: rosa.delgado
+    system: WS-RDELGADO-01
+    activity: "An accounting employee works unusually late to finish a month-end report, unrelated to any IT incident"
+    explanation: "Ordinary late work for a month-end reporting deadline — not tied to any incident-response policy, not part of the IT on-call rotation, and not an anomaly by this employee's normal role."
+    events:
+      - type: process
+        process_name: "C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE"
+        command_line: "\"C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE\" \"C:\\Users\\rosa.delgado\\Documents\\MonthEnd_Report.xlsx\""
+      - type: connection
+        dst_ip: "10.90.20.21"
+        dst_port: 1433
+        service: "mssql"
+
+  - id: rh-breakglass-night2-file
+    time: "+24h15m"
+    actor: svc-breakglass
+    system: FILE-01
+    activity: "Documented emergency-access account used the following night to check disk space after a low-space alert"
+    explanation: "Second, separate documented emergency-access session by the on-call rotation — responding to a low-disk-space alert on FILE-01."
+    events:
+      - type: rdp_session
+        source_ip: "10.90.10.32"
+      - type: process
+        process_name: "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+        command_line: "powershell.exe -Command Get-PSDrive -PSProvider FileSystem"
+
+  - id: rh-breakglass-night2-dc
+    time: "+24h35m"
+    actor: svc-breakglass
+    system: DC-01
+    activity: "Same on-call session checks the domain controller's system event log as a precaution"
+    explanation: "Continuation of the same documented emergency-access session — a routine precautionary check of the DC's system log, standard practice for this on-call rotation."
+    events:
+      - type: process
+        process_name: "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+        command_line: "powershell.exe -Command Get-EventLog -LogName System -Newest 50"
+
+output:
+  logs:
+    - format: windows_event_security
+    - format: windows_event_sysmon
+  destination: scenarios/benign-breakglass-account
+  compression: false

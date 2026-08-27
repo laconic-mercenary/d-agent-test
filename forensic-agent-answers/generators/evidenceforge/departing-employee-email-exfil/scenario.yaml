@@ -1,0 +1,213 @@
+version: "1.0"
+generation_seed: 8842
+name: departing-employee-email-exfil
+description: |
+  A senior architect at a small design studio, who has legitimate
+  access to client project files as a normal part of his job, emails
+  three attachments containing client-sensitive material to his own
+  personal email address over two days shortly before his last day.
+  No malware, no external attacker, no technical exploitation of any
+  kind — every action is performed with legitimate, already-authorized
+  access. Tests whether an agent reports this as what it actually is
+  (a policy/DLP matter) rather than either over-dramatizing it as a
+  "breach" or under-reporting it as nothing worth flagging.
+
+environment:
+  description: "Small architecture and design studio — a handful of architects, one office manager, one IT admin, and an on-prem mail server"
+  domain: "thistledownarch.local"
+
+  timezone:
+    default: "America/Los_Angeles"
+
+  users:
+    - username: owen.marsh
+      full_name: "Owen Marsh"
+      email: "owen.marsh@thistledownarch.com"
+      persona: analyst
+      primary_system: WS-OMARSH-01
+      groups: ["architects"]
+      enabled: true
+      browsing_intensity: normal
+
+    - username: lily.fenwick
+      full_name: "Lily Fenwick"
+      email: "lily.fenwick@thistledownarch.com"
+      persona: analyst
+      primary_system: WS-LFENWICK-01
+      groups: ["architects"]
+      enabled: true
+      browsing_intensity: normal
+
+    - username: tariq.hassan
+      full_name: "Tariq Hassan"
+      email: "tariq.hassan@thistledownarch.com"
+      persona: sysadmin
+      primary_system: WS-THASSAN-01
+      groups: ["it-admins"]
+      enabled: true
+      browsing_intensity: light
+
+  systems:
+    - hostname: WS-OMARSH-01
+      ip: "10.110.10.31"
+      os: "Windows 11 Enterprise"
+      type: workstation
+      assigned_user: owen.marsh
+      services: ["dns-client"]
+
+    - hostname: WS-LFENWICK-01
+      ip: "10.110.10.32"
+      os: "Windows 11 Enterprise"
+      type: workstation
+      assigned_user: lily.fenwick
+      services: ["dns-client"]
+
+    - hostname: WS-THASSAN-01
+      ip: "10.110.10.33"
+      os: "Windows 11 Enterprise"
+      type: workstation
+      assigned_user: tariq.hassan
+      services: ["dns-client"]
+
+    - hostname: DC-01
+      ip: "10.110.20.10"
+      os: "Windows Server 2022"
+      type: domain_controller
+      services: ["kerberos", "ldap", "dns", "windows-dhcp-server"]
+      roles: ["domain_controller", "dns_server", "dhcp_server"]
+
+    - hostname: MAIL-01
+      ip: "10.110.20.30"
+      os: "Windows Server 2022"
+      type: server
+      services: ["smtp"]
+      roles: ["mail_server"]
+
+  email:
+    accepted_domains:
+      - thistledownarch.com
+    mail_servers:
+      - name: main
+        hostname: mail.thistledownarch.com
+        system: MAIL-01
+        platform: generic_smtp
+        allow_inbound_starttls: true
+        attempt_outbound_starttls: false
+    default_mailbox_servers: [main]
+    outbound_routes:
+      - name: default
+        servers: [main]
+    inbound_route: [main]
+    artifacts:
+      mode: storyline
+    background_messages_per_user_per_day: 3.0
+
+  network:
+    segments:
+      - name: workstations
+        cidr: "10.110.10.0/24"
+        exposure: internal
+      - name: servers
+        cidr: "10.110.20.0/24"
+        exposure: internal
+    sensors:
+      - type: network
+        name: core-tap
+        hostname: zeek01
+        monitoring_segments: [workstations, servers]
+        direction: bidirectional
+        placement: span
+        log_formats: [zeek_smtp, zeek_files]
+
+time_window:
+  start: "2024-05-06T13:00:00Z"
+  duration: "48h"
+  warmup: "8h"
+
+baseline_activity:
+  description: "Ordinary small-studio workday — architectural project work, routine email, light web browsing, minimal background noise."
+  intensity: low
+  variation: low
+  suspicious_noise: low
+
+observation_profile: complete
+logon_grace_period: "30m"
+
+storyline:
+  - id: evt-logon-000
+    time: "+2h00m"
+    actor: owen.marsh
+    system: WS-OMARSH-01
+    activity: "Owen logs into his own workstation for the day, as usual"
+    events:
+      - type: logon
+        logon_type: 2
+
+  - id: evt-email-001
+    time: "+2h20m"
+    actor: owen.marsh
+    system: WS-OMARSH-01
+    activity: "Owen emails a batch of client contract documents to his personal email address"
+    events:
+      - type: email_message
+        technique: "T1567 - Exfiltration Over Web Service"
+        description: "Outbound email with a client-contracts attachment to a personal, non-corporate address"
+        to: ["owen.marsh.archive@gmail.com"]
+        subject: "Q3 Client Contracts - Backup"
+        body: "Keeping a copy for my records."
+        verdict: clean
+        mail_action: deliver
+        outcome: delivered
+        attachments:
+          - filename: "Client_Contracts_Q3.pdf"
+            content_type: "application/pdf"
+            size: 1850000
+
+  - id: evt-email-002
+    time: "+6h45m"
+    actor: owen.marsh
+    system: WS-OMARSH-01
+    activity: "Later the same day, Owen emails a large batch of client project design files to the same personal address"
+    events:
+      - type: email_message
+        technique: "T1567 - Exfiltration Over Web Service"
+        description: "Outbound email with a large project-files archive to a personal, non-corporate address"
+        to: ["owen.marsh.archive@gmail.com"]
+        subject: "Project Atlas - Design Files"
+        body: "Full set for my portfolio."
+        verdict: clean
+        mail_action: deliver
+        outcome: delivered
+        attachments:
+          - filename: "Design_Specifications_ProjectAtlas.zip"
+            content_type: "application/zip"
+            size: 12000000
+
+  - id: evt-email-003
+    time: "+26h10m"
+    actor: owen.marsh
+    system: WS-OMARSH-01
+    activity: "The next day, Owen emails the firm's client contact list to the same personal address"
+    events:
+      - type: email_message
+        technique: "T1567 - Exfiltration Over Web Service"
+        description: "Outbound email with the firm's client contact list to a personal, non-corporate address"
+        to: ["owen.marsh.archive@gmail.com"]
+        subject: "Client Contact List"
+        body: "For my own reference going forward."
+        verdict: clean
+        mail_action: deliver
+        outcome: delivered
+        attachments:
+          - filename: "Client_Contact_List.xlsx"
+            content_type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+            size: 450000
+
+output:
+  logs:
+    - format: windows_event_security
+    - format: windows_event_sysmon
+    - format: zeek_smtp
+    - format: zeek_files
+  destination: scenarios/departing-employee-email-exfil
+  compression: false

@@ -104,8 +104,10 @@ Do it before Phase 3, not after.
 Follow `../AGENTS.md` Phase 2's checklist in full:
 
 1. Copy the generator input (`scenario.yaml` only) into
-   `generators/evidenceforge/<slug>/`, with a README recording exact
-   source version/commit/seed.
+   `forensic-agent-answers/generators/evidenceforge/<slug>/`, with a
+   README recording exact source version/commit/seed. This goes in
+   `forensic-agent-answers/`, not `forensic-agent-tests/` — a
+   `scenario.yaml` is effectively the case's ground truth in YAML form.
 2. Split the output: safe evidence + `ENVIRONMENT.md` → `cases/<slug>/data/`;
    answer-revealing sidecars → `forensic-agent-answers/case-<slug>/supporting/`;
    pure generator bookkeeping (no investigative value, real fingerprint

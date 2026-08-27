@@ -3,13 +3,19 @@
 Total: 100. Applied per the process in this directory's `AGENTS.md`.
 
 ## Q1 — Session inventory (15 pts)
-**Expected:** Three SSH sessions to APP-SHARED-01:
-1. `priya.desai` from `10.70.8.21`, ~14:15:11 UTC
-2. `greta.lindqvist` from `10.70.8.23`, ~14:18:27 UTC
-3. `priya.desai` from `10.70.8.22`, ~14:19:44 UTC
-**Full credit:** All three sessions identified with correct account and
+**Expected:** Five SSH sessions to APP-SHARED-01 (corrected in v1.2 — an
+earlier revision of this key only listed 3, missing #1 and #5 below; see
+`BRIEFING.md`):
+1. `marcus.oyelaran` from `10.70.8.22`, ~14:11:24 UTC
+2. `priya.desai` from `10.70.8.21`, ~14:15:11 UTC
+3. `greta.lindqvist` from `10.70.8.23`, ~14:18:27 UTC
+4. `priya.desai` from `10.70.8.22`, ~14:19:44 UTC
+5. `greta.lindqvist` from `10.70.8.23`, ~15:54:37 UTC (a second, later
+   session — same account/IP as #3, does not close within the window)
+**Full credit:** All five sessions identified with correct account and
 source IP (timestamps approximate, within a few minutes, are fine).
-**Partial:** Missing one session, or an account/IP pairing error.
+**Partial:** Missing one or two sessions, or an account/IP pairing error.
+**Zero/low:** Missing three or more sessions, or multiple pairing errors.
 
 ## Q2 — Overlap of the duplicate-identity sessions (15 pts)
 **Expected:** Both `priya.desai` sessions overlap — the second (from
@@ -37,17 +43,28 @@ count as sufficient corroboration.
 identifying detail from each (not just "the logs confirm this").
 **Partial:** Names only one source, or names sources without specifics.
 
-## Q5 — Discrimination: Greta's account (15 pts)
-**Expected:** No anomaly on Greta's account. Her session overlaps in time
-with both Priya sessions purely because three people use the shared server
-around the same time — different account, single consistent source IP,
-nothing duplicated. Time-overlap between *different* accounts is normal
-concurrent usage, not a tell; the actual anomaly is the same identity from
-two different source IPs.
-**Full credit:** Correctly clears Greta's account and explains why
-overlap alone isn't suspicious.
-**Zero:** Flags Greta's account, session, or IP as suspicious or part of
-the anomaly.
+## Q5 — Discrimination: other sessions overlapping both Priya sessions (15 pts)
+**Expected (corrected in v1.2 — see `BRIEFING.md`):** Two sessions overlap
+both Priya sessions in time: Greta's first session (`10.70.8.23`, opens
+~14:18:27) and Marcus's own genuine session (`10.70.8.22`, opens
+~14:11:24, on the same source IP as Priya's borrowed-key session but a
+separate, unrelated session of his own). Neither is anomalous — both are
+different accounts with a single consistent source IP each, purely
+overlapping because multiple people use the shared server around the same
+time. Time-overlap between *different* accounts is normal concurrent
+usage, not a tell; the actual anomaly is the same identity from two
+different source IPs. Greta's *second* session (~15:54:37) does not
+qualify here — it only overlaps one of the two Priya sessions, not both
+(see `BRIEFING.md`), so an answer citing it as a third "both-overlapping"
+session is a minor evidence-scope error, not a false-positive scoring
+issue the way flagging Marcus or Greta *would* be.
+**Full credit:** Identifies both qualifying sessions (Marcus's own and
+Greta's first), correctly clears both, and explains why overlap alone
+isn't suspicious.
+**Partial:** Identifies and correctly clears only one of the two
+qualifying sessions.
+**Zero:** Flags Marcus's own account, Greta's account, or either session/IP
+as suspicious or part of the anomaly.
 
 ## Q6 — Attack/malware conclusion (15 pts)
 **Expected:** No evidence of attack, malware, or unauthorized data access.

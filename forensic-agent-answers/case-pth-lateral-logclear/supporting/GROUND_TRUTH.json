@@ -1,0 +1,463 @@
+{
+  "schema_version": 2,
+  "scenario_name": "pth-lateral-logclear",
+  "scenario_description": "A workstation is already compromised (prior access assumed, not\nmodeled here) and the attacker has extracted the credential hash of a\nlocal Administrator account that, due to imaged/cloned system\nbuilds, is identical across three file servers. The attacker uses\nthat hash to authenticate directly to all three via NTLM, in an\notherwise Kerberos-native domain, accessing file shares on each —\nthen clears the Security event log on the middle host to cover\ntracks before finishing. Tests whether an agent both identifies the\nNTLM-where-Kerberos-expected pattern across hosts and treats the log\nclear itself as significant evidence of intent, using surviving\ncross-host and network evidence to reconstruct what the cleared host\nno longer shows on its own.\n",
+  "generated_at": "2024-07-15T13:00:00Z",
+  "observation_profile": "complete",
+  "collection_window": {
+    "start": "2024-07-15T13:00:00Z",
+    "end": "2024-07-16T13:00:00Z"
+  },
+  "source_evidence_status": {
+    "evt-logclear-004": {
+      "windows_security": {
+        "visible": 1
+      }
+    },
+    "evt-pth-fs01-001": {
+      "sysmon": {
+        "visible": 2
+      },
+      "windows_security": {
+        "visible": 10
+      },
+      "zeek": {
+        "visible": 2
+      }
+    },
+    "evt-pth-fs02-002": {
+      "sysmon": {
+        "visible": 2
+      },
+      "windows_security": {
+        "visible": 9
+      },
+      "zeek": {
+        "visible": 2
+      }
+    },
+    "evt-pth-fs03-003": {
+      "sysmon": {
+        "visible": 2
+      },
+      "windows_security": {
+        "visible": 9
+      },
+      "zeek": {
+        "visible": 2
+      }
+    }
+  },
+  "storyline_steps": [
+    {
+      "storyline_id": "evt-pth-fs01-001",
+      "index": 0,
+      "actor": "localadmin",
+      "system": "FS-01",
+      "activity": "Attacker authenticates to the first file server using the cloned local-admin credential hash, from the already-compromised workstation",
+      "ground_truth_section": "storyline",
+      "event_types": [
+        "connection",
+        "logon"
+      ]
+    },
+    {
+      "storyline_id": "evt-pth-fs02-002",
+      "index": 1,
+      "actor": "localadmin",
+      "system": "FS-02",
+      "activity": "Attacker repeats the same credential against the second file server",
+      "ground_truth_section": "storyline",
+      "event_types": [
+        "connection",
+        "logon"
+      ]
+    },
+    {
+      "storyline_id": "evt-pth-fs03-003",
+      "index": 2,
+      "actor": "localadmin",
+      "system": "FS-03",
+      "activity": "Attacker repeats the same credential against the third file server",
+      "ground_truth_section": "storyline",
+      "event_types": [
+        "connection",
+        "logon"
+      ]
+    },
+    {
+      "storyline_id": "evt-logclear-004",
+      "index": 3,
+      "actor": "localadmin",
+      "system": "FS-02",
+      "activity": "Before finishing, the attacker clears the Security event log on the middle host of the three to cover tracks",
+      "ground_truth_section": "storyline",
+      "event_types": [
+        "log_cleared"
+      ]
+    }
+  ],
+  "red_herring_steps": [],
+  "intent_reconciliation": {
+    "complete": true,
+    "expected_count": 7,
+    "planned_count": 7,
+    "occurred_count": 7,
+    "observed_count": 7,
+    "missing_intent_ids": [],
+    "unexpected_intent_ids": [],
+    "intents": [
+      {
+        "intent_id": "53538e2c-064c-44ad-85de-5567d6115588",
+        "ground_truth_section": "storyline",
+        "storyline_id": "evt-pth-fs01-001",
+        "event_type": "logon",
+        "semantic_instance_key": "775d10a8e608c441a9c143ff:0",
+        "authored_time": "+3h00m",
+        "actor": "localadmin",
+        "system": "FS-01",
+        "activity": "Attacker authenticates to the first file server using the cloned local-admin credential hash, from the already-compromised workstation",
+        "planned": true,
+        "action_ids": [
+          "2771b373-19b3-4a2d-8bc5-dd5b6e85e4d7",
+          "317751f6-14ef-41ef-8e2b-035abe08e4b6",
+          "b6e92ccf-1b80-4718-ba74-3aca8635888d"
+        ],
+        "occurrence_ids": [
+          "0bf0bdf6-0a5b-431f-9ccd-c9e83ccf8d08",
+          "2929c3ad-98d6-4640-ac27-14f143d3b69b",
+          "caf180d7-0927-4c43-80d3-deb30a488071",
+          "d6b25405-bbdf-46ce-8e24-c59f5abacfc8",
+          "df916717-081e-44a5-a252-da6a2b29d8e5",
+          "f3a1bdec-8120-474b-bc34-252f9183e2d3"
+        ],
+        "source_status": {
+          "sysmon": {
+            "visible": 1
+          },
+          "windows_security": {
+            "visible": 5
+          },
+          "zeek": {
+            "visible": 1
+          }
+        }
+      },
+      {
+        "intent_id": "4f25939c-ee2b-4332-a790-b699ae2e3f12",
+        "ground_truth_section": "storyline",
+        "storyline_id": "evt-pth-fs01-001",
+        "event_type": "connection",
+        "semantic_instance_key": "e316f0aced35f81f0486681a:0",
+        "authored_time": "+3h00m",
+        "actor": "localadmin",
+        "system": "FS-01",
+        "activity": "Attacker authenticates to the first file server using the cloned local-admin credential hash, from the already-compromised workstation",
+        "planned": true,
+        "action_ids": [
+          "317751f6-14ef-41ef-8e2b-035abe08e4b6",
+          "99b460c3-0727-440e-9942-f108794e9206",
+          "9ca5a748-a7bf-45c5-84cf-4ef7f11390cd"
+        ],
+        "occurrence_ids": [
+          "67c6965b-78b6-4236-b469-43767f6fc39b",
+          "811e8bf9-f777-4483-a0eb-3a85fbfeb229",
+          "83cdbd6b-e58e-4121-85b0-9f977fde89c5",
+          "b312b5b8-c263-40d0-b589-cca7590a2348",
+          "b6cef5b3-1e2e-42ef-90b0-011fdcc7addb",
+          "f762609d-54e8-41e8-8402-a8930f811040"
+        ],
+        "source_status": {
+          "sysmon": {
+            "visible": 1
+          },
+          "windows_security": {
+            "visible": 5
+          },
+          "zeek": {
+            "visible": 1
+          }
+        }
+      },
+      {
+        "intent_id": "7acc055c-de4e-429e-bd0b-a8b618ace3c1",
+        "ground_truth_section": "storyline",
+        "storyline_id": "evt-pth-fs02-002",
+        "event_type": "logon",
+        "semantic_instance_key": "775d10a8e608c441a9c143ff:0",
+        "authored_time": "+3h06m",
+        "actor": "localadmin",
+        "system": "FS-02",
+        "activity": "Attacker repeats the same credential against the second file server",
+        "planned": true,
+        "action_ids": [
+          "2bcb5d2d-7cac-4290-bdec-c39630fcf648",
+          "49dcea70-9d61-4c70-82e9-6bda2a99342c",
+          "6d418c70-2ef7-4e4a-a706-ac3bb6ac43bb"
+        ],
+        "occurrence_ids": [
+          "626f9826-2fe4-49d6-96cf-598adecec513",
+          "84de1973-71e4-40da-98ec-cef1e53fad85",
+          "9227376a-3490-4814-9dc8-c03604ee0947",
+          "e358fb7e-7a9b-4bff-8c72-2ef50f047584",
+          "fc14bbac-b504-4375-a301-d801bdf4fffc"
+        ],
+        "source_status": {
+          "sysmon": {
+            "visible": 1
+          },
+          "windows_security": {
+            "visible": 4
+          },
+          "zeek": {
+            "visible": 1
+          }
+        }
+      },
+      {
+        "intent_id": "64798ee7-c156-438c-9665-8c7e4ebddf48",
+        "ground_truth_section": "storyline",
+        "storyline_id": "evt-pth-fs02-002",
+        "event_type": "connection",
+        "semantic_instance_key": "ba0f751af898061c6ee0a591:0",
+        "authored_time": "+3h06m",
+        "actor": "localadmin",
+        "system": "FS-02",
+        "activity": "Attacker repeats the same credential against the second file server",
+        "planned": true,
+        "action_ids": [
+          "5dfaeb32-0ede-4f85-8936-805bc99015e5",
+          "6d418c70-2ef7-4e4a-a706-ac3bb6ac43bb",
+          "91a6dc6d-958c-49ca-b289-072b678a2d06"
+        ],
+        "occurrence_ids": [
+          "4ba6261d-e9f7-422f-b20e-198a18873de5",
+          "6c2bbb29-3e48-4905-9c68-c66cf9e4aadf",
+          "871d84e1-99e5-4a43-a629-a1e59e959770",
+          "9a43998d-41d3-48ef-b58f-12d130f48735",
+          "b124b258-db06-45e3-9ab3-58aac5c05146",
+          "cdb22698-29ad-4816-8ee7-222e351b4a03"
+        ],
+        "source_status": {
+          "sysmon": {
+            "visible": 1
+          },
+          "windows_security": {
+            "visible": 5
+          },
+          "zeek": {
+            "visible": 1
+          }
+        }
+      },
+      {
+        "intent_id": "afbbad99-d5b4-486c-89f5-403c5e01011c",
+        "ground_truth_section": "storyline",
+        "storyline_id": "evt-pth-fs03-003",
+        "event_type": "logon",
+        "semantic_instance_key": "775d10a8e608c441a9c143ff:0",
+        "authored_time": "+3h12m",
+        "actor": "localadmin",
+        "system": "FS-03",
+        "activity": "Attacker repeats the same credential against the third file server",
+        "planned": true,
+        "action_ids": [
+          "16baf6f6-dd45-48cd-83a1-2c1e4ee7cb68",
+          "39cfbe3e-87b2-4438-8823-190f58dee0fe",
+          "ba8cc332-f3bb-4223-89ba-2dc10bbac579"
+        ],
+        "occurrence_ids": [
+          "0a157ccb-04ac-40af-8140-619e0ff2664c",
+          "c3a7043e-6510-46d1-9a46-bf6f1d40bcc3",
+          "cfd516fa-96c4-4f03-a64f-d1897acac40a",
+          "d34b0ea7-4761-420a-a8f8-db5c2aec5e87",
+          "f014997c-1eba-4d76-b0bf-113cb5ee643f"
+        ],
+        "source_status": {
+          "sysmon": {
+            "visible": 1
+          },
+          "windows_security": {
+            "visible": 4
+          },
+          "zeek": {
+            "visible": 1
+          }
+        }
+      },
+      {
+        "intent_id": "afd80035-81d6-4949-9d65-c494b20add5d",
+        "ground_truth_section": "storyline",
+        "storyline_id": "evt-pth-fs03-003",
+        "event_type": "connection",
+        "semantic_instance_key": "cebd97db6207273d7a31675d:0",
+        "authored_time": "+3h12m",
+        "actor": "localadmin",
+        "system": "FS-03",
+        "activity": "Attacker repeats the same credential against the third file server",
+        "planned": true,
+        "action_ids": [
+          "39cfbe3e-87b2-4438-8823-190f58dee0fe",
+          "67cec875-7cc9-4c08-969a-686931220880",
+          "f4d7add8-c8f4-4ca6-a7e1-50b0f7145633"
+        ],
+        "occurrence_ids": [
+          "13cb063f-8519-4755-bbbc-ece114188c8b",
+          "46db50c7-fa57-4ccc-b61a-5559ca0c6386",
+          "4e8ec15f-291e-4364-ba05-9e88c18efd62",
+          "a4392a8a-d156-4434-b170-936984d7c4df",
+          "bce19f27-4579-410f-8df0-3b10d0a8157d",
+          "d6c805a5-8adf-44e4-bafe-9c28c8d01cb6"
+        ],
+        "source_status": {
+          "sysmon": {
+            "visible": 1
+          },
+          "windows_security": {
+            "visible": 5
+          },
+          "zeek": {
+            "visible": 1
+          }
+        }
+      },
+      {
+        "intent_id": "2df7f9b8-8602-4209-b3e8-da828a2654b4",
+        "ground_truth_section": "storyline",
+        "storyline_id": "evt-logclear-004",
+        "event_type": "log_cleared",
+        "semantic_instance_key": "82bb8b41c5767d901b9413bf:0",
+        "authored_time": "+3h22m",
+        "actor": "localadmin",
+        "system": "FS-02",
+        "activity": "Before finishing, the attacker clears the Security event log on the middle host of the three to cover tracks",
+        "planned": true,
+        "action_ids": [
+          "4fbe24be-5ba5-48c7-b173-4db08d3156ae"
+        ],
+        "occurrence_ids": [
+          "570a1c89-2401-4186-9d7a-4330ca549d3c"
+        ],
+        "source_status": {
+          "windows_security": {
+            "visible": 1
+          }
+        }
+      }
+    ]
+  },
+  "events": [
+    {
+      "record_id": "evt-logclear-004#0",
+      "kind": "log_cleared",
+      "intent_id": "2df7f9b8-8602-4209-b3e8-da828a2654b4",
+      "storyline_id": "evt-logclear-004",
+      "time": "2024-07-15T16:21:55Z",
+      "actor": "localadmin",
+      "system": "FS-02",
+      "activity": "Before finishing, the attacker clears the Security event log on the middle host of the three to cover tracks",
+      "ground_truth_section": "storyline",
+      "emitted": true,
+      "attributes": {}
+    },
+    {
+      "record_id": "evt-pth-fs01-001#0",
+      "kind": "logon",
+      "intent_id": "53538e2c-064c-44ad-85de-5567d6115588",
+      "storyline_id": "evt-pth-fs01-001",
+      "time": "2024-07-15T15:59:42Z",
+      "actor": "localadmin",
+      "system": "FS-01",
+      "activity": "Attacker authenticates to the first file server using the cloned local-admin credential hash, from the already-compromised workstation",
+      "ground_truth_section": "storyline",
+      "emitted": true,
+      "attributes": {
+        "logon_id": "0xba7cac0",
+        "source_ip": "10.80.10.15"
+      }
+    },
+    {
+      "record_id": "evt-pth-fs01-001#1",
+      "kind": "connection",
+      "intent_id": "4f25939c-ee2b-4332-a790-b699ae2e3f12",
+      "storyline_id": "evt-pth-fs01-001",
+      "time": "2024-07-15T15:59:43Z",
+      "actor": "localadmin",
+      "system": "FS-01",
+      "activity": "Attacker authenticates to the first file server using the cloned local-admin credential hash, from the already-compromised workstation",
+      "ground_truth_section": "storyline",
+      "emitted": true,
+      "attributes": {
+        "dst_ip": "10.80.20.10",
+        "dst_port": 445,
+        "uid": "CsG23xxhWge2ErVqFp"
+      }
+    },
+    {
+      "record_id": "evt-pth-fs02-002#0",
+      "kind": "logon",
+      "intent_id": "7acc055c-de4e-429e-bd0b-a8b618ace3c1",
+      "storyline_id": "evt-pth-fs02-002",
+      "time": "2024-07-15T16:06:28Z",
+      "actor": "localadmin",
+      "system": "FS-02",
+      "activity": "Attacker repeats the same credential against the second file server",
+      "ground_truth_section": "storyline",
+      "emitted": true,
+      "attributes": {
+        "logon_id": "0x1375221e",
+        "source_ip": "10.80.10.15"
+      }
+    },
+    {
+      "record_id": "evt-pth-fs02-002#1",
+      "kind": "connection",
+      "intent_id": "64798ee7-c156-438c-9665-8c7e4ebddf48",
+      "storyline_id": "evt-pth-fs02-002",
+      "time": "2024-07-15T16:06:38Z",
+      "actor": "localadmin",
+      "system": "FS-02",
+      "activity": "Attacker repeats the same credential against the second file server",
+      "ground_truth_section": "storyline",
+      "emitted": true,
+      "attributes": {
+        "dst_ip": "10.80.20.11",
+        "dst_port": 445,
+        "uid": "CNaGw97skRtEnfLyeg"
+      }
+    },
+    {
+      "record_id": "evt-pth-fs03-003#0",
+      "kind": "logon",
+      "intent_id": "afbbad99-d5b4-486c-89f5-403c5e01011c",
+      "storyline_id": "evt-pth-fs03-003",
+      "time": "2024-07-15T16:11:45Z",
+      "actor": "localadmin",
+      "system": "FS-03",
+      "activity": "Attacker repeats the same credential against the third file server",
+      "ground_truth_section": "storyline",
+      "emitted": true,
+      "attributes": {
+        "logon_id": "0xa2aae4c",
+        "source_ip": "10.80.10.15"
+      }
+    },
+    {
+      "record_id": "evt-pth-fs03-003#1",
+      "kind": "connection",
+      "intent_id": "afd80035-81d6-4949-9d65-c494b20add5d",
+      "storyline_id": "evt-pth-fs03-003",
+      "time": "2024-07-15T16:11:59Z",
+      "actor": "localadmin",
+      "system": "FS-03",
+      "activity": "Attacker repeats the same credential against the third file server",
+      "ground_truth_section": "storyline",
+      "emitted": true,
+      "attributes": {
+        "dst_ip": "10.80.20.12",
+        "dst_port": 445,
+        "uid": "CRXD3FMIBWAkG3KbXD"
+      }
+    }
+  ]
+}

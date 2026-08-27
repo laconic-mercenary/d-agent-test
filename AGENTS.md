@@ -23,7 +23,7 @@ uv run eforge eval scenarios/<slug>/data --scenario scenarios/<slug>/scenario.ya
 
 Use that checkout's own `eforge-scenario`/`eforge-generate`/`eforge-validate`/
 `eforge-evaluate` skills for authoring — don't re-derive scenario schema from
-memory or from the vendored copy in `forensic-agent-tests/EvidenceForge/`
+memory or from the vendored copy in `forensic-agent-answers/EvidenceForge/`
 (stale, see "Known pitfalls" below).
 
 Before moving to Phase 2, record: the scenario slug, the `generation_seed`
@@ -54,9 +54,13 @@ real answer leak once.
 
 1. **Copy the generator input.** `scenario.yaml` only (not `ENVIRONMENT.md`
    — that's case content, see step 2) into
-   `forensic-agent-tests/generators/evidenceforge/<slug>/scenario.yaml`,
+   `forensic-agent-answers/generators/evidenceforge/<slug>/scenario.yaml`,
    plus a `README.md` recording the EvidenceForge version/commit, the seed,
-   and the exact `eforge generate` command to reproduce it.
+   and the exact `eforge generate` command to reproduce it. This lives in
+   `forensic-agent-answers/`, not `forensic-agent-tests/` — a
+   `scenario.yaml` is effectively the ground truth in YAML form (the exact
+   storyline every exam question is graded against), so it belongs with
+   the held-out answer material, not in the AUT-facing repo.
 
 2. **Split the generated output.**
    - `data/` (the logs) + `ENVIRONMENT.md` → `cases/<slug>/data/`
@@ -112,20 +116,44 @@ real answer leak once.
 
 ## Known pitfalls (read before repeating any of this work)
 
-- `git mv`-ing an already-tracked file into a gitignored directory
-  (`forensic-agent-answers/`) leaves it staged as a rename —
-  `.gitignore` does not retroactively untrack it. Follow with
-  `git reset -- forensic-agent-answers/` and verify
-  `git ls-files | grep forensic-agent-answers` returns nothing.
-- `forensic-agent-answers/` is not backed up anywhere: not a git repo
-  itself, gitignored from `forensic-agent-tests/`, never pushed. Get it
-  under version control in its own (private) repo before treating any of
-  its contents as durable.
-- The vendored `forensic-agent-tests/EvidenceForge/.agents/skills/` copy is
-  stale relative to the live checkout — current EvidenceForge ships skills
-  under `commands/eforge/*.md`, not `.agents/skills/eforge-*/`, and the
-  vendored `scenario-reference.md` is behind by dozens of lines. Don't
-  treat it as authoritative.
+- **The root `.gitignore`'s `forensic-agent-answers/` entry is
+  comment-only — there is no actual ignore pattern under it**, confirmed
+  by `git check-ignore`. The comment states intent ("must never enter
+  this repo's history") and even claims a "public `origin` remote,"
+  but the repo's actual remote (`laconic-mercenary/d-agent-test`) is
+  confirmed **private** via `gh repo view`, and `forensic-agent-answers/`
+  has in fact already been committed and pushed there — the gitignore
+  never worked as intended. This is a known, accepted state: the user's
+  explicit instruction was not to remediate it (no `git rm --cached`, no
+  history purge, no fixing the pattern) — the intended fix is a future
+  manual hand-pick into two properly separated repos, not something to
+  do unilaterally mid-session. Don't assume "it's in
+  `forensic-agent-answers/`" means "the AUT can't reach it" while both
+  live in the same, actually-tracked repo — the directory boundary is
+  organizational (and matters for the eventual split), not a real
+  access-control boundary yet. (A `git mv` of an already-tracked file
+  into `forensic-agent-answers/` stages cleanly as a rename, same as any
+  other tracked-to-tracked move — there's no gitignore interaction to
+  work around, despite what an earlier version of this note assumed.)
+- `generators/evidenceforge/<slug>/` and the vendored `EvidenceForge/`
+  skills/reference copy live in `forensic-agent-answers/`, not
+  `forensic-agent-tests/` (moved there mid-project after realizing both
+  were sitting in the AUT-facing repo). Two separate reasons, don't
+  conflate them: (1) a case's `scenario.yaml` is effectively its ground
+  truth in YAML form — the literal storyline every exam question is
+  graded against — so it belongs with held-out material on principle,
+  independent of the point below; (2) the vendored `EvidenceForge/`
+  directory is a literal, unmissable brand-name string sitting as a
+  top-level directory name, which directly contradicts every
+  file-content leak-audit grep this project runs. If you're authoring a
+  new case, write its `generators/evidenceforge/<slug>/` output into
+  `forensic-agent-answers/`, not `forensic-agent-tests/` — see Phase 2
+  step 1 above.
+- The vendored `forensic-agent-answers/EvidenceForge/.agents/skills/`
+  copy is stale relative to the live checkout — current EvidenceForge
+  ships skills under `commands/eforge/*.md`, not `.agents/skills/eforge-*/`,
+  and the vendored `scenario-reference.md` is behind by dozens of lines.
+  Don't treat it as authoritative.
 - A case can look internally consistent in `GROUND_TRUTH.md` and still be
   wrong in the rendered data — cross-source timing/identity fields
   (process parent images, domain/SID fields, event ordering at sub-second
@@ -142,3 +170,137 @@ real answer leak once.
   because the original audit only checked `grep -a` against the binary).
   To actually audit binary evidence, convert it to text first (e.g.
   `evtx_dump -o jsonl`), grep the converted text, then decide from there.
+- When transcribing an answer key from source material that includes
+  screenshots (Event Viewer, a UI, anything rendering a timestamp), the
+  displayed time may be in the *screenshot tool's local timezone*, not
+  UTC — even when the underlying raw data field genuinely is UTC.
+  `windows-log-search-basics` shipped with every timestamp in its answer
+  key wrong by exactly 9 hours (JST vs. UTC) because the transcription
+  copied times straight off the source PDF's screenshots without
+  cross-checking the raw data's own timestamp field. This is the same
+  "verify against raw data, not the narrative" rule already in this list,
+  but the failure mode is easy to miss specifically because a screenshot
+  *looks like* raw data — it isn't. Always independently pull the
+  timestamp from the actual evidence file's own timezone-stamped field
+  before writing it into `BRIEFING.md`/`grading_schema.md`, especially for
+  any source not authored in UTC-adjacent timezones.
+- **`CHANGELOG.md` is the file most likely to leak something**, not
+  `README.md`/`AGENTS.md`/`EXAM.md`. It happened three times in one
+  session (the generator brand name, twice; a case's decoy account names,
+  once) — always writing it last, in "explain what I just did" narrative
+  mode, pulls in whatever's fresh in context (a brand name, a decoy
+  account, an internal detail) without the same scrutiny applied to the
+  more obviously AUT-facing files. Run the leak grep on `CHANGELOG.md`
+  specifically, every time, even when the rest of the case tree is
+  already clean.
+- Baseline-generated "legitimate" cross-segment traffic does not
+  appear to be fully gated by a scenario's declared firewall
+  `policy:` rules the way explicitly-authored storyline/scan traffic
+  is — confirmed in `websqli-webshell-pivot`, where the declared
+  policy listed exactly one DMZ→internal exception (port 445) but the
+  rendered `cisco_asa.log` also showed baseline monitoring-style
+  traffic (health-check polling, ICMP, background SSH noise) crossing
+  the same boundary on other ports the policy never listed. By
+  contrast, `external-recon-no-breach`'s firewall cleanly gated all of
+  that scenario's (fully attacker-authored) port-scan traffic. Don't
+  assume a declared `policy:` block is the sole source of truth for
+  what crosses a segment boundary in the rendered data — check the
+  actual ASA/Zeek output for baseline noise before writing an
+  `ENVIRONMENT.md` claim like "no other traffic is permitted."
+- **Never use the `adversarial_payload` storyline event type in any case
+  whose evidence reaches the agent-under-test.** It is a hard,
+  unconditional safety guardrail in the engine itself (see
+  `src/evidenceforge/config/activity/payload_families.yaml`'s
+  `default_marker`): every payload it renders — regardless of family,
+  surface, or scenario content — carries the literal string
+  `EFORGE_TEST` on every line, by design, with no way to disable it.
+  That string directly matches this project's own leak-audit grep
+  (`evidenceforge|eforge`) and would appear in whatever surface the
+  payload is injected into (a URL, a user agent, a syslog line, a
+  process command line). Model attacker-controlled HTTP/log content a
+  different way instead — e.g. a plain `connection` event with
+  `service: http` and a hand-written URI/query string carrying the
+  injection shape you want (SQLi, XSS, log-forging, etc.) — which gives
+  full control over the rendered content and carries no such marker.
+- A leak grep on a raw file only catches plaintext substrings — it does
+  not see anything hiding behind an encoding. `phishing-c2-beacon`'s
+  generated `.eml` email artifact had a synthetic attachment body whose
+  base64-encoded filler content, once decoded, spelled out the
+  scenario's own storyline event ID in plain text
+  (`email-attachment:evt-phish-001-...`) — a raw-text grep against the
+  `.eml` file found nothing, because the string only exists after
+  base64 decoding. Same category of miss as the `grep -a`-on-binary-EVTX
+  pitfall above, different encoding. Before porting any generated
+  artifact that carries base64/hex/other encoded binary content
+  (`.eml` files, attachments, anything with a `Content-Transfer-Encoding:
+  base64` part) into a case's AUT-facing `data/`, decode and inspect it
+  first — don't trust a clean grep on the raw file.
+- `AuthenticationPackageName` (Kerberos vs. NTLM) on rendered network
+  logons is a fixed 70/30 random roll in this engine version
+  (`_select_auth_package` in
+  `src/evidenceforge/generation/activity/generator.py`), completely
+  independent of whether the account is domain- or local-scoped.
+  Confirmed by reading the engine source after `pth-lateral-logclear`'s
+  first design (a local-admin credential meant to render reliably as
+  NTLM, distinguishing it from Kerberos-authenticated legitimate
+  traffic) produced a near-random mix instead — only 1 of 6 attacker
+  logon events came out NTLM. There is no scenario-authoring path to
+  force deterministic auth-package rendering for a specific account;
+  design the exam around the account's identity/timing pattern
+  instead, and treat any auth-package observation as a secondary,
+  non-required signal at most.
+- `log_cleared` does not remove any preceding events from the affected
+  host's own rendered log in this engine version — it is purely
+  additive (adds the Event ID 1102 record without suppressing anything
+  before it). Confirmed independently in both `pth-lateral-logclear`
+  and `dga-beacon-logclear`: the host's own prior evidence (a logon,
+  a process-creation event) remained fully present and citable after
+  the clear. Don't design a case around "this evidence is now
+  destroyed" without verifying that claim directly against the
+  rendered output first — instead, a good use of this event type is
+  testing whether the agent-under-test *verifies* the clear's actual
+  effect rather than assuming a clear attempt necessarily succeeded.
+- Declaring an account under `environment.service_accounts` reliably
+  produces baseline Event ID 4648 ("explicit credential usage") noise
+  from `SYSTEM`-context automated processes (`taskhostw.exe`,
+  `ops-agent.exe`, and — confirmed in `rogue-service-account-privcreep`
+  — sometimes `powershell.exe` too) — and this noise is **not confined
+  to the one host you'd narratively expect**. Confirmed across four
+  cases this session (`credential-spray-domain-compromise`,
+  `pth-lateral-logclear`, `benign-breakglass-account`,
+  `rogue-service-account-privcreep`): the noise consistently spans
+  *every* host in the environment the account has any plausible reason
+  to touch, not just the one server hosting its "documented" job. An
+  early answer-key draft for `rogue-service-account-privcreep` listed
+  only 3 of the actual 4 hosts carrying this noise and claimed the
+  process name alone was a reliable discriminator — both wrong, caught
+  by an independent audit. When characterizing this baseline for an
+  exam, check **every** host in the scenario, not just the obvious
+  one, and confirm which field (usually `SubjectUserName`, not
+  `ProcessName` or `IpAddress`) is actually the reliable signal by
+  checking what baseline noise renders, not by assuming it from the
+  process names the scenario happens to reference.
+- Any `roles:` assignment can trigger the engine's own built-in
+  "legitimate lateral movement" baseline patterns
+  (`src/evidenceforge/config/activity/network_params.yaml`) connecting
+  hosts by role pairing (e.g. any `web_server`-role host automatically
+  gets baseline SMB traffic to any `file_server`-role host, modeled as
+  a content-publishing pattern) — confirmed in `websqli-webshell-pivot`,
+  where this silently generated realistic-looking "legitimate" traffic
+  toward a host a case's premise required to have no legitimate
+  visitors at all. If a case's design depends on a host having *no*
+  baseline traffic from a particular role, don't just declare the
+  target's role and assume — generate once, grep the rendered
+  ASA/Zeek/Windows output for unexpected connections to that host, and
+  remove the role (or pick a target role with no such pairing) if the
+  premise doesn't hold.
+- When delegating an audit (or any read-only investigation) of a case with
+  compressed evidence (`.tar.gz` in `data/`), don't instruct the agent to
+  unpack with `-C data/` — that leaves raw, uncompressed evidence sitting
+  in the real case directory afterward, undoing the compression and
+  getting staged alongside the compressed originals on the next
+  `git add`. This happened twice in one session. Either tell the agent to
+  unpack into a scratch/temp location instead, or explicitly tell it to
+  clean up its extraction when done, and always `git status`/`ls` the
+  case's `data/` directory after any delegated audit completes, before
+  staging anything.

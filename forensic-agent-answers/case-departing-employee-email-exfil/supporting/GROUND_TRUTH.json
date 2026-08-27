@@ -1,0 +1,471 @@
+{
+  "schema_version": 2,
+  "scenario_name": "departing-employee-email-exfil",
+  "scenario_description": "A senior architect at a small design studio, who has legitimate\naccess to client project files as a normal part of his job, emails\nthree attachments containing client-sensitive material to his own\npersonal email address over two days shortly before his last day.\nNo malware, no external attacker, no technical exploitation of any\nkind — every action is performed with legitimate, already-authorized\naccess. Tests whether an agent reports this as what it actually is\n(a policy/DLP matter) rather than either over-dramatizing it as a\n\"breach\" or under-reporting it as nothing worth flagging.\n",
+  "generated_at": "2024-05-06T13:00:00Z",
+  "observation_profile": "complete",
+  "collection_window": {
+    "start": "2024-05-06T13:00:00Z",
+    "end": "2024-05-08T13:00:00Z"
+  },
+  "source_evidence_status": {
+    "evt-email-001": {
+      "sysmon": {
+        "visible": 20
+      },
+      "windows_security": {
+        "visible": 19
+      },
+      "zeek": {
+        "visible": 5
+      }
+    },
+    "evt-email-002": {
+      "sysmon": {
+        "visible": 7
+      },
+      "windows_security": {
+        "visible": 11
+      },
+      "zeek": {
+        "visible": 4
+      }
+    },
+    "evt-email-003": {
+      "sysmon": {
+        "visible": 7
+      },
+      "windows_security": {
+        "visible": 12
+      },
+      "zeek": {
+        "visible": 3
+      }
+    }
+  },
+  "storyline_steps": [
+    {
+      "storyline_id": "evt-logon-000",
+      "index": 0,
+      "actor": "owen.marsh",
+      "system": "WS-OMARSH-01",
+      "activity": "Owen logs into his own workstation for the day, as usual",
+      "ground_truth_section": "storyline",
+      "event_types": [
+        "logon"
+      ]
+    },
+    {
+      "storyline_id": "evt-email-001",
+      "index": 1,
+      "actor": "owen.marsh",
+      "system": "WS-OMARSH-01",
+      "activity": "Owen emails a batch of client contract documents to his personal email address",
+      "ground_truth_section": "storyline",
+      "event_types": [
+        "email_message"
+      ]
+    },
+    {
+      "storyline_id": "evt-email-002",
+      "index": 2,
+      "actor": "owen.marsh",
+      "system": "WS-OMARSH-01",
+      "activity": "Later the same day, Owen emails a large batch of client project design files to the same personal address",
+      "ground_truth_section": "storyline",
+      "event_types": [
+        "email_message"
+      ]
+    },
+    {
+      "storyline_id": "evt-email-003",
+      "index": 3,
+      "actor": "owen.marsh",
+      "system": "WS-OMARSH-01",
+      "activity": "The next day, Owen emails the firm's client contact list to the same personal address",
+      "ground_truth_section": "storyline",
+      "event_types": [
+        "email_message"
+      ]
+    }
+  ],
+  "red_herring_steps": [],
+  "intent_reconciliation": {
+    "complete": true,
+    "expected_count": 4,
+    "planned_count": 4,
+    "occurred_count": 3,
+    "observed_count": 3,
+    "missing_intent_ids": [],
+    "unexpected_intent_ids": [],
+    "intents": [
+      {
+        "intent_id": "15a488df-c762-4e64-823f-a53c3bff8daa",
+        "ground_truth_section": "storyline",
+        "storyline_id": "evt-logon-000",
+        "event_type": "logon",
+        "semantic_instance_key": "6b4560dee35b917a46a5395a:0",
+        "authored_time": "+2h00m",
+        "actor": "owen.marsh",
+        "system": "WS-OMARSH-01",
+        "activity": "Owen logs into his own workstation for the day, as usual",
+        "planned": true,
+        "action_ids": [],
+        "occurrence_ids": [],
+        "source_status": {}
+      },
+      {
+        "intent_id": "1b89f7a8-3def-4aac-8f12-aa48cc069d1d",
+        "ground_truth_section": "storyline",
+        "storyline_id": "evt-email-001",
+        "event_type": "email_message",
+        "semantic_instance_key": "fdda9e53b8f2fd3630ae262e:0",
+        "authored_time": "+2h20m",
+        "actor": "owen.marsh",
+        "system": "WS-OMARSH-01",
+        "activity": "Owen emails a batch of client contract documents to his personal email address",
+        "planned": true,
+        "action_ids": [
+          "251b1605-7ed3-42cb-b362-8469ec7784df",
+          "34f5abda-c607-4671-95d6-18c5c24ad4f4",
+          "5b68c24f-f71b-41f3-9cf4-66fd4fc6e25f",
+          "65994271-c701-4d24-ac13-86251c7e009a",
+          "6e106275-3f1c-4db7-9f50-1638413752e2",
+          "70d0f491-909e-4ea8-885a-41373c40accf",
+          "8427e8b3-c4fa-48e9-8c9c-5600be164b33",
+          "a9ea1a99-ae79-432a-b362-d2f904ac7588",
+          "c20a3890-b43f-4060-abc5-4895ac03da33",
+          "c9a65651-e2cc-480f-87f9-c36f0c986941",
+          "d3daa68f-4458-44bf-ae00-7822840dc27f"
+        ],
+        "occurrence_ids": [
+          "00fd70f8-1055-46fd-9a1d-d0f8712aa610",
+          "0a92f7ac-8a11-4624-92e2-c454c401243b",
+          "0e59198b-8bad-4ce7-bc67-1a66b091d8b1",
+          "15ab8a51-d38d-4cbe-b90a-2dd156195ff6",
+          "1c10aad0-54e7-44ca-8889-68b08cd0a74c",
+          "1c21ee2f-e53d-4fb2-ba1f-ce75380c49bf",
+          "1c9c20cb-3a31-4d07-ab47-103071c8c43b",
+          "29d246f4-53ab-4163-b456-793b2bde3502",
+          "2a549c63-e6d7-4502-8ebb-54bbf828275d",
+          "2aaf8f18-7d95-4f8a-93fc-18caab7a3ada",
+          "35ba18a2-058f-413b-97c1-ffbae6761d7f",
+          "4b00fc20-df1a-485e-9342-7fa5123b885e",
+          "517cc885-42eb-401b-a15f-6d81305c3769",
+          "5674d7fd-0069-4c86-ae26-99c5a01f80ee",
+          "57c2ec1a-8922-4bf9-925f-7431c4e8889c",
+          "57f11036-f6f5-4080-90c2-5e21b34a414c",
+          "716d3c39-b07d-47d8-9758-2e66824bcfe0",
+          "7b1e4843-71d8-4c0c-a3f8-f6a35286a9ea",
+          "8a2abb9e-5c52-4b13-b533-136af80fd02b",
+          "8cfdf010-af16-4761-a025-b776dc504868",
+          "9398cf33-8dbc-4509-a1c0-c08c7b280b12",
+          "9a2eb348-ac5b-4ed6-a8a7-840a30a99201",
+          "9cd58457-d5bb-4fb6-a847-7a1e27cd1588",
+          "9ce56f73-8c6c-45c8-9cdb-d85af5b92b5b",
+          "c8ab3c52-6bd1-4a69-bad7-ee5f7d06162f",
+          "c9883c1b-f595-4b4b-9ef4-2c051ae3efdc",
+          "caabfc17-de08-49d4-a31d-0edfc3ca9141",
+          "d1f042af-4626-470b-9106-72d3e9c82c15",
+          "d686aa5a-13e3-499c-bef4-153fcdafa1ef",
+          "dd627a35-48c8-4cae-8f46-add24daf46ef",
+          "e64408f3-4eff-4e6a-847d-f2e611b776db",
+          "e8a1da14-eb4c-41d9-a9b4-4319181d86a5",
+          "ea9ae027-2beb-4ed6-a8ba-c725ff12ca80",
+          "eddff894-9b7c-416e-b2c4-64bb1095b151",
+          "ee144596-284a-428f-ae12-393fdc0a7a4a",
+          "f15d040e-cf88-436a-b4fc-874e93cf5a56",
+          "f2050171-6dab-4d11-aae2-9c9148fe6b16",
+          "f81901f3-9065-4d0b-b0fb-eb23671d5820",
+          "ffdd8317-d338-4567-940b-cff9a012a6ba"
+        ],
+        "source_status": {
+          "sysmon": {
+            "visible": 20
+          },
+          "windows_security": {
+            "visible": 19
+          },
+          "zeek": {
+            "visible": 5
+          }
+        }
+      },
+      {
+        "intent_id": "83a6a0c2-e10a-4752-9f78-95f5cfdc74a3",
+        "ground_truth_section": "storyline",
+        "storyline_id": "evt-email-002",
+        "event_type": "email_message",
+        "semantic_instance_key": "e8c57b2848f4fa9a6db26d68:0",
+        "authored_time": "+6h45m",
+        "actor": "owen.marsh",
+        "system": "WS-OMARSH-01",
+        "activity": "Later the same day, Owen emails a large batch of client project design files to the same personal address",
+        "planned": true,
+        "action_ids": [
+          "1315c222-9e3d-4e5a-ac3d-7c978b2e3a58",
+          "2de5fc3d-bba4-407b-840e-292a47444b9f",
+          "8307ce57-bc5c-44da-9419-7c25272d3ce2",
+          "d5f79f68-eeea-48e0-935e-84b1ffe7afbd",
+          "e02f1eb6-9cd5-4c2d-ab3e-045667a09b09",
+          "ed7f6012-af73-4cc3-a4d2-87594606692b",
+          "fb4ffb38-7101-491f-b761-ee91940a91e0"
+        ],
+        "occurrence_ids": [
+          "1623312c-5cde-4a9f-9411-590630c9c03b",
+          "29c8253b-ce6d-400e-8abe-db198130a986",
+          "2c397f29-4ee2-4bdc-bffa-92cb6af0e4e9",
+          "3373ace9-9e2c-479b-affd-4fcd07041be7",
+          "4ca879cf-3730-452a-96c5-c4131c514cf0",
+          "517b5bf5-b42b-4073-a908-77475dae97bf",
+          "658ea9ae-ac65-4cd6-834e-23e75594c305",
+          "8198131b-b2f2-4730-9583-909079e6cbcc",
+          "81fdcee5-d935-4ca7-b811-c6f396acb587",
+          "bff61234-cbf2-419f-94dd-c368722288c6",
+          "c03fa623-e726-4cbe-9ec5-1dba2098c17c",
+          "c0d9ef6e-beac-4845-913b-af16b666ecfb",
+          "c4f35e8a-d9da-41c0-8ed4-284d153fc527",
+          "c9102bcc-77bb-40f8-bdf0-f732feca52f1",
+          "cc1749ff-30b7-4143-8986-bf0a0d6a2ad1",
+          "ddad8a09-f0ab-4d12-a99b-52d1b8622531",
+          "e6f5c9c0-03bf-4b5f-8ea7-fc4456d03b5b"
+        ],
+        "source_status": {
+          "sysmon": {
+            "visible": 7
+          },
+          "windows_security": {
+            "visible": 11
+          },
+          "zeek": {
+            "visible": 4
+          }
+        }
+      },
+      {
+        "intent_id": "182b5143-a463-43b6-ab9f-c78ac33d481c",
+        "ground_truth_section": "storyline",
+        "storyline_id": "evt-email-003",
+        "event_type": "email_message",
+        "semantic_instance_key": "37cec68c2819ff19a3f0169f:0",
+        "authored_time": "+26h10m",
+        "actor": "owen.marsh",
+        "system": "WS-OMARSH-01",
+        "activity": "The next day, Owen emails the firm's client contact list to the same personal address",
+        "planned": true,
+        "action_ids": [
+          "6324e049-2ebb-435e-8daa-3e62718a5f79",
+          "76f994d4-8cae-472d-a8df-8fb75686128b",
+          "bfb053dc-f04a-4c6a-8030-386ecb61cdf5",
+          "cc40c6cd-4517-4ff3-abef-d42957583c3d",
+          "d0eb4676-d784-4063-ac61-e001e3662298",
+          "d2d3fd7d-fa7e-41d6-88c2-9ac2e3199676",
+          "d79ae9d7-954f-415a-95b4-29e10fb9cccf"
+        ],
+        "occurrence_ids": [
+          "205ee321-fd65-46ae-b16a-d03e6d59af89",
+          "380c6373-f51a-483c-bbe7-69c2b0d48250",
+          "5bbfe5ef-88b3-4167-b47f-90133101f021",
+          "6ef82d14-eba4-49f2-b35d-f8745d0394ad",
+          "772dfa3e-8b32-4fb9-b8a4-e4050ea49420",
+          "78fcb00f-a50c-4d40-9511-f97e2e07f2da",
+          "7a55b683-762e-41af-b32d-58ef863b1148",
+          "7afbc5d9-f827-43c6-b815-a0a46f6ff1d1",
+          "87fcd7a4-19b1-44f9-b192-0f0107361a0b",
+          "8832bd54-b0e8-4009-b995-64f6c4462a6b",
+          "945110e7-5686-45b4-a2cb-44a690f9554b",
+          "949c5a83-5084-41fe-a549-abf7e2d5a705",
+          "ae94bddb-aec3-47cf-984e-9004401e2554",
+          "b2c0b5d8-0eba-4a07-97e0-397d8a190dde",
+          "b3f686f4-0148-434a-b595-e10c16b30222",
+          "b4a29645-6b17-4c00-91bc-bdb2fb2b3445",
+          "d848f0a0-851d-4a11-9fb2-2934700e2ce5",
+          "eab97ce6-57bc-4a2e-9b77-6d30a7b71965",
+          "fb0bbe84-37e5-4da0-a94b-9874547298e9"
+        ],
+        "source_status": {
+          "sysmon": {
+            "visible": 7
+          },
+          "windows_security": {
+            "visible": 12
+          },
+          "zeek": {
+            "visible": 3
+          }
+        }
+      }
+    ]
+  },
+  "events": [
+    {
+      "record_id": "evt-email-001#0",
+      "kind": "email_message",
+      "intent_id": "1b89f7a8-3def-4aac-8f12-aa48cc069d1d",
+      "storyline_id": "evt-email-001",
+      "time": "2024-05-06T15:20:10Z",
+      "actor": "owen.marsh",
+      "system": "WS-OMARSH-01",
+      "activity": "Owen emails a batch of client contract documents to his personal email address",
+      "ground_truth_section": "storyline",
+      "emitted": true,
+      "attributes": {
+        "artifact_id": "evt-email-001-000090d3ef7e",
+        "artifact_path": "artifacts/email/evt-email-001-000090d3ef7e.eml",
+        "message_id": "<10000180U7RF.1001IGUQQ5@thistledownarch.com>",
+        "outcome": "delivered",
+        "recipients": [
+          "owen.marsh.archive@gmail.com"
+        ],
+        "sender": "owen.marsh@thistledownarch.com",
+        "smtp_uids": [
+          "Ci8OA7lqIE83wyS4gFl",
+          "C23qBrELEWLU04UMAO"
+        ],
+        "subject": "Q3 Client Contracts - Backup",
+        "route": [
+          {
+            "src": "WS-OMARSH-01",
+            "dst": "MAIL-01",
+            "src_fqdn": "WS-OMARSH-01.thistledownarch.local",
+            "dst_fqdn": "mail.thistledownarch.com",
+            "port": "587",
+            "tls": "true",
+            "routing_mode": "internal",
+            "recipient_domains": "gmail.com",
+            "uid": "Ci8OA7lqIE83wyS4gFl"
+          },
+          {
+            "src": "MAIL-01",
+            "dst": "aspmx.l.google.com",
+            "src_fqdn": "mail.thistledownarch.com",
+            "dst_fqdn": "aspmx.l.google.com",
+            "port": "25",
+            "tls": "false",
+            "routing_mode": "mx",
+            "recipient_domains": "gmail.com",
+            "uid": "C23qBrELEWLU04UMAO"
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "evt-email-002#0",
+      "kind": "email_message",
+      "intent_id": "83a6a0c2-e10a-4752-9f78-95f5cfdc74a3",
+      "storyline_id": "evt-email-002",
+      "time": "2024-05-06T19:45:12Z",
+      "actor": "owen.marsh",
+      "system": "WS-OMARSH-01",
+      "activity": "Later the same day, Owen emails a large batch of client project design files to the same personal address",
+      "ground_truth_section": "storyline",
+      "emitted": true,
+      "attributes": {
+        "artifact_id": "evt-email-002-00006db8a865",
+        "artifact_path": "artifacts/email/evt-email-002-00006db8a865.eml",
+        "message_id": "<2BA50634-5EC6-C4E1-3FDE-44880496FE9C@thistledownarch.com>",
+        "outcome": "delivered",
+        "recipients": [
+          "owen.marsh.archive@gmail.com"
+        ],
+        "sender": "owen.marsh@thistledownarch.com",
+        "smtp_uids": [
+          "CSgXpMtUSRDEHWW76T",
+          "CwjvMroRU9jXJKY4ldC"
+        ],
+        "subject": "Project Atlas - Design Files",
+        "route": [
+          {
+            "src": "WS-OMARSH-01",
+            "dst": "MAIL-01",
+            "src_fqdn": "WS-OMARSH-01.thistledownarch.local",
+            "dst_fqdn": "mail.thistledownarch.com",
+            "port": "587",
+            "tls": "true",
+            "routing_mode": "internal",
+            "recipient_domains": "gmail.com",
+            "uid": "CSgXpMtUSRDEHWW76T"
+          },
+          {
+            "src": "MAIL-01",
+            "dst": "aspmx.l.google.com",
+            "src_fqdn": "mail.thistledownarch.com",
+            "dst_fqdn": "aspmx.l.google.com",
+            "port": "25",
+            "tls": "false",
+            "routing_mode": "mx",
+            "recipient_domains": "gmail.com",
+            "uid": "CwjvMroRU9jXJKY4ldC"
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "evt-email-003#0",
+      "kind": "email_message",
+      "intent_id": "182b5143-a463-43b6-ab9f-c78ac33d481c",
+      "storyline_id": "evt-email-003",
+      "time": "2024-05-07T15:09:49Z",
+      "actor": "owen.marsh",
+      "system": "WS-OMARSH-01",
+      "activity": "The next day, Owen emails the firm's client contact list to the same personal address",
+      "ground_truth_section": "storyline",
+      "emitted": true,
+      "attributes": {
+        "artifact_id": "evt-email-003-000044dade17",
+        "artifact_path": "artifacts/email/evt-email-003-000044dade17.eml",
+        "message_id": "<18F928EA-211C-12FF-053A-2CBB6BB6B343@thistledownarch.com>",
+        "outcome": "delivered",
+        "recipients": [
+          "owen.marsh.archive@gmail.com"
+        ],
+        "sender": "owen.marsh@thistledownarch.com",
+        "smtp_uids": [
+          "CB0D0clplxlHHQ1q9X",
+          "CC3RVoGpcBsFByM172"
+        ],
+        "subject": "Client Contact List",
+        "route": [
+          {
+            "src": "WS-OMARSH-01",
+            "dst": "MAIL-01",
+            "src_fqdn": "WS-OMARSH-01.thistledownarch.local",
+            "dst_fqdn": "mail.thistledownarch.com",
+            "port": "587",
+            "tls": "true",
+            "routing_mode": "internal",
+            "recipient_domains": "gmail.com",
+            "uid": "CB0D0clplxlHHQ1q9X"
+          },
+          {
+            "src": "MAIL-01",
+            "dst": "aspmx.l.google.com",
+            "src_fqdn": "mail.thistledownarch.com",
+            "dst_fqdn": "aspmx.l.google.com",
+            "port": "25",
+            "tls": "false",
+            "routing_mode": "mx",
+            "recipient_domains": "gmail.com",
+            "uid": "CC3RVoGpcBsFByM172"
+          }
+        ]
+      }
+    },
+    {
+      "record_id": "evt-logon-000#0",
+      "kind": "logon",
+      "intent_id": "15a488df-c762-4e64-823f-a53c3bff8daa",
+      "storyline_id": "evt-logon-000",
+      "time": "2024-05-06T14:59:38Z",
+      "actor": "owen.marsh",
+      "system": "WS-OMARSH-01",
+      "activity": "Owen logs into his own workstation for the day, as usual",
+      "ground_truth_section": "storyline",
+      "emitted": true,
+      "attributes": {
+        "logon_id": "0x8a4d2be",
+        "source_ip": "185.220.101.34"
+      }
+    }
+  ]
+}

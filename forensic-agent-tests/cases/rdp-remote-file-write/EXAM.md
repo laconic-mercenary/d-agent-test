@@ -23,4 +23,6 @@ write your answers.
    time window?
 
 6. Is there any evidence of malicious activity, privilege escalation, or
-   unauthorized access in this data? State your conclusion.
+   unauthorized access in this data? State your conclusion, and name the
+   specific evidence (or specific absence of evidence) it rests on — a
+   conclusion without a cited basis isn't sufficient here.

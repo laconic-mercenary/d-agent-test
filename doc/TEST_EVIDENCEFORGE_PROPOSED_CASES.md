@@ -1,22 +1,26 @@
 # Proposed EvidenceForge-Only Cases
 
-Ten candidate cases, generated purely by EvidenceForge (no external/real-data
-sourcing). This is a **menu of Phase 0 proposals**, not approved cases —
-each one still needs the `TEST_CASE_PROCESS.md` Phase 0 joint-approval gate
-before any `eforge generate` run, scenario authoring, or port-over happens.
-Treat each section below as a pre-filled draft of that template, not a
-substitute for it.
+**Status: all ten proposals below are now Built** (see the summary
+matrix and each section's "Status: Built" note). This doc started as a
+menu of Phase 0 proposals — generated purely by EvidenceForge, no
+external/real-data sourcing — and is kept as-is (proposal sketches
+intact) rather than rewritten after the fact, since the sketches
+remain useful context for why each case looks the way it does. For
+what each case actually tests and how its as-built behavior diverged
+from the sketch, read the "Status: Built" note under each heading and
+`TEST_CASE_MATRIX.md` (the authoritative, as-built coverage record) —
+not the speculative narrative/matrix text below, which reflects
+design-time intent only.
 
-**Intended workflow**: this doc is written to be picked up by a separate
-Claude Code session (in the EvidenceForge checkout) that does not share this
-conversation's context. That session should, per case: confirm scope with
-the user (a quick sanity check, not a full re-negotiation — the design work
-is already done here), then follow `TEST_CASE_PROCESS.md` Phases 1-7 in
-full (author in the EvidenceForge checkout, sanity-check raw output,
-port over, audit for leaks, write the exam, sanity-check questions against
-data, get an independent audit, update tracking docs). Nothing here is
-ground truth — exact timestamps, hostnames, and field values only exist
-once a case is actually generated with a recorded seed.
+**Historical workflow note** (no longer applicable — kept for
+context): this doc was originally written to be picked up by a
+separate Claude Code session that didn't share the authoring
+conversation's context, following `TEST_CASE_PROCESS.md` Phases 1-7 in
+full per case. All ten were, in the end, built in-session instead.
+Nothing in the sketches below was ever ground truth — exact
+timestamps, hostnames, and field values only existed once each case
+was actually generated with a recorded seed, which is now reflected in
+each case's own `BRIEFING.md`/`CHANGELOG.md`, not here.
 
 **Grounding**: every EvidenceForge primitive named below (event types,
 roles, sensors) is taken directly from the live checkout's
@@ -36,27 +40,43 @@ proposals attempt to work around.
 
 ## Summary matrix
 
-| # | Case | Attack vector | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | Credential-Spray to Domain Compromise | Credential spray → Kerberoasting-style escalation → persistence | X | | X | | X | X | X | | X |
-| 2 | Insider Staging + DNS-Tunnel Exfil | Malicious insider, no external breach | X | | X | X | X | | | X | X |
-| 3 | Phishing to C2 Beacon | Phishing → macro execution → beaconing C2 | X | | X | X | X | X | | X | X |
-| 4 | Web SQLi to Webshell to Internal Pivot | External web-app attack | X | | | X | X | X | X | | X |
-| 5 | PtH Lateral Spread + Anti-Forensic Log Clear | Pass-the-Hash lateral movement + log tampering | X | | X | | X | X | X | | X |
-| 6 | Benign Shared Emergency-Admin Account | None — benign | X | | X | | X | | | | X |
-| 7 | DGA Beaconing + Log Tampering | Slow-burn malware C2 | X | | | X | X | X | | | X |
-| 8 | Departing-Employee Email Exfil | Insider policy violation, non-intrusive | X | | X | | X | | | X | X |
-| 9 | External Recon, No Breach | Reconnaissance only — attempted, not achieved | X | | | X | | X | | | X |
-| 10 | Rogue Service-Account Privilege Creep | Service-account abuse / privilege escalation | X | | X | | X | X | | | X |
+| # | Status | Case | Attack vector | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | Built | Credential-Spray to Domain Compromise | Credential spray → Kerberoasting-style escalation → persistence | X | | X | | X | X | X | | X |
+| 2 | Built | Insider Staging + DNS-Tunnel Exfil | Malicious insider, no external breach | X | | X | X | X | | | X | X |
+| 3 | Built | Phishing to C2 Beacon | Phishing → macro execution → beaconing C2 | X | | X | X | X | X | | X | X |
+| 4 | Built | Web SQLi to Webshell to Internal Pivot | External web-app attack | X | | | X | X | X | X | | X |
+| 5 | Built | PtH Lateral Spread + Anti-Forensic Log Clear | Pass-the-Hash lateral movement + log tampering | X | | X | | X | X | X | | X |
+| 6 | Built | Benign Shared Emergency-Admin Account | None — benign | X | | X | | X | | | | X |
+| 7 | Built | DGA Beaconing + Log Tampering | Slow-burn malware C2 | X | | | X | X | X | | | X |
+| 8 | Built | Departing-Employee Email Exfil | Insider policy violation, non-intrusive | X | | X | | X | | | X | X |
+| 9 | Built | External Recon, No Breach | Reconnaissance only — attempted, not achieved | X | | | X | | X | | | X |
+| 10 | Built | Rogue Service-Account Privilege Creep | Service-account abuse / privilege escalation | X | | X | | X | X | | | X |
 
-Coverage check against `TEST_CASE_MATRIX.md`'s current gaps: categories 6
-and 7 (currently zero active coverage) get real, positive coverage from
-#1/#4/#5 (category 6) and #1/#4/#5 (category 7) if any of these are built.
-Category 8 (currently zero coverage anywhere) gets covered by #2, #3, #8.
+All ten proposals are now built. See `TEST_CASE_MATRIX.md` for each
+case's *as-built* category coverage (verified against real exam
+questions, not the speculative marks above) — several cases' actual
+coverage differs slightly from what was projected here before any data
+existed, per each section's "Status: Built" note below.
+
+*(Historical note: the paragraph that originally stood here evaluated
+this menu's coverage against categories 6/7/8's gaps as they stood
+before any of these ten proposals were built — those gaps have since
+closed; see `TEST_CASE_MATRIX.md`'s "Coverage Gaps" section for the
+current, as-built picture. Category 2/Browser History remains the only
+structural gap.)*
 
 ---
 
 ## 1. Credential-Spray to Domain Compromise
+
+**Status: Built** — see `forensic-agent-tests/cases/credential-spray-domain-compromise/`
+and the paired `forensic-agent-answers/case-credential-spray-domain-compromise/`.
+Slug: `credential-spray-domain-compromise`. Built close to the sketch below;
+the one real gap found by an independent Phase 6 audit (svc-sql's escalation
+logon is actually a two-step Type 2 → Type 10 chain, not the single event
+the first answer key documented) was fixed, not a design deviation — see the
+case's `CHANGELOG.md` for detail.
 
 **Attack vector:** Credential spray (external) → Kerberoasting-style
 privilege escalation → persistence via scheduled task.
@@ -105,6 +125,18 @@ signal in the scenario design, not just narrative framing in
 
 ## 2. Insider Staging + DNS-Tunnel Exfil
 
+**Status: Built** — see `forensic-agent-tests/cases/insider-dns-tunnel-exfil/`
+and the paired `forensic-agent-answers/case-insider-dns-tunnel-exfil/`.
+Slug: `insider-dns-tunnel-exfil`. Built close to the sketch below, with one
+unplanned addition worth noting: the environment's own baseline activity
+independently generated a second, unrelated file-archiving event by the
+same user later the same day — not designed in, but built into the exam
+as a real discrimination test (Q1) once found. See the case's
+`CHANGELOG.md`/paired generator README for detail, including a real
+`GROUND_TRUTH.md` accuracy defect (a wrong timestamp/logon-type/IP for the
+storyline actor's own local logon) independent of the DNS-tunnel mechanic
+itself.
+
 **Attack vector:** Malicious insider — legitimate credentials throughout,
 no external breach.
 
@@ -148,6 +180,20 @@ skill. Needs calibration against the specific baseline intensity chosen.
 ---
 
 ## 3. Phishing to C2 Beacon
+
+**Status: Built** — see `forensic-agent-tests/cases/phishing-c2-beacon/`
+and the paired `forensic-agent-answers/case-phishing-c2-beacon/`.
+Slug: `phishing-c2-beacon`. Deviated from the sketch below in one real,
+engine-confirmed way: the scenario authored an explicit parent/child
+process link (Word opening the attachment, then a macro-launched
+PowerShell stager) using the schema's `process_ref`/`parent_ref` fields,
+but the rendered logs show no such lineage — both processes render with
+`explorer.exe` as their parent. Rather than route around this, the exam
+(Q2) was built directly around the gap, asking the agent to correlate via
+timing/command-line content instead. Also avoided `adversarial_payload`
+entirely for modeling the phishing content, after discovering it
+unconditionally embeds a literal brand-marker string in rendered output —
+see the case's `CHANGELOG.md`/paired generator README for full detail.
 
 **Attack vector:** Phishing email → malicious attachment execution →
 periodic C2 beaconing.
@@ -193,6 +239,22 @@ the AUT may not have.
 
 ## 4. Web SQLi to Webshell to Internal Pivot
 
+**Status: Built** — see `forensic-agent-tests/cases/websqli-webshell-pivot/`
+and the paired `forensic-agent-answers/case-websqli-webshell-pivot/`.
+Slug: `websqli-webshell-pivot`. Deviated from the sketch below in two
+real, verified ways: (1) the engine's own built-in "legitimate lateral
+movement" pattern (`content_publisher`: any `web_server`-role host gets
+baseline SMB traffic to any `file_server`-role host) would have directly
+undermined "the web server has no legitimate reason to reach the file
+server" — fixed by removing the file server's role designation; (2) the
+automated scan's own probes return HTTP 200 on roughly half their
+requests, so the exam could not rely on status code to distinguish the
+real breach — it uses User-Agent and payload-content signals instead,
+both found by inspecting the rendered data directly. `adversarial_payload`
+was avoided entirely for the SQLi content for the same brand-marker-leak
+reason noted in case #3. See the case's `CHANGELOG.md`/paired generator
+README for full detail.
+
 **Attack vector:** External web-application attack — SQL injection → webshell → internal pivot.
 
 | 1 | 4 | 5 | 6 | 7 | 9 |
@@ -236,6 +298,23 @@ engine's own baseline behavior for that role.
 ---
 
 ## 5. PtH Lateral Spread + Anti-Forensic Log Clear
+
+**Status: Built** — see `forensic-agent-tests/cases/pth-lateral-logclear/`
+and the paired `forensic-agent-answers/case-pth-lateral-logclear/`.
+Slug: `pth-lateral-logclear`. Deviated from the sketch below in a way
+this proposal's own "Known design risks" section anticipated but got
+wrong in a different direction: this engine version's
+`AuthenticationPackageName` for network logons turned out to be a fixed
+70/30 Kerberos/NTLM random roll, completely independent of account
+scope — there is no way to force a deterministic NTLM-where-Kerberos
+-expected signal via scenario authoring at all (confirmed by reading
+the engine source). The exam was redesigned around the account's
+identity/cross-host timing pattern instead. The anticipated
+log-clearing-answerability risk also manifested, but not as predicted:
+`log_cleared` doesn't remove any prior evidence in this engine version
+(purely additive), so the case tests verification of that fact rather
+than reasoning around genuinely-missing evidence. See the case's
+`CHANGELOG.md`/paired generator README for full detail.
 
 **Attack vector:** Pass-the-Hash lateral movement across file servers + log tampering.
 
@@ -281,6 +360,17 @@ test.
 ---
 
 ## 6. Benign Shared Emergency-Admin Account
+
+**Status: Built** — see `forensic-agent-tests/cases/benign-breakglass-account/`
+and the paired `forensic-agent-answers/case-benign-breakglass-account/`.
+Slug: `benign-breakglass-account`. Built close to the sketch below — a
+clean, fully benign case with no attack anywhere. An independent Phase
+6 audit actively searched for anything resembling a real compromise
+indicator and found none, confirming the "no incident" design intent
+holds. See the case's `CHANGELOG.md` for the one real texture worth
+knowing (the environment's own baseline model generates legitimate
+background credential-usage noise for the shared account across all
+seven hosts, not just the four servers).
 
 **Attack vector:** None — fully benign.
 
@@ -330,6 +420,19 @@ infer from vibes.
 
 ## 7. DGA Beaconing + Log Tampering
 
+**Status: Built** — see `forensic-agent-tests/cases/dga-beacon-logclear/`
+and the paired `forensic-agent-answers/case-dga-beacon-logclear/`.
+Slug: `dga-beacon-logclear`. Built close to the sketch below. Confirms,
+for the second time this session, that `log_cleared` does not remove
+prior log content in this engine version — the exam tests verification
+of that rather than reasoning around genuinely-missing evidence, the
+same design already used in case #5. Every quantitative claim (DGA
+query count, NXDOMAIN ratio, beacon connection count) was independently
+reproduced from raw data, including correctly excluding a coincidental
+false-positive domain (`sharepoint.com`) that a naive length-based DGA
+filter would otherwise catch. See the case's `CHANGELOG.md`/paired
+generator README for detail.
+
 **Attack vector:** Slow-burn malware C2 via domain-generation algorithm, with anti-forensic log clearing.
 
 | 1 | 4 | 5 | 6 | 9 |
@@ -369,6 +472,21 @@ remains solvable after the clear.
 ---
 
 ## 8. Departing-Employee Email Exfil
+
+**Status: Built** — see `forensic-agent-tests/cases/departing-employee-email-exfil/`
+and the paired `forensic-agent-answers/case-departing-employee-email-exfil/`.
+Slug: `departing-employee-email-exfil`. Deviated from the sketch below in
+one real way, caught before the exam was written: the scenario's first
+draft (following an inbound-facing email-topology example) requested no
+network sensor at all, and default outbound STARTTLS meant every
+outbound message — including the exfiltration emails themselves —
+rendered with blank sender/recipient/subject fields; the case was, as
+first built, silently unanswerable. Fixed by adding a network sensor and
+disabling outbound STARTTLS on the mail server, after which all three
+messages render in full. This proposal's own anticipated risk (needing
+a different, more qualitative grading-rubric shape for the
+register/tone question) held true and was built that way from the
+start. See the case's `CHANGELOG.md`/paired generator README for detail.
 
 **Attack vector:** Insider policy violation — non-intrusive, no technical compromise.
 
@@ -413,6 +531,19 @@ whether it needs a rubric more like a short-answer writing assessment.
 ---
 
 ## 9. External Recon, No Breach
+
+**Status: Built** — see `forensic-agent-tests/cases/external-recon-no-breach/`
+and the paired `forensic-agent-answers/case-external-recon-no-breach/`.
+Slug: `external-recon-no-breach`. Deviated from the sketch below in one
+way worth noting: `target_segment` (as originally proposed) turned out
+to silently produce zero rendered evidence when the storyline's `system`
+is itself inside the scanned segment — a real generator-tooling issue,
+fixed by using `target_ips` explicitly instead. See the case's
+`CHANGELOG.md` and the paired generator directory's README for full
+detail. The actual rendered scan also turned out richer than sketched
+here — 2 of 21 probed ports get a real connection (not just denies),
+including one failed SSH login attempt — which made for a better case
+than the originally-planned "everything just gets denied" version.
 
 **Attack vector:** Reconnaissance only — attempted, not achieved.
 
@@ -459,6 +590,20 @@ accidental partial-breach case.
 ---
 
 ## 10. Rogue Service-Account Privilege Creep
+
+**Status: Built** — see `forensic-agent-tests/cases/rogue-service-account-privcreep/`
+and the paired `forensic-agent-answers/case-rogue-service-account-privcreep/`.
+Slug: `rogue-service-account-privcreep`. Built close to the sketch below,
+with a richer discrimination test than originally planned: the
+environment's own baseline model independently generates 22 legitimate
+credential-usage events for the service account across all four hosts,
+mixing several different automation processes (including PowerShell,
+not just the presumed backup/monitoring binaries) — an independent
+Phase 6 audit caught the first answer-key draft understating both the
+host coverage and wrongly treating process name as a reliable
+discriminator, since `SubjectUserName` (a real human vs. `SYSTEM`) turns
+out to be the only fully reliable signal. See the case's `CHANGELOG.md`
+(v1.1) for detail.
 
 **Attack vector:** Service-account abuse / privilege escalation via group membership.
 

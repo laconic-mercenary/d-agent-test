@@ -1,0 +1,189 @@
+version: "1.0"
+generation_seed: 4471
+name: external-recon-no-breach
+description: |
+  A small office network is port-scanned from an external IP against its
+  DMZ segment. The firewall's default-deny policy blocks nearly every
+  probe; the few ports that are actually open (the public web server's
+  80/443) respond normally to what look like ordinary scan probes, with
+  no follow-on connection, no successful authentication, and no process
+  or account activity of any kind. The entire incident is: someone
+  looked, and found nothing they could use. No attacker storyline beyond
+  the scan itself — this case tests whether an agent can correctly
+  conclude "no compromise" from real but ultimately inert reconnaissance
+  evidence, rather than either dismissing it without checking or
+  escalating scan noise into a breach finding it can't support.
+
+environment:
+  description: "Small accounting firm — a handful of workstations, one internal file server, one DMZ-facing web server for client document uploads"
+  domain: "meridianledger.local"
+
+  timezone:
+    default: "America/Chicago"
+
+  users:
+    - username: paul.iverson
+      full_name: "Paul Iverson"
+      email: "paul.iverson@meridianledger.com"
+      persona: accountant
+      primary_system: WS-PIVERSON-01
+      groups: ["accounting"]
+      enabled: true
+      browsing_intensity: normal
+
+    - username: rita.okafor
+      full_name: "Rita Okafor"
+      email: "rita.okafor@meridianledger.com"
+      persona: sysadmin
+      primary_system: WS-ROKAFOR-01
+      groups: ["it-admins"]
+      enabled: true
+      browsing_intensity: light
+
+  service_accounts:
+    - www-data
+
+  systems:
+    - hostname: WS-PIVERSON-01
+      ip: "10.30.10.11"
+      os: "Windows 11 Enterprise"
+      type: workstation
+      assigned_user: paul.iverson
+      services: ["dns-client"]
+
+    - hostname: WS-ROKAFOR-01
+      ip: "10.30.10.12"
+      os: "Windows 11 Enterprise"
+      type: workstation
+      assigned_user: rita.okafor
+      services: ["dns-client"]
+
+    - hostname: FILE-01
+      ip: "10.30.20.10"
+      os: "Windows Server 2022"
+      type: server
+      services: ["smb", "dns-client"]
+      roles: ["file_server"]
+
+    - hostname: WEB-01
+      ip: "10.30.30.10"
+      os: "Ubuntu 22.04 LTS"
+      type: server
+      services: ["nginx", "ssh", "dns-client"]
+      roles: ["web_server"]
+      public_hostnames: ["docs.meridianledger.com"]
+
+  network_identities:
+    - id: docs_portal
+      hosts: [docs.meridianledger.com]
+      ips: ["51.75.140.5"]
+      tags: [web, dmz]
+      dns: true
+
+  network:
+    public_cidrs:
+      - "51.75.140.0/28"
+
+    segments:
+      - name: workstations
+        cidr: "10.30.10.0/24"
+        description: "Office workstation VLAN"
+        exposure: internal
+        systems: [WS-PIVERSON-01, WS-ROKAFOR-01]
+
+      - name: servers
+        cidr: "10.30.20.0/24"
+        description: "Internal server VLAN"
+        exposure: internal
+        systems: [FILE-01]
+
+      - name: dmz
+        cidr: "10.30.30.0/24"
+        description: "DMZ for the public client-document-upload portal"
+        exposure: both
+        external_ratio: 0.5
+        systems: [WEB-01]
+
+    sensors:
+      - type: network
+        name: core-span
+        hostname: ZEEK-CORE-01
+        monitoring_segments: [workstations, servers, dmz]
+        direction: bidirectional
+        placement: span
+        log_formats: [zeek]
+        description: "Core switch SPAN covering all internal segments and DMZ"
+
+      - type: firewall
+        name: edge-fw
+        hostname: FW-EDGE-01
+        monitoring_segments: [workstations, servers, dmz]
+        direction: bidirectional
+        placement: tap
+        log_formats: [cisco_asa]
+        interfaces:
+          workstations: inside
+          servers: inside
+          dmz: dmz
+        interface_security_levels:
+          outside: 0
+          dmz: 50
+          inside: 100
+        default_action: deny
+        deny_ratio: 5.0
+        threat_detection_rate: 10
+        nat_rules:
+          - type: dynamic_pat
+            src: [workstations, servers]
+            mapped_ip: "51.75.140.1"
+          - type: static
+            src: dmz
+            real_ip: "10.30.30.10"
+            mapped_ip: "51.75.140.5"
+        policy:
+          - {src: external, dst: dmz, ports: [80, 443], action: permit}
+          - {src: workstations, dst: servers, ports: [53, 88, 389, 445], action: permit}
+          - {src: workstations, dst: external, ports: [80, 443, 53], action: permit}
+          - {src: servers, dst: external, ports: [80, 443, 53, 123], action: permit}
+          - {src: dmz, dst: servers, ports: [], action: deny}
+
+time_window:
+  start: "2024-06-11T13:00:00Z"
+  duration: "4h"
+  warmup: "3h"
+
+baseline_activity:
+  description: "Ordinary small-office workday — light web browsing, file-share access, domain authentication, minimal background noise. No suspicious baseline noise layered in; the scan itself is the only anomaly in this case."
+  intensity: low
+  variation: low
+  suspicious_noise: low
+
+observation_profile: complete
+logon_grace_period: "30m"
+
+storyline:
+  - id: evt-recon-001
+    time: "+1h10m"
+    actor: www-data
+    system: WEB-01
+    activity: "External host conducts a broad TCP port scan against the DMZ segment, testing a mix of common service ports; the firewall's default-deny policy blocks all but the two ports actually permitted inbound (80/443 to the web server), which respond as ordinary open ports with no follow-on connection or exploitation attempt"
+    events:
+      - type: port_scan
+        technique: "T1595.001 - Active Scanning: Scanning IP Blocks"
+        description: "External source sweeps a broad port list against the DMZ segment; firewall denies the overwhelming majority, only 80/443 to WEB-01 are permitted and respond normally"
+        source_ip: "203.0.113.77"
+        target_ips: ["10.30.30.10"]
+        ports: [21, 22, 23, 25, 80, 110, 135, 139, 143, 443, 445, 993, 995, 1433, 1521, 3306, 3389, 5432, 5900, 8080, 8443]
+        scan_rate: 12.0
+
+output:
+  logs:
+    - format: zeek
+    - format: cisco_asa
+    - format: syslog
+    - format: web_access
+    - format: windows_event_security
+    - format: windows_event_sysmon
+    - format: bash_history
+  destination: scenarios/external-recon-no-breach
+  compression: false

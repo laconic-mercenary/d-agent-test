@@ -1,0 +1,598 @@
+{
+  "schema_version": 2,
+  "scenario_name": "benign-breakglass-account",
+  "scenario_description": "A small insurance office's two on-call sysadmins share a documented\nbreak-glass local-admin account across several servers, used only\nduring off-hours incident response — logons at odd hours followed by\ndiagnostic PowerShell commands that would read as suspicious in\nisolation, but match a real, informally-documented operational\npractice. No attack anywhere in this scenario — entirely benign\nactivity plus one unrelated distractor (a different employee working\nlate for an ordinary reason). Tests whether an agent correctly\nconcludes \"no incident\" while still doing real verification work\n(checking the account's documented purpose, distinguishing the\nunrelated late-night activity on its own merits) rather than either\ncrying wolf over odd-hours admin activity or waving everything off\nwithout checking.\n",
+  "generated_at": "2024-09-03T07:00:00Z",
+  "observation_profile": "complete",
+  "collection_window": {
+    "start": "2024-09-03T07:00:00Z",
+    "end": "2024-09-05T07:00:00Z"
+  },
+  "source_evidence_status": {
+    "red_herring:rh-breakglass-night1-app": {
+      "sysmon": {
+        "visible": 29
+      },
+      "windows_security": {
+        "visible": 15
+      }
+    },
+    "red_herring:rh-breakglass-night1-db": {
+      "sysmon": {
+        "visible": 11
+      },
+      "windows_security": {
+        "visible": 3
+      }
+    },
+    "red_herring:rh-breakglass-night2-dc": {
+      "sysmon": {
+        "visible": 11
+      },
+      "windows_security": {
+        "visible": 3
+      }
+    },
+    "red_herring:rh-breakglass-night2-file": {
+      "sysmon": {
+        "visible": 24
+      },
+      "windows_security": {
+        "visible": 15
+      }
+    },
+    "red_herring:rh-lateworker-db": {
+      "sysmon": {
+        "visible": 16
+      },
+      "windows_security": {
+        "visible": 8
+      }
+    }
+  },
+  "storyline_steps": [],
+  "red_herring_steps": [
+    {
+      "storyline_id": "rh-breakglass-night1-app",
+      "index": 0,
+      "actor": "svc-breakglass",
+      "system": "APP-01",
+      "activity": "Documented emergency-access account used for after-hours service check following an automated alert",
+      "ground_truth_section": "red_herring",
+      "event_types": [
+        "process",
+        "rdp_session"
+      ],
+      "explanation": "svc-breakglass is a documented break-glass account shared by the two on-call sysadmins for after-hours incident response; usage is logged and reviewed weekly per informal IT policy. This session responds to a stopped-service alert on APP-01."
+    },
+    {
+      "storyline_id": "rh-breakglass-night1-db",
+      "index": 1,
+      "actor": "svc-breakglass",
+      "system": "DB-01",
+      "activity": "Same on-call session continues to DB-01 to check for related database errors",
+      "ground_truth_section": "red_herring",
+      "event_types": [
+        "process"
+      ],
+      "explanation": "Continuation of the same documented emergency-access session — checking whether the stopped service on APP-01 affected the database tier."
+    },
+    {
+      "storyline_id": "rh-lateworker-db",
+      "index": 2,
+      "actor": "rosa.delgado",
+      "system": "WS-RDELGADO-01",
+      "activity": "An accounting employee works unusually late to finish a month-end report, unrelated to any IT incident",
+      "ground_truth_section": "red_herring",
+      "event_types": [
+        "connection",
+        "process"
+      ],
+      "explanation": "Ordinary late work for a month-end reporting deadline — not tied to any incident-response policy, not part of the IT on-call rotation, and not an anomaly by this employee's normal role."
+    },
+    {
+      "storyline_id": "rh-breakglass-night2-file",
+      "index": 3,
+      "actor": "svc-breakglass",
+      "system": "FILE-01",
+      "activity": "Documented emergency-access account used the following night to check disk space after a low-space alert",
+      "ground_truth_section": "red_herring",
+      "event_types": [
+        "process",
+        "rdp_session"
+      ],
+      "explanation": "Second, separate documented emergency-access session by the on-call rotation — responding to a low-disk-space alert on FILE-01."
+    },
+    {
+      "storyline_id": "rh-breakglass-night2-dc",
+      "index": 4,
+      "actor": "svc-breakglass",
+      "system": "DC-01",
+      "activity": "Same on-call session checks the domain controller's system event log as a precaution",
+      "ground_truth_section": "red_herring",
+      "event_types": [
+        "process"
+      ],
+      "explanation": "Continuation of the same documented emergency-access session — a routine precautionary check of the DC's system log, standard practice for this on-call rotation."
+    }
+  ],
+  "intent_reconciliation": {
+    "complete": true,
+    "expected_count": 8,
+    "planned_count": 8,
+    "occurred_count": 8,
+    "observed_count": 8,
+    "missing_intent_ids": [],
+    "unexpected_intent_ids": [],
+    "intents": [
+      {
+        "intent_id": "53f43908-8cc9-4711-bc37-b2abf57610c7",
+        "ground_truth_section": "red_herring",
+        "storyline_id": "rh-breakglass-night1-app",
+        "event_type": "rdp_session",
+        "semantic_instance_key": "221a6f5662a5240598c94cd0:0",
+        "authored_time": "+15m",
+        "actor": "svc-breakglass",
+        "system": "APP-01",
+        "activity": "Documented emergency-access account used for after-hours service check following an automated alert",
+        "planned": true,
+        "action_ids": [
+          "11dacd20-79ed-4059-9abb-6ce7ebe23a67",
+          "333bb2ef-0c29-4d49-a625-336fd21248fe",
+          "41c83048-0a27-48e3-9ed6-c13cf145c985",
+          "5e9e40a9-da6b-43fa-a79a-6469736db501",
+          "61bb1447-511d-42cc-9b8f-4818c5ad3897",
+          "756f597f-ed21-42a9-9fa0-ff3013635712",
+          "774530da-fc81-4496-974c-1826cccf4821",
+          "79c201c6-2f4f-4a38-b20b-ff1c36ac6b57",
+          "8d60737f-84ae-4d8d-82c6-60f6d448b91c",
+          "bab1f08c-38e1-4b63-9056-e6e2868f1fcd"
+        ],
+        "occurrence_ids": [
+          "05fd358b-1124-47c0-934a-d912ceffced4",
+          "28432bf6-4477-4789-9205-483decbf350b",
+          "2d9358c3-a757-4a52-9a21-34d299b76bd3",
+          "328a28e5-deda-44bd-9431-aa33d2f84071",
+          "4462962d-38ec-4ec1-936a-a8daaf877a47",
+          "560f8a83-9a23-4bf7-8daf-aeb2b6e39b6a",
+          "79067e9b-5eb7-4328-8692-55f248bdfb2d",
+          "7dbf4db7-4867-4de0-aa4d-76712c3ccca2",
+          "8563092e-d3bd-4f12-aaa4-23d5488133db",
+          "91991db3-5acc-4b92-aae6-1b639ac3cf43",
+          "9d73f492-68ed-4c76-8b15-caa2dd1f6e78",
+          "a5b377cf-456a-458a-b64c-df7c730d9d7b",
+          "bb6738a3-2f8e-4951-af21-ca05171e20bc",
+          "c4caac86-9103-4b56-b1bb-4522846907b6",
+          "ce6629c2-54ef-4990-a171-4761729ed01c",
+          "d0dad51d-1e86-4548-b7bd-9a180e9bb10d",
+          "e15b0f9d-2ad4-4a9e-a65d-fa5ed51d03db",
+          "e20f1652-0b97-4916-b6d2-f1059dbfa3ef",
+          "ecb15637-abda-4c71-b1a0-11c08d2d767e",
+          "ed5f04e8-8953-4d90-9c64-4b0e7687bbd2",
+          "eff97613-f48b-45a0-99fe-badb0d521ffe",
+          "fed479d3-7c09-42bd-b412-9506dafabec4"
+        ],
+        "source_status": {
+          "sysmon": {
+            "visible": 18
+          },
+          "windows_security": {
+            "visible": 13
+          }
+        }
+      },
+      {
+        "intent_id": "7f58c221-13a7-4653-b91b-397c44d1f2b3",
+        "ground_truth_section": "red_herring",
+        "storyline_id": "rh-breakglass-night1-app",
+        "event_type": "process",
+        "semantic_instance_key": "811356a0deb8662b7454f990:0",
+        "authored_time": "+15m",
+        "actor": "svc-breakglass",
+        "system": "APP-01",
+        "activity": "Documented emergency-access account used for after-hours service check following an automated alert",
+        "planned": true,
+        "action_ids": [
+          "af59680b-7dd3-41d1-9c53-9be9764270e1"
+        ],
+        "occurrence_ids": [
+          "0bdb2ba6-dfac-484c-8957-89667a102920",
+          "11316595-39ed-4902-930c-6a3666c4392f",
+          "1ea4c72c-6dda-440b-93d1-3a49a58e1c0d",
+          "55df46dd-f6a9-400b-a385-d624503cdb2d",
+          "8435e548-6707-4884-a16d-8704cfe14597",
+          "8a7b132e-abce-40e6-a0d5-3c24d0c4157b",
+          "909f7971-9b63-4368-bd7c-05a929e3b682",
+          "aa7a67eb-5c47-4934-9d63-1e9722b33dd1",
+          "d04bf2df-50e3-4300-ba22-b504cc34296a",
+          "eb8ab86d-64d5-4db6-8296-1407fac6045e"
+        ],
+        "source_status": {
+          "sysmon": {
+            "visible": 10
+          },
+          "windows_security": {
+            "visible": 1
+          }
+        }
+      },
+      {
+        "intent_id": "e622a6e7-52e4-4220-9303-33f53178dc76",
+        "ground_truth_section": "red_herring",
+        "storyline_id": "rh-breakglass-night1-db",
+        "event_type": "process",
+        "semantic_instance_key": "f6ce7284d2d39553e47a1067:0",
+        "authored_time": "+30m",
+        "actor": "svc-breakglass",
+        "system": "DB-01",
+        "activity": "Same on-call session continues to DB-01 to check for related database errors",
+        "planned": true,
+        "action_ids": [
+          "23df9d83-dec6-4037-ab41-917d199d2f02",
+          "ecc1bce8-7856-4ec9-b9fd-0ffce8410111"
+        ],
+        "occurrence_ids": [
+          "16c0ffcc-93a3-4f67-83cf-99866a47c4a8",
+          "4380f24d-d068-4634-b9fc-230c5b5aa518",
+          "61337fc8-9aaa-4225-9fcd-c7abff5a8e39",
+          "889ab46d-40b2-4f1e-bea8-350d8b73c986",
+          "bbbf588d-b4fc-4f0f-986b-116a642eabfe",
+          "bd269459-92f2-4407-b557-d0425d4e4160",
+          "c6f4b153-7bd1-4a92-b6eb-891669f50022",
+          "e8fa4d1e-528f-44d6-b12a-33578a99d585",
+          "f514a299-10bf-417f-a76c-8dcbf762dd99",
+          "faae9124-ee04-4561-ab84-1e415e56ba4a",
+          "fd25a3a5-9787-443a-b369-dbc1f75b7745"
+        ],
+        "source_status": {
+          "sysmon": {
+            "visible": 10
+          },
+          "windows_security": {
+            "visible": 2
+          }
+        }
+      },
+      {
+        "intent_id": "81d0277a-a303-4035-8b89-b0635b601640",
+        "ground_truth_section": "red_herring",
+        "storyline_id": "rh-lateworker-db",
+        "event_type": "process",
+        "semantic_instance_key": "9debd282a613789e6701acf8:0",
+        "authored_time": "+21h00m",
+        "actor": "rosa.delgado",
+        "system": "WS-RDELGADO-01",
+        "activity": "An accounting employee works unusually late to finish a month-end report, unrelated to any IT incident",
+        "planned": true,
+        "action_ids": [
+          "5cc63954-1837-404b-9995-ad2a8cfdb615",
+          "6122bdab-6b24-46ed-84ae-35887e9c5f15",
+          "75e62272-cdff-45f8-9f89-13855f4632bb",
+          "c34c8ad4-3a24-4c3c-a09d-99f86a1adf9c",
+          "eacae247-0f64-4eab-879e-0804948fb527"
+        ],
+        "occurrence_ids": [
+          "20937722-899e-4356-8b37-c7b07df2306a",
+          "46183ea0-4af3-47b0-94b5-557313792a8b",
+          "5a1d5406-7dc7-465e-89ee-99d2895957ae",
+          "7dab0b36-c756-4c48-87cf-96f7239ab2ca",
+          "899870e7-b5cb-4c56-990a-4253c889ac25",
+          "ab65ecb4-f229-4b76-a803-0e370b7eb392",
+          "b28a1600-0b70-46b7-867a-ae37f60d5254",
+          "b72b48c0-3a7e-462c-a28e-d593fb8f04f4",
+          "b785e832-1eb4-457b-8886-d9e0e7bb1f1b",
+          "bc478de7-846a-4a2f-8287-1485e0c2d2d0",
+          "c5b9fb11-c7df-440c-aba3-8eb79cab67ff",
+          "ca595d0c-8155-4721-b60a-805e4ca21a00",
+          "d6d361df-73ed-4fac-a603-16773ca6feee",
+          "d9b49ebf-1849-40f9-a596-d1cf43eae52f",
+          "eacf3719-caf4-481a-83d9-ca5a9c8846ab"
+        ],
+        "source_status": {
+          "sysmon": {
+            "visible": 14
+          },
+          "windows_security": {
+            "visible": 6
+          }
+        }
+      },
+      {
+        "intent_id": "9763103e-e4ce-4dd2-a576-6f5b71ae5dfe",
+        "ground_truth_section": "red_herring",
+        "storyline_id": "rh-lateworker-db",
+        "event_type": "connection",
+        "semantic_instance_key": "3bed3e66428225d8cc5b709f:0",
+        "authored_time": "+21h00m",
+        "actor": "rosa.delgado",
+        "system": "WS-RDELGADO-01",
+        "activity": "An accounting employee works unusually late to finish a month-end report, unrelated to any IT incident",
+        "planned": true,
+        "action_ids": [
+          "95eeea3a-1312-4422-a2e2-986ba8261c11"
+        ],
+        "occurrence_ids": [
+          "928f26c4-969e-423f-91ad-a968bcd0c39b",
+          "b930136c-d4a3-4485-8e8d-506776dbb03f"
+        ],
+        "source_status": {
+          "sysmon": {
+            "visible": 1
+          },
+          "windows_security": {
+            "visible": 1
+          }
+        }
+      },
+      {
+        "intent_id": "db1a67e4-5f61-4043-8fe3-13f92dc2d66e",
+        "ground_truth_section": "red_herring",
+        "storyline_id": "rh-breakglass-night2-file",
+        "event_type": "rdp_session",
+        "semantic_instance_key": "00db256a27692e98f7c498b1:0",
+        "authored_time": "+24h15m",
+        "actor": "svc-breakglass",
+        "system": "FILE-01",
+        "activity": "Documented emergency-access account used the following night to check disk space after a low-space alert",
+        "planned": true,
+        "action_ids": [
+          "1cfc667c-355c-4737-9b43-e74cf8760f8b",
+          "373b204c-1999-443f-a6e1-bdfde285fb20",
+          "39741eed-b00c-4ab8-8f73-37c5f4ac40b3",
+          "432be80d-7403-4b30-8a4b-09e18847f7a0",
+          "701aad1a-d5ae-49ec-b4ca-ba30f7f590b9",
+          "731e78b1-249f-4f03-8168-63ba331a53a0",
+          "7b544f0b-f696-4395-9922-d9306374c765",
+          "c9a20862-eda2-4180-b34a-5c0c2fb825da",
+          "e87e8bef-c612-497c-80ec-727fedfa600f",
+          "fe9cf782-f37c-4db8-970b-76243264ed2a"
+        ],
+        "occurrence_ids": [
+          "1e25e1e0-ee59-4e35-a5e2-f3b63664892f",
+          "1eafb951-85f8-4676-9e0b-d6a5f27c13d9",
+          "3352e393-30ec-49fc-a335-8f7ad93cbf93",
+          "34f15032-e27f-4f90-822a-dda9930b4d52",
+          "431aaef5-fbe4-4c3f-ad5a-f069b80081fa",
+          "48880205-a63d-4b62-8eba-e6f707011025",
+          "5da1e780-bc97-4196-b032-c1b6bb444a89",
+          "5e931767-e680-4612-ae95-956d6323f9dc",
+          "6f367e21-4029-45d0-88d7-8fd8ab2ed9ba",
+          "76f9b3d8-4186-438d-83af-27410d0c428b",
+          "77db0aa1-6df9-4d4b-a24c-bae6f5095532",
+          "78d9f71b-8f0c-40f5-bbc0-5c59912ede6e",
+          "af3e9d93-9a5d-4eee-8984-306b1d5ec1b6",
+          "b1982283-d431-4c98-ac3f-376585688650",
+          "c2817000-1d71-4f42-9207-80c316311a12",
+          "ca59533b-5ffc-40f0-8e1a-4b58e8535012",
+          "e321aef6-7b53-4d79-bf93-f3fa46a1747c",
+          "e7caf72d-f365-49cf-aba7-dde1fedf64b8",
+          "ea8c6e69-8d71-4c36-8a08-5c19996834d1"
+        ],
+        "source_status": {
+          "sysmon": {
+            "visible": 15
+          },
+          "windows_security": {
+            "visible": 13
+          }
+        }
+      },
+      {
+        "intent_id": "5e627a89-2f1c-4d89-a569-c31c50dd84bf",
+        "ground_truth_section": "red_herring",
+        "storyline_id": "rh-breakglass-night2-file",
+        "event_type": "process",
+        "semantic_instance_key": "a179abc1c2123cf4a8fe62b9:0",
+        "authored_time": "+24h15m",
+        "actor": "svc-breakglass",
+        "system": "FILE-01",
+        "activity": "Documented emergency-access account used the following night to check disk space after a low-space alert",
+        "planned": true,
+        "action_ids": [
+          "586125a5-7fb2-45bd-9ba2-c59e01a51bdd"
+        ],
+        "occurrence_ids": [
+          "13556e3d-2cb8-4b2d-98d1-0817052c72a2",
+          "3152e396-5e2e-41e4-ba21-c84b91da9b26",
+          "5f1f9436-0c23-4334-871d-2ef2a128b553",
+          "a0508f27-aee7-495c-8806-ff479cd3f89a",
+          "a3c512cc-2ecb-4b0d-b59a-fe1a55abc1ab",
+          "be4b5bb9-24c0-48e1-a651-798627b054df",
+          "cbcd34bf-0c17-4f68-9f9b-cb1526beea9c",
+          "e4bee1b9-08e8-40c3-975c-7c7d2c3f088d"
+        ],
+        "source_status": {
+          "sysmon": {
+            "visible": 8
+          },
+          "windows_security": {
+            "visible": 1
+          }
+        }
+      },
+      {
+        "intent_id": "223d801e-21ab-48f9-a064-3a589eab2c40",
+        "ground_truth_section": "red_herring",
+        "storyline_id": "rh-breakglass-night2-dc",
+        "event_type": "process",
+        "semantic_instance_key": "0e682d9d8758f10862746b0a:0",
+        "authored_time": "+24h35m",
+        "actor": "svc-breakglass",
+        "system": "DC-01",
+        "activity": "Same on-call session checks the domain controller's system event log as a precaution",
+        "planned": true,
+        "action_ids": [
+          "92052e78-4a2f-47cb-920f-5f2f2fef60b2",
+          "dbbc6a55-26dc-45a6-a92a-c2e1acaf79b8"
+        ],
+        "occurrence_ids": [
+          "5d2f4ab0-9c82-409e-a95e-9efad09c3884",
+          "70a8d6d4-d375-4a16-a187-da3cafa6d30b",
+          "74b967e0-4afe-4d7b-a4f8-1b2663586fca",
+          "77cc1c5d-35c6-46ae-851c-7c6718362730",
+          "963a921e-6bdf-497a-86e9-245bec08cff8",
+          "aa1c7088-1689-4ace-8aae-319925c1a147",
+          "cc4dfe25-47b1-4231-a4e8-1faecda3611b",
+          "df2a832b-b82d-44f2-ab02-db73dfeb167d",
+          "e6a0893e-fa10-4fed-8a99-6a30d2c01f44",
+          "e73b1d4b-b433-4ecf-b60f-9ea858ac23c9",
+          "f5f97795-2f49-4ee7-9746-c95a29216f15"
+        ],
+        "source_status": {
+          "sysmon": {
+            "visible": 10
+          },
+          "windows_security": {
+            "visible": 2
+          }
+        }
+      }
+    ]
+  },
+  "events": [
+    {
+      "record_id": "red_herring:rh-breakglass-night1-app#0",
+      "kind": "rdp_session",
+      "intent_id": "53f43908-8cc9-4711-bc37-b2abf57610c7",
+      "storyline_id": "red_herring:rh-breakglass-night1-app",
+      "time": "2024-09-03T07:14:38Z",
+      "actor": "svc-breakglass",
+      "system": "APP-01",
+      "activity": "Documented emergency-access account used for after-hours service check following an automated alert",
+      "ground_truth_section": "red_herring",
+      "emitted": true,
+      "explanation": "svc-breakglass is a documented break-glass account shared by the two on-call sysadmins for after-hours incident response; usage is logged and reviewed weekly per informal IT policy. This session responds to a stopped-service alert on APP-01.",
+      "attributes": {
+        "dst_ip": "10.90.20.20",
+        "dst_port": 3389,
+        "uid": "(filtered by sensor placement)"
+      }
+    },
+    {
+      "record_id": "red_herring:rh-breakglass-night1-app#1",
+      "kind": "process",
+      "intent_id": "7f58c221-13a7-4653-b91b-397c44d1f2b3",
+      "storyline_id": "red_herring:rh-breakglass-night1-app",
+      "time": "2024-09-03T07:14:40Z",
+      "actor": "svc-breakglass",
+      "system": "APP-01",
+      "activity": "Documented emergency-access account used for after-hours service check following an automated alert",
+      "ground_truth_section": "red_herring",
+      "emitted": true,
+      "explanation": "svc-breakglass is a documented break-glass account shared by the two on-call sysadmins for after-hours incident response; usage is logged and reviewed weekly per informal IT policy. This session responds to a stopped-service alert on APP-01.",
+      "attributes": {
+        "command_line": "powershell.exe -Command Get-Service | Where-Object {$_.Status -ne 'Running'}",
+        "pid": 6844,
+        "process_name": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+      }
+    },
+    {
+      "record_id": "red_herring:rh-breakglass-night1-db#0",
+      "kind": "process",
+      "intent_id": "e622a6e7-52e4-4220-9303-33f53178dc76",
+      "storyline_id": "red_herring:rh-breakglass-night1-db",
+      "time": "2024-09-03T07:30:15Z",
+      "actor": "svc-breakglass",
+      "system": "DB-01",
+      "activity": "Same on-call session continues to DB-01 to check for related database errors",
+      "ground_truth_section": "red_herring",
+      "emitted": true,
+      "explanation": "Continuation of the same documented emergency-access session — checking whether the stopped service on APP-01 affected the database tier.",
+      "attributes": {
+        "command_line": "powershell.exe -Command Get-EventLog -LogName Application -Newest 100",
+        "pid": 5952,
+        "process_name": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+      }
+    },
+    {
+      "record_id": "red_herring:rh-breakglass-night2-dc#0",
+      "kind": "process",
+      "intent_id": "223d801e-21ab-48f9-a064-3a589eab2c40",
+      "storyline_id": "red_herring:rh-breakglass-night2-dc",
+      "time": "2024-09-04T07:35:03Z",
+      "actor": "svc-breakglass",
+      "system": "DC-01",
+      "activity": "Same on-call session checks the domain controller's system event log as a precaution",
+      "ground_truth_section": "red_herring",
+      "emitted": true,
+      "explanation": "Continuation of the same documented emergency-access session — a routine precautionary check of the DC's system log, standard practice for this on-call rotation.",
+      "attributes": {
+        "command_line": "powershell.exe -Command Get-EventLog -LogName System -Newest 50",
+        "pid": 17036,
+        "process_name": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+      }
+    },
+    {
+      "record_id": "red_herring:rh-breakglass-night2-file#0",
+      "kind": "rdp_session",
+      "intent_id": "db1a67e4-5f61-4043-8fe3-13f92dc2d66e",
+      "storyline_id": "red_herring:rh-breakglass-night2-file",
+      "time": "2024-09-04T07:14:32Z",
+      "actor": "svc-breakglass",
+      "system": "FILE-01",
+      "activity": "Documented emergency-access account used the following night to check disk space after a low-space alert",
+      "ground_truth_section": "red_herring",
+      "emitted": true,
+      "explanation": "Second, separate documented emergency-access session by the on-call rotation — responding to a low-disk-space alert on FILE-01.",
+      "attributes": {
+        "dst_ip": "10.90.20.22",
+        "dst_port": 3389,
+        "uid": "(filtered by sensor placement)"
+      }
+    },
+    {
+      "record_id": "red_herring:rh-breakglass-night2-file#1",
+      "kind": "process",
+      "intent_id": "5e627a89-2f1c-4d89-a569-c31c50dd84bf",
+      "storyline_id": "red_herring:rh-breakglass-night2-file",
+      "time": "2024-09-04T07:14:33Z",
+      "actor": "svc-breakglass",
+      "system": "FILE-01",
+      "activity": "Documented emergency-access account used the following night to check disk space after a low-space alert",
+      "ground_truth_section": "red_herring",
+      "emitted": true,
+      "explanation": "Second, separate documented emergency-access session by the on-call rotation — responding to a low-disk-space alert on FILE-01.",
+      "attributes": {
+        "command_line": "powershell.exe -Command Get-PSDrive -PSProvider FileSystem",
+        "pid": 11632,
+        "process_name": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+      }
+    },
+    {
+      "record_id": "red_herring:rh-lateworker-db#0",
+      "kind": "process",
+      "intent_id": "81d0277a-a303-4035-8b89-b0635b601640",
+      "storyline_id": "red_herring:rh-lateworker-db",
+      "time": "2024-09-04T04:00:08Z",
+      "actor": "rosa.delgado",
+      "system": "WS-RDELGADO-01",
+      "activity": "An accounting employee works unusually late to finish a month-end report, unrelated to any IT incident",
+      "ground_truth_section": "red_herring",
+      "emitted": true,
+      "explanation": "Ordinary late work for a month-end reporting deadline — not tied to any incident-response policy, not part of the IT on-call rotation, and not an anomaly by this employee's normal role.",
+      "attributes": {
+        "command_line": "\"C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE\" \"C:\\Users\\rosa.delgado\\Documents\\MonthEnd_Report.xlsx\"",
+        "pid": 10152,
+        "process_name": "C:\\Program Files\\Microsoft Office\\root\\Office16\\EXCEL.EXE"
+      }
+    },
+    {
+      "record_id": "red_herring:rh-lateworker-db#1",
+      "kind": "connection",
+      "intent_id": "9763103e-e4ce-4dd2-a576-6f5b71ae5dfe",
+      "storyline_id": "red_herring:rh-lateworker-db",
+      "time": "2024-09-04T04:00:10Z",
+      "actor": "rosa.delgado",
+      "system": "WS-RDELGADO-01",
+      "activity": "An accounting employee works unusually late to finish a month-end report, unrelated to any IT incident",
+      "ground_truth_section": "red_herring",
+      "emitted": true,
+      "explanation": "Ordinary late work for a month-end reporting deadline — not tied to any incident-response policy, not part of the IT on-call rotation, and not an anomaly by this employee's normal role.",
+      "attributes": {
+        "dst_ip": "10.90.20.21",
+        "dst_port": 1433,
+        "uid": "(filtered by sensor placement)"
+      }
+    }
+  ]
+}
