@@ -6,8 +6,8 @@ MIT) and drives deterministic generation of the case's `data/`.
 
 **EvidenceForge version/commit used:** v1.17.0, commit `567073b0`. Local
 checkout: `/Users/mlcs/Documents/github/EvidenceForge`. Author/iterate
-scenarios there, not in this repo — see `../../../../AGENTS.md` (the
-`d-agent-test` root) for the full workflow.
+scenarios there, not in this repo — see `../../../AGENTS.md` (this
+repo's root, `forensic-agent-answers`) for the full workflow.
 
 ## Regenerate
 
@@ -18,7 +18,7 @@ uv run eforge generate scenarios/rdp-remote-file-write/scenario.yaml --verbose -
 ```
 
 (If `uv sync` fails on a `cryptography`/`openssl-sys` build error, see the
-"Environment setup" section of the `d-agent-test` root `AGENTS.md`.)
+"Environment setup" section of this repo's root `AGENTS.md`.)
 
 Generation seed: 42 — deterministic; confirmed identical output (timestamps,
 `LogonId`, event counts) across three separate regeneration runs.

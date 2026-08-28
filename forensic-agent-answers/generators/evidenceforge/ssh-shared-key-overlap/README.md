@@ -18,7 +18,7 @@ uv run eforge validate scenarios/ssh-shared-key-overlap/scenario.yaml
 uv run eforge generate scenarios/ssh-shared-key-overlap/scenario.yaml --verbose --force
 ```
 
-See the `d-agent-test` root `AGENTS.md` for the full generate → port-over
+See this repo's root `AGENTS.md` for the full generate → port-over
 workflow, and its "Environment setup" section if `uv sync` fails.
 
 Generation seed: 42 — the scenario file itself doesn't set one explicitly,

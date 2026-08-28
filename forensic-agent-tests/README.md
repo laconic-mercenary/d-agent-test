@@ -1,8 +1,13 @@
 # forensic-agent-tests
 
 Forensic-analysis test cases for evaluating LLM agents on DFIR tasks —
-evidence + task instructions only. Answer keys live in a separate,
-sibling repository (`forensic-agent-answers`), never in this one.
+evidence + task instructions only. Answer keys, grading rubrics, and the
+case-building methodology all live in a separate, sibling repository,
+`forensic-agent-answers`, never in this one.
+
+**If you're an agent-under-test assigned a specific case**: go straight to
+`cases/<slug>/AGENTS.md` — that's your entry point. You don't need, and
+shouldn't need, anything else in this repo.
 
 ## Layout
 
@@ -11,12 +16,18 @@ sibling repository (`forensic-agent-answers`), never in this one.
   `EXAM.md` (the graded questions), `CHANGELOG.md`, and `data/` (all the
   evidence the agent-under-test sees — nothing answer-revealing).
 
-The generator input (`generators/evidenceforge/<slug>/scenario.yaml` —
-effectively a case's ground truth in YAML form) and the vendored
-EvidenceForge skills/reference docs live in
-`forensic-agent-answers/generators/` and
-`forensic-agent-answers/EvidenceForge/` respectively, not in this repo —
-see `../AGENTS.md`.
+This repo carries only cases that are actually part of the active suite.
+A case held out after an audit finds an unresolvable data defect is
+removed from here entirely, not just marked inactive — see the sibling
+`forensic-agent-answers` repo's `_discarded/` for the full record of any
+such case (there's no reason for a discarded case to stay in the
+AUT-facing repo at all).
+
+Everything about *how* a case was built — the generator input
+(`scenario.yaml`, effectively a case's ground truth in YAML form), the
+vendored generator reference docs, and the full build/audit
+methodology — lives in the sibling `forensic-agent-answers` repo, not
+here. See that repo's `AGENTS.md`.
 
 ## Cases
 
@@ -38,13 +49,14 @@ see `../AGENTS.md`.
 | [rogue-service-account-privcreep](cases/rogue-service-account-privcreep/) | Yes | service-account-abuse discrimination, earliest-anomaly identification distinct from its consequence, privilege-escalation tracing |
 
 **Discarded**: `single-host-linux-rce` — held out of active use after an
-audit found data self-contradictions on its central causal claim (see
-`_discarded/single-host-linux-rce/WHY_DISCARDED.md`). Not deleted; kept for
-reference and for filing upstream bug reports.
+audit found data self-contradictions on its central causal claim. Not
+part of this repo (see above); the full record lives in the sibling
+`forensic-agent-answers` repo's `_discarded/case-single-host-linux-rce/`,
+kept there for reference and for filing upstream bug reports.
 
-## Adding a case
+## Adding or maintaining a case
 
-See `../AGENTS.md` (at the `d-agent-test` root) for the full procedure —
-scenario generation happens in a separate EvidenceForge checkout, not here;
-this repo only receives the finished, audited port-over.
-
+Don't do this work in this repo. Scenario authoring, auditing, and the
+full build methodology live in the sibling `forensic-agent-answers`
+repo's `AGENTS.md` — this repo only ever receives the finished, audited
+port-over of a case's evidence and task files.

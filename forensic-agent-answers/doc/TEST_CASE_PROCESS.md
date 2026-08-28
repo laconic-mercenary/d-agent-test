@@ -157,8 +157,12 @@ missed. Budget for this as a real step, not a courtesy pass.
 
 Apply the keep / patch / discard criteria to whatever the audit finds:
 - **Data self-contradicts on a fact a question's grading depends on** →
-  discard or hold the case (see `_discarded/single-host-linux-rce/` for the
-  pattern — move, don't delete, and write up why).
+  discard or hold the case (see `_discarded/case-single-host-linux-rce/`
+  in this repo for the pattern — move, don't delete, and write up why.
+  A discarded case's evidence/task side is removed from
+  `forensic-agent-tests` entirely, not just marked inactive there — it
+  has no reason to stay in the AUT-facing repo once it's out of active
+  use; the full record, including the audit's reasoning, lives here).
 - **Wording ambiguity, data itself is fine** → reword.
 - **Real quirk, doesn't sit on a graded fact** → document in
   `BRIEFING.md`/`grading_schema.md` and keep.
