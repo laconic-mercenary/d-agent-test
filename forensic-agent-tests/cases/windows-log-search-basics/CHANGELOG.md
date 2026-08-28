@@ -12,8 +12,7 @@
   `AGENTS.md`/`TASK.md`, which correctly state all timestamps are UTC. No
   change to `EXAM.md` itself (it never stated a time), no change to which
   events/fields are cited as evidence — only the stated clock times in
-  `forensic-agent-answers/case-windows-log-search-basics/BRIEFING.md` and
-  `grading_schema.md` were wrong, and only those were corrected.
+  the held-out answer key were wrong, and only those were corrected.
 - **Fixed a real answer-key gap on Q2**: `data/sample1.jsonl` contains a
   second, genuine Type-10 RDP logon (`domadm`, `2023-07-21 09:45:24` UTC)
   that the source PDF doesn't document and the answer key didn't account

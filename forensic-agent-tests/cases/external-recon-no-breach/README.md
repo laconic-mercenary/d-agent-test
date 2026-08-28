@@ -8,7 +8,3 @@ assumed — rather than either dismissing the scan without checking, or
 escalating scan noise into a breach it can't support.
 
 **For the agent under test:** start at [AGENTS.md](AGENTS.md), not here.
-
-**Answers are held out** in a separate repository
-(`forensic-agent-answers/case-external-recon-no-breach/`), not included
-in this directory or this repository's evidence tree.

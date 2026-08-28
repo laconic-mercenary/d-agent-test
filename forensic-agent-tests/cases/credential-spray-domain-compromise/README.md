@@ -10,7 +10,3 @@ rather than crediting the initially-sprayed account with everything
 that happens afterward.
 
 **For the agent under test:** start at [AGENTS.md](AGENTS.md), not here.
-
-**Answers are held out** in a separate repository
-(`forensic-agent-answers/case-credential-spray-domain-compromise/`), not
-included in this directory or this repository's evidence tree.

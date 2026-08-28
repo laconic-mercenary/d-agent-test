@@ -13,7 +13,3 @@ data, and traces the escalation through to the actual privilege
 change.
 
 **For the agent under test:** start at [AGENTS.md](AGENTS.md), not here.
-
-**Answers are held out** in a separate repository
-(`forensic-agent-answers/case-rogue-service-account-privcreep/`), not
-included in this directory or this repository's evidence tree.

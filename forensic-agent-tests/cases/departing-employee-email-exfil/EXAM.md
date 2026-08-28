@@ -3,11 +3,12 @@
 Answer every question below. See [TASK.md](TASK.md) for how and where to
 write your answers.
 
-1. Identify every outbound email from Owen Marsh to his own personal
-   address: timestamp, subject, and attachment filename and size for
-   each. Owen also sends other outbound external email during this
-   same window that is **not** part of this — identify it separately
-   and explain why it doesn't belong in your list.
+1. **[Flexible Answer on one attachment's size]** Identify every
+   outbound email from Owen Marsh to his own personal address:
+   timestamp, subject, and attachment filename and size for each. Owen
+   also sends other outbound external email during this same window
+   that is **not** part of this — identify it separately and explain
+   why it doesn't belong in your list.
 
 2. Was any unauthorized access — a compromised credential, a technical
    exploit, access beyond what this account already legitimately

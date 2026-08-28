@@ -42,6 +42,6 @@
 ## 1.0 — 2026-08-26
 
 - Initial case build. Split into `data/` (evidence + context), the
-  generator's scenario file (moved to `generators/`), and answer-key
-  material (moved to the separate `forensic-agent-answers` directory).
+  generator's scenario file, and answer-key material — the latter two
+  moved to a separate, held-out location, not part of this repo.
 - Authored `AGENTS.md`, `TASK.md`, `EXAM.md` (7 questions).

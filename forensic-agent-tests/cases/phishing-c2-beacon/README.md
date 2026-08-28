@@ -13,7 +13,3 @@ the one connection that isn't like the others rather than treating
 "found a beacon" as the end of the investigation.
 
 **For the agent under test:** start at [AGENTS.md](AGENTS.md), not here.
-
-**Answers are held out** in a separate repository
-(`forensic-agent-answers/case-phishing-c2-beacon/`), not included in
-this directory or this repository's evidence tree.

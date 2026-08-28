@@ -13,7 +13,3 @@ target, and whether it distinguishes "the firewall allowed it" from
 "this traffic is normal for this host."
 
 **For the agent under test:** start at [AGENTS.md](AGENTS.md), not here.
-
-**Answers are held out** in a separate repository
-(`forensic-agent-answers/case-websqli-webshell-pivot/`), not included
-in this directory or this repository's evidence tree.

@@ -63,7 +63,6 @@ watching for):
 ```
 
 - [ ] User approved
-- [ ] Claude approved
 
 ---
 

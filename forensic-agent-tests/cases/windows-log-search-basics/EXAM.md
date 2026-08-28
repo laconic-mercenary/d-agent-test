@@ -7,8 +7,9 @@ write your answers.
    being launched. At what time(s) did this happen? Cite the specific
    event type and field that establishes it.
 
-2. `data/sample1.jsonl` contains a successful interactive remote desktop
-   (RDP) logon. Which account authenticated, and at what time? Cite the
+2. **[Flexible Answer]** `data/sample1.jsonl` contains a successful
+   interactive remote desktop (RDP) logon. Which account authenticated,
+   and at what time? Cite the
    specific Event ID and Logon Type that establishes this was RDP
    specifically, not some other logon type.
 

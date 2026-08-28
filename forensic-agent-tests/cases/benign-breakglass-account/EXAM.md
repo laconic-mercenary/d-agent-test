@@ -20,10 +20,11 @@ write your answers.
    it should be evaluated as unrelated to the `svc-breakglass` pattern,
    rather than folded into the same "off-hours activity" bucket.
 
-4. What specific evidence — if it were present in this data instead of
-   what's actually there — would change your answer to question 2?
-   Name at least two concrete things you would look for that would
-   turn this from "documented practice" into "actual incident."
+4. **[Flexible Answer]** What specific evidence — if it were present
+   in this data instead of what's actually there — would change your
+   answer to question 2? Name at least two concrete things you would
+   look for that would turn this from "documented practice" into
+   "actual incident."
 
 5. Draft the finding as it should appear in a brief internal
    incident-review note. It should reflect the actual severity of what

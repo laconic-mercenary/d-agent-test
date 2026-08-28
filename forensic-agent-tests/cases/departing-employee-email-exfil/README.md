@@ -11,7 +11,3 @@ technical case in this test suite by design: the difficulty is
 entirely in reporting judgment, not investigative depth.
 
 **For the agent under test:** start at [AGENTS.md](AGENTS.md), not here.
-
-**Answers are held out** in a separate repository
-(`forensic-agent-answers/case-departing-employee-email-exfil/`), not
-included in this directory or this repository's evidence tree.

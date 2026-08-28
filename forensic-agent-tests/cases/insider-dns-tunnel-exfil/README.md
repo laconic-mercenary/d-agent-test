@@ -12,7 +12,3 @@ exfiltration channel → destination) rather than stopping at "an
 employee compressed some files."
 
 **For the agent under test:** start at [AGENTS.md](AGENTS.md), not here.
-
-**Answers are held out** in a separate repository
-(`forensic-agent-answers/case-insider-dns-tunnel-exfil/`), not included
-in this directory or this repository's evidence tree.

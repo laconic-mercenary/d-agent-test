@@ -3,10 +3,11 @@
 Answer every question below. See [TASK.md](TASK.md) for how and where to
 write your answers.
 
-1. Characterize the automated scan against `WEB-01`: source IP, the
-   tool it identifies itself as (cite the specific field), the
-   endpoints it probed, and the approximate time range. Roughly how
-   many requests came from this source during the scan?
+1. **[Flexible Answer on request count only]** Characterize the
+   automated scan against `WEB-01`: source IP, the tool it identifies
+   itself as (cite the specific field), the endpoints it probed, and
+   the approximate time range. Roughly how many requests came from
+   this source during the scan?
 
 2. Exactly one request in this scan's time range actually succeeded in
    extracting sensitive data — but it is **not** the only request that

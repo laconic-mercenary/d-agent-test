@@ -16,14 +16,15 @@ write your answers.
    specifically what distinguishes it from the routine ones (the
    subject account, the process, and anything else you rely on).
 
-3. How much time elapsed between the event in question 2 and the next
-   time `svc-sql` actually logs on anywhere in this data? Why is a gap
-   of that length itself meaningful here, rather than incidental?
+3. **[Flexible Answer]** How much time elapsed between the event in
+   question 2 and the next time `svc-sql` actually logs on anywhere in
+   this data? Why is a gap of that length itself meaningful here,
+   rather than incidental?
 
-4. Identify `svc-sql`'s logon in question 3 — the Event ID, Logon Type,
-   and source IP/host it originated from. What does that source tell
-   you about how the attacker reached that logon, given what you found
-   in questions 1-2?
+4. **[Flexible Answer]** Identify `svc-sql`'s logon in question 3 — the
+   Event ID, Logon Type, and source IP/host it originated from. What
+   does that source tell you about how the attacker reached that
+   logon, given what you found in questions 1-2?
 
 5. What did the attacker do with `svc-sql`'s access to establish
    lasting presence? Cite the specific event and the exact malicious

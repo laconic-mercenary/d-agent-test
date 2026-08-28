@@ -12,7 +12,3 @@ merits) rather than either escalating ordinary off-hours admin activity
 into a false alarm, or waving everything off without checking anything.
 
 **For the agent under test:** start at [AGENTS.md](AGENTS.md), not here.
-
-**Answers are held out** in a separate repository
-(`forensic-agent-answers/case-benign-breakglass-account/`), not
-included in this directory or this repository's evidence tree.

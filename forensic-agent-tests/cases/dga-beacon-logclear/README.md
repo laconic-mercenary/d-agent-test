@@ -13,7 +13,3 @@ verifies — rather than assumes — what the log clear actually did and
 did not remove.
 
 **For the agent under test:** start at [AGENTS.md](AGENTS.md), not here.
-
-**Answers are held out** in a separate repository
-(`forensic-agent-answers/case-dga-beacon-logclear/`), not included in
-this directory or this repository's evidence tree.

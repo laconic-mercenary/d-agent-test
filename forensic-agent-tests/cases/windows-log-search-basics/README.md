@@ -7,7 +7,3 @@ unpack before use), find specific facts using targeted queries (event ID,
 process path, account name, time correlation).
 
 **For the agent under test:** start at [AGENTS.md](AGENTS.md), not here.
-
-**Answers are held out** in a separate repository
-(`forensic-agent-answers/case-windows-log-search-basics/`), not included in
-this directory or this repository's evidence tree.

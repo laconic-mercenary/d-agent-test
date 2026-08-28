@@ -14,7 +14,3 @@ of intent, and — critically — actually checks whether that log-clear
 succeeded in removing anything, rather than assuming it did.
 
 **For the agent under test:** start at [AGENTS.md](AGENTS.md), not here.
-
-**Answers are held out** in a separate repository
-(`forensic-agent-answers/case-pth-lateral-logclear/`), not included in
-this directory or this repository's evidence tree.

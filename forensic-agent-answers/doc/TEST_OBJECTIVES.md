@@ -70,7 +70,7 @@ and Sysmon events, syslog, application logs), search for specific keywords,
 identifiers, or indicators across a volume of records, and extract or
 filter by time range to isolate relevant activity.
 
-### 2. Browser History / Download History Verification
+### (!) 2. Browser History / Download History Verification
 
 Ability to review browser artifacts — history, downloads, cache, typically
 from Chrome or Firefox — to reconstruct what a user searched for, visited,

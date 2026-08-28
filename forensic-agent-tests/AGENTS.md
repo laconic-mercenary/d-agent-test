@@ -17,10 +17,9 @@ task, and nothing here should factor into your investigation or answers.
 Stop — this isn't the right place. This repo (`forensic-agent-tests`)
 holds only finished, independently-audited evidence and task files; it
 never holds scenario-authoring input, answer keys, grading rubrics, or
-the build methodology. All of that lives in the sibling
-`forensic-agent-answers` repo — see that repo's `AGENTS.md` for the full
-case-building procedure. Nothing should be authored or edited directly
-in this repo outside of a finished port-over from that process.
+the build methodology. All of that lives elsewhere. Nothing should be
+authored or edited directly in this repo outside of a finished
+port-over from that separate process.
 
 ## Layout
 

@@ -35,11 +35,3 @@ investigating.
   server monitoring agent) — both run as `SYSTEM` and both explicitly
   authenticate as `svc-sql` as part of normal, unattended operation. This
   is expected background activity, not evidence of anything by itself.
-
-## What this document does not cover
-
-There is no known incident, no reported suspicious activity, and no
-open investigation as of this document's writing. Whatever an analyst
-finds should be evaluated on its own merits against the context stated
-above, not against an assumption that something is already known to be
-wrong.
