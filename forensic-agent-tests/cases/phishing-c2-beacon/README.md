@@ -1,15 +1,13 @@
-# Case: phishing-c2-beacon
+# Case
 
-A paralegal at a small law firm opens a macro-enabled attachment from a
-phishing email disguised as an overdue invoice notice. The macro
-launches a hidden PowerShell stager that establishes a periodic HTTPS
-beacon to external infrastructure. After roughly ninety minutes of
-routine check-in traffic, one connection within that same channel
-carries a byte volume far larger than any other beacon tick — a manual
-attacker action riding the C2 channel, not the beacon itself. This case
-specifically tests whether an agent traces delivery, execution, and C2
-as three distinct, separately-citable stages, and whether it notices
-the one connection that isn't like the others rather than treating
-"found a beacon" as the end of the investigation.
+A digital forensics investigation case for evaluating an
+agent-under-test. No description of the scenario, technique, or
+outcome is given in this file — see [AGENTS.md](AGENTS.md) for what
+the agent needs.
+
+**Before giving this case to an agent under test:** copy this entire
+case directory to a working location under a neutral name (e.g.
+`case-01`), so the agent never sees this directory's original name.
+Do this before the agent's first read of anything in this directory.
 
 **For the agent under test:** start at [AGENTS.md](AGENTS.md), not here.

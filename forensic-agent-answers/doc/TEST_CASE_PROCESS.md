@@ -114,14 +114,17 @@ Follow `../AGENTS.md` Phase 2's checklist in full:
 3. **Audit the entire intended `cases/<slug>/` tree**, not just `data/`,
    before writing anything else:
    - grep case-insensitive for the generator's name/vendor/brand — zero
-     hits anywhere the AUT can read, including `README.md`/`CHANGELOG.md`.
+     hits anywhere the AUT can read, including `README.md`.
    - grep for narrative/answer-leak patterns (e.g. `"storyline_id"`,
      `"kind": *"red_herring"`, `"activity":` for EvidenceForge specifically
      — adapt the pattern per source). Don't trust a sidecar's documented
      purpose over its actual rendered content.
-4. Write the case bundle: `README.md`, `AGENTS.md` (thin router + evidence
-   index, no provenance), `TASK.md`, `EXAM.md` (questions only),
-   `CHANGELOG.md`, `.gitignore` (containing `QUESTION_ANSWERS.md`).
+4. Write the case bundle: `README.md` (fixed, content-free template — no
+   scenario/technique/outcome description), `AGENTS.md` (thin router +
+   evidence index, no provenance), `TASK.md`, `EXAM.md` (questions only),
+   `.gitignore` (containing `QUESTION_ANSWERS.md`). No `CHANGELOG.md` — see
+   this repo's root `AGENTS.md` ("Known pitfalls") for why one is never
+   included.
 5. Write the answer bundle: `BRIEFING.md`, `AGENTS.md` (grader
    instructions), `grading_schema.md` (1:1 with `EXAM.md`).
 

@@ -1,13 +1,13 @@
-# Case: departing-employee-email-exfil
+# Case
 
-A senior architect at a small design studio, who has legitimate,
-standing access to client project files as a normal part of his job,
-emails three attachments containing client-sensitive material to his
-own personal email address over two days shortly before his last day.
-There is no malware, no external attacker, and no technical
-exploitation anywhere in this case — every action is performed with
-access this person already legitimately had. This is the simplest
-technical case in this test suite by design: the difficulty is
-entirely in reporting judgment, not investigative depth.
+A digital forensics investigation case for evaluating an
+agent-under-test. No description of the scenario, technique, or
+outcome is given in this file — see [AGENTS.md](AGENTS.md) for what
+the agent needs.
+
+**Before giving this case to an agent under test:** copy this entire
+case directory to a working location under a neutral name (e.g.
+`case-01`), so the agent never sees this directory's original name.
+Do this before the agent's first read of anything in this directory.
 
 **For the agent under test:** start at [AGENTS.md](AGENTS.md), not here.

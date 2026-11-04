@@ -1,4 +1,4 @@
-# AGENTS.md — dga-beacon-logclear
+# AGENTS.md
 
 You are investigating a small freight company's domain controller and
 three workstations for signs of malware activity. This is a real,

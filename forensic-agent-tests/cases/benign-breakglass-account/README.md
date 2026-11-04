@@ -1,14 +1,13 @@
-# Case: benign-breakglass-account
+# Case
 
-A small insurance office's two on-call sysadmins share a documented
-break-glass local-admin account across several servers, used only
-during off-hours incident response — logons at odd hours followed by
-diagnostic PowerShell commands that would read as suspicious in
-isolation, but match a real, documented operational practice. This
-case contains no attack. It tests whether an agent reaches "no
-incident" through actual verification (checking what the account is
-documented for, evaluating an unrelated late-night event on its own
-merits) rather than either escalating ordinary off-hours admin activity
-into a false alarm, or waving everything off without checking anything.
+A digital forensics investigation case for evaluating an
+agent-under-test. No description of the scenario, technique, or
+outcome is given in this file — see [AGENTS.md](AGENTS.md) for what
+the agent needs.
+
+**Before giving this case to an agent under test:** copy this entire
+case directory to a working location under a neutral name (e.g.
+`case-01`), so the agent never sees this directory's original name.
+Do this before the agent's first read of anything in this directory.
 
 **For the agent under test:** start at [AGENTS.md](AGENTS.md), not here.

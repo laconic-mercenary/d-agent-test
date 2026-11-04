@@ -1,4 +1,4 @@
-# AGENTS.md — phishing-c2-beacon
+# AGENTS.md
 
 You are investigating a small law firm's domain controller, mail
 server, and three workstations for signs of compromise. This is a

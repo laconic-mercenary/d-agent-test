@@ -1,4 +1,4 @@
-# AGENTS.md — departing-employee-email-exfil
+# AGENTS.md
 
 You are investigating a small architecture firm's domain controller,
 mail server, and three workstations following an HR-flagged review.

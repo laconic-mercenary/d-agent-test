@@ -115,16 +115,19 @@ Phase 1を参照してください。
 3. 何か他のファイルを書く前に、`data/` だけでなく **`cases/<slug>/` ツリー
    全体を監査**してください。
    - 生成ツールの名称/ベンダー名/ブランド名を大文字小文字を区別せずgrepし
-     — `README.md`/`CHANGELOG.md` を含め、AUTが読める場所に1件もヒットしない
+     — `README.md` を含め、AUTが読める場所に1件もヒットしない
      ことを確認します。
    - ストーリーや解答が漏れるパターン(例: `"storyline_id"`、
      `"kind": *"red_herring"`、EvidenceForgeの場合は `"activity":` など
      — データソースごとにパターンを調整)をgrepしてください。補助ファイルに
      書かれた「用途」の説明を鵜呑みにせず、実際にレンダリングされた内容を
      確認してください。
-4. ケース一式を作成します: `README.md`、`AGENTS.md`(薄いルーター+証拠の
+4. ケース一式を作成します: `README.md`(固定の内容を含まないテンプレート —
+   シナリオ・手法・結果の説明を含めない)、`AGENTS.md`(薄いルーター+証拠の
    索引。出典情報は含めない)、`TASK.md`、`EXAM.md`(設問のみ)、
-   `CHANGELOG.md`、`.gitignore`(`QUESTION_ANSWERS.md` を含める)。
+   `.gitignore`(`QUESTION_ANSWERS.md` を含める)。`CHANGELOG.md` は作成し
+   ません — 理由はこのリポジトリのルート `AGENTS.md`(「既知の落とし穴」)
+   を参照してください。
 5. 解答一式を作成します: `BRIEFING.md`、`AGENTS.md`(採点者向けの指示)、
    `grading_schema.md`(`EXAM.md` と1対1対応)。
 

@@ -1,4 +1,4 @@
-# AGENTS.md — external-recon-no-breach
+# AGENTS.md
 
 You are investigating a small accounting firm's network after evidence
 of a port scan against its public-facing web server. There is no

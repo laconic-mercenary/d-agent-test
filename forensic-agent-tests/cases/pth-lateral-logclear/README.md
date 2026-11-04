@@ -1,16 +1,13 @@
-# Case: pth-lateral-logclear
+# Case
 
-A workstation is already compromised (prior access assumed, not part
-of this evidence) and the attacker has a credential hash for a local
-Administrator account that, due to a shared base image, is identical
-across three file servers. The attacker uses that hash to log directly
-into all three within about twelve minutes, then clears the Security
-event log on the middle host before finishing. This case tests whether
-an agent can isolate this pattern from a noisy environment (the source
-workstation generates heavy routine file-share traffic all day, and
-the same account name also shows up in unrelated, legitimate automated
-processes), correctly treats the log-clear action itself as evidence
-of intent, and — critically — actually checks whether that log-clear
-succeeded in removing anything, rather than assuming it did.
+A digital forensics investigation case for evaluating an
+agent-under-test. No description of the scenario, technique, or
+outcome is given in this file — see [AGENTS.md](AGENTS.md) for what
+the agent needs.
+
+**Before giving this case to an agent under test:** copy this entire
+case directory to a working location under a neutral name (e.g.
+`case-01`), so the agent never sees this directory's original name.
+Do this before the agent's first read of anything in this directory.
 
 **For the agent under test:** start at [AGENTS.md](AGENTS.md), not here.

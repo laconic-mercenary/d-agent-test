@@ -1,4 +1,4 @@
-# AGENTS.md — windows-log-search-basics
+# AGENTS.md
 
 You are testing Windows Event Log search and filtering ability against two
 Windows Event Log exports. There is no incident narrative here — this case

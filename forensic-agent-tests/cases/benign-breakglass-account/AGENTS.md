@@ -1,4 +1,4 @@
-# AGENTS.md — benign-breakglass-account
+# AGENTS.md
 
 You are investigating a small insurance office's domain controller,
 three internal servers, and three workstations after a routine review

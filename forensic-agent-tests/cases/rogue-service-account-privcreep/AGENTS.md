@@ -1,4 +1,4 @@
-# AGENTS.md — rogue-service-account-privcreep
+# AGENTS.md
 
 You are investigating a small consultancy's domain controller,
 application server, and two workstations for signs of privilege

@@ -1,4 +1,4 @@
-# AGENTS.md — insider-dns-tunnel-exfil
+# AGENTS.md
 
 You are investigating a small data-analytics consultancy's domain
 controller, file server, and three workstations for signs of data loss.
