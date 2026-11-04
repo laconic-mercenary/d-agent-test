@@ -49,11 +49,21 @@ Generation
 | `departing-employee-email-exfil` | Active | X | | | X | X | | | X | X | EvidenceForge v1.17.0, commit `567073b0`. Ninth case from `TEST_EVIDENCEFORGE_PROPOSED_CASES.md` (proposal #8). The simplest technical case in the set by design — no attacker, no exploit; a departing employee with entirely legitimate access emails three attachments to his personal address. A real Phase 2 finding (default outbound STARTTLS made every message, including the exfiltration emails, render with blank sender/recipient fields) meant the case was silently unanswerable until fixed. Tests report register/tone as much as fact-finding — over- or under-dramatizing the finding are both graded. | - `hunting-for-data-exfiltration-indicators`<br>- `performing-log-analysis-for-forensic-investigation` |
 | `rogue-service-account-privcreep` | Active | X | | X | | X | | X | | X | EvidenceForge v1.17.0, commit `567073b0`. Tenth and final case from `TEST_EVIDENCEFORGE_PROPOSED_CASES.md` (proposal #10). A service account documented for one unattended automated purpose gets invoked interactively and used to add itself to Domain Admins; tests whether the AUT identifies the explicit-credentials event itself — not the later group-membership change — as the earliest point a control should have fired. The richest discrimination signal (22 legitimate credential-usage events across all four hosts, several using the same process the attacker used) came from the engine's own baseline realism; an independent audit caught the first answer-key draft understating host coverage and wrongly treating process name as reliable — `SubjectUserName` is the only fully reliable signal, fixed before shipping. | - `detecting-service-account-abuse`<br>- `performing-active-directory-compromise-investigation`<br>- `extracting-windows-event-logs-artifacts` |
 
-Note on the discarded row's 7 (Lateral Movement): its X comes from Q10,
-which requires checking specific cross-host/cross-account evidence (WS-OP-01,
-`sam.ortiz`) for pivot indicators — a real (if negative) lateral-movement
-check, unlike category 6 in the two active cases where the question is a
-generic "was anything malicious happening" catch-all with no path to trace.
+Note on the "negative result still counts" standard, established by a
+since-discarded case: an earlier case (`single-host-linux-rce`, pulled
+from active use — see `TEST_CASE_PROCESS.md` Phase 6 for the discard
+criteria) had a lateral-movement question (Q10) requiring the AUT to
+check specific cross-host/cross-account evidence (`WS-OP-01`,
+`sam.ortiz`) for pivot indicators and correctly conclude none existed.
+That "checked a specific path and ruled it out" standard — as opposed
+to a generic "was anything malicious happening" catch-all with no path
+to trace — is the bar the two notes below apply to
+`external-recon-no-breach` and `insider-dns-tunnel-exfil`. That case's
+own row and record no longer exist in this table or in
+`forensic-agent-tests`; its full discard writeup briefly lived in this
+repo's `_discarded/case-single-host-linux-rce/` before being deleted in
+an unrelated repo-reorg commit (`6fecd3227`, 2026-08-28) — recoverable
+from git history if ever needed, not duplicated here.
 
 Note on `external-recon-no-breach`'s 6 (Intrusion Path ID): its X is
 deliberately a *negative* result, not a catch-all question — Q5
