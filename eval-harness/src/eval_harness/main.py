@@ -151,10 +151,13 @@ def _grade_once(session: Session, entry: rubric.RubricEntry, repeat: int) -> Non
     raw = _ask_model(session, entry, repeat)
     if isinstance(raw, Exception):
         return raw
-    judge_reply = reply.parse_reply(raw, entry, session.context.run_files.answer.text)
+    judge_reply = reply.parse_reply(raw, entry, session.context.run_files.answer.normalized_text)
     if isinstance(judge_reply, Exception):
         return judge_reply
-    report.emit(report.build_record(session.run_info, session.context.run_files, entry, repeat, judge_reply))
+    record = report.build_record(session.run_info, session.context.run_files, entry, repeat, judge_reply)
+    if isinstance(record, Exception):
+        return record
+    report.emit(record)
     LOGGER.info("Q%d, repeat %d: %s (confidence %s)", entry.number, repeat, judge_reply.band, judge_reply.confidence)
     return None
 

@@ -1,4 +1,4 @@
-# AGENTS.md — d-agent-test (umbrella, temporary)
+# AGENTS.md — Evaluation Suite for Forensic Investigation LLM Assistants (umbrella, temporary)
 
 This folder is a **temporary umbrella** holding two projects that are
 meant to become fully separate repositories (see `README.md`). Until that
@@ -22,25 +22,18 @@ repo that actually matters for the task at hand.
 
 There is one workstream that belongs to neither repo:
 
-- **`EVAL_SUITE_PLAN.md`** (this directory) — the plan for automating the
-  currently-manual grading process into a full eval pipeline (agentic
-  runner, judge ensemble, cost/latency capture). Still a **draft
-  discussion artifact beyond what's actually built** — read it first if
-  you're asked to work on evaluation tooling, scoring automation, or
-  framework selection; it carries dated decisions with their reasoning,
-  including two that were later reversed, and re-deriving them wastes the
-  record. Don't start building further from it without an explicit
-  per-phase go-ahead; that constraint is stated in the file itself and is
-  deliberate.
 - **`eval-harness/`** (this directory) — a real, working Docker harness
   that runs Hermes (backed by Qwen) against a case, one manual run at a
-  time, behind an in-container egress lockdown. This *is* built and
-  tested — it's a spike validating the plan's mechanics, not the
-  automated pipeline `EVAL_SUITE_PLAN.md` still describes as future work.
-  See `HERMES_QUICKSTART.md` (this directory) to run it; see
-  `eval-harness/docker/*.sh` for how it actually works.
+  time, behind an in-container egress lockdown, plus the judge that grades
+  the resulting `QUESTION_ANSWERS.md`. This *is* built and tested, but
+  it's a spike run by hand one case at a time, not an automated pipeline.
+  See `eval-harness/docker/run-case.sh` to run a case and
+  `eval-harness/docker/*.sh` for how the lockdown actually works; the
+  judge's requirements and dated design decisions are in
+  `eval-harness/judge/DESIGN.md`, and `eval-harness/CODING_STANDARDS.md`
+  is binding for code there.
 
 Once the two projects actually split into separate repositories, this
-file and `d-agent-test/`'s `.git` go away — don't add new durable content
+file and the umbrella's own `.git` go away — don't add new durable content
 here that would need migrating; put it in whichever of the two repos it
 actually belongs to.

@@ -15,6 +15,7 @@ LINE_BREAK = "\n"
 # .match is intended here: it checks the heading *starts* with Q<n>.
 QUESTION_PATTERN = re.compile(r"Q(\d+)")
 POINTS_PATTERN = re.compile(r"\((\d{1,2}) pts\)")
+FIRST_CAPTURE_GROUP = 1  # the single (\d+) group in QUESTION_PATTERN and POINTS_PATTERN
 LABEL_EXPECTED = "**Expected:**"
 LABEL_FULL_CREDIT = "**Full credit:**"
 LABEL_PARTIAL = "**Partial:**"
@@ -27,13 +28,17 @@ class RubricEntry:
     """One `## Q<n>` section of a rubric.
 
     text is the whole section, heading line included: it's what the judge
-    receives for this question.
+    receives for this question. normalized_text is the same text with its
+    whitespace collapsed, computed once here so quote checks never
+    re-normalize it; text itself stays as authored, because the prompt and
+    the report's line lookup both need the original wrapping.
     """
 
     number: int
     points: int
     heading: str
     text: str
+    normalized_text: str
 
 
 # PUBLIC FUNCTIONS
@@ -82,7 +87,13 @@ def _parse_entry(section: str) -> RubricEntry | Exception:
     labels = _check_labels(section, heading)
     if isinstance(labels, Exception):
         return labels
-    return RubricEntry(number=int(number.group(1)), points=int(points.group(1)), heading=heading, text=section)
+    return RubricEntry(
+        number=int(number.group(FIRST_CAPTURE_GROUP)),
+        points=int(points.group(FIRST_CAPTURE_GROUP)),
+        heading=heading,
+        text=section,
+        normalized_text=strings.normalize_whitespace(section),
+    )
 
 
 def _check_labels(section: str, heading: str) -> None | Exception:

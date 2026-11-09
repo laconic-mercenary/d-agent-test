@@ -20,7 +20,8 @@ rubric. Started 2026-10-02; decisions dated below.
   attack-report template for every case; 11 of 12 label a user
   "(compromised account)", including the benign rdp case. In rdp it also
   gives a wrong time (14:19:56) and calls the unproven file write fact.
-- **Constraints from `../../EVAL_SUITE_PLAN.md`:**
+- **Standing constraints on any judge** (carried over from the earlier
+  eval-suite plan, which has since been removed; they hold regardless):
   - The judge is never from the AUT's model family (Qwen).
   - Grading runs outside the AUT's container; answer keys never reach it.
   - Run outcome is reported beside the score, not inside it.
@@ -234,7 +235,7 @@ inputs:  QUESTION_ANSWERS.md + case's grading_schema.md, BRIEFING.md, AGENTS.md
 - **Plain Python, no framework** (2026-10-19). Direct API calls, minimal
   pinned dependencies (HTTP client, schema validator). A TUI may come later.
   - Rejected: EvalScope (set aside for now); TypeScript.
-  - Departs from `EVAL_SUITE_PLAN.md`, which chose EvalScope.
+  - Reverses the earlier eval-suite plan's choice of EvalScope.
 - **Provisional Partial value** (2026-10-19). Until case authors set
   values, code scores Partial as half the question's points.
   - The judge records only the band; code applies the value.

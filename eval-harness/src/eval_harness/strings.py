@@ -6,6 +6,7 @@ import re
 
 # CONSTS
 LOGGER = logging.getLogger(__name__)
+WHITESPACE_JOINER = " "
 
 
 # PUBLIC FUNCTIONS
@@ -13,6 +14,18 @@ def trim(value: str) -> str:
     """Return value without leading or trailing whitespace."""
     LOGGER.debug("trim()")
     return value.strip()
+
+
+def normalize_whitespace(value: str) -> str:
+    """Return value with every run of whitespace collapsed to one space, and
+    without leading or trailing whitespace.
+
+    Quotes are compared after this, so a hard-wrapped rubric line and the
+    same sentence re-flowed onto one line count as the same text. How a file
+    is wrapped is formatting, not content.
+    """
+    LOGGER.debug("normalize_whitespace()")
+    return WHITESPACE_JOINER.join(value.split())
 
 
 def is_empty(value: str | None) -> bool:

@@ -1,4 +1,4 @@
-# d-agent-test
+# Evaluation Suite for Forensic Investigation LLM Assistants
 
 A DFIR benchmark for evaluating LLM agents, plus a Docker harness to run
 one against it.
@@ -16,12 +16,12 @@ Don't push `main` as more than a working copy.
 
 | You are... | Go to |
 |---|---|
-| A human running an agent against a case | [`HERMES_QUICKSTART.md`](HERMES_QUICKSTART.md) ([日本語版](HERMES_QUICKSTART.jp.md)) |
+| A human running an agent against a case | [`eval-harness/docker/run-case.sh`](eval-harness/docker/run-case.sh) — its header comments are the procedure |
 | A human building/fixing/auditing a case | [`forensic-agent-answers/AGENTS.md`](forensic-agent-answers/AGENTS.md) |
 | A human wanting the case set and what each tests | [`forensic-agent-tests/README.md`](forensic-agent-tests/README.md) |
 | An **agent-under-test** assigned a case | `forensic-agent-tests/cases/<slug>/AGENTS.md` — nothing else here |
 | An **agent** doing general work in this repo | [`AGENTS.md`](AGENTS.md) |
-| Anyone wanting the full automated-pipeline plan | [`EVAL_SUITE_PLAN.md`](EVAL_SUITE_PLAN.md) — draft, beyond the spike below |
+| Anyone wanting the judge harness's design | [`eval-harness/judge/DESIGN.md`](eval-harness/judge/DESIGN.md) |
 
 **Agents-under-test**: read only your case's `AGENTS.md`. Never read
 `forensic-agent-answers/` — see Status below for what does and doesn't
@@ -34,12 +34,9 @@ enforce that.
 - **`forensic-agent-answers/`** — held-out answer keys and case-building
   methodology, paired by slug. Case-building work happens here.
 - **`eval-harness/`** — Docker harness running Hermes/Qwen against a case,
-  egress-locked. A manual spike, not the automated pipeline. See
-  `HERMES_QUICKSTART.md`.
-- **`EVAL_SUITE_PLAN.md`** — draft plan for the full automated pipeline
-  `eval-harness/` is a step toward. Read before further eval-tooling work.
-- **`HERMES_QUICKSTART.md`** (日本語版: `HERMES_QUICKSTART.jp.md`) — steps
-  to actually run a case.
+  egress-locked, plus the judge that grades the result. A manual spike, run
+  one case at a time; not an automated pipeline. `docker/run-case.sh` runs
+  a case, `judge/DESIGN.md` covers the grading side.
 
 ## Sources
 
@@ -68,6 +65,5 @@ can't reach the network beyond its model endpoint. Outside that container,
 on this checkout, both directories still sit side by side — full
 separation waits on the repo split.
 
-**At split time**, `EVAL_SUITE_PLAN.md`, `eval-harness/`, and
-`HERMES_QUICKSTART.md` all need new homes too — none belongs to either
-existing project.
+**At split time**, `eval-harness/` needs a new home too — it belongs to
+neither existing project.

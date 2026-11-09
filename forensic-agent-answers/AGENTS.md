@@ -149,8 +149,9 @@ real answer leak once.
 ## Known pitfalls (read before repeating any of this work)
 
 - **This repo (`forensic-agent-answers`) and `forensic-agent-tests` both
-  currently live in one shared umbrella git repo** (`d-agent-test`, on a
-  private GitHub remote), not yet split into two separate repos — despite
+  currently live in one shared umbrella git repo** (the Evaluation Suite
+  for Forensic Investigation LLM Assistants, on a private GitHub remote),
+  not yet split into two separate repos — despite
   the intent that they should be. The root `.gitignore`'s
   `forensic-agent-answers/` entry there is comment-only (no actual ignore
   pattern), confirmed via `git check-ignore`, so this repo's content has

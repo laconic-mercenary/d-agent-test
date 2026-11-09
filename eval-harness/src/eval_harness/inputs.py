@@ -51,11 +51,17 @@ class CaseFilePaths:
 class InputFile:
     """A file read into memory once. sha256 is the hash of its exact bytes,
     logged for the run and recorded as its version (R9).
+
+    normalized_text is text with its whitespace collapsed, computed once
+    here: quote checks compare against it instead of re-normalizing the
+    whole file on every check. text stays as read, because the prompt, the
+    hash and the report's line lookup all need the original bytes.
     """
 
     path: str
     text: str
     sha256: str
+    normalized_text: str
 
 
 @dataclass(frozen=True)
@@ -161,7 +167,12 @@ def read_input_file(path: str) -> InputFile | Exception:
     if isinstance(text, Exception):
         LOGGER.error("cannot read input file %s", path)
         return text
-    return InputFile(path=valid_path, text=text, sha256=files.sha256_hex(data))
+    return InputFile(
+        path=valid_path,
+        text=text,
+        sha256=files.sha256_hex(data),
+        normalized_text=strings.normalize_whitespace(text),
+    )
 
 
 def validate_dir_path(path: str) -> str | Exception:

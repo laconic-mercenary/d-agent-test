@@ -34,7 +34,7 @@ Two distinct ways it's used, and both are now decided:
    themselves stay valid either way, since case-design input (above) never
    depended on AUT enrichment in the first place.
 
-   **Delivery mechanism (noted 2026-09-09, see `../../EVAL_SUITE_PLAN.md`):**
+   **Delivery mechanism (noted 2026-09-09):**
    this decision was adopted without a concrete way to hand the skills to
    an AUT at run time. There now is one, contingent on the harness's
    still-open framework choice — EvalScope's

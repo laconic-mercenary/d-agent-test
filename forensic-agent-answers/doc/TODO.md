@@ -1,8 +1,10 @@
 ## TODOs
 
 1. Develop a scoring rubric system
-   - Planned in `../../EVAL_SUITE_PLAN.md` (Phase 1). Still draft — not
-     approved for implementation, and no code exists yet.
+   - Built: see `../../eval-harness/judge/DESIGN.md` and
+     `../../eval-harness/src/eval_harness/`. Rubrics
+     (`grading_schema.md`) exist per case; Partial band point values are
+     still unset, so the judge scores them provisionally at half.
 2. Run rubric against 3 frontier models and produce report
    - Same plan, Phases 4-5. Note the runner is now agentic/tool-using, not
      single-turn: 12 of 14 cases exceed every current model's context
@@ -19,7 +21,7 @@
      AUT reads them; it does **not** settle vendoring (submodule vs.
      directory vs. pinned copy), which is still open — and the library is
      a third-party community project, so a pinned copy is the safer
-     default. Open question raised in `EVAL_SUITE_PLAN.md` Phase 4:
+     default. Open question raised while planning the harness:
      mounting a category-matched subset of the 818 skills would leak which
      of the nine categories a case belongs to. **Decided 2026-09-18: the same
      10 skills for every case** — the union of `TEST_CASE_MATRIX.md`'s

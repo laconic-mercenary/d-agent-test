@@ -38,11 +38,25 @@ class Reply:
 
 
 # PUBLIC FUNCTIONS
-def parse_reply(raw: str, entry: rubric.RubricEntry, answer_text: str) -> Reply | Exception:
+def is_zero_default(rubric_quote: str) -> bool:
+    """Return True if rubric_quote is the marker for "no band's conditions
+    were met", however its whitespace is spaced.
+
+    The check and the report both ask this, so they can't disagree about
+    whether there is a rubric condition to cite.
+    """
+    LOGGER.debug("is_zero_default()")
+    return strings.normalize_whitespace(rubric_quote) == ZERO_DEFAULT
+
+
+def parse_reply(raw: str, entry: rubric.RubricEntry, normalized_answer: str) -> Reply | Exception:
     """Return the model's raw reply as a validated Reply, or the error.
 
-    Checks the JSON shape and values, that the band exists in the entry, and
-    that both quotes are verbatim (or the allowed zero-band exceptions).
+    Checks the JSON shape and values, that the band exists in the entry,
+    that the reasons aren't empty, and that both quotes are verbatim (or the
+    allowed zero-band exceptions). normalized_answer is the answer file's
+    normalized_text: quotes are compared with whitespace collapsed, so how
+    either file wraps its lines doesn't decide whether a quote matches.
     """
     LOGGER.debug("parse_reply(Q%d, %d chars)", entry.number, len(raw))
     fields = _parse_json_object(raw)
@@ -53,7 +67,7 @@ def parse_reply(raw: str, entry: rubric.RubricEntry, answer_text: str) -> Reply 
     if isinstance(reply, Exception):
         LOGGER.error("cannot use the reply for Q%d: wrong fields or values", entry.number)
         return reply
-    checked = _check_reply(reply, entry, answer_text)
+    checked = _check_reply(reply, entry, normalized_answer)
     if isinstance(checked, Exception):
         LOGGER.error("cannot use the reply for Q%d: it failed a check", entry.number)
         return checked
@@ -89,7 +103,7 @@ def _to_reply(fields: dict[str, object]) -> Reply | Exception:
     return reply
 
 
-def _check_reply(reply: Reply, entry: rubric.RubricEntry, answer_text: str) -> None | Exception:
+def _check_reply(reply: Reply, entry: rubric.RubricEntry, normalized_answer: str) -> None | Exception:
     """Return the first failed check on reply, or None.
 
     Checks run one at a time and stop at the first failure: a later check
@@ -98,10 +112,22 @@ def _check_reply(reply: Reply, entry: rubric.RubricEntry, answer_text: str) -> N
     band = _check_band(reply, entry)
     if isinstance(band, Exception):
         return band
+    reasons = _check_reasons(reply, entry)
+    if isinstance(reasons, Exception):
+        return reasons
     rubric_quote = _check_rubric_quote(reply, entry)
     if isinstance(rubric_quote, Exception):
         return rubric_quote
-    return _check_answer_quote(reply, entry, answer_text)
+    return _check_answer_quote(reply, entry, normalized_answer)
+
+
+def _check_reasons(reply: Reply, entry: rubric.RubricEntry) -> None | Exception:
+    """Return the error if reply has no reasons. Every grade carries a
+    rationale a test engineer can read (R5), so an empty one is not a grade.
+    """
+    if strings.is_empty(reply.reasons):
+        return ValueError(f"reasons is empty for rubric entry Q{entry.number}")
+    return None
 
 
 def _check_band(reply: Reply, entry: rubric.RubricEntry) -> None | Exception:
@@ -115,25 +141,34 @@ def _check_band(reply: Reply, entry: rubric.RubricEntry) -> None | Exception:
 def _check_rubric_quote(reply: Reply, entry: rubric.RubricEntry) -> None | Exception:
     """Return the error unless rubric_quote is verbatim in the entry, or is
     ZERO_DEFAULT with band zero.
+
+    Verbatim means the same words in the same order: both sides are compared
+    with their whitespace collapsed, so a condition the rubric hard-wraps
+    mid-sentence still matches when the model quotes it as one line.
     """
-    if reply.rubric_quote == ZERO_DEFAULT:
+    if is_zero_default(reply.rubric_quote):
         if reply.band != BAND_ZERO:
             return ValueError(f"{ZERO_DEFAULT!r} is only allowed with band {BAND_ZERO!r}")
         return None
-    if strings.is_empty(reply.rubric_quote) or reply.rubric_quote not in entry.text:
+    if strings.is_empty(reply.rubric_quote):
+        return ValueError(f"rubric_quote is empty for rubric entry Q{entry.number}")
+    if strings.normalize_whitespace(reply.rubric_quote) not in entry.normalized_text:
         return ValueError(f"rubric_quote isn't verbatim in rubric entry Q{entry.number}")
     return None
 
 
-def _check_answer_quote(reply: Reply, entry: rubric.RubricEntry, answer_text: str) -> None | Exception:
+def _check_answer_quote(reply: Reply, entry: rubric.RubricEntry, normalized_answer: str) -> None | Exception:
     """Return the error unless answer_quote is verbatim in the answer file, or
     empty with band zero (no answer: logged as an error, but the run continues).
+
+    Compared with whitespace collapsed, as _check_rubric_quote is: the answer
+    file is agent-written and wrapped however the agent chose.
     """
     if strings.is_empty(reply.answer_quote):
         if reply.band != BAND_ZERO:
             return ValueError(f"an empty answer_quote is only allowed with band {BAND_ZERO!r}")
         LOGGER.error("Q%d: the judge found no answer and graded zero; check it", entry.number)
         return None
-    if reply.answer_quote not in answer_text:
+    if strings.normalize_whitespace(reply.answer_quote) not in normalized_answer:
         return ValueError(f"answer_quote isn't verbatim in the answer file (Q{entry.number})")
     return None

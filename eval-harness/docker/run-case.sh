@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 # Manual spike runner: build (if needed) and run the Hermes/Qwen container
 # against one case, evidence mounted read-only. Interactive/attached by
-# design -- see EVAL_SUITE_PLAN.md Phase 0. You're meant to watch this run,
-# not automate it yet. `--oneshot` on the hermes chat invocation below is
+# design: you're meant to watch this run, not automate it yet. `--oneshot` on the hermes chat invocation below is
 # still required despite that, though -- without it, `-q` only seeds the
 # first turn and the session stays open afterward waiting for more input
 # that never comes, so the container never exits and entrypoint.sh's
@@ -161,8 +160,8 @@ fi
 command -v docker >/dev/null 2>&1 || fail "docker not found on PATH"
 
 # --- Network / egress lockdown ------------------------------------------------
-# EVAL_SUITE_PLAN.md's non-negotiable rule: "Container network: the bridge
-# only." This used to be an open gap (plain `docker run` gives normal
+# Non-negotiable rule: the container reaches the bridge only. This used to
+# be an open gap (plain `docker run` gives normal
 # outbound access, restricted only by whatever the host's own
 # network/firewall does) -- now enforced INSIDE the container instead:
 # entrypoint.sh sets iptables to default-DROP outbound, with the only
