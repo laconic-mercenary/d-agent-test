@@ -1,4 +1,4 @@
-# Exam — websqli-webshell-pivot
+# Exam
 
 Answer every question below. See [TASK.md](TASK.md) for how and where to
 write your answers.

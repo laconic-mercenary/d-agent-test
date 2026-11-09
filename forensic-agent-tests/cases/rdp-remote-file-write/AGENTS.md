@@ -1,4 +1,4 @@
-# AGENTS.md — rdp-remote-file-write
+# AGENTS.md
 
 You are a forensic analyst investigating a directory of security evidence.
 

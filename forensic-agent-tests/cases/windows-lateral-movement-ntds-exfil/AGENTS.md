@@ -1,4 +1,4 @@
-# AGENTS.md — windows-lateral-movement-ntds-exfil
+# AGENTS.md
 
 You are investigating a multi-stage intrusion across four hosts in a small
 Windows/Active Directory environment. Unlike this repo's simpler cases,

@@ -36,7 +36,7 @@
 | `rdp-remote-file-write` | 稼働中 | X | | X | X | X | | | | | EvidenceForge v1.17.0、コミット `567073b0` | - `extracting-windows-event-logs-artifacts`<br>- `performing-log-analysis-for-forensic-investigation`<br>- `building-super-timelines-with-plaso` |
 | `windows-log-search-basics` | 稼働中 | X | | | | | | | | | `JPCERTCC/log-analysis-training_v2` の `Hands-on/basis/` から得た実データ(合成データではない)(`SOURCES.md`: Adopted)。意図的にインシデントの筋書きなし — 純粋なログ検索/フィルタリングのテスト。 | - `extracting-windows-event-logs-artifacts`<br>- `performing-log-analysis-for-forensic-investigation` |
 | `windows-lateral-movement-ntds-exfil` | 稼働中 | X | | X | X | X | X | X | X | X | `JPCERTCC/log-analysis-training_v2` の `Hands-on/advance/` から得た実データ(合成データではない)(`SOURCES.md`: Adopted)。4ホスト・6段階の侵入ストーリー。すべての事実は、元となったPDFのストーリー(それ自体に2件の確認済みの誤りがあり、生データと照合して解決 — ケースの `BRIEFING.md` を参照)からではなく、変換後/生データから独立して再確認済み。対応表の中で単一ケースとしては最も網羅的なカバレッジ。カテゴリ2(ブラウザ)のみ対応不可。 | - `analyzing-cyber-kill-chain`<br>- `detecting-service-account-abuse`<br>- `extracting-windows-event-logs-artifacts`<br>- `performing-log-analysis-for-forensic-investigation` |
-| `external-recon-no-breach` | 稼働中 | X | | | X | | X | | | X | EvidenceForge v1.17.0、コミット `567073b0`。`TEST_EVIDENCEFORGE_PROPOSED_CASES.md`(提案#9)から作成された最初のケース。攻撃者のストーリーなし — ポートスキャンは2ポート(1つは無害、もう1つはSSHログイン失敗1回)を除いて拒否される。`ssh-shared-key-overlap` とは逆方向から(アカウント重複のノイズに対して、ネットワーク偵察のノイズから)過剰反応を避ける力を試す。実際の生成ツールのバグ(`port_scan` が自分自身のセグメントを対象にすると証拠が無音でゼロになる)と、そのバグとは独立した `GROUND_TRUTH.md` の正確性の不備の両方を発見・修正 — ケースの `CHANGELOG.md`/対応する生成ツールのREADMEを参照。 | - `performing-log-analysis-for-forensic-investigation`<br>- `analyzing-cyber-kill-chain` |
+| `external-recon-no-breach` | 稼働中 | X | | | X | | X | | | X | EvidenceForge v1.17.0、コミット `567073b0`。`TEST_EVIDENCEFORGE_PROPOSED_CASES.md`(提案#9)から作成された最初のケース。攻撃者のストーリーなし — ポートスキャンは2ポート(1つは無害、もう1つはSSHログイン失敗1回)を除いて拒否される。`ssh-shared-key-overlap` とは逆方向から(アカウント重複のノイズに対して、ネットワーク偵察のノイズから)過剰反応を避ける力を試す。実際の生成ツールのバグ(`port_scan` が自分自身のセグメントを対象にすると証拠が無音でゼロになる)と、そのバグとは独立した `GROUND_TRUTH.md` の正確性の不備の両方を発見・修正 — 対応する生成ツールのREADMEを参照。 | - `performing-log-analysis-for-forensic-investigation`<br>- `analyzing-cyber-kill-chain` |
 | `credential-spray-domain-compromise` | 稼働中 | X | | X | | X | X | X | | X | EvidenceForge v1.17.0、コミット `567073b0`。`TEST_EVIDENCEFORGE_PROPOSED_CASES.md`(提案#1)から作成された2番目のケース。スプレー攻撃で1人の一般社員のアカウントが侵害された後、Kerberoastingと整合するクレデンシャル要求を通じて過剰な権限を持つサービスアカウントへと昇格する。AUTが「どこから侵入したか」と「最終的に何が侵害されたか」を正しく切り分けられるかを試す — 最初にスプレーされたアカウントにその後の全結果を紐づけていないかを確認する。判別の鍵となる信号(同一アカウントに対する複数の正規の4648イベントの中に1件だけ混じった攻撃者由来のもの)は、意図的な設計ではなくエンジン自体のベースラインのリアリズムから生じたもので、試験問題を書く前に生データで直接確認済み。 | - `analyzing-cyber-kill-chain`<br>- `detecting-service-account-abuse`<br>- `performing-log-analysis-for-forensic-investigation` |
 | `insider-dns-tunnel-exfil` | 稼働中 | X | | X | X | | | | X | X | EvidenceForge v1.17.0、コミット `567073b0`。`TEST_EVIDENCEFORGE_PROPOSED_CASES.md`(提案#2)から作成された3番目のケース。攻撃者はどこにも存在しない — 完全に正規のアクセス権を持つ財務アナリストが顧客ファイルをアーカイブし、この環境の通信では他に一度も見たことのないドメインへ、約2時間のDNSトンネル経由で持ち出す。無関係な正規のバックアップという、おとりのアーカイブ事象との識別、および「不正アクセスがあったか」という設問への慎重な判断(正解: なし)を試す。 | - `performing-log-analysis-for-forensic-investigation`<br>- `extracting-windows-event-logs-artifacts` |
 | `phishing-c2-beacon` | 稼働中 | X | | | X | X | X | | X | X | EvidenceForge v1.17.0、コミット `567073b0`。`TEST_EVIDENCEFORGE_PROPOSED_CASES.md`(提案#3)から作成された4番目のケース。フィッシング添付ファイル → マクロによるPowerShell起動 → 定期的なHTTPSビーコン通信。C2ホストへの合計39件の通信のうち、1件だけがバイト量によってのみ識別できる、攻撃者による手動コマンドを含む。エンジンの既知の制約(`process_ref`/`parent_ref` がレンダリング後のログで宣言通りの親子関係を生成しない)により、Q2はプロセスの親子関係ではなく、タイミング/コマンド内容の相関に基づいて設計し直す必要があった — これは取り繕った不具合ではなく、意図的に記録された証拠上のギャップ。 | - `analyzing-cyber-kill-chain`<br>- `performing-network-traffic-analysis-with-zeek`<br>- `extracting-windows-event-logs-artifacts` |
@@ -47,12 +47,20 @@
 | `departing-employee-email-exfil` | 稼働中 | X | | | X | X | | | X | X | EvidenceForge v1.17.0、コミット `567073b0`。`TEST_EVIDENCEFORGE_PROPOSED_CASES.md`(提案#8)から作成された9番目のケース。この対応表の中で意図的に最も技術的に単純なケース — 攻撃者も脆弱性の悪用もなく、退職予定の社員が完全に正規のアクセス権を使って3つの添付ファイルを自分の個人アドレスにメールする。実際にPhase 2で見つかった問題(デフォルトのアウトバウンドSTARTTLSにより、持ち出しメールを含むすべてのメッセージが送信者/受信者欄が空白でレンダリングされる)により、修正するまでこのケースは実質的に解答不能だった。事実確認と同じくらい、報告のトーン・調子(過剰演出/過小評価の両方を減点)を試す。 | - `hunting-for-data-exfiltration-indicators`<br>- `performing-log-analysis-for-forensic-investigation` |
 | `rogue-service-account-privcreep` | 稼働中 | X | | X | | X | | X | | X | EvidenceForge v1.17.0、コミット `567073b0`。`TEST_EVIDENCEFORGE_PROPOSED_CASES.md`(提案#10)から作成された10番目、最後のケース。1つの自動化された無人処理専用として文書化されたサービスアカウントが対話的に呼び出され、そのアカウント自身をDomain Adminsに追加するために使われる。AUTが、後の権限グループの変更ではなく、明示的なクレデンシャル使用イベント自体を、統制が働くべき最も早い時点として特定できるかを試す。最も豊富な判別信号(全4ホストにまたがる22件の正規のクレデンシャル使用イベント。うち複数は攻撃者が使ったのと同じプロセスを使用)はエンジン自体のベースラインのリアリズムから生じたもの。独立監査により、最初の解答キー草案がホストのカバレッジを過小に記述し、プロセス名を誤って信頼できる信号として扱っていたことが発覚 — `SubjectUserName` のみが完全に信頼できる信号であり、公開前に修正済み。 | - `detecting-service-account-abuse`<br>- `performing-active-directory-compromise-investigation`<br>- `extracting-windows-event-logs-artifacts` |
 
-廃棄されたケースの行にあるカテゴリ7(横展開)のXについて補足: これは
-Q10に由来するもので、具体的なホスト間/アカウント間の証拠
-(WS-OP-01、`sam.ortiz`)をピボットの兆候として確認する、実際の(結果的には
-否定的な)横展開の確認作業です。稼働中の2ケースでカテゴリ6が、追跡すべき
-経路のない「何か悪いことが起きていたか」という一般的な問いにすぎないのとは
-異なります。
+「否定的な結果も有効」という基準について補足: この基準は、現在は廃棄済みの
+あるケースによって確立されたものです。以前存在したケース
+(`single-host-linux-rce` — 廃棄された経緯は `TEST_CASE_PROCESS.md` の
+Phase 6 を参照)には、Q10として、具体的なホスト間/アカウント間の証拠
+(`WS-OP-01`、`sam.ortiz`)をピボットの兆候として確認し、実際には存在しない
+と正しく結論づける横展開の設問がありました。この「具体的な経路を確認し、
+それを否定した」という基準 — 追跡すべき経路のない「何か悪いことが起きて
+いたか」という一般的な問いとは異なるもの — が、下の2つの注記が
+`external-recon-no-breach` と `insider-dns-tunnel-exfil` に当てはめている
+基準です。このケース自身の行と記録は、この対応表にも `forensic-agent-tests`
+にも現在は存在しません。その廃棄時の記録一式は、かつてこのリポジトリの
+`_discarded/case-single-host-linux-rce/` に短期間存在していましたが、
+無関係なリポジトリ再編コミット(`6fecd3227`、2026-08-28)で削除されました —
+必要であればgitの履歴から復元可能ですが、ここには再掲しません。
 
 `external-recon-no-breach` のカテゴリ6(侵入経路の特定)のXについて補足:
 このXは意図的に*否定的な*結果であり、単なる一般的な問いではありません —

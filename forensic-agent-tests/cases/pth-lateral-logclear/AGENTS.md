@@ -1,4 +1,4 @@
-# AGENTS.md — pth-lateral-logclear
+# AGENTS.md
 
 You are investigating a small manufacturer's domain controller, three
 file servers, and two workstations for signs of lateral movement. This

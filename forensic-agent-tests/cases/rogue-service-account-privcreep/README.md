@@ -1,15 +1,13 @@
-# Case: rogue-service-account-privcreep
+# Case
 
-A BI analyst at a small data-analytics consultancy uses explicit
-alternate credentials to invoke a service account that is documented
-for exactly one automated nightly job and nothing else, then uses that
-account's access to add itself to Domain Admins. This is a genuine,
-unambiguous escalation — not a benign look-alike. This case tests
-whether an agent identifies the explicit-credentials event itself as
-the anomaly signal (a service account being used interactively at all,
-independent of what happens next), correctly distinguishes it from the
-account's own legitimate automated credential usage elsewhere in the
-data, and traces the escalation through to the actual privilege
-change.
+A digital forensics investigation case for evaluating an
+agent-under-test. No description of the scenario, technique, or
+outcome is given in this file — see [AGENTS.md](AGENTS.md) for what
+the agent needs.
+
+**Before giving this case to an agent under test:** copy this entire
+case directory to a working location under a neutral name (e.g.
+`case-01`), so the agent never sees this directory's original name.
+Do this before the agent's first read of anything in this directory.
 
 **For the agent under test:** start at [AGENTS.md](AGENTS.md), not here.

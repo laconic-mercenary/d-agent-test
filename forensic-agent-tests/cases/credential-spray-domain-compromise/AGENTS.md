@@ -1,4 +1,4 @@
-# AGENTS.md — credential-spray-domain-compromise
+# AGENTS.md
 
 You are investigating a small engineering firm's domain controller and
 five other hosts after signs of a credential-based attack. This is a

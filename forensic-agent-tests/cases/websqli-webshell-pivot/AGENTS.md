@@ -1,4 +1,4 @@
-# AGENTS.md — websqli-webshell-pivot
+# AGENTS.md
 
 You are investigating a small retailer's public web application, its
 database, an internal file server, an IT admin workstation, and the

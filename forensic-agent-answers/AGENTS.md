@@ -99,8 +99,8 @@ real answer leak once.
 3. **Audit the entire intended `forensic-agent-tests/cases/<slug>/` tree**
    (not just `data/`) before writing anything else:
    - grep case-insensitive for `evidenceforge|eforge|cisco.?talos|talos` —
-     zero hits anywhere the AUT can read, including `README.md` and
-     `CHANGELOG.md`, not just `data/`.
+     zero hits anywhere the AUT can read, including `README.md`, not just
+     `data/`.
    - grep for `"storyline_id"|"kind": *"red_herring"|"activity":` — a
      narrative/answer leak pattern. Any match means that file does not
      belong in `cases/<slug>/`, regardless of what it's named or what its
@@ -116,10 +116,13 @@ real answer leak once.
    the log files themselves.
 
 5. **Write the case bundle** in
-   `../forensic-agent-tests/cases/<slug>/`: `README.md` (human-facing, no
-   provenance/brand mentions), `AGENTS.md` (thin router + evidence index,
-   also no provenance), `TASK.md`, `EXAM.md` (questions only, no framing),
-   `CHANGELOG.md`, `.gitignore` (containing `QUESTION_ANSWERS.md`).
+   `../forensic-agent-tests/cases/<slug>/`: `README.md` (fixed, content-free
+   template — see "Known pitfalls" below, no scenario/technique/outcome
+   description, no provenance/brand mentions), `AGENTS.md` (thin router +
+   evidence index, also no provenance), `TASK.md`, `EXAM.md` (questions
+   only, no framing), `.gitignore` (containing `QUESTION_ANSWERS.md`). **No
+   `CHANGELOG.md`** — see "Known pitfalls" below for why this case bundle
+   no longer includes one at all.
 
 6. **Write the answer bundle** in `case-<slug>/` in this repo:
    `BRIEFING.md` (true story, decoys, undetermined facts, known evidence
@@ -197,16 +200,25 @@ real answer leak once.
   timestamp from the actual evidence file's own timezone-stamped field
   before writing it into `BRIEFING.md`/`grading_schema.md`, especially for
   any source not authored in UTC-adjacent timezones.
-- **`CHANGELOG.md` (in the `forensic-agent-tests` case bundle) is the file
-  most likely to leak something**, not `README.md`/`AGENTS.md`/`EXAM.md`.
-  It has happened four separate times across this project — brand name
-  twice, a case's decoy account names once, a brand name a fourth time in
-  a later case — always writing it last, in "explain what I just did"
-  narrative mode, pulls in whatever's fresh in context (a brand name, a
-  decoy account, an internal detail) without the same scrutiny applied to
-  the more obviously AUT-facing files. Run the leak grep on `CHANGELOG.md`
-  specifically, every time, even when the rest of the case tree is
-  already clean.
+- **`CHANGELOG.md` no longer belongs in the `forensic-agent-tests` case
+  bundle at all — don't create one.** It used to be part of the standard
+  bundle (step 5 above), and was the file most likely to leak something,
+  not `README.md`/`AGENTS.md`/`EXAM.md`: four separate incidents (brand
+  name twice, a case's decoy account names once, a brand name a fourth
+  time in a later case), always from writing it last in "explain what I
+  just did" narrative mode. A full project audit later found this was
+  worse than those four incidents suggested — every `CHANGELOG.md` across
+  every built case was leaking real answer-key content (exact counts,
+  discriminating fields, final conclusions), not just brand/account names,
+  and the per-case `README.md` narrative description had the same problem
+  independently. The fix: `CHANGELOG.md` was removed from every existing
+  case and dropped from the bundle entirely going forward; `README.md` is
+  now a single fixed, content-free template (no scenario/technique/outcome
+  description, no slug restated in its own text) reused verbatim across
+  every case, plus an instruction to copy the case directory to a
+  neutral-named working location before giving it to an AUT. If build
+  history is worth recording for a case, it belongs in this repo's
+  `case-<slug>/` bundle, never in `forensic-agent-tests`.
 - Baseline-generated "legitimate" cross-segment traffic does not
   appear to be fully gated by a scenario's declared firewall
   `policy:` rules the way explicitly-authored storyline/scan traffic

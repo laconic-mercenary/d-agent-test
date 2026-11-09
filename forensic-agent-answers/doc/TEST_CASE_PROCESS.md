@@ -114,14 +114,17 @@ Follow `../AGENTS.md` Phase 2's checklist in full:
 3. **Audit the entire intended `cases/<slug>/` tree**, not just `data/`,
    before writing anything else:
    - grep case-insensitive for the generator's name/vendor/brand — zero
-     hits anywhere the AUT can read, including `README.md`/`CHANGELOG.md`.
+     hits anywhere the AUT can read, including `README.md`.
    - grep for narrative/answer-leak patterns (e.g. `"storyline_id"`,
      `"kind": *"red_herring"`, `"activity":` for EvidenceForge specifically
      — adapt the pattern per source). Don't trust a sidecar's documented
      purpose over its actual rendered content.
-4. Write the case bundle: `README.md`, `AGENTS.md` (thin router + evidence
-   index, no provenance), `TASK.md`, `EXAM.md` (questions only),
-   `CHANGELOG.md`, `.gitignore` (containing `QUESTION_ANSWERS.md`).
+4. Write the case bundle: `README.md` (fixed, content-free template — no
+   scenario/technique/outcome description), `AGENTS.md` (thin router +
+   evidence index, no provenance), `TASK.md`, `EXAM.md` (questions only),
+   `.gitignore` (containing `QUESTION_ANSWERS.md`). No `CHANGELOG.md` — see
+   this repo's root `AGENTS.md` ("Known pitfalls") for why one is never
+   included.
 5. Write the answer bundle: `BRIEFING.md`, `AGENTS.md` (grader
    instructions), `grading_schema.md` (1:1 with `EXAM.md`).
 
@@ -156,12 +159,19 @@ missed. Budget for this as a real step, not a courtesy pass.
 
 Apply the keep / patch / discard criteria to whatever the audit finds:
 - **Data self-contradicts on a fact a question's grading depends on** →
-  discard or hold the case (see `_discarded/case-single-host-linux-rce/`
-  in this repo for the pattern — move, don't delete, and write up why.
-  A discarded case's evidence/task side is removed from
+  discard or hold the case — move, don't delete, and write up why. A
+  discarded case's evidence/task side is removed from
   `forensic-agent-tests` entirely, not just marked inactive there — it
   has no reason to stay in the AUT-facing repo once it's out of active
-  use; the full record, including the audit's reasoning, lives here).
+  use; the full record, including the audit's reasoning, is meant to
+  live here permanently. **This was violated once already**: the first
+  case this process discarded (`single-host-linux-rce` — see
+  `TEST_CASE_MATRIX.md`'s note on the "negative result still counts"
+  standard for what it tested) had its full record here deleted in an
+  unrelated reorg commit shortly after, with no commit message
+  acknowledging it — recoverable only from git history now, not from
+  this working tree. Don't let a reorg-flavored commit touch
+  `_discarded/` without explicitly checking its diff first.
 - **Wording ambiguity, data itself is fine** → reword.
 - **Real quirk, doesn't sit on a graded fact** → document in
   `BRIEFING.md`/`grading_schema.md` and keep.

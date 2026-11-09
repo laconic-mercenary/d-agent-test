@@ -1,12 +1,13 @@
-# Case: credential-spray-domain-compromise
+# Case
 
-A small engineering firm's domain gets compromised through a
-credential-spray attack that succeeds against one ordinary employee
-account — but the lasting damage happens through a completely different,
-over-privileged service account the attacker escalates to along the
-way. This case specifically tests whether an agent correctly separates
-"how the attacker got in" from "what they ultimately compromised,"
-rather than crediting the initially-sprayed account with everything
-that happens afterward.
+A digital forensics investigation case for evaluating an
+agent-under-test. No description of the scenario, technique, or
+outcome is given in this file — see [AGENTS.md](AGENTS.md) for what
+the agent needs.
+
+**Before giving this case to an agent under test:** copy this entire
+case directory to a working location under a neutral name (e.g.
+`case-01`), so the agent never sees this directory's original name.
+Do this before the agent's first read of anything in this directory.
 
 **For the agent under test:** start at [AGENTS.md](AGENTS.md), not here.
