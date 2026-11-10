@@ -52,16 +52,16 @@ class InputFile:
     """A file read into memory once. sha256 is the hash of its exact bytes,
     logged for the run and recorded as its version (R9).
 
-    normalized_text is text with its whitespace collapsed, computed once
-    here: quote checks compare against it instead of re-normalizing the
-    whole file on every check. text stays as read, because the prompt, the
-    hash and the report's line lookup all need the original bytes.
+    words holds the file's distinct words, computed once here: a quote is
+    tested against it instead of walking the whole file on every check.
+    text stays as read, because the prompt, the hash and the report's line
+    lookup all need the original bytes.
     """
 
     path: str
     text: str
     sha256: str
-    normalized_text: str
+    words: frozenset[str]
 
 
 @dataclass(frozen=True)
@@ -171,7 +171,7 @@ def read_input_file(path: str) -> InputFile | Exception:
         path=valid_path,
         text=text,
         sha256=files.sha256_hex(data),
-        normalized_text=strings.normalize_whitespace(text),
+        words=strings.distinct_words(text),
     )
 
 

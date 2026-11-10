@@ -23,9 +23,20 @@ masquerading tell.
 itself is the tell.
 **Zero:** Wrong process cited.
 """
+FULL_CREDIT_LINE = 5
 PARTIAL_LINE = 7
 ZERO_LINE = 9
 ZERO_CONDITION = "**Zero:** Wrong process cited."
+# The same entry with no Zero label: nothing to cite when zero is awarded.
+RUBRIC_TEXT_NO_ZERO = """# Grading schema
+
+## Q1 - Execution (15 pts)
+**Full credit:** Correct process and path.
+**Partial:** Correct event cited only.
+"""
+RESTATED_QUOTE = "Correct event cites, no explantion of why the path itself is the tell"
+RESTATED_ANSWER_QUOTE = "The proces was ARMHelper.exe, launched from the user's AppData directory"
+FULL_CONDITION_QUOTE = "Correct process and path, AND explains the masquerading tell."
 ANSWER_TEXT = """# Answers
 
 ## Q1
@@ -105,7 +116,7 @@ class ScoreTest(unittest.TestCase):
 
 
 class BuildRecordTest(unittest.TestCase):
-    """Tests for build_record: every record carries both citations."""
+    """Tests for build_record: the condition comes from the rubric, not the reply."""
 
     def setUp(self) -> None:
         """Build the entry, files and run info one record needs."""
@@ -113,29 +124,84 @@ class BuildRecordTest(unittest.TestCase):
         self.run_files = _run_files()
         self.run_info = _run_info()
 
-    def test_both_quotes_are_located(self) -> None:
-        """A graded reply gets a real "path:line" for each quote."""
+    def test_condition_comes_from_the_rubric(self) -> None:
+        """The awarded band's own condition is cited, with its line."""
         record = report.build_record(self.run_info, self.run_files, self.entry, REPEAT, _reply())
-        self.assertEqual(record.quotes_at.rubric_quote, f"{RUBRIC_PATH}:{PARTIAL_LINE}")
-        self.assertEqual(record.quotes_at.answer_quote, f"{ANSWER_PATH}:{ANSWER_LINE}")
+        self.assertEqual(record.condition.band_label, rubric.LABEL_PARTIAL)
+        self.assertEqual(record.condition.at, f"{RUBRIC_PATH}:{PARTIAL_LINE}")
+        self.assertIn("Correct event cited, no explanation", record.condition.text)
+
+    def test_full_band_cites_the_full_condition(self) -> None:
+        """A different band cites a different condition."""
+        judge_reply = _reply(band=reply.BAND_FULL)
+        record = report.build_record(self.run_info, self.run_files, self.entry, REPEAT, judge_reply)
+        self.assertEqual(record.condition.band_label, rubric.LABEL_FULL_CREDIT)
+        self.assertEqual(record.condition.at, f"{RUBRIC_PATH}:{FULL_CREDIT_LINE}")
+
+    def test_condition_ignores_a_restated_quote(self) -> None:
+        """A quote the judge reworded doesn't change the cited condition."""
+        judge_reply = _reply(rubric_quote=RESTATED_QUOTE)
+        record = report.build_record(self.run_info, self.run_files, self.entry, REPEAT, judge_reply)
+        self.assertEqual(record.condition.at, f"{RUBRIC_PATH}:{PARTIAL_LINE}")
+        self.assertEqual(record.reply.rubric_quote, RESTATED_QUOTE)
+
+    def test_absent_quote_no_longer_fails(self) -> None:
+        """rubric_quote isn't checked, so even an unrelated one still grades."""
+        judge_reply = _reply(rubric_quote=ABSENT_QUOTE)
+        record = report.build_record(self.run_info, self.run_files, self.entry, REPEAT, judge_reply)
+        self.assertIsInstance(record, report.GradeRecord)
+
+    def test_mismatch_is_visible_in_the_record(self) -> None:
+        """A quote from another band sits beside the cited one, and differs."""
+        judge_reply = _reply(rubric_quote=FULL_CONDITION_QUOTE, band=reply.BAND_PARTIAL)
+        record = report.build_record(self.run_info, self.run_files, self.entry, REPEAT, judge_reply)
+        self.assertEqual(record.condition.band_label, rubric.LABEL_PARTIAL)
+        self.assertNotIn(record.reply.rubric_quote, record.condition.text)
 
     def test_zero_default_says_so(self) -> None:
         """No band's conditions met: the citation names that, and isn't null."""
         judge_reply = _reply(rubric_quote=reply.ZERO_DEFAULT, band=reply.BAND_ZERO)
         record = report.build_record(self.run_info, self.run_files, self.entry, REPEAT, judge_reply)
-        self.assertEqual(record.quotes_at.rubric_quote, report.NO_RUBRIC_CONDITION)
+        self.assertEqual(record.condition.band_label, report.NO_RUBRIC_CONDITION)
+        self.assertEqual(record.condition.text, report.NO_RUBRIC_CONDITION)
+        self.assertEqual(record.condition.at, report.NO_RUBRIC_CONDITION)
+
+    def test_band_without_a_condition_says_so(self) -> None:
+        """An entry stating no Zero condition has nothing to cite for zero."""
+        entry = rubric.read_rubric_entries_as_list(RUBRIC_TEXT_NO_ZERO)[0]
+        run_files = _run_files(RUBRIC_TEXT_NO_ZERO)
+        judge_reply = _reply(band=reply.BAND_ZERO)
+        record = report.build_record(self.run_info, run_files, entry, REPEAT, judge_reply)
+        self.assertEqual(record.condition.at, report.NO_RUBRIC_CONDITION)
 
     def test_missing_answer_says_so(self) -> None:
         """No answer given: the citation names that, and isn't null."""
         judge_reply = _reply(rubric_quote=reply.ZERO_DEFAULT, answer_quote=EMPTY, band=reply.BAND_ZERO)
         record = report.build_record(self.run_info, self.run_files, self.entry, REPEAT, judge_reply)
-        self.assertEqual(record.quotes_at.answer_quote, report.NO_ANSWER_GIVEN)
+        self.assertEqual(record.answer_citation.at, report.NO_ANSWER_GIVEN)
+        self.assertEqual(record.answer_citation.match, report.NO_ANSWER_GIVEN)
 
-    def test_unlocatable_quote_fails_the_record(self) -> None:
-        """A quote that can't be found is a bug, so no record is emitted."""
-        judge_reply = _reply(rubric_quote=ABSENT_QUOTE)
+    def test_exact_answer_quote_is_located(self) -> None:
+        """A quote found as written is labelled exact, with its own line."""
+        record = report.build_record(self.run_info, self.run_files, self.entry, REPEAT, _reply())
+        self.assertEqual(record.answer_citation.at, f"{ANSWER_PATH}:{ANSWER_LINE}")
+        self.assertEqual(record.answer_citation.match, report.MATCH_EXACT)
+        self.assertEqual(record.answer_citation.coverage, 1.0)
+
+    def test_restated_answer_quote_gets_the_best_line(self) -> None:
+        """A reworded quote still points at the line it came from."""
+        judge_reply = _reply(answer_quote=RESTATED_ANSWER_QUOTE)
         record = report.build_record(self.run_info, self.run_files, self.entry, REPEAT, judge_reply)
-        self.assertIsInstance(record, Exception)
+        self.assertEqual(record.answer_citation.at, f"{ANSWER_PATH}:{ANSWER_LINE}")
+        self.assertEqual(record.answer_citation.match, report.MATCH_APPROXIMATE)
+        self.assertLess(record.answer_citation.coverage, 1.0)
+
+    def test_unlocatable_answer_quote_still_records(self) -> None:
+        """An unfindable quote no longer fails the record; it's labelled."""
+        judge_reply = _reply(answer_quote=ABSENT_QUOTE)
+        record = report.build_record(self.run_info, self.run_files, self.entry, REPEAT, judge_reply)
+        self.assertIsInstance(record, report.GradeRecord)
+        self.assertEqual(record.answer_citation.match, report.MATCH_APPROXIMATE)
 
     def test_points_come_from_the_band(self) -> None:
         """Code scores the band the model picked."""
@@ -151,13 +217,13 @@ def _input_file(path: str, text: str) -> inputs.InputFile:
         path=path,
         text=text,
         sha256=HASH,
-        normalized_text=strings.normalize_whitespace(text),
+        words=strings.distinct_words(text),
     )
 
 
-def _run_files() -> inputs.RunFiles:
+def _run_files(rubric_text: str = RUBRIC_TEXT) -> inputs.RunFiles:
     """Return the four files a record is built from. Only two are read here."""
-    rubric_file = _input_file(RUBRIC_PATH, RUBRIC_TEXT)
+    rubric_file = _input_file(RUBRIC_PATH, rubric_text)
     return inputs.RunFiles(
         answer=_input_file(ANSWER_PATH, ANSWER_TEXT),
         rubric=rubric_file,

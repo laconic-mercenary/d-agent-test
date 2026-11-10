@@ -53,62 +53,57 @@ class ParseReplyTest(unittest.TestCase):
         """Parse the fixture rubrics into the entries the checks run against."""
         self.entry = _first_entry(RUBRIC_TEXT)
         self.entry_no_partial = _first_entry(RUBRIC_TEXT_NO_PARTIAL)
-        self.answer = _normalized(ANSWER_TEXT)
+        self.answer = _answer_words(ANSWER_TEXT)
 
-    def test_reflowed_rubric_quote_is_accepted(self) -> None:
-        """A condition the rubric wraps, quoted as one line, is still verbatim."""
-        parsed = reply.parse_reply(_raw(rubric_quote=REFLOWED_RUBRIC_QUOTE), self.entry, self.answer)
-        self.assertIsInstance(parsed, reply.Reply)
-
-    def test_wrapped_rubric_quote_is_accepted(self) -> None:
-        """A quote copied with the rubric's own line break is also accepted."""
-        parsed = reply.parse_reply(_raw(rubric_quote=WRAPPED_RUBRIC_QUOTE), self.entry, self.answer)
-        self.assertIsInstance(parsed, reply.Reply)
-
-    def test_quote_kept_verbatim(self) -> None:
-        """The reply keeps the quote as the model sent it; only the check normalizes."""
+    def test_rubric_quote_is_kept_as_sent(self) -> None:
+        """The quote is carried through unchanged, for the record to show."""
         parsed = reply.parse_reply(_raw(rubric_quote=REFLOWED_RUBRIC_QUOTE), self.entry, self.answer)
         self.assertEqual(parsed.rubric_quote, REFLOWED_RUBRIC_QUOTE)
 
-    def test_rubric_quote_not_in_entry_is_rejected(self) -> None:
-        """Words that aren't in the entry are not a quote of it, however spaced."""
+    def test_restated_rubric_quote_is_accepted(self) -> None:
+        """A condition the judge reworded no longer fails the grade."""
+        restated = "Correct event cites, no explantion of why the path itself is the tell"
+        parsed = reply.parse_reply(_raw(rubric_quote=restated), self.entry, self.answer)
+        self.assertIsInstance(parsed, reply.Reply)
+
+    def test_wrapped_rubric_quote_is_accepted(self) -> None:
+        """A quote copied with the rubric's own line break is fine too."""
+        parsed = reply.parse_reply(_raw(rubric_quote=WRAPPED_RUBRIC_QUOTE), self.entry, self.answer)
+        self.assertIsInstance(parsed, reply.Reply)
+
+    def test_unrelated_rubric_quote_is_accepted(self) -> None:
+        """rubric_quote is not validated at all: the record shows it instead."""
         parsed = reply.parse_reply(_raw(rubric_quote=ABSENT_QUOTE), self.entry, self.answer)
-        self.assertIsInstance(parsed, Exception)
+        self.assertIsInstance(parsed, reply.Reply)
 
-    def test_reordered_words_are_rejected(self) -> None:
-        """Normalizing whitespace doesn't make word order negotiable."""
-        reordered = "no explanation of why the path itself is the tell, Correct event cited"
-        parsed = reply.parse_reply(_raw(rubric_quote=reordered), self.entry, self.answer)
-        self.assertIsInstance(parsed, Exception)
-
-    def test_empty_rubric_quote_is_rejected(self) -> None:
-        """An empty rubric quote cites nothing, so it fails."""
+    def test_empty_rubric_quote_is_accepted(self) -> None:
+        """Even an empty quote grades; the citation comes from the rubric."""
         parsed = reply.parse_reply(_raw(rubric_quote=EMPTY), self.entry, self.answer)
-        self.assertIsInstance(parsed, Exception)
+        self.assertIsInstance(parsed, reply.Reply)
 
     def test_zero_default_with_band_zero_is_accepted(self) -> None:
-        """The no-band-met marker is allowed when the band is zero."""
+        """The no-band-met marker is carried through when the band is zero."""
         raw = _raw(rubric_quote=reply.ZERO_DEFAULT, band=BAND_ZERO)
         self.assertIsInstance(reply.parse_reply(raw, self.entry, self.answer), reply.Reply)
 
-    def test_zero_default_with_other_band_is_rejected(self) -> None:
-        """The marker means no condition was met, so it can't earn credit."""
-        raw = _raw(rubric_quote=reply.ZERO_DEFAULT, band=BAND_FULL)
-        self.assertIsInstance(reply.parse_reply(raw, self.entry, self.answer), Exception)
-
-    def test_zero_default_spacing_is_ignored(self) -> None:
-        """The marker is recognized however its whitespace is spaced."""
-        raw = _raw(rubric_quote="Zero  -\ndefault", band=BAND_ZERO)
-        self.assertIsInstance(reply.parse_reply(raw, self.entry, self.answer), reply.Reply)
-
     def test_reflowed_answer_quote_is_accepted(self) -> None:
-        """The answer file is agent-wrapped, so its quotes normalize too."""
+        """The answer file is agent-wrapped, so wrapping can't decide this."""
         raw = _raw(answer_quote=REFLOWED_ANSWER_QUOTE)
         self.assertIsInstance(reply.parse_reply(raw, self.entry, self.answer), reply.Reply)
 
-    def test_answer_quote_not_in_answer_is_rejected(self) -> None:
-        """A quote the answer file doesn't hold fails."""
+    def test_restated_answer_quote_is_accepted(self) -> None:
+        """A quote the judge reworded still came from the answer file."""
+        restated = "The proces was ARMHelper.exe, launched from the user's AppData directory"
+        self.assertIsInstance(reply.parse_reply(_raw(answer_quote=restated), self.entry, self.answer), reply.Reply)
+
+    def test_invented_answer_quote_is_rejected(self) -> None:
+        """A quote sharing almost nothing with the answer file was invented."""
         raw = _raw(answer_quote=ABSENT_QUOTE)
+        self.assertIsInstance(reply.parse_reply(raw, self.entry, self.answer), Exception)
+
+    def test_fabricated_answer_quote_is_rejected(self) -> None:
+        """Grading an answer the agent never gave must not pass."""
+        raw = _raw(answer_quote="The attacker exfiltrated the database over SMB to 10.0.0.9")
         self.assertIsInstance(reply.parse_reply(raw, self.entry, self.answer), Exception)
 
     def test_empty_answer_quote_with_band_zero_is_accepted(self) -> None:
@@ -175,6 +170,38 @@ class ParseReplyTest(unittest.TestCase):
         self.assertIsInstance(reply.parse_reply("[1, 2]", self.entry, self.answer), Exception)
 
 
+class CodeFenceTest(unittest.TestCase):
+    """Tests that a reply wrapped in a fence or prose still parses."""
+
+    def setUp(self) -> None:
+        """Parse the fixture rubric and answer the checks run against."""
+        self.entry = _first_entry(RUBRIC_TEXT)
+        self.answer = _answer_words(ANSWER_TEXT)
+
+    def test_fenced_reply_is_accepted(self) -> None:
+        """A reply inside a ```json fence parses rather than killing the run."""
+        raw = f"```json\n{_raw()}\n```"
+        self.assertIsInstance(reply.parse_reply(raw, self.entry, self.answer), reply.Reply)
+
+    def test_bare_fenced_reply_is_accepted(self) -> None:
+        """A fence with no language tag works too."""
+        raw = f"```\n{_raw()}\n```"
+        self.assertIsInstance(reply.parse_reply(raw, self.entry, self.answer), reply.Reply)
+
+    def test_prose_around_the_object_is_accepted(self) -> None:
+        """A sentence before or after the object doesn't lose the grade."""
+        raw = f"Here is my assessment:\n{_raw()}\nLet me know if you need more."
+        self.assertIsInstance(reply.parse_reply(raw, self.entry, self.answer), reply.Reply)
+
+    def test_plain_object_still_parses(self) -> None:
+        """The happy path is unchanged."""
+        self.assertIsInstance(reply.parse_reply(_raw(), self.entry, self.answer), reply.Reply)
+
+    def test_no_object_at_all_is_rejected(self) -> None:
+        """Text with no JSON object in it still fails."""
+        self.assertIsInstance(reply.parse_reply("I cannot grade this.", self.entry, self.answer), Exception)
+
+
 class IsZeroDefaultTest(unittest.TestCase):
     """Tests for is_zero_default."""
 
@@ -201,9 +228,9 @@ def _first_entry(rubric_text: str) -> rubric.RubricEntry:
     return rubric.read_rubric_entries_as_list(rubric_text)[0]
 
 
-def _normalized(text: str) -> str:
-    """Return text as the answer file's normalized_text would hold it."""
-    return strings.normalize_whitespace(text)
+def _answer_words(text: str) -> frozenset[str]:
+    """Return text as the answer file's words would hold it."""
+    return strings.distinct_words(text)
 
 
 def _fields(

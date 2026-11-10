@@ -60,12 +60,17 @@ rubric. Started 2026-10-02; decisions dated below.
 
 **Validity: the grade is correct**
 
-- **R5.** Every grade gives its band, a rationale, and verbatim quotes of
-  the rubric and the answer text it relied on. Code confirms both quotes
-  exist and adds line numbers and links. v1 checks only that the answer
-  quote exists somewhere in the answer file, not which question's answer
-  it came from: quoting another answer can be legitimate (e.g.
-  benign-breakglass Q2 grades the link to the agent's Q1).
+- **R5.** Every grade gives its band, a rationale, the rubric condition it
+  was graded against, and a verbatim quote of the answer text it relied
+  on. The rubric condition is read from the rubric by code, keyed on the
+  awarded band, so it is exact and always present; the judge's own
+  `rubric_quote` is recorded beside it but never checked. The answer quote
+  is checked for provenance rather than transcription, and cited exactly
+  where it is found exactly and approximately otherwise (see the
+  2026-11-10 decisions below). v1 checks only that the answer quote came
+  from the answer file, not which question's answer it came from: quoting
+  another answer can be legitimate (e.g. benign-breakglass Q2 grades the
+  link to the agent's Q1).
 - **R6.** The judge's accuracy is measured against hand-graded fixtures
   (see Validation), and re-measured whenever the judge changes.
 - **R8.** Nothing inside an answer can change how it's graded.
@@ -173,7 +178,8 @@ inputs:  QUESTION_ANSWERS.md + case's grading_schema.md, BRIEFING.md, AGENTS.md
   zero`), `confidence` (`high | med | low`).
   - Order is deliberate: the model writes top to bottom, so evidence, then
     reasoning, then verdict, then how sure it is of that verdict.
-  - One quote of each kind. Code checks both exist verbatim (R5).
+  - One quote of each kind. Code checks the answer quote exists verbatim;
+    `rubric_quote` is unchecked (see the 2026-11-10 decision below).
   - Only the judgment comes from the model. IDs, case, rubric entry,
     points and hashes are attached by code in the harness record.
   - No answer to the question: `answer_quote` is empty and `band` is
@@ -197,9 +203,12 @@ inputs:  QUESTION_ANSWERS.md + case's grading_schema.md, BRIEFING.md, AGENTS.md
 - **Grade output** (2026-10-22). One JSON line per grade (entry × repeat)
   on stdout: `run` (run ID, answer file, reading-rules version, config,
   hashes of all six input files: R9), question, heading, max points,
-  repeat, points, provisional, the validated reply, and `quotes_at`: each
-  quote's `path:line` (R5; the rubric quote is searched from its own
-  entry's start; null for the zero-band exceptions). Logs go to stderr,
+  repeat, points, provisional, the validated reply, `condition` (the
+  awarded band's label, its text as the rubric states it, and its
+  `path:line`, read from the rubric by code) and `answer_citation` (the
+  answer quote's `path:line`, whether it matched `exact` or `approximate`,
+  and its measured word coverage). Never null: where there is nothing to
+  cite, the field says which (R5). Logs go to stderr,
   so `> grades.jsonl` captures only grades. Run ID: UTC start time plus a
   short random suffix.
 - **Configuration and secrets** (2026-10-21). All settings come from
@@ -243,6 +252,62 @@ inputs:  QUESTION_ANSWERS.md + case's grading_schema.md, BRIEFING.md, AGENTS.md
   - A rubric's own Partial value overrides it; points are recomputed from
     stored bands, no re-run.
   - The one deliberate exception to "no side rules".
+- **The rubric condition comes from the rubric, not the reply**
+  (2026-11-10). Code reads the awarded band's condition out of the rubric
+  entry and records its text and line; `rubric_quote` is kept in the reply
+  but no longer validated.
+  - Why: the verbatim check killed runs over transcription. Measured on
+    the real rubrics, 241 of 277 band conditions (87%) failed it purely
+    because conditions are hard-wrapped mid-sentence and the model quotes
+    them as one line. Collapsing whitespace fixed that, and a real reply
+    then failed anyway: the judge restates conditions rather than copying
+    them (`cites` for `cited`, `achiving` for `archiving`, `-` for `—`,
+    88% word overlap). Verbatim transcription of a 50-word passage is past
+    what the judge does reliably, and the grade it was about to give was
+    sound.
+  - Consistent with the division of labour: the model judges, code does
+    everything else. Transcription was code's job all along.
+  - Citing by band label is exact by construction and can't fail —
+    verified across all 14 rubrics, 208 conditions cited and 11 entries
+    that state no Zero condition, with a deliberately wrong
+    `rubric_quote`.
+  - `rubric_quote` stays in the payload for two reasons: the prompt's
+    field order makes the model write it before it commits to a band, so
+    it reads the condition it is about to grade by; and it sits beside the
+    code-read condition in the record, where a quote from a different band
+    is visible to a reader.
+  - Cost accepted: a judge citing one condition while grading by another
+    is no longer caught automatically, only visible in the record. A
+    word-overlap check on band attribution was measured (203/203 correct,
+    median margin 75 points, foreign quotes ≤0.40) and deliberately not
+    built — judged too much machinery for the risk. It can be added later
+    from the two fields the record already carries.
+- **The answer quote is checked for provenance, not transcription**
+  (2026-11-10). `answer_quote` passes if enough of its words are in the
+  answer file (`MIN_ANSWER_COVERAGE`, 0.5); the record carries the measured
+  coverage and whether the quote was found exactly.
+  - Why not the rubric treatment: free prose has no band structure, so
+    code can't read a substitute from the answer file. Dropping the check
+    would have left the answer side with no citation at all.
+  - What must still fail is a quote the judge invented. A grade resting on
+    an answer the agent never gave is worse than no grade, and a
+    fabricated quote shares few words with the file while a restated one
+    shares nearly all.
+  - The citation falls back to the answer line sharing the most words with
+    the quote, labelled `approximate`. An approximate pointer beats none,
+    and the label says which it is.
+  - The 0.5 threshold is provisional and unmeasured: there were no real
+    answer files to calibrate against, unlike the 277 rubric conditions
+    behind the decision above. Every grade records its coverage, so one
+    real run gives the data to set it properly.
+- **A wrapped reply still parses** (2026-11-10). A reply that isn't valid
+  JSON is retried on the text between its outermost braces, so a code
+  fence or a sentence around the object no longer kills the run.
+  - The prompt forbids both and models add them anyway. Same principle as
+    the two decisions above: don't fail a sound judgment over its wrapper.
+  - The happy path is unchanged -- the fallback runs only after a parse
+    failure -- and whatever the fallback returns is still parsed and
+    validated in full.
 
 ## Validation
 

@@ -7,6 +7,7 @@ import re
 # CONSTS
 LOGGER = logging.getLogger(__name__)
 WHITESPACE_JOINER = " "
+NO_COVERAGE = 0.0
 
 
 # PUBLIC FUNCTIONS
@@ -34,6 +35,32 @@ def is_empty(value: str | None) -> bool:
     if value is None:
         return True
     return len(trim(value)) == 0
+
+
+def distinct_words(text: str) -> frozenset[str]:
+    """Return the distinct whitespace-separated words of text.
+
+    Computed once per file when it is read, so a quote can be tested against
+    it without walking the whole file again on every check.
+    """
+    LOGGER.debug("distinct_words()")
+    return frozenset(normalize_whitespace(text).split())
+
+
+def word_coverage(quote: str, words: frozenset[str]) -> float:
+    """Return the fraction of quote's distinct words that appear in words.
+
+    1.0 means every word of the quote is somewhere in the text it came from;
+    0.0 means none is, so the quote wasn't taken from that text at all. This
+    is deliberately insensitive to word order and to how either side wraps:
+    the judge restates what it quotes, and the question here is provenance,
+    not transcription. An empty quote covers nothing.
+    """
+    LOGGER.debug("word_coverage()")
+    quote_words = set(normalize_whitespace(quote).split())
+    if not quote_words:
+        return NO_COVERAGE
+    return len(quote_words & words) / len(quote_words)
 
 
 def parse_int(text: str) -> int | Exception:
